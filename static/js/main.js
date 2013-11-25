@@ -24,7 +24,7 @@ $(document).ready(function(){
 	});
 
 
-	$("div.step:not(:first)").hide();
+	//$("div.step:not(:first)").hide();
 
 	$('.stepmaster').click(function() {
 

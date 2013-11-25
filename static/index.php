@@ -25,7 +25,7 @@
             <img src="img/logo_branlette.png" width="277" height="277" alt="Brrrrrrrranlettteee" />
         </div>
 <!-- Quand qqun arrive sur le browser -->
-<div class="page-landing step">
+<div class="page-landing step" style="display: none;">
     <div class="stepmaster">Page-Landing</div>
 
     <div class="bras"></div>
@@ -33,7 +33,7 @@
         <button type="button" class="right start">Let's do this bro.</button>
         <div class="clear">
         <h1 class="left">Un contest <span>interagence</span>  de branlette interactive</h1>
-        <p class="right">Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. Fusce egestas ligula ac leo varius dapibus sed sit amet eros. Integer scelerisque egestas dui sit amet aliquet. Nulla posuere mattis ante, a f orci quam, tempor eu tristique vel, ultricies sit amet felis. Mauris volutpat, lacus non viverra porta, nisi mi fringilla risus, pharetra rutrum metus diam a purus.</p>
+        <p class="right">Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. Fusce egestas ligula ac leo varius dapibus sed sit amet eros. Integer scelerisque egestas dui sit amet aliquet. Nulla posuere mattis ante.</p>
         </div>
     </div>
     <div class="sidebar">
@@ -54,21 +54,35 @@
 
 <!-- Quand qqun clique sur le CTA pis que l'information est dedans le iphone -->
 
-
 <!-- 3 messages: 1. le code. 2. Confirmation. 3. Aller, baisse les yeux. -->
 
 <div class="page-landing-code step" style="display: none;">
     <div class="stepmaster">page-landing-code</div>
 
-    <div id="bras2">
-        <div class="code">5ys7w</div>
+
+
+    <div class="bras2">
+        <div class="biphone-contenu">
+            <h1>Sur ton mobile var sur:</h1>
+            <h2>gatetoecestnoel.com</h2>
+            <p>Entre le code suivant pour connecter ton intelligent téléfun.</p>
+            <div class="code">5ys7w</div>
+        </div>
     </div>
+
 
 </div>
 
 <!-- Quand il pogne son iphone pis qu'il check dedans -->
 <div class="page-landing-iphonecode step" style="display: none;">
     <div class="stepmaster">page-landing-iphonecode</div>
+    <div class="logo">
+        <img src="img/logo_branlette.png" width="120" height="120" alt="Brrrrrrrranlettteee" />
+    </div>
+    <h1>Un <span>contest</span> interagence de branlette interactive</h1>
+    <p>Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. </p>
+    <h2>Entre ton code</h2>
+    <form><input type="text" class="code" value="" /></form>
 
 </div>
 
@@ -76,7 +90,53 @@
 
 <div class="page-landing-agence-iphone step" style="display: none;">
     <div class="stepmaster">page-landing-agence-iphone</div>
-
+    <div class="logo">
+        <img src="img/logo_branlette.png" width="100" height="100" alt="Brrrrrrrranlettteee" />
+        <div class="right">
+        <h1>Tu branles pour qui? *</h1>
+        <p>* Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. </p></div>
+    </div>
+    
+    <ul>
+        <li>Agence</li>
+        <li>Akufplottes</li>
+        <li>Agence</li>
+        <li>281</li>
+        <li>288</li>
+        <li>Akufen</li>
+        <li>Agence</li>
+        <li>Cossette</li>
+        <li>Bos</li>
+        <li>Agence</li>
+        <li>Akufplottes</li>
+        <li>Agence</li>
+        <li>281</li>
+        <li>288</li>
+        <li>Akufen</li>
+        <li>Agence</li>
+        <li>Cossette</li>
+        <li>Bos</li>
+        <li>Agence</li>
+        <li>Akufplottes</li>
+        <li>Agence</li>
+        <li>281</li>
+        <li>288</li>
+        <li>Akufen</li>
+        <li>Agence</li>
+        <li>Cossette</li>
+        <li>Bos</li>
+        <li>Agence</li>
+        <li>Akufplottes</li>
+        <li>Agence</li>
+        <li>281</li>
+        <li>288</li>
+        <li>Akufen</li>
+        <li>Agence</li>
+        <li>Cossette</li>
+        <li>Bos</li>
+    </ul>
+<br><br>
+    <h3>Ajouter mon agence de branleur:</h3> <form><input type="text" value="" /></form>
 </div>
 
 <!-- Page de crossage -->
@@ -86,7 +146,22 @@
 <div class="page-shake step" style="display: none;">
     <div class="stepmaster">page-shake</div>
 
+    <div class="shake-bras"></div>
+    <h1>Allo Cossette.<br>Shake comme si y’avait pas de lendemain.</h1>
+
+    <div class="switch">
+        <button type="button" class="small">Permuter la branlette</button>
+    </div>
+    
 </div>
+
+<!-- Quand c fini pis ye venu -->
+
+<div class="page-shake-iphone step" style="display: none;">
+    <div class="stepmaster">page-shake-iphone</div>
+
+</div>
+
 
 <!-- Quand c fini pis ye venu -->
 
@@ -99,12 +174,28 @@
 
 <!-- Classement -->
 
-<div class="page-classement step" style="display: none;">
+<div class="page-classement step">
     <div class="stepmaster">page-classement</div>
-
-
+    <div class="classement">
+        <header>
+            <div>Hey Cossette, Gâte-toé, c'est Noël</div>
+        
+        </header>
     <div id="leaderboard">
         
+    </div>
+</div>
+    <div class="sidebar">
+        <header>
+            <div class="left">Hey Cossette, Gâte-toé, c'est Noël</div>
+            <div class="right"><a href="#twitter" class="icon-twitter"><div>twitter</div></a><a href="#facebook" class="icon-facebook"><div>facebook</div></a></div>
+        </header>
+        <div class="leftscore">
+            <h1>14/168</h1>
+            <footer><a href="/"><div class="arrow-left"></div>Retour à la branlette</a></footer>
+        </div>
+            <p class="right">Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. Fusce egestas ligula ac leo varius dapibus sed sit amet eros. Integer scelerisque egestas dui sit amet aliquet. Nulla posuere mattis ante, a f orci quam, tempor eu tristique vel, ultricies sit amet felis. Mauris volutpat, lacus non viverra porta, nisi mi fringilla risus, pharetra rutrum metus diam a purus.</p>
+        </div>
     </div>
 
 </div>

@@ -233,37 +233,95 @@ div.arrow-right {
   max-width: 900px;
   max-height: 900px;
   bottom: 0;
-  left: 30px;
+  left: 170px;
   width: 100%;
   height: 100%;
   background: url(../img/bras.png);
 }
-.page-landing .main {
+.page-landing .main,
+.page-landing-code .main {
   width: 1100px;
   position: absolute;
   left: 72px;
   bottom: 52px;
 }
-.page-landing .main h1 {
+.page-landing .main div.clear,
+.page-landing-code .main div.clear {
+  padding: 20px 0 0 0;
+  border-top: 6px solid black;
+}
+.page-landing .main button,
+.page-landing-code .main button {
+  margin-bottom: 40px;
+}
+.page-landing .main h1,
+.page-landing-code .main h1 {
+  margin: 0;
   width: 60%;
   font-size: 52px;
   line-height: 52px;
   font-weight: bold;
   position: relative;
 }
-.page-landing .main h1 span:after {
+.page-landing .main h1 span:after,
+.page-landing-code .main h1 span:after {
   content: '*';
   font-size: 26px;
   position: absolute;
   top: -10px;
 }
-.page-landing .main p {
+.page-landing .main p,
+.page-landing-code .main p {
   width: 285px;
 }
-.page-landing .main p:before {
+.page-landing .main p:before,
+.page-landing-code .main p:before {
   content: '* ';
   font-size: 1.3em;
   font-family: 'NHaasGroteskTXStd-65Md';
+}
+.page-landing-code .bras2 {
+  position: absolute;
+  z-index: -1;
+  max-width: 1024px;
+  max-height: 900px;
+  bottom: 0;
+  left: 30px;
+  width: 100%;
+  height: 100%;
+  background: url(../img/bras2.png) center center;
+}
+.page-landing-code .biphone-contenu {
+  position: absolute;
+  left: 50%;
+  margin-left: -135px;
+  bottom: 50%;
+  margin-bottom: -135px;
+  width: 270px;
+  height: 270px;
+  padding: 52px 0;
+}
+.page-landing-code .biphone-contenu h1 {
+  border-top: 5px solid black;
+  font-size: 37px;
+  line-height: 1em;
+  margin: 0 0 15px 0;
+}
+.page-landing-code .biphone-contenu h2 {
+  margin: 0 0 15px 0;
+  font-size: 25px;
+  line-height: 1em;
+}
+.page-landing-code .biphone-contenu .code {
+  background: white;
+  font-size: 24px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  margin: auto;
+}
+.page-landing-code .biphone-contenu .code:hover {
+  background-color: #f2f2f2;
 }
 .sidebar {
   font-family: 'NHaasGroteskTXStd-75Bd';
@@ -312,11 +370,124 @@ div.arrow-right {
   text-align: right;
   line-height: 40px;
 }
-.page-landing .sidebar {
+.page-landing .sidebar,
+.page-landing-code .sidebar {
   position: fixed;
   top: 52px;
   right: 52px;
   width: 600px;
+}
+.page-classement .wrap1 {
+  width: 10%;
+}
+.page-classement .wrap2 {
+  width: 70%;
+}
+.page-classement .sidebar {
+  position: fixed;
+  top: 52px;
+  right: 52px;
+  width: 500px;
+}
+.page-classement .sidebar header {
+  overflow: hidden;
+  zoom: 1;
+  margin-bottom: 20px;
+}
+.page-classement .sidebar div.leftscore {
+  float: left;
+  width: 40%;
+  clear: both;
+}
+.page-classement .sidebar div.leftscore h1 {
+  border-bottom: 1px solid black;
+  font-size: 58px;
+  margin: 0;
+}
+.page-classement .sidebar div.leftscore h1:after {
+  content: '*';
+  font-size: 26px;
+  position: absolute;
+}
+.page-classement .sidebar div.leftscore footer {
+  width: 100%;
+  text-align: left;
+}
+.page-classement .sidebar p.right {
+  width: 50%;
+}
+.page-classement .sidebar p.right:before {
+  content: '* ';
+  font-size: 1.3em;
+  font-family: 'NHaasGroteskTXStd-65Md';
+}
+html,
+body {
+  height: 100%;
+}
+.page-shake {
+  background: url(../img/bras3.png) center center no-repeat #ec1d1d;
+  height: 100%;
+}
+.page-shake h1 {
+  position: absolute;
+  bottom: 150px;
+  line-height: 120px;
+  margin: 0;
+  left: 52px;
+  max-width: 1024px;
+  width: 90%;
+  font-size: 120px;
+}
+.page-shake .switch {
+  position: fixed;
+  left: 52px;
+  bottom: 52px;
+}
+.page-classement .classement {
+  width: 860px;
+  margin: 52px 0 0 380px;
+}
+.page-classement .classement header {
+  zoom: 1;
+  overflow: hidden;
+  border-bottom: 4px solid #000;
+  line-height: 40px;
+}
+.page-classement .classement header div.right a div {
+  display: inline-block;
+}
+.page-classement .classement header div.right a:hover {
+  border: 0;
+}
+.page-classement .classement table {
+  font-family: 'NHaasGroteskTXStd-75Bd';
+  font-size: 58px;
+  line-height: 1em;
+}
+.page-classement .classement table tr,
+.page-classement .classement table td {
+  padding: 0;
+  margin: 0;
+}
+.page-classement .classement table tr {
+  border-bottom: 2px solid #000;
+  vertical-align: baseline;
+}
+.page-classement .classement table td {
+  padding-top: 17px;
+}
+.page-classement .classement table td.position {
+  padding-top: 0px;
+  width: 85px;
+}
+.page-classement .classement table td.agence {
+  width: 400px;
+}
+.page-classement .classement table td.score {
+  text-align: right;
+  font-size: 16px;
+  font-family: 'NHaasGroteskTXStd-65Md';
 }
 /* ==========================================================================
    Helper classes
@@ -409,6 +580,82 @@ div.arrow-right {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  #logo,
+  #akfnlogo {
+    display: none;
+  }
+  .page-landing-iphonecode {
+    padding: 25px;
+    background: #ec1d1d;
+  }
+  .page-landing-iphonecode .logo {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .page-landing-iphonecode h1 {
+    margin: 0.5em 0;
+    position: relative;
+    line-height: 1em;
+    font-size: 30px;
+  }
+  .page-landing-iphonecode h1 span:after {
+    content: '*';
+    top: -10px;
+    position: absolute;
+  }
+  .page-landing-iphonecode h2 {
+    margin-bottom: 0.5em;
+    font-size: 16px;
+  }
+  input.code,
+  input[type="text"] {
+    -webkit-appearance: none;
+    border-radius: 0;
+    width: 100%;
+    background: white;
+    border: 0;
+    line-height: 50px;
+    text-align: center;
+    font-size: 24px;
+    font-family: 'NHaasGroteskTXStd-75Bd';
+    height: 50px;
+    padding: 0;
+    margin: 0;
+  }
+  .page-landing-agence-iphone {
+    background: #ec1d1d;
+    padding: 35px 25px 25px 25px;
+  }
+  .page-landing-agence-iphone .logo {
+    zoom: 1;
+    overflow: hidden;
+  }
+  .page-landing-agence-iphone .logo img {
+    width: 35%;
+    height: auto;
+  }
+  .page-landing-agence-iphone .right {
+    width: 60%;
+  }
+  .page-landing-agence-iphone .right h1 {
+    border-bottom: 6px solid black;
+    padding-bottom: 0.3em;
+    font-size: 14px;
+  }
+  .page-landing-agence-iphone ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    clear: both;
+  }
+  .page-landing-agence-iphone ul li {
+    border-bottom: 1px solid black;
+    font-family: 'NHaasGroteskTXStd-75Bd';
+    line-height: 48px;
+    font-size: 30px;
+  }
+}
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
 }

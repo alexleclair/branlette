@@ -3,13 +3,17 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Oliver Chank -- Front-End Dev -- @oliverchank
+    Alex Leclair -- Back-End Dev -- @alexleclair
 
 # THANKS
 
-    <name>
+    Oliver Chank
+    Alex Leclair
 
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
     Normalize.css, jQuery, Modernizr
+    NodeJS
+    Redis

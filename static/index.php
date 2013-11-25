@@ -36,37 +36,21 @@
         <p class="right">Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. Fusce egestas ligula ac leo varius dapibus sed sit amet eros. Integer scelerisque egestas dui sit amet aliquet. Nulla posuere mattis ante, a f orci quam, tempor eu tristique vel, ultricies sit amet felis. Mauris volutpat, lacus non viverra porta, nisi mi fringilla risus, pharetra rutrum metus diam a purus.</p>
         </div>
     </div>
+    <div id="leaderboard">
+        
+    </div>
     <div class="wrap3">
     <div id="sidebar">
         <header>
             <div class="left">Top 5 des plus vigoureux branleurs</div>
             <div class="right"><a href="#twitter" class="icon-twitter"><div>twitter</div></a><a href="#facebook" class="icon-facebook"><div>facebook</div></a></div>
         </header>
-            <?php include('top5.php'); ?>
+            <div id="top5">
+
+            </div>
         <footer>
             <a href="classement.php"><div class="arrow-right"></div>Voir le classement complet</a>
         </footer>
         </div>
         
-</div><div id="akfnlogo">
-            <img src="img/logoAKFN-bloc.png" height="40" width="40" />
-        </div>
-
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="http://github.com/janl/mustache.js/raw/master/mustache.js"></script>  
-        <script src="js/main.js"></script>
-        
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
-    </body>
-</html>
+<?php include('footer.php');?>

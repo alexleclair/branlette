@@ -31,6 +31,11 @@ App =
 				cossette:"Cossette"
 				akufen:"Akufen"
 				commun:"Commun"
+				bbr:"BleuBlancRouge"
+				ecorce:"Écorce"
+				tp1:"TP1"
+				sidlee:"Sid Lee"
+				cri:"CRI"
 		agencies:{}	
 		events:[]
 

@@ -4,11 +4,21 @@
             <img src="img/logoAKFN-bloc.png" height="40" width="40" />
         </div>
 
-
+        <script type="text/html" id="template-leaderboard">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                {{#each_upto agencies limit}}
+                <tr>
+                    <td class="position">{{rank}}</td><td class="agence">{{name}}</td><td class="score">{{score}}</td>
+                </tr>
+                {{/each_upto}}
+            </table>
+        </script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="http://github.com/janl/mustache.js/raw/master/mustache.js"></script>  
+        <script src="js/vendor/handlebars-v1.1.2.js"></script>  
         <script src="js/main.js"></script>
+        <script src="http://localhost:8081/socket.io/socket.io.js"></script>
+        <script src="js/sockets.js"></script>
         
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

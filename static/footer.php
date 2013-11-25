@@ -17,7 +17,7 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/vendor/handlebars-v1.1.2.js"></script>  
         <script src="js/main.js"></script>
-        <script src="http://localhost:8081/socket.io/socket.io.js"></script>
+        <script src="js/vendor/socket.io.js"></script>
         <script src="js/sockets.js"></script>
         
 

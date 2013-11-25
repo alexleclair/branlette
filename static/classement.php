@@ -27,9 +27,9 @@
         </div>
 
         <div class="wrap2">
-        <div id="classement">
+        <div id="leaderboard">
             <header>
-                <div class="left">Hey Cossette, Gâte-toé, c'est Noël</div>
+                <div class="left">Classement des branleurs</div>
             </header>
             <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>

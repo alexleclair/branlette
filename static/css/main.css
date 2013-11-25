@@ -135,6 +135,22 @@ body p {
   bottom: 52px;
   right: 52px;
 }
+.stepmaster {
+  position: fixed;
+  top: 5px;
+  text-align: center;
+  left: 5px;
+  line-height: 40px;
+  height: 40px;
+  width: 300px;
+  background: pink;
+  color: green;
+}
+.stepmaster:hover {
+  background: purple;
+  color: turquoise;
+  cursor: pointer;
+}
 input.button,
 button[type="button"] {
   background-color: #ffd600;
@@ -150,8 +166,8 @@ button[type="button"] {
 }
 input.button:hover,
 button[type="button"]:hover {
-  color: black;
-  background: white;
+  color: white;
+  background: black;
   transition: all 0.1s ease;
 }
 button[type="button"].small {
@@ -211,7 +227,7 @@ div.arrow-right {
   margin-right: 10px;
 }
 /* LANDING */
-body.landing #bras {
+.page-landing .bras {
   position: absolute;
   z-index: -1;
   max-width: 900px;
@@ -222,230 +238,85 @@ body.landing #bras {
   height: 100%;
   background: url(../img/bras.png);
 }
-body.landing #bras2 {
-  display: none;
-  position: absolute;
-  z-index: -1;
-  max-width: 1024px;
-  max-height: 900px;
-  bottom: 0;
-  left: 30px;
-  width: 100%;
-  height: 100%;
-  background: url(../img/bras2.png);
-}
-body.landing #bras2 .code {
-  background: white;
-  width: 250px;
-  font-size: 24px;
-  height: 60px;
-  line-height: 60px;
-  text-align: center;
-  position: absolute;
-  left: 50%;
-  margin-left: -125px;
-  bottom: 40%;
-}
-body.landing #main {
+.page-landing .main {
   width: 1100px;
   position: absolute;
   left: 72px;
   bottom: 52px;
 }
-body.landing #main h1 {
+.page-landing .main h1 {
   width: 60%;
   font-size: 52px;
   line-height: 52px;
   font-weight: bold;
   position: relative;
 }
-body.landing #main h1 span:after {
+.page-landing .main h1 span:after {
   content: '*';
   font-size: 26px;
   position: absolute;
   top: -10px;
 }
-body.landing #main p {
+.page-landing .main p {
   width: 285px;
 }
-body.landing #main p:before {
+.page-landing .main p:before {
   content: '* ';
   font-size: 1.3em;
   font-family: 'NHaasGroteskTXStd-65Md';
 }
-body.branlette {
-  background-color: #ec1d1d;
-}
-body.branlette #shake-count {
-  position: fixed;
-  right: 128px;
-  width: 543px;
-  bottom: 52px;
-  border-bottom: 2px solid black;
+.sidebar {
   font-family: 'NHaasGroteskTXStd-75Bd';
 }
-body.branlette #shake-count .left {
-  font-size: 30px;
+.sidebar header {
+  zoom: 1;
+  overflow: hidden;
+  border-bottom: 4px solid #000;
+  line-height: 40px;
 }
-body.branlette #shake-count .right {
-  vertical-align: text-bottom;
+.sidebar header div.right a div {
+  display: inline-block;
 }
-body.branlette #switch {
-  position: fixed;
-  left: 52px;
-  bottom: 52px;
+.sidebar header div.right a:hover {
+  border: 0;
 }
-body.branlette .shake-intro {
-  width: 1077px;
-  padding: 135px;
+.sidebar table {
+  font-size: 58px;
+  line-height: 1em;
 }
-body.branlette .shake-intro h1 {
-  margin: 0;
+.sidebar table tr,
+.sidebar table td {
   padding: 0;
-  font-size: 150px;
-  line-height: 150px;
+  margin: 0;
 }
-.wrap3 {
-  position: absolute;
-  right: 72px;
-  top: 72px;
+.sidebar table tr {
+  border-bottom: 2px solid #000;
+  vertical-align: baseline;
 }
-body.classement .wrap3 {
-  width: 25%;
+.sidebar table td {
+  padding-top: 17px;
 }
-body.branlette .wrap3,
-body.landing .wrap3 {
+.sidebar table td.position {
+  padding-top: 0px;
+  width: 85px;
+}
+.sidebar table td.agence {
+  width: 400px;
+}
+.sidebar table td.score {
+  text-align: right;
+  font-size: 16px;
+  font-family: 'NHaasGroteskTXStd-65Md';
+}
+.sidebar footer {
+  text-align: right;
+  line-height: 40px;
+}
+.page-landing .sidebar {
+  position: fixed;
+  top: 52px;
+  right: 52px;
   width: 600px;
-}
-#sidebar {
-  font-family: 'NHaasGroteskTXStd-75Bd';
-}
-#sidebar header {
-  zoom: 1;
-  overflow: hidden;
-  border-bottom: 4px solid #000;
-  line-height: 40px;
-}
-#sidebar header div.right a div {
-  display: inline-block;
-}
-#sidebar header div.right a:hover {
-  border: 0;
-}
-#sidebar table {
-  font-size: 58px;
-  line-height: 1em;
-}
-#sidebar table tr,
-#sidebar table td {
-  padding: 0;
-  margin: 0;
-}
-#sidebar table tr {
-  border-bottom: 2px solid #000;
-  vertical-align: baseline;
-}
-#sidebar table td {
-  padding-top: 17px;
-}
-#sidebar table td.position {
-  padding-top: 0px;
-  width: 85px;
-}
-#sidebar table td.agence {
-  width: 400px;
-}
-#sidebar table td.score {
-  text-align: right;
-  font-size: 16px;
-  font-family: 'NHaasGroteskTXStd-65Md';
-}
-#sidebar footer {
-  text-align: right;
-  line-height: 40px;
-}
-.classement h1 {
-  width: 60%;
-  font-size: 52px;
-  line-height: 52px;
-  font-weight: bold;
-  position: relative;
-}
-.classement h1 span:after {
-  content: '*';
-  font-size: 26px;
-  position: absolute;
-  top: -10px;
-}
-.classement footer {
-  text-align: right;
-  line-height: 40px;
-}
-#classement {
-  width: 860px;
-  margin: 72px 0 0 380px;
-}
-#classement header {
-  zoom: 1;
-  overflow: hidden;
-  border-bottom: 4px solid #000;
-  line-height: 40px;
-}
-#classement header div.right a div {
-  display: inline-block;
-}
-#classement header div.right a:hover {
-  border: 0;
-}
-#classement h1 {
-  width: 60%;
-  font-size: 52px;
-  line-height: 52px;
-  font-weight: bold;
-  position: relative;
-}
-#classement h1 span:after {
-  content: '*';
-  font-size: 26px;
-  position: absolute;
-  top: -10px;
-}
-#classement p {
-  width: 285px;
-}
-#classement p:before {
-  content: '* ';
-  font-size: 1.3em;
-  font-family: 'NHaasGroteskTXStd-65Md';
-}
-#classement table {
-  font-family: 'NHaasGroteskTXStd-75Bd';
-  font-size: 58px;
-  line-height: 1em;
-}
-#classement table tr,
-#classement table td {
-  padding: 0;
-  margin: 0;
-}
-#classement table tr {
-  border-bottom: 2px solid #000;
-  vertical-align: baseline;
-}
-#classement table td {
-  padding-top: 17px;
-}
-#classement table td.position {
-  padding-top: 0px;
-  width: 85px;
-}
-#classement table td.agence {
-  width: 400px;
-}
-#classement table td.score {
-  text-align: right;
-  font-size: 16px;
-  font-family: 'NHaasGroteskTXStd-65Md';
 }
 /* ==========================================================================
    Helper classes

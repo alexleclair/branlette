@@ -104,6 +104,7 @@
   };
 
   $(function() {
+    var sensitivity, x1, x2, y1, y2, z1, z2;
     Handlebars.registerHelper('each_upto', function(ary, max, options) {
       var i, result, _i, _ref;
       if (!ary || ary.length === 0) {
@@ -115,7 +116,31 @@
       }
       return result.join('');
     });
-    return App.init();
+    App.init();
+    if (window.DeviceMotionEvent != null) {
+      sensitivity = 20;
+      x1 = 0;
+      y1 = 0;
+      z1 = 0;
+      x2 = 0;
+      y2 = 0;
+      z2 = 0;
+      window.addEventListener('devicemotion', function(e) {
+        x1 = e.accelerationIncludingGravity.x;
+        y1 = e.accelerationIncludingGravity.y;
+        return z1 = e.accelerationIncludingGravity.z;
+      }, false);
+      return setInterval(function() {
+        var change;
+        change = Math.abs(x1 - x2 + y1 - y2 + z1 - z2);
+        if (change > sensitivity) {
+          App.shake();
+        }
+        x2 = x1;
+        y2 = y1;
+        return z2 = z1;
+      }, 150);
+    }
   });
 
   window.Branlette = App;

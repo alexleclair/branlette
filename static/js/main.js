@@ -54,7 +54,7 @@ $(document).ready(function(){
 
 
 
-	$('button[data-action="shake"').click(function() {
+	$('button[data-action="shake"]').click(function() {
 		$('.shake-bras').effect('shake',{direction:'up', times:2});
 	// $('.shake-bras').animate({
 	// 	'background-position-x' : '+=50',

@@ -39,7 +39,6 @@ App =
 	shake: (agency)->
 		if !agency?
 			agency = App.agency;
-			#alert 'shaked'
 		App.socket.emit('shake', agency);
 
 	refreshCodeScreen: ()=>

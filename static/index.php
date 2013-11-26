@@ -146,7 +146,7 @@
 <div class="page-shake step">
     <div class="stepmaster">page-shake</div>
 
-    <div class="shake-bras">
+    <div class="shake-bras shake">
         <img src="img/bras3.png" />
     </div>
 

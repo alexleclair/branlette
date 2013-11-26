@@ -526,8 +526,9 @@ html,body {
     height: 100%;
 }
 .page-shake {
-        background: url(../img/bras3.png) center center no-repeat #ec1d1d;
-    height: 100%;
+    //background: url(../img/bras3.png) center center no-repeat #ec1d1d;
+    background-color: #ec1d1d;
+    min-height: 100%;
 
 
     // .shake-bras {
@@ -556,7 +557,65 @@ html,body {
         bottom: 52px;
     }
 
+    .shake-bras {
+        margin: auto;
+        text-align: center;
+        height: 100%;
 
+
+        img {
+            width: auto;
+            height: 100%;
+        }
+    }
+
+    .shake-bulle {
+        position: absolute;
+        top:20%;
+        left:50%;
+        margin-left: -475px;
+        background: @jaune;
+        padding: 20px;
+        font-size: 12px;
+        width: 250px;
+        z-index: 1000;
+
+        h3 {
+
+        border-top: 1px solid black;
+        padding-top: 10px;
+        margin: 0;
+        }
+
+        &:after {
+            background-color: transparent;
+            position: absolute;
+            bottom: -15px;
+            right: 15px;
+            content:'';
+            width: 0px;
+            height: 0px;
+            border-style: solid;
+            border-width: 15px 0px 0 10px;
+            border-color: @jaune transparent transparent transparent;
+        }
+
+    }
+
+    .shake-nombre {
+        font-size: 280px;
+        text-align: center;
+        position: fixed;
+        z-index: 1001;
+        width: 1024px;
+        height: 400px;
+        right: 50%;
+        bottom: 50%;
+        margin-right: -512px;
+        margin-bottom: -200px;
+
+        font-family: @haasbold;
+    }
 
 }
 
@@ -629,6 +688,10 @@ html,body {
 
 }
 
+.page-shake-iphone {
+    background: url(../img/bras3.png) center center no-repeat #ec1d1d;
+    height: 100%;
+}
 
 
 
@@ -903,13 +966,16 @@ input.code, input[type="text"] {
         margin: 0;
     }
 
+
+
+
     .page-landing-agence-iphone {
-    background: #ec1d1d;
-        padding: 35px 25px 25px 25px;
+        background: #ec1d1d;
 
        .logo {
         zoom: 1;
         overflow: hidden;
+        padding: 35px 25px 25px 25px;
 
         img {
             width: 35%;
@@ -936,13 +1002,38 @@ input.code, input[type="text"] {
         }
 
         ul li {
-            border-bottom: 1px solid black;
             font-family: @haasbold;
             line-height: 48px;
             font-size: 30px;
+            padding: 0 25px;
+
+
+
+            span {
+                border-bottom: 1px solid black;
+                display: block;
+            }
+        }
+        .prev-active {
+            span {
+                border-bottom: 1px solid transparent;
+            }
+        }
+        .active {
+            background-color: #ec1d1d;
+
+            span {
+                border-bottom: 1px solid transparent;
+            }
+        }
+
+        &.one-selected {
+            background-color: #30b542;
         }
 
     }
+
+
 
 
 }

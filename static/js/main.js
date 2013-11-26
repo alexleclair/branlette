@@ -38,4 +38,33 @@ $(document).ready(function(){
 		$ancestor.fadeOut();
 		$next.fadeIn();
 	});
+
+
+	$('.page-landing-agence-iphone ul li').click(function() {
+		$('.page-landing-agence-iphone').addClass('one-selected');
+		$('.page-landing-agence-iphone ul li').removeClass('active').removeClass('prev-active');
+		$(this).addClass('active');
+		$(this).prev('li').addClass('prev-active');
+	});
+
+	$('ul li.active').click(function() {
+		$('.page-landing-agence-iphone').removeClass('one-selected');
+		$('.page-landing-agence-iphone ul li').removeClass('active').removeClass('prev-active');
+	});
+
+
+
+	$('button[data-action="shake"').click(function() {
+		$('.shake-bras').effect('shake',{direction:'up', times:2});
+	// $('.shake-bras').animate({
+	// 	'background-position-x' : '+=50',
+	// 	'background-position-y': '+=50'
+	// }, 1000);
+	});
+
+
+
+
+
+
 });

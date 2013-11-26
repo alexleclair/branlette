@@ -426,8 +426,8 @@ body {
   height: 100%;
 }
 .page-shake {
-  background: url(../img/bras3.png) center center no-repeat #ec1d1d;
-  height: 100%;
+  background-color: #ec1d1d;
+  min-height: 100%;
 }
 .page-shake h1 {
   position: absolute;
@@ -443,6 +443,56 @@ body {
   position: fixed;
   left: 52px;
   bottom: 52px;
+}
+.page-shake .shake-bras {
+  margin: auto;
+  text-align: center;
+  height: 100%;
+}
+.page-shake .shake-bras img {
+  width: auto;
+  height: 100%;
+}
+.page-shake .shake-bulle {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  margin-left: -475px;
+  background: #ffd600;
+  padding: 20px;
+  font-size: 12px;
+  width: 250px;
+  z-index: 1000;
+}
+.page-shake .shake-bulle h3 {
+  border-top: 1px solid black;
+  padding-top: 10px;
+  margin: 0;
+}
+.page-shake .shake-bulle:after {
+  background-color: transparent;
+  position: absolute;
+  bottom: -15px;
+  right: 15px;
+  content: '';
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 15px 0px 0 10px;
+  border-color: #ffd600 transparent transparent transparent;
+}
+.page-shake .shake-nombre {
+  font-size: 280px;
+  text-align: center;
+  position: fixed;
+  z-index: 1001;
+  width: 1024px;
+  height: 400px;
+  right: 50%;
+  bottom: 50%;
+  margin-right: -512px;
+  margin-bottom: -200px;
+  font-family: 'NHaasGroteskTXStd-75Bd';
 }
 .page-classement .classement {
   width: 860px;
@@ -488,6 +538,10 @@ body {
   text-align: right;
   font-size: 16px;
   font-family: 'NHaasGroteskTXStd-65Md';
+}
+.page-shake-iphone {
+  background: url(../img/bras3.png) center center no-repeat #ec1d1d;
+  height: 100%;
 }
 /* ==========================================================================
    Helper classes
@@ -625,11 +679,11 @@ body {
   }
   .page-landing-agence-iphone {
     background: #ec1d1d;
-    padding: 35px 25px 25px 25px;
   }
   .page-landing-agence-iphone .logo {
     zoom: 1;
     overflow: hidden;
+    padding: 35px 25px 25px 25px;
   }
   .page-landing-agence-iphone .logo img {
     width: 35%;
@@ -650,10 +704,26 @@ body {
     clear: both;
   }
   .page-landing-agence-iphone ul li {
-    border-bottom: 1px solid black;
     font-family: 'NHaasGroteskTXStd-75Bd';
     line-height: 48px;
     font-size: 30px;
+    padding: 0 25px;
+  }
+  .page-landing-agence-iphone ul li span {
+    border-bottom: 1px solid black;
+    display: block;
+  }
+  .page-landing-agence-iphone .prev-active span {
+    border-bottom: 1px solid transparent;
+  }
+  .page-landing-agence-iphone .active {
+    background-color: #ec1d1d;
+  }
+  .page-landing-agence-iphone .active span {
+    border-bottom: 1px solid transparent;
+  }
+  .page-landing-agence-iphone.one-selected {
+    background-color: #30b542;
   }
 }
 @media only screen and (min-width: 35em) {

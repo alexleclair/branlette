@@ -98,42 +98,42 @@
     </div>
     
     <ul>
-        <li>Agence</li>
-        <li>Akufplottes</li>
-        <li>Agence</li>
-        <li>281</li>
-        <li>288</li>
-        <li>Akufen</li>
-        <li>Agence</li>
-        <li>Cossette</li>
-        <li>Bos</li>
-        <li>Agence</li>
-        <li>Akufplottes</li>
-        <li>Agence</li>
-        <li>281</li>
-        <li>288</li>
-        <li>Akufen</li>
-        <li>Agence</li>
-        <li>Cossette</li>
-        <li>Bos</li>
-        <li>Agence</li>
-        <li>Akufplottes</li>
-        <li>Agence</li>
-        <li>281</li>
-        <li>288</li>
-        <li>Akufen</li>
-        <li>Agence</li>
-        <li>Cossette</li>
-        <li>Bos</li>
-        <li>Agence</li>
-        <li>Akufplottes</li>
-        <li>Agence</li>
-        <li>281</li>
-        <li>288</li>
-        <li>Akufen</li>
-        <li>Agence</li>
-        <li>Cossette</li>
-        <li>Bos</li>
+        <li><span>Agence</span></li>
+        <li><span>Akufplottes</span></li>
+        <li><span>Agence</span></li>
+        <li><span>281</span></li>
+        <li><span>288</span></li>
+        <li><span>Akufen</span></li>
+        <li><span>Agence</span></li>
+        <li><span>Cossette</span></li>
+        <li><span>Bos</span></li>
+        <li><span>Agence</span></li>
+        <li><span>Akufplottes</span></li>
+        <li><span>Agence</span></li>
+        <li><span>281</span></li>
+        <li><span>288</span></li>
+        <li><span>Akufen</span></li>
+        <li><span>Agence</span></li>
+        <li><span>Cossette</span></li>
+        <li><span>Bos</span></li>
+        <li><span>Agence</span></li>
+        <li><span>Akufplottes</span></li>
+        <li><span>Agence</span></li>
+        <li><span>281</span></li>
+        <li><span>288</span></li>
+        <li><span>Akufen</span></li>
+        <li><span>Agence</span></li>
+        <li><span>Cossette</span></li>
+        <li><span>Bos</span></li>
+        <li><span>Agence</span></li>
+        <li><span>Akufplottes</span></li>
+        <li><span>Agence</span></li>
+        <li><span>281</span></li>
+        <li><span>288</span></li>
+        <li><span>Akufen</span></li>
+        <li><span>Agence</span></li>
+        <li><span>Cossette</span></li>
+        <li><span>Bos</span></li>
     </ul>
 <br><br>
     <h3>Ajouter mon agence de branleur:</h3> <form><input type="text" value="" /></form>
@@ -143,23 +143,38 @@
 
 <!-- 3 states: 1. intro, 2. shaking, 3. repos/fatigué -->
 
-<div class="page-shake step" style="display: none;">
+<div class="page-shake step">
     <div class="stepmaster">page-shake</div>
 
-    <div class="shake-bras"></div>
-    <h1>Allo Cossette.<br>Shake comme si y’avait pas de lendemain.</h1>
+    <div class="shake-bras">
+        <img src="img/bras3.png" />
+    </div>
+
+    <div class="shake-nombre">
+        <div data-info="shake-sessioncount">2087</div>
+    </div>
+
+    <div class="shake-bulle">
+        <h3>Enweille. Lâche-pas la banane!</h3>
+    </div>
+
+    <h1 style="display: none;">Allo Cossette.<br>Shake comme si y’avait pas de lendemain.</h1>
 
     <div class="switch">
         <button type="button" class="small">Permuter la branlette</button>
+        <button type="button" class="small" data-action="shake">Shake it</button>
     </div>
     
+    <div class="shake-bottomcount"></div>
+
 </div>
 
 <!-- Quand c fini pis ye venu -->
 
-<div class="page-shake-iphone step" style="display: none;">
+<div class="page-shake-iphone step"  style="display: none;">
     <div class="stepmaster">page-shake-iphone</div>
 
+asdasd
 </div>
 
 
@@ -174,7 +189,7 @@
 
 <!-- Classement -->
 
-<div class="page-classement step">
+<div class="page-classement step" style="display: none;">
     <div class="stepmaster">page-classement</div>
     <div class="classement">
         <header>

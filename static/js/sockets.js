@@ -117,6 +117,10 @@
       return result.join('');
     });
     App.init();
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      $('div.step').hide();
+      $('div.page-landing-iphonecode').show();
+    }
     if (window.DeviceMotionEvent != null) {
       sensitivity = 20;
       x1 = 0;

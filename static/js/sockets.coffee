@@ -96,40 +96,43 @@ $ ->
 	    return result.join('');
 	
 	App.init();
+	if /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+		$('div.step').hide();
+		$('div.page-landing-iphonecode').show();
 
 	if window.DeviceMotionEvent?
-      # Shake sensitivity (a lower number is more)
-      sensitivity = 20;
+		# Shake sensitivity (a lower number is more)
+		sensitivity = 20;
 
-      # Position variables
-      x1 = 0
-      y1 = 0
-      z1 = 0
-      x2 = 0
-      y2 = 0
-      z2 = 0
+		# Position variables
+		x1 = 0
+		y1 = 0
+		z1 = 0
+		x2 = 0
+		y2 = 0
+		z2 = 0
 
-      # Listen to motion events and update the position
-      window.addEventListener('devicemotion',  (e)-> 
-          x1 = e.accelerationIncludingGravity.x;
-          y1 = e.accelerationIncludingGravity.y;
-          z1 = e.accelerationIncludingGravity.z;
-      , false);
+		# Listen to motion events and update the position
+		window.addEventListener('devicemotion',  (e)-> 
+			x1 = e.accelerationIncludingGravity.x;
+			y1 = e.accelerationIncludingGravity.y;
+			z1 = e.accelerationIncludingGravity.z;
+		, false);
 
-      # Periodically check the position and fire
-      # if the change is greater than the sensitivity
-      setInterval(()->
-          change = Math.abs(x1-x2+y1-y2+z1-z2);
+		# Periodically check the position and fire
+		# if the change is greater than the sensitivity
+		setInterval(()->
+			change = Math.abs(x1-x2+y1-y2+z1-z2);
 
-          if change > sensitivity 
-            App.shake();
-          
+			if change > sensitivity 
+				App.shake();
 
-          # Update new position
-          x2 = x1;
-          y2 = y1;
-          z2 = z1;
-      , 150);
+
+			# Update new position
+			x2 = x1;
+			y2 = y1;
+			z2 = z1;
+		, 150);
   
 
 window.Branlette = App;

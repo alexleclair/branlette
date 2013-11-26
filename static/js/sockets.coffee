@@ -1,19 +1,48 @@
 App = 
 	config:
-		endpoint:'http://www.alexleclair.ca:8090/'
+		endpoint:'http://127.0.0.1:8090/'
 	socket:null
 	labels:{}
 	agencies:{}
+	code:null
+	agency:null
+	shakes:0
+
+	shakeTimeout: null;
+
 
 	init: (callback)=>
 		App.socket = io.connect(App.config.endpoint);
 		App.socket.on 'labels', (data)->
 			App.labels = data;
-
+		App.socket.on 'pick', (data)->
+			App.agency = data;
+			App.shakes = 0;
+		App.socket.on 'shake', ()->
+			App.shakes++;
+			$('div[data-info="shake-sessioncount"]').text(App.shakes);
+			clearTimeout(App.shakeTimeout)
+			$('body').addClass('shake');
+			App.shakeTimeout = setTimeout ()->
+				$('body').removeClass('shake');
+			, 500
+			console.log 'current shakes for ' + App.agency + ' is ' + App.shakes;
 		App.socket.on 'agencies', (data)->
 			App.agencies = data;
 			App.refreshLeaderboards()
+		App.socket.on 'code', (code)->
+			App.code = code;
+			App.refreshCodeScreen();
+	bindToCode: (code)=>
+		App.socket.emit 'registerSibling', code
+	
+	shake: (agency)->
+		if !agency?
+			agency = App.agency;
+		App.socket.emit('shake', agency);
 
+	refreshCodeScreen: ()=>
+		console.log 'TODO'
 	refreshLeaderboards: ()=>
 		agencies = App.sortAgencies()
 

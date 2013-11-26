@@ -108,6 +108,8 @@ App =
 
 		agencies:{}
 		siblings:{}
+		sockets:{}
+		connCounter: 0;
 
 		init: (config)->
 
@@ -151,6 +153,15 @@ App =
 				setInterval @_saveScores, @config.updateRedisTimer
 
 				@io.on 'connection', (socket)->
+					++App.connCounter;
+					code = App.generateCode(App.connCounter);
+					console.log 'Code is' + code;
+					App.siblings[code] = []
+					App.sockets[socket.id] = socket;
+					socket.set 'code', code;
+					App.attachSiblings(socket, code)
+
+					socket.emit 'code', code
 					socket.emit 'labels', App.config.labels
 					socket.emit 'agencies', App.agencies;
 
@@ -169,7 +180,6 @@ App =
 							App.sendAgencies();
 
 					socket.on 'shake', (agency=null)->
-						console.log 'Shake'
 						if agency? && App.agencies[agency]?
 							App.agencies[agency].count++;
 							App.sendAgencies();
@@ -181,16 +191,43 @@ App =
 						App.sendToSiblings(socket, 'shake', agency)
 
 					socket.on 'registerSibling', (inviteId)->
-						App.attachSiblings(socket, inviteId)
+						socket.set 'code', inviteId #Same clients share same code/invite id
+						App.attachSiblings(socket, inviteId) 
 
 					socket.on 'disconnect', ()->
 						socket.get 'agency', (err, currentAgency)->
 							if !(err? || !currentAgency?) && App.agencies[currentAgency]?
 								App.agencies[currentAgency].people--;
 								App.sendAgencies();
+						socket.get 'code', (err, code)->
+							if code?
+								delete App.siblings[code];
+						delete App.sockets[socket.id]
 
 		
-		attachSiblings:(socket, inviteId)->
+		attachSiblings:(socket, code)->
+			if App.siblings? && App.siblings[code]
+				App.siblings[code].push(socket.id);
+		sendToSiblings: (socket)=>
+			args = [];
+			for i in[1...arguments.length]
+				args.push arguments[i]
+			socket.get 'code', (err, code)->
+				console.log App.siblings, App.sockets
+				if App.siblings[code]?
+					for i in [0...App.siblings[code].length]
+						try
+							socketId = App.siblings[code][i];
+							if App.sockets[socketId]?
+								if args.length == 1 #ugly hack
+									App.sockets[socketId].emit(args[0]);
+								else if args.length >= 2
+									App.sockets[socketId].emit(args[0], args[1]);
+						catch err
+							console.log '[error] ', err.message, err
+
+		generateCode:(id)->
+			return (id+1000).toString(36)
 
 		sendAgencies:()->
 			App.io.sockets.emit 'agencies', App.agencies

@@ -106,7 +106,8 @@ App =
 				zip:		'ZiP communication'
 				imedia:		'Imédia'
 
-		agencies:{}	
+		agencies:{}
+		siblings:{}
 
 		init: (config)->
 
@@ -162,6 +163,8 @@ App =
 								console.log 'setting +1 on agency '+agency, App.agencies[agency]
 								App.agencies[agency].people++
 								console.log 'set +1 on agency '+agency, App.agencies[agency]
+							
+							App.sendToSiblings(socket, 'pick', agency)
 
 							App.sendAgencies();
 
@@ -175,12 +178,19 @@ App =
 								if !(err? || !currentAgency?) && App.agencies[currentAgency]?
 									App.agencies[currentAgency].count++;
 									App.sendAgencies();
+						App.sendToSiblings(socket, 'shake', agency)
+
+					socket.on 'registerSibling', (inviteId)->
+						App.attachSiblings(socket, inviteId)
 
 					socket.on 'disconnect', ()->
 						socket.get 'agency', (err, currentAgency)->
 							if !(err? || !currentAgency?) && App.agencies[currentAgency]?
 								App.agencies[currentAgency].people--;
 								App.sendAgencies();
+
+		
+		attachSiblings:(socket, inviteId)->
 
 		sendAgencies:()->
 			App.io.sockets.emit 'agencies', App.agencies

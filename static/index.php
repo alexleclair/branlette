@@ -56,7 +56,7 @@
 
 <!-- 3 messages: 1. le code. 2. Confirmation. 3. Aller, baisse les yeux. -->
 
-<div class="page-landing-code step" style="display: none;">
+<div class="page-landing-code step">
     <div class="stepmaster">page-landing-code</div>
 
 
@@ -144,7 +144,7 @@
 
 <!-- 3 states: 1. intro, 2. shaking, 3. repos/fatigué -->
 
-<div class="page-shake step">
+<div class="page-shake step" style="display: none;">
     <div class="stepmaster">page-shake</div>
 
     <div class="shake-bras">
@@ -174,8 +174,6 @@
 
 <div class="page-shake-iphone step"  style="display: none;">
     <div class="stepmaster">page-shake-iphone</div>
-
-asdasd
 </div>
 
 

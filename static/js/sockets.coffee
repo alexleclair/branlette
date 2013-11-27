@@ -1,6 +1,6 @@
 App = 
 	config:
-		endpoint:'http://alexleclair.ca:8090/'
+		endpoint:'http://192.168.0.109:8090/'
 	socket:null
 	labels:{}
 	agencies:{}
@@ -42,7 +42,7 @@ App =
 		App.socket.emit('shake', agency);
 
 	refreshCodeScreen: ()=>
-		console.log 'TODO'
+		alert 'Code is ' + App.code;
 	refreshLeaderboards: ()=>
 		agencies = App.sortAgencies()
 

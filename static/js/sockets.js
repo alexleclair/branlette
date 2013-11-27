@@ -5,7 +5,7 @@
 
   App = {
     config: {
-      endpoint: 'http://alexleclair.ca:8090/'
+      endpoint: 'http://192.168.0.109:8090/'
     },
     socket: null,
     labels: {},
@@ -52,7 +52,7 @@
       return App.socket.emit('shake', agency);
     },
     refreshCodeScreen: function() {
-      return console.log('TODO');
+      return alert('Code is ' + App.code);
     },
     refreshLeaderboards: function() {
       var agencies, source, template;

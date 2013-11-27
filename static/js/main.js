@@ -10,6 +10,8 @@ $(document).ready(function(){
 	$('.btn-submit-code').click(function(e){
 		e.preventDefault();
 		Branlette.bindToCode($.trim($('input.code').val()).toLowerCase());
+		$('div.step').hide();
+		$('div.page-shake-iphone').show();
 		return false;
 	})
 });
@@ -61,7 +63,7 @@ $(document).ready(function(){
 
 
 	$('button[data-action="shake"]').click(function() {
-		$('.shake-bras').effect('shake',{direction:'up', times:2});
+		$('.shake-bras').effect('shake',{direction:'up', times:1});
 	// $('.shake-bras').animate({
 	// 	'background-position-x' : '+=50',
 	// 	'background-position-y': '+=50'

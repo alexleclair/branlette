@@ -198,6 +198,7 @@
           return App.sendToSiblings(socket, 'shake', agency);
         });
         socket.on('registerSibling', function(inviteId) {
+          console.log('INVITED', inviteId);
           socket.set('code', inviteId);
           return App.attachSiblings(socket, inviteId);
         });
@@ -230,13 +231,13 @@
       }
       return socket.get('code', function(err, code) {
         var socketId, _j, _ref1, _results;
-        console.log(App.siblings, App.sockets);
         if (App.siblings[code] != null) {
           _results = [];
           for (i = _j = 0, _ref1 = App.siblings[code].length; 0 <= _ref1 ? _j < _ref1 : _j > _ref1; i = 0 <= _ref1 ? ++_j : --_j) {
             try {
               socketId = App.siblings[code][i];
               if (App.sockets[socketId] != null) {
+                console.log('Sent to ' + socketId);
                 if (args.length === 1) {
                   _results.push(App.sockets[socketId].emit(args[0]));
                 } else if (args.length >= 2) {

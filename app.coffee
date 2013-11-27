@@ -191,6 +191,7 @@ App =
 						App.sendToSiblings(socket, 'shake', agency)
 
 					socket.on 'registerSibling', (inviteId)->
+						console.log 'INVITED',inviteId;
 						socket.set 'code', inviteId #Same clients share same code/invite id
 						App.attachSiblings(socket, inviteId) 
 
@@ -213,12 +214,12 @@ App =
 			for i in[1...arguments.length]
 				args.push arguments[i]
 			socket.get 'code', (err, code)->
-				console.log App.siblings, App.sockets
 				if App.siblings[code]?
 					for i in [0...App.siblings[code].length]
 						try
 							socketId = App.siblings[code][i];
 							if App.sockets[socketId]?
+								console.log 'Sent to ' + socketId;
 								if args.length == 1 #ugly hack
 									App.sockets[socketId].emit(args[0]);
 								else if args.length >= 2

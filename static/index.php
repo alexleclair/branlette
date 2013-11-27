@@ -83,7 +83,7 @@
     <p>Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. </p>
     <h2>Entre ton code</h2>
     <form><input type="text" class="code" value="" /></form>
-    <button class="btn">Shake-là</button>
+    <button class="btn-submit-code btn">Shake-là</button>
 
 </div>
 

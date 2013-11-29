@@ -23,6 +23,7 @@
       });
       App.socket.on('pick', function(data) {
         App.agency = data;
+        alert('picked agency ' + data);
         App.shakes = 0;
         App.resetTexts();
         $('body').addClass('has-agency');
@@ -43,12 +44,13 @@
         $('body').addClass('shake');
         App.shakeTimeout = setTimeout(function() {
           $('body').removeClass('shake');
+          $('.shake-bras').stop(true);
           if (!App.isMobile) {
-            return App.gotoPage('page-shake', 'shake-repos');
+            return App.gotoPage('page-shake', 'shake-repos', 500);
           }
-        }, 500);
+        }, 1500);
         if (!App.isMobile) {
-          return App.gotoPage('page-shake', 'shake-shake');
+          return App.gotoPage('page-shake', 'shake-shake', 0);
         }
       });
       App.socket.on('agencies', function(data) {
@@ -103,7 +105,7 @@
         _byName = {};
         for (key in App.labels) {
           _agencies.push(App.labels[key]);
-          _byName[App.labels.key] = key;
+          _byName[App.labels[key]] = key;
         }
         _agencies.sort();
         for (i = _j = 0, _ref1 = _agencies.length; 0 <= _ref1 ? _j < _ref1 : _j > _ref1; i = 0 <= _ref1 ? ++_j : --_j) {
@@ -114,9 +116,14 @@
         }
         source = $('#template-agencies-list').html();
         template = Handlebars.compile(source);
-        return $('#agency-picker').html(template({
+        $('#agency-picker').html(template({
           agencies: _agencies
         }));
+        return $('#agency-picker li a').click(function(e) {
+          e.preventDefault();
+          App.pickAgency($(this).attr('data-key'));
+          return false;
+        });
       }
     },
     refreshCodeScreen: function() {
@@ -148,9 +155,8 @@
       $div = $('div.step.' + step);
       if (!$('div.step.current').is('.' + step)) {
         $('div.step').hide().removeClass('current');
-        $div.find('.substep').fadeOut(fadeTime, function(e) {});
       }
-      if ((substep != null) && !$div.find('.current').is('.' + substep)) {
+      if ((substep != null) && !$div.find('.substep.current').is('.' + substep)) {
         $div.find('.substep').fadeOut(fadeTime, function(e) {
           $div.find('.substep').removeClass('current');
           return $div.find('.substep.' + substep).fadeIn(fadeTime).addClass('current');

@@ -19,6 +19,10 @@ App =
 		App.socket.on 'pick', (data)->
 			App.agency = data;
 			App.shakes = 0;
+			App.resetTexts();
+			$('body').addClass('has-agency');
+
+
 		App.socket.on 'shake', ()->
 			App.shakes++;
 			$('div[data-info="shake-sessioncount"]').text(App.shakes);
@@ -37,9 +41,7 @@ App =
 		App.socket.on 'code', (code)->
 			App.code = code;
 			App.refreshCodeScreen();
-		App.socket.on 'pick', (agency)->
-			App.agency = agency;
-			App.resetTexts();
+		
 	bindToCode: (code)=>
 		App.socket.emit 'registerSibling', code
 	
@@ -89,8 +91,8 @@ App =
 			obj = 
 				name:App.labels[key]
 				key:key
-				score:_agencies[key].count
-				people:_agencies[key].people
+				score:parseInt(_agencies[key].count)
+				people:parseInt(_agencies[key].people)
 
 			if sorted.length == 0 || obj.score > sorted[sorted.length-1].score
 				sorted.push obj

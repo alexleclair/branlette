@@ -22,7 +22,9 @@
       });
       App.socket.on('pick', function(data) {
         App.agency = data;
-        return App.shakes = 0;
+        App.shakes = 0;
+        App.resetTexts();
+        return $('body').addClass('has-agency');
       });
       App.socket.on('shake', function() {
         App.shakes++;
@@ -45,13 +47,9 @@
       App.socket.on('siblingsCount', function(count) {
         return console.log('Eille, y\'a ' + count + 'personnes connectées man');
       });
-      App.socket.on('code', function(code) {
+      return App.socket.on('code', function(code) {
         App.code = code;
         return App.refreshCodeScreen();
-      });
-      return App.socket.on('pick', function(agency) {
-        App.agency = agency;
-        return App.resetTexts();
       });
     },
     bindToCode: function(code) {
@@ -115,8 +113,8 @@
         obj = {
           name: App.labels[key],
           key: key,
-          score: _agencies[key].count,
-          people: _agencies[key].people
+          score: parseInt(_agencies[key].count),
+          people: parseInt(_agencies[key].people)
         };
         if (sorted.length === 0 || obj.score > sorted[sorted.length - 1].score) {
           sorted.push(obj);

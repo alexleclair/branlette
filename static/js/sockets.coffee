@@ -1,6 +1,6 @@
 App = 
 	config:
-		endpoint:'http://alexleclair.ca:8090/'
+		endpoint:'http://10.0.10.159:8090/'
 	socket:null
 	labels:{}
 	agencies:{}
@@ -31,6 +31,8 @@ App =
 		App.socket.on 'agencies', (data)->
 			App.agencies = data;
 			App.refreshLeaderboards()
+		App.socket.on 'siblingsCount', (count)->
+			alert 'Eille, y\'a '+count+'personnes connectées man'
 		App.socket.on 'code', (code)->
 			App.code = code;
 			App.refreshCodeScreen();

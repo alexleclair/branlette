@@ -45,6 +45,9 @@
     bindToCode: function(code) {
       return App.socket.emit('registerSibling', code);
     },
+    pickAgency: function(agency) {
+      return App.socket.emit('pick', agency);
+    },
     shake: function(agency) {
       if (agency == null) {
         agency = App.agency;

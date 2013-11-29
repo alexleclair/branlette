@@ -36,6 +36,9 @@ App =
 	bindToCode: (code)=>
 		App.socket.emit 'registerSibling', code
 	
+	pickAgency: (agency)->
+		App.socket.emit 'pick', agency;
+
 	shake: (agency)->
 		if !agency?
 			agency = App.agency;

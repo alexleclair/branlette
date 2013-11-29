@@ -76,6 +76,7 @@ App =
 
 	refreshCodeScreen: ()=>
 		$('div[data-info="code"]').text(App.code);
+		$('div.landing-code .biphone-contenu').show();
 	refreshLeaderboards: ()=>
 		agencies = App.sortAgencies()
 
@@ -88,17 +89,21 @@ App =
 			limit:agencies.length
 			agencies:agencies
 
-	gotoPage:(step, substep)=>
+	gotoPage:(step, substep, fadeTime=500)=>
 		if window.isOli? || (window.location+'').indexOf('static') > 0
 			return;
-		$('div.step').hide().removeClass('current');
-		$div = $('div.step.'+step);
-		$div.find('.substep').hide();
 
-		if substep?
-			$div.find('.substep').removeClass('current');
-			$div.find('.substep.'+substep).show().addClass('current');
-		$div.show().addClass('current');
+		$div = $('div.step.'+step);
+		if !$('div.step.current').is('.'+step)
+			$('div.step').hide().removeClass('current');
+			$div.find('.substep').fadeOut fadeTime, (e)=>
+
+
+		if substep? && !$div.find('.current').is('.'+substep)
+			$div.find('.substep').fadeOut fadeTime, (e)=>
+				$div.find('.substep').removeClass('current');
+				$div.find('.substep.'+substep).fadeIn(fadeTime).addClass('current');
+		$div.fadeIn(fadeTime).addClass('current');
 
 	sortAgencies:(_agencies=null)=>
 		if !_agencies?

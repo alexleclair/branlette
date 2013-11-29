@@ -25,10 +25,7 @@ $(document).ready(function(){
 	});
 
 	$('.start').click(function(){
-		$('#bras').fadeOut();
-		$('#bras2').fadeIn();
-
-		$(this).fadeOut();
+		Branlette.gotoPage('page-landing', 'landing-code')
 	});
 
 

@@ -95,7 +95,8 @@
       }
     },
     refreshCodeScreen: function() {
-      return $('div[data-info="code"]').text(App.code);
+      $('div[data-info="code"]').text(App.code);
+      return $('div.landing-code .biphone-contenu').show();
     },
     refreshLeaderboards: function() {
       var agencies, source, template;
@@ -111,19 +112,26 @@
         agencies: agencies
       }));
     },
-    gotoPage: function(step, substep) {
+    gotoPage: function(step, substep, fadeTime) {
       var $div;
+      if (fadeTime == null) {
+        fadeTime = 500;
+      }
       if ((window.isOli != null) || (window.location + '').indexOf('static') > 0) {
         return;
       }
-      $('div.step').hide().removeClass('current');
       $div = $('div.step.' + step);
-      $div.find('.substep').hide();
-      if (substep != null) {
-        $div.find('.substep').removeClass('current');
-        $div.find('.substep.' + substep).show().addClass('current');
+      if (!$('div.step.current').is('.' + step)) {
+        $('div.step').hide().removeClass('current');
+        $div.find('.substep').fadeOut(fadeTime, function(e) {});
       }
-      return $div.show().addClass('current');
+      if ((substep != null) && !$div.find('.current').is('.' + substep)) {
+        $div.find('.substep').fadeOut(fadeTime, function(e) {
+          $div.find('.substep').removeClass('current');
+          return $div.find('.substep.' + substep).fadeIn(fadeTime).addClass('current');
+        });
+      }
+      return $div.fadeIn(fadeTime).addClass('current');
     },
     sortAgencies: function(_agencies) {
       var i, key, obj, sorted, _i, _j, _ref, _ref1;

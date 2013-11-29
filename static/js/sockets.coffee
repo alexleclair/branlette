@@ -92,8 +92,10 @@ App =
 		$('div.step').hide().removeClass('current');
 		$div = $('div.step.'+step);
 		$div.find('.substep').hide();
+
 		if substep?
-			$div.find('.substep').show().addClass('current');
+			$div.find('.substep').removeClass('current');
+			$div.find('.substep.'+substep).show().addClass('current');
 		$div.show().addClass('current');
 
 	sortAgencies:(_agencies=null)=>

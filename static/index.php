@@ -28,13 +28,13 @@
 <div class="page-landing step">
     <div class="stepmaster">Page-Landing</div>
 
-    <div class="landing-intro" style="display: none">
+    <div class="landing-intro substep" style="display: none">
 
         <div class="bras"></div>
         
     </div>
 
-    <div class="landing-code">
+    <div class="landing-code substep">
         <div class="bras2">
         <div class="biphone-contenu" style="display: none">
             <h1>Sur ton mobile var sur:</h1>
@@ -45,7 +45,7 @@
         </div>
     </div>
 
-    <div class="landing-confirmation">
+    <div class="landing-confirmation substep">
         <div class="bras2">
         <div class="biphone-contenu">
             <h1>Baisse les yeux:</h1>
@@ -88,13 +88,13 @@
 <div class="page-shake step" style="display: none;">
     <div class="stepmaster">page-shake</div>
     <!-- intro -->
-    <div class="shake-intro">
+    <div class="shake-intro substep">
         <h1 style="display: none;">Allo <span class="agencyName"></span>.<br>Shake comme si y’avait pas de lendemain.</h1>
     </div>
 
     <!-- shake -->
 
-    <div class="shake-shake">
+    <div class="shake-shake substep">
         <div class="shake-nombre">  
         <div data-info="shake-sessioncount">0</div>
 
@@ -109,7 +109,7 @@
     
 
     <!-- repos submit -->
-    <div class="shake-repos">
+    <div class="shake-repos substep">
 
     </div>
 

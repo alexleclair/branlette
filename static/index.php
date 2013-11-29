@@ -79,7 +79,7 @@
 
             </div>
         <footer>
-            <a href="#"><div class="arrow-right"></div>Voir le classement complet</a>
+            <a href="#" class="btn-leaderboard"><div class="arrow-right"></div>Voir le classement complet</a>
         </footer>
     </div>
 
@@ -125,8 +125,7 @@
     
 
     <div class="switch">
-        <button type="button" class="small">Permuter la branlette</button>
-        <button type="button" class="small" data-action="shake">Shake it</button>
+        <button type="button" class="small btn-change-object">Permuter la branlette</button>
     </div>
     
     <div class="shake-bottomcount"></div>

@@ -166,6 +166,9 @@
         socket.emit('code', code);
         socket.emit('labels', App.config.labels);
         socket.emit('agencies', App.agencies);
+        socket.on('object', function(obj) {
+          return App.sendToSiblings(socket, 'object', obj);
+        });
         socket.on('pick', function(agency) {
           return socket.get('agency', function(err, currentAgency) {
             if (!((err != null) || (currentAgency == null)) && (App.agencies[currentAgency] != null)) {

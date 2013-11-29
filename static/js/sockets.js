@@ -15,6 +15,8 @@
     shakes: 0,
     isMobile: false,
     shakeTimeout: null,
+    objects: ['marie', 'jesus', 'nutcracker', 'emballage', 'boite', 'canne', 'explosif', 'ange', 'roi', 'canne2', 'cierge', 'boule'],
+    currentObject: null,
     init: function(callback) {
       App.socket = io.connect(App.config.endpoint);
       App.socket.on('labels', function(data) {
@@ -23,15 +25,18 @@
       });
       App.socket.on('pick', function(data) {
         App.agency = data;
-        alert('picked agency ' + data);
         App.shakes = 0;
         App.resetTexts();
         $('body').addClass('has-agency');
         if (App.isMobile) {
           return App.gotoPage('pageiphone-shake');
         } else {
-          return App.gotoPage('page-shake', 'shake-intro');
+          App.gotoPage('page-shake', 'shake-intro');
+          return App.changeObject(App.objects[Math.floor(Math.random() * (App.objects.length - 1))]);
         }
+      });
+      App.socket.on('object', function(obj) {
+        return App.changeObject(obj);
       });
       App.socket.on('shake', function() {
         App.shakes++;
@@ -81,6 +86,23 @@
         agency = App.agency;
       }
       return App.socket.emit('shake', agency);
+    },
+    changeObject: function(obj, sendToServer) {
+      var classes, i, _i, _ref;
+      if (sendToServer == null) {
+        sendToServer = false;
+      }
+      classes = ($('body').attr('class') + '').split(' ');
+      for (i = _i = 0, _ref = classes.length; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
+        if (classes[i].substr(0, 7) === 'object-') {
+          $('body').removeClass(classes[i]);
+        }
+      }
+      $('body').addClass('object-' + obj);
+      App.currentObject = obj;
+      if (sendToServer) {
+        return App.socket.emit('object', obj);
+      }
     },
     resetTexts: function() {
       var agencies, agency, i, index, key, source, template, _agencies, _byName, _i, _j, _ref, _ref1;

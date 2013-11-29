@@ -10,6 +10,21 @@ App =
 	isMobile:false
 	shakeTimeout: null
 
+	objects:[
+		'marie'
+		'jesus'
+		'nutcracker'
+		'emballage'
+		'boite'
+		'canne'
+		'explosif'
+		'ange'
+		'roi'
+		'canne2'
+		'cierge'
+		'boule'
+	]
+	currentObject: null;
 
 	init: (callback)=>
 		App.socket = io.connect(App.config.endpoint);
@@ -18,7 +33,6 @@ App =
 			App.resetTexts();
 		App.socket.on 'pick', (data)->
 			App.agency = data;
-			alert 'picked agency ' + data
 			App.shakes = 0;
 			App.resetTexts();
 			$('body').addClass('has-agency');
@@ -26,6 +40,10 @@ App =
 				App.gotoPage 'pageiphone-shake'
 			else
 				App.gotoPage 'page-shake', 'shake-intro'
+				App.changeObject App.objects[Math.floor(Math.random() * (App.objects.length-1))]
+
+		App.socket.on 'object', (obj) ->
+			App.changeObject(obj)
 
 		App.socket.on 'shake', ()->
 			App.shakes++;
@@ -65,6 +83,18 @@ App =
 		if !agency?
 			agency = App.agency;
 		App.socket.emit('shake', agency);
+
+	changeObject:(obj, sendToServer=false)=>
+		classes = ($('body').attr('class')+'').split(' ');
+		for i in [0...classes.length]
+			if classes[i].substr(0,7) == 'object-'
+				$('body').removeClass(classes[i])
+		$('body').addClass('object-'+obj);
+		App.currentObject = obj;
+
+		if sendToServer
+			App.socket.emit 'object', obj
+
 
 	resetTexts:()=>
 		agency = App.agency;

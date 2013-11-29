@@ -32,7 +32,7 @@ App =
 			App.agencies = data;
 			App.refreshLeaderboards()
 		App.socket.on 'siblingsCount', (count)->
-			alert 'Eille, y\'a '+count+'personnes connectées man'
+			#alert 'Eille, y\'a '+count+'personnes connectées man'
 		App.socket.on 'code', (code)->
 			App.code = code;
 			App.refreshCodeScreen();

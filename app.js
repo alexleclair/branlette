@@ -201,7 +201,7 @@
           console.log('INVITED', inviteId);
           socket.set('code', inviteId);
           App.attachSiblings(socket, inviteId);
-          return App.sendToSiblings(socket, 'siblingsCount', App.siblings[code].length);
+          return App.sendToSiblings(socket, 'siblingsCount', App.siblings[inviteId].length);
         });
         return socket.on('disconnect', function() {
           socket.get('agency', function(err, currentAgency) {

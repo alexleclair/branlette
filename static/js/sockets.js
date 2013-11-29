@@ -41,9 +41,7 @@
         App.agencies = data;
         return App.refreshLeaderboards();
       });
-      App.socket.on('siblingsCount', function(count) {
-        return alert('Eille, y\'a ' + count + 'personnes connectées man');
-      });
+      App.socket.on('siblingsCount', function(count) {});
       return App.socket.on('code', function(code) {
         App.code = code;
         return App.refreshCodeScreen();

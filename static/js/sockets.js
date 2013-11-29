@@ -60,7 +60,8 @@
       });
       App.socket.on('agencies', function(data) {
         App.agencies = data;
-        return App.refreshLeaderboards();
+        App.refreshLeaderboards();
+        return App.resetTexts();
       });
       App.socket.on('siblingsCount', function(count) {
         if (!App.isMobile && $('div.step.current').is('.page-landing')) {

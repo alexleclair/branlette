@@ -180,7 +180,7 @@
         <h3>Enweille. Lâche-pas la banane!</h3>
     </div>
 
-    <h1 style="display: none;">Allo Cossette.<br>Shake comme si y’avait pas de lendemain.</h1>
+    <h1 style="display: none;">Allo <span class="agencyName"></span>.<br>Shake comme si y’avait pas de lendemain.</h1>
 
     <div class="switch">
         <button type="button" class="small">Permuter la branlette</button>
@@ -213,7 +213,7 @@
     <div class="stepmaster">page-classement</div>
     <div class="classement">
         <header>
-            <div>Hey Cossette, Gâte-toé, c'est Noël</div>
+            <div>Hey <span class="agencyName"></span>, Gâte-toé, c'est Noël</div>
         
         </header>
     <div id="leaderboard">
@@ -222,11 +222,11 @@
 </div>
     <div class="sidebar">
         <header>
-            <div class="left">Hey Cossette, Gâte-toé, c'est Noël</div>
+            <div class="left">Hey <span class="agencyName"></span>, Gâte-toé, c'est Noël</div>
             <div class="right"><a href="#twitter" class="icon-twitter"><div>twitter</div></a><a href="#facebook" class="icon-facebook"><div>facebook</div></a></div>
         </header>
         <div class="leftscore">
-            <h1>14/168</h1>
+            <h1><span class="agencyIndex">?</span>/<span class="agenciesCount">?</span></h1>
             <footer><a href="/"><div class="arrow-left"></div>Retour à la branlette</a></footer>
         </div>
             <p class="right">Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. Fusce egestas ligula ac leo varius dapibus sed sit amet eros. Integer scelerisque egestas dui sit amet aliquet. Nulla posuere mattis ante, a f orci quam, tempor eu tristique vel, ultricies sit amet felis. Mauris volutpat, lacus non viverra porta, nisi mi fringilla risus, pharetra rutrum metus diam a purus.</p>

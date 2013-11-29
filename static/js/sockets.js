@@ -17,7 +17,8 @@
     init: function(callback) {
       App.socket = io.connect(App.config.endpoint);
       App.socket.on('labels', function(data) {
-        return App.labels = data;
+        App.labels = data;
+        return App.resetTexts();
       });
       App.socket.on('pick', function(data) {
         App.agency = data;
@@ -44,9 +45,13 @@
       App.socket.on('siblingsCount', function(count) {
         return console.log('Eille, y\'a ' + count + 'personnes connectées man');
       });
-      return App.socket.on('code', function(code) {
+      App.socket.on('code', function(code) {
         App.code = code;
         return App.refreshCodeScreen();
+      });
+      return App.socket.on('pick', function(agency) {
+        App.agency = agency;
+        return App.resetTexts();
       });
     },
     bindToCode: function(code) {
@@ -60,6 +65,25 @@
         agency = App.agency;
       }
       return App.socket.emit('shake', agency);
+    },
+    resetTexts: function() {
+      var agencies, agency, i, index, _i, _ref;
+      agency = App.agency;
+      if ((App.labels != null) && (App.labels[agency] != null)) {
+        $('.agencyName').text(App.labels[agency]);
+      }
+      if ((App.agencies != null) && App.agencies[agency]) {
+        agencies = App.sortAgencies();
+        index = -1;
+        for (i = _i = 0, _ref = agencies.length; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
+          if (agencies[i].key === agency) {
+            index = i + 1;
+            break;
+          }
+        }
+        $('.agencyIndex').text(index);
+        return $('.agenciesCount').text(agencies.length);
+      }
     },
     refreshCodeScreen: function() {
       return $('div[data-info="code"]').text(App.code);

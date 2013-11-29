@@ -15,6 +15,7 @@ App =
 		App.socket = io.connect(App.config.endpoint);
 		App.socket.on 'labels', (data)->
 			App.labels = data;
+			App.resetTexts();
 		App.socket.on 'pick', (data)->
 			App.agency = data;
 			App.shakes = 0;
@@ -36,6 +37,9 @@ App =
 		App.socket.on 'code', (code)->
 			App.code = code;
 			App.refreshCodeScreen();
+		App.socket.on 'pick', (agency)->
+			App.agency = agency;
+			App.resetTexts();
 	bindToCode: (code)=>
 		App.socket.emit 'registerSibling', code
 	
@@ -46,6 +50,20 @@ App =
 		if !agency?
 			agency = App.agency;
 		App.socket.emit('shake', agency);
+
+	resetTexts:()=>
+		agency = App.agency;
+		if App.labels? && App.labels[agency]?	
+			$('.agencyName').text(App.labels[agency])
+		if App.agencies? && App.agencies[agency]
+			agencies = App.sortAgencies();
+			index = -1;
+			for i in [0...agencies.length]
+				if agencies[i].key == agency
+					index = i+1;
+					break;
+			$('.agencyIndex').text(index)			
+			$('.agenciesCount').text(agencies.length)			
 
 	refreshCodeScreen: ()=>
 		$('div[data-info="code"]').text(App.code);

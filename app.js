@@ -28,6 +28,7 @@
       updateRedisTimer: 5000,
       labels: {
         acolyte: 'Acolyte Communication',
+        akufen: 'Akufen',
         braque: 'Agence Braque',
         alfred: 'Alfred info',
         amazone: 'Amazone communications gestion',

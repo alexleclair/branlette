@@ -203,12 +203,16 @@ App =
 								App.sendAgencies();
 						socket.get 'code', (err, code)->
 							if code?
-								delete App.siblings[code];
+								index = App.siblings[code].indexOf(socket.id);
+								if index >= 0
+									App.siblings[code].splice index, 1;
+								if App.siblings[code].length == 0
+									delete App.siblings[code];
 						delete App.sockets[socket.id]
 
 		
 		attachSiblings:(socket, code)->
-			if App.siblings? && App.siblings[code]
+			if App.siblings? && App.siblings[code] && App.siblings[code].indexOf(code) < 0
 				App.siblings[code].push(socket.id);
 		sendToSiblings: (socket)=>
 			args = [];

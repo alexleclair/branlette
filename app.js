@@ -211,8 +211,15 @@
             }
           });
           socket.get('code', function(err, code) {
+            var index;
             if (code != null) {
-              return delete App.siblings[code];
+              index = App.siblings[code].indexOf(socket.id);
+              if (index >= 0) {
+                App.siblings[code].splice(index, 1);
+              }
+              if (App.siblings[code].length === 0) {
+                return delete App.siblings[code];
+              }
             }
           });
           return delete App.sockets[socket.id];
@@ -220,7 +227,7 @@
       });
     },
     attachSiblings: function(socket, code) {
-      if ((App.siblings != null) && App.siblings[code]) {
+      if ((App.siblings != null) && App.siblings[code] && App.siblings[code].indexOf(code) < 0) {
         return App.siblings[code].push(socket.id);
       }
     },

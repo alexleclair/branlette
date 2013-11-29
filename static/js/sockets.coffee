@@ -18,6 +18,7 @@ App =
 			App.resetTexts();
 		App.socket.on 'pick', (data)->
 			App.agency = data;
+			alert 'picked agency ' + data
 			App.shakes = 0;
 			App.resetTexts();
 			$('body').addClass('has-agency');
@@ -34,11 +35,12 @@ App =
 			$('body').addClass('shake');
 			App.shakeTimeout = setTimeout ()->
 				$('body').removeClass('shake');
+				$('.shake-bras').stop(true);
 				if !App.isMobile
-					App.gotoPage 'page-shake', 'shake-repos'
-			, 500
+					App.gotoPage 'page-shake', 'shake-repos',500
+			, 1500
 			if !App.isMobile
-				App.gotoPage 'page-shake', 'shake-shake'
+				App.gotoPage 'page-shake', 'shake-shake', 0
 		App.socket.on 'agencies', (data)->
 			App.agencies = data;
 			App.refreshLeaderboards()
@@ -82,7 +84,7 @@ App =
 			_byName = {}
 			for key of App.labels
 				_agencies.push App.labels[key]
-				_byName[App.labels.key] = key;
+				_byName[App.labels[key]] = key;
 			_agencies.sort();
 			for i in [0..._agencies.length]
 				_agencies[i] = 
@@ -92,6 +94,11 @@ App =
 			template = Handlebars.compile(source);
 			$('#agency-picker').html template
 				agencies:_agencies
+			$('#agency-picker li a').click (e)->
+				e.preventDefault();
+
+				App.pickAgency $(this).attr('data-key');
+				return false;
 
 	refreshCodeScreen: ()=>
 		$('div[data-info="code"]').text(App.code);
@@ -115,10 +122,9 @@ App =
 		$div = $('div.step.'+step);
 		if !$('div.step.current').is('.'+step)
 			$('div.step').hide().removeClass('current');
-			$div.find('.substep').fadeOut fadeTime, (e)=>
 
 
-		if substep? && !$div.find('.current').is('.'+substep)
+		if substep? && !$div.find('.substep.current').is('.'+substep)
 			$div.find('.substep').fadeOut fadeTime, (e)=>
 				$div.find('.substep').removeClass('current');
 				$div.find('.substep.'+substep).fadeIn(fadeTime).addClass('current');

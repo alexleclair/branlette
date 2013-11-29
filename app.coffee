@@ -194,6 +194,7 @@ App =
 						console.log 'INVITED',inviteId;
 						socket.set 'code', inviteId #Same clients share same code/invite id
 						App.attachSiblings(socket, inviteId) 
+						App.sendToSiblings(socket, 'count', App.siblings[code].length);
 
 					socket.on 'disconnect', ()->
 						socket.get 'agency', (err, currentAgency)->

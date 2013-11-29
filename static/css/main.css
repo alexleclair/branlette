@@ -378,46 +378,48 @@ div.arrow-right {
   text-align: right;
   line-height: 40px;
 }
-.page-classement .wrap1 {
-  width: 10%;
-}
-.page-classement .wrap2 {
-  width: 70%;
-}
-.page-classement .sidebar {
+.page-classement .sidebar,
+.page-shake .sidebar {
   position: fixed;
   top: 52px;
   right: 52px;
   width: 500px;
 }
-.page-classement .sidebar header {
+.page-classement .sidebar header,
+.page-shake .sidebar header {
   overflow: hidden;
   zoom: 1;
   margin-bottom: 20px;
 }
-.page-classement .sidebar div.leftscore {
+.page-classement .sidebar div.leftscore,
+.page-shake .sidebar div.leftscore {
   float: left;
   width: 40%;
   clear: both;
 }
-.page-classement .sidebar div.leftscore h1 {
+.page-classement .sidebar div.leftscore h1,
+.page-shake .sidebar div.leftscore h1 {
   border-bottom: 1px solid black;
   font-size: 58px;
   margin: 0;
 }
-.page-classement .sidebar div.leftscore h1:after {
+.page-classement .sidebar div.leftscore h1:after,
+.page-shake .sidebar div.leftscore h1:after {
   content: '*';
   font-size: 26px;
   position: absolute;
 }
-.page-classement .sidebar div.leftscore footer {
+.page-classement .sidebar div.leftscore footer,
+.page-shake .sidebar div.leftscore footer {
   width: 100%;
   text-align: left;
 }
-.page-classement .sidebar p.right {
+.page-classement .sidebar p.right,
+.page-shake .sidebar p.right {
   width: 50%;
 }
-.page-classement .sidebar p.right:before {
+.page-classement .sidebar p.right:before,
+.page-shake .sidebar p.right:before {
   content: '* ';
   font-size: 1.3em;
   font-family: 'NHaasGroteskTXStd-65Md';
@@ -430,7 +432,12 @@ body {
   background-color: #ec1d1d;
   min-height: 100%;
 }
-.page-shake h1 {
+.page-shake .shake-bras {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+.page-shake .shake-intro h1 {
   position: absolute;
   bottom: 150px;
   line-height: 120px;
@@ -444,15 +451,6 @@ body {
   position: fixed;
   left: 52px;
   bottom: 52px;
-}
-.page-shake .shake-bras {
-  margin: auto;
-  text-align: center;
-  height: 100%;
-}
-.page-shake .shake-bras img {
-  width: auto;
-  height: 100%;
 }
 .page-shake .shake-bulle {
   position: absolute;
@@ -493,6 +491,35 @@ body {
   margin-right: -512px;
   margin-bottom: -200px;
   font-family: 'NHaasGroteskTXStd-75Bd';
+}
+.page-shake .shake-repos .fatigue {
+  position: absolute;
+  width: 480px;
+  height: 300px;
+  top: 50%;
+  left: 104px;
+  margin-top: -150px;
+}
+.page-shake .shake-repos .fatigue h1 {
+  font-size: 120px;
+  line-height: 1em;
+  margin-bottom: 0.5em;
+  font-weight: normal;
+}
+.page-shake .shake-repos .fatigue h2 {
+  margin-left: 8px;
+  border-top: 3px solid black;
+  padding-top: 1em;
+  position: relative;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 16px;
+}
+.page-shake .shake-repos .fatigue h2 div {
+  color: #ffd600;
+}
+.page-shake .shake-repos .fatigue footer div {
+  float: left;
 }
 .page-classement .classement {
   width: 860px;
@@ -539,7 +566,7 @@ body {
   font-size: 16px;
   font-family: 'NHaasGroteskTXStd-65Md';
 }
-.page-shake-iphone {
+.pageiphone-shake {
   background: url(../img/bras3.png) center center no-repeat #ec1d1d;
   height: 100%;
 }

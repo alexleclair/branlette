@@ -25,7 +25,7 @@
             <img src="img/logo_branlette.png" width="277" height="277" alt="Brrrrrrrranlettteee" />
         </div>
 <!-- Quand qqun arrive sur le browser -->
-<div class="page-landing step">
+<div class="page-landing step" style="display: none;">
     <div class="stepmaster">Page-Landing</div>
 
     <div class="landing-intro substep" style="display: none">
@@ -34,7 +34,7 @@
         
     </div>
 
-    <div class="landing-code substep">
+    <div class="landing-code substep" style="display: none;">
         <div class="bras2">
         
         
@@ -90,7 +90,7 @@
 
 <!-- 3 states: 1. intro, 2. shaking, 3. repos/fatigué -->
 
-<div class="page-shake step" style="display: none;">
+<div class="page-shake step">
     <div class="stepmaster">page-shake</div>
     <!-- intro -->
     <div class="shake-intro substep">
@@ -116,20 +116,38 @@
     <!-- repos submit -->
     <div class="shake-repos substep">
 
+        <div class="fatigue">
+            <h1>Deja fatigué?</h1>
+            <h2>Tu as shaké <div data-info="shake-sessioncount" style="display: inline">0</div> fois. Hey, Bravo. Fais pas ton égoïste. Partage ton plaisir pis ton score de branlette. Pas game!</h2>
+            <footer><a href="#twitter" class="icon-twitter"><div>twitter</div></a><a href="#facebook" class="icon-facebook"><div>facebook</div></a></footer>
+        </div>
+
     </div>
 
 
     <div class="shake-bras">
-        <img src="img/bras3.png" />
+
     </div>
     
 
     <div class="switch">
         <button type="button" class="small">Permuter la branlette</button>
-        <button type="button" class="small" data-action="shake">Shake it</button>
     </div>
     
     <div class="shake-bottomcount"></div>
+
+    <div class="sidebar">
+        <header>
+            <div class="left">Hey <span class="agencyName"></span>, Gâte-toé, c'est Noël</div>
+            <div class="right"><a href="#twitter" class="icon-twitter"><div>twitter</div></a><a href="#facebook" class="icon-facebook"><div>facebook</div></a></div>
+        </header>
+        <div class="leftscore">
+            <h1><span class="agencyIndex">?</span>/<span class="agenciesCount">?</span></h1>
+            <footer><a href="/"><div class="arrow-left"></div>Retour à la branlette</a></footer>
+        </div>
+            <p class="right">Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. Fusce egestas ligula ac leo varius dapibus sed sit amet eros. Integer scelerisque egestas dui sit amet aliquet. Nulla posuere mattis ante, a f orci quam, tempor eu tristique vel, ultricies sit amet felis. Mauris volutpat, lacus non viverra porta, nisi mi fringilla risus, pharetra rutrum metus diam a purus.</p>
+        </div>
+    </div>
 
 </div>
 
@@ -199,7 +217,7 @@
     <h3>Ajouter mon agence de branleur:</h3> <form><input type="text" value="" /></form>
 </div>
 
-<div class="pageiphone-shake">
+<div class="pageiphone-shake" style="display: none;">
 
         <div>
 

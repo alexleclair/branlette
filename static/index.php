@@ -169,8 +169,9 @@
     <h1>Un <span>contest</span> interagence de branlette interactive</h1>
     <p>Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. </p>
     <h2>Entre ton code</h2>
-    <form><input type="text" class="code" value="" /></form>
-    <button class="btn-submit-code btn">Shake-là</button>
+    <form id="code-form"><input type="text" class="code" autocapitalize="off" autocorrect="off" value="" />
+    <button class="btn-submit-code" type="submit">Shake-là</button>
+    </form>
 
 </div>
 

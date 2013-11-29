@@ -28,14 +28,42 @@
 <div class="page-landing step">
     <div class="stepmaster">Page-Landing</div>
 
-    <div class="bras"></div>
-    <div class="main">
+    <div class="landing-intro">
+
+         <div class="bras"></div>
+        <div class="main">
         <button type="button" class="right start">Let's do this bro.</button>
         <div class="clear">
         <h1 class="left">Un contest <span>interagence</span>  de branlette interactive</h1>
         <p class="right">Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. Fusce egestas ligula ac leo varius dapibus sed sit amet eros. Integer scelerisque egestas dui sit amet aliquet. Nulla posuere mattis ante.</p>
         </div>
     </div>
+
+    </div>
+
+    <div class="landing-code">
+        <div class="bras2">
+        <div class="biphone-contenu">
+            <h1>Sur ton mobile var sur:</h1>
+            <h2>gatetoecestnoel.com</h2>
+            <p>Entre le code suivant pour connecter ton intelligent téléfun.</p>
+            <div class="code" data-info="code"></div>
+        </div>
+    </div>
+    </div>
+
+    <div class="landing-confirmation">
+        <div class="bras2">
+        <div class="biphone-contenu">
+            <h1>Baisse les yeux:</h1>
+            <h2>Le code a synché.</h2>
+            <p>Bravo</p>
+            <div class="code" data-info="code"></div>
+        </div>
+    </div>
+    </div>
+
+   
     <div class="sidebar">
         <header>
             <div class="left">Top 5 des plus vigoureux branleurs</div>
@@ -45,36 +73,95 @@
 
             </div>
         <footer>
-            <a href="classement.php"><div class="arrow-right"></div>Voir le classement complet</a>
+            <a href="#"><div class="arrow-right"></div>Voir le classement complet</a>
         </footer>
     </div>
 
 
 </div>
 
-<!-- Quand qqun clique sur le CTA pis que l'information est dedans le iphone -->
+<!-- Page de crossage -->
 
-<!-- 3 messages: 1. le code. 2. Confirmation. 3. Aller, baisse les yeux. -->
+<!-- 3 states: 1. intro, 2. shaking, 3. repos/fatigué -->
 
-<div class="page-landing-code step" style="display: none;">
-    <div class="stepmaster">page-landing-code</div>
+<div class="page-shake step" style="display: none;">
+    <div class="stepmaster">page-shake</div>
+    <!-- intro -->
+    <div class="shake-intro">
+        <h1 style="display: none;">Allo <span class="agencyName"></span>.<br>Shake comme si y’avait pas de lendemain.</h1>
+    </div>
 
+    <!-- shake -->
 
+    <div class="shake-shake">
+        <div class="shake-nombre">  
+        <div data-info="shake-sessioncount">0</div>
 
-    <div class="bras2">
-        <div class="biphone-contenu">
-            <h1>Sur ton mobile var sur:</h1>
-            <h2>gatetoecestnoel.com</h2>
-            <p>Entre le code suivant pour connecter ton intelligent téléfun.</p>
-            <div class="code" data-info="code"></div>
+        <div class="shake-bulle">
+            <h3>Enweille. Lâche-pas la banane!</h3>
         </div>
+
     </div>
 
 
+    </div>
+    
+
+    <!-- repos submit -->
+    <div class="shake-repos">
+
+    </div>
+
+
+    <div class="shake-bras">
+        <img src="img/bras3.png" />
+    </div>
+    
+
+    <div class="switch">
+        <button type="button" class="small">Permuter la branlette</button>
+        <button type="button" class="small" data-action="shake">Shake it</button>
+    </div>
+    
+    <div class="shake-bottomcount"></div>
+
 </div>
 
+
+<!-- Classement -->
+
+<div class="page-classement step" style="display: none;">
+    <div class="stepmaster">page-classement</div>
+    <div class="classement">
+        <header>
+            <div>Hey <span class="agencyName"></span>, Gâte-toé, c'est Noël</div>
+        
+        </header>
+    <div id="leaderboard">
+        
+    </div>
+</div>
+    <div class="sidebar">
+        <header>
+            <div class="left">Hey <span class="agencyName"></span>, Gâte-toé, c'est Noël</div>
+            <div class="right"><a href="#twitter" class="icon-twitter"><div>twitter</div></a><a href="#facebook" class="icon-facebook"><div>facebook</div></a></div>
+        </header>
+        <div class="leftscore">
+            <h1><span class="agencyIndex">?</span>/<span class="agenciesCount">?</span></h1>
+            <footer><a href="/"><div class="arrow-left"></div>Retour à la branlette</a></footer>
+        </div>
+            <p class="right">Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. Fusce egestas ligula ac leo varius dapibus sed sit amet eros. Integer scelerisque egestas dui sit amet aliquet. Nulla posuere mattis ante, a f orci quam, tempor eu tristique vel, ultricies sit amet felis. Mauris volutpat, lacus non viverra porta, nisi mi fringilla risus, pharetra rutrum metus diam a purus.</p>
+        </div>
+    </div>
+
+</div>
+        
+<!-- IPHONE -->
+
+
+
 <!-- Quand il pogne son iphone pis qu'il check dedans -->
-<div class="page-landing-iphonecode step" style="display: none;">
+<div class="pageiphone-landing step" style="display: none;">
     <div class="stepmaster">page-landing-iphonecode</div>
     <div class="logo">
         <img src="img/logo_branlette.png" width="120" height="120" alt="Brrrrrrrranlettteee" />
@@ -90,7 +177,7 @@
 
 <!-- Liste d'agence à choisir dans le iphone -->
 
-<div class="page-landing-agence-iphone step" style="display: none;">
+<div class="pageiphone-agence step" style="display: none;">
     <div class="stepmaster">page-landing-agence-iphone</div>
     <div class="logo">
         <img src="img/logo_branlette.png" width="100" height="100" alt="Brrrrrrrranlettteee" />
@@ -141,98 +228,13 @@
     <h3>Ajouter mon agence de branleur:</h3> <form><input type="text" value="" /></form>
 </div>
 
-<!-- Page de crossage -->
+<div class="pageiphone-shake">
 
-<!-- 3 states: 1. intro, 2. shaking, 3. repos/fatigué -->
+        <div>
 
-<div class="page-shake step" style="display: none;">
-    <div class="stepmaster">page-shake</div>
-
-    <div class="shake-bras">
-        <img src="img/bras3.png" />
-    </div>
-
-    <div class="shake-nombre">
-        <div data-info="shake-sessioncount">0</div>
-    </div>
-
-    <div class="shake-bulle">
-        <h3>Enweille. Lâche-pas la banane!</h3>
-    </div>
-
-    <div class="shake-bulle">
-        <h3>Enweille. Lâche-pas la banane!</h3>
-    </div>
-
-    <div class="shake-bulle">
-        <h3>Enweille. Lâche-pas la banane!</h3>
-    </div>
-
-    <div class="shake-bulle">
-        <h3>Enweille. Lâche-pas la banane!</h3>
-    </div>
-
-    <div class="shake-bulle">
-        <h3>Enweille. Lâche-pas la banane!</h3>
-    </div>
-
-    <div class="shake-bulle">
-        <h3>Enweille. Lâche-pas la banane!</h3>
-    </div>
-
-    <h1 style="display: none;">Allo <span class="agencyName"></span>.<br>Shake comme si y’avait pas de lendemain.</h1>
-
-    <div class="switch">
-        <button type="button" class="small">Permuter la branlette</button>
-        <button type="button" class="small" data-action="shake">Shake it</button>
-    </div>
-    
-    <div class="shake-bottomcount"></div>
-
-</div>
-
-<!-- Quand c fini pis ye venu -->
-
-<div class="page-shake-iphone step"  style="display: none;">
-    <div class="stepmaster">page-shake-iphone</div>
-</div>
-
-
-<!-- Quand c fini pis ye venu -->
-
-<div class="page-shake-fini step" style="display: none;">
-    <div class="stepmaster">page-shake-fini</div>
-
-</div>
-
-
-
-<!-- Classement -->
-
-<div class="page-classement step" style="display: none;">
-    <div class="stepmaster">page-classement</div>
-    <div class="classement">
-        <header>
-            <div>Hey <span class="agencyName"></span>, Gâte-toé, c'est Noël</div>
-        
-        </header>
-    <div id="leaderboard">
-        
-    </div>
-</div>
-    <div class="sidebar">
-        <header>
-            <div class="left">Hey <span class="agencyName"></span>, Gâte-toé, c'est Noël</div>
-            <div class="right"><a href="#twitter" class="icon-twitter"><div>twitter</div></a><a href="#facebook" class="icon-facebook"><div>facebook</div></a></div>
-        </header>
-        <div class="leftscore">
-            <h1><span class="agencyIndex">?</span>/<span class="agenciesCount">?</span></h1>
-            <footer><a href="/"><div class="arrow-left"></div>Retour à la branlette</a></footer>
         </div>
-            <p class="right">Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. Fusce egestas ligula ac leo varius dapibus sed sit amet eros. Integer scelerisque egestas dui sit amet aliquet. Nulla posuere mattis ante, a f orci quam, tempor eu tristique vel, ultricies sit amet felis. Mauris volutpat, lacus non viverra porta, nisi mi fringilla risus, pharetra rutrum metus diam a purus.</p>
-        </div>
-    </div>
 
 </div>
-        
+
+
 <?php include('footer.php');?>

@@ -41,22 +41,23 @@
         
         <div class="bras2image">
             <div class="biphone-contenu">
-            <h1>Sur ton mobile var sur:</h1>
-            <h2>gatetoecestnoel.com</h2>
-            <p>Entre le code suivant pour connecter ton intelligent téléfun.</p>
-            <div class="code" data-info="code"></div>
+                <h1>Sur ton mobile var sur:</h1>
+                <h2>gatetoecestnoel.com</h2>
+                <p>Entre le code suivant pour connecter ton intelligent téléfun.</p>
+                <div class="code" data-info="code"></div>
+            </div>
         </div>
         </div>
     </div>
 
     <div class="landing-confirmation substep" style="display: none">
         <div class="bras2">
-        <div class="biphone-contenu">
-            <h1>Baisse les yeux:</h1>
-            <h2>Le code a synché.</h2>
-            <p>Bravo</p>
-            <div class="code" data-info="code"></div>
-        </div>
+            <div class="biphone-contenu">
+                <h1>Baisse les yeux:</h1>
+                <h2>Le code a synché.</h2>
+                <p>Bravo</p>
+                <div class="code" data-info="code"></div>
+            </div>
         </div>
     </div>
 

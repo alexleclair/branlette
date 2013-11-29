@@ -25,7 +25,7 @@
             <img src="img/logo_branlette.png" width="277" height="277" alt="Brrrrrrrranlettteee" />
         </div>
 <!-- Quand qqun arrive sur le browser -->
-<div class="page-landing step" style="display: none;">
+<div class="page-landing step">
     <div class="stepmaster">Page-Landing</div>
 
     <div class="bras"></div>
@@ -56,7 +56,7 @@
 
 <!-- 3 messages: 1. le code. 2. Confirmation. 3. Aller, baisse les yeux. -->
 
-<div class="page-landing-code step">
+<div class="page-landing-code step" style="display: none;">
     <div class="stepmaster">page-landing-code</div>
 
 
@@ -66,7 +66,7 @@
             <h1>Sur ton mobile var sur:</h1>
             <h2>gatetoecestnoel.com</h2>
             <p>Entre le code suivant pour connecter ton intelligent téléfun.</p>
-            <div class="code">5ys7w</div>
+            <div class="code" data-info="code"></div>
         </div>
     </div>
 
@@ -152,7 +152,27 @@
     </div>
 
     <div class="shake-nombre">
-        <div data-info="shake-sessioncount">2087</div>
+        <div data-info="shake-sessioncount">0</div>
+    </div>
+
+    <div class="shake-bulle">
+        <h3>Enweille. Lâche-pas la banane!</h3>
+    </div>
+
+    <div class="shake-bulle">
+        <h3>Enweille. Lâche-pas la banane!</h3>
+    </div>
+
+    <div class="shake-bulle">
+        <h3>Enweille. Lâche-pas la banane!</h3>
+    </div>
+
+    <div class="shake-bulle">
+        <h3>Enweille. Lâche-pas la banane!</h3>
+    </div>
+
+    <div class="shake-bulle">
+        <h3>Enweille. Lâche-pas la banane!</h3>
     </div>
 
     <div class="shake-bulle">

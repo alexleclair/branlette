@@ -21,6 +21,7 @@ App =
 		App.socket.on 'shake', ()->
 			App.shakes++;
 			$('div[data-info="shake-sessioncount"]').text(App.shakes);
+			$('.shake-bras').effect('shake',{direction:'up', times:1});
 			clearTimeout(App.shakeTimeout)
 			$('body').addClass('shake');
 			App.shakeTimeout = setTimeout ()->
@@ -45,7 +46,7 @@ App =
 		App.socket.emit('shake', agency);
 
 	refreshCodeScreen: ()=>
-		alert 'Code is ' + App.code;
+		$('div[data-info="code"]').text(App.code);
 	refreshLeaderboards: ()=>
 		agencies = App.sortAgencies()
 
@@ -120,6 +121,8 @@ $ ->
 			x1 = e.accelerationIncludingGravity.x;
 			y1 = e.accelerationIncludingGravity.y;
 			z1 = e.accelerationIncludingGravity.z;
+			e.preventDefault();
+			return false;
 		, false);
 
 		# Periodically check the position and fire

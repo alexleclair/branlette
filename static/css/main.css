@@ -459,9 +459,8 @@ body {
 }
 .page-shake .shake-bulle {
   position: absolute;
-  top: 20%;
-  left: 50%;
-  margin-left: -475px;
+  top: 0;
+  left: 0;
   background: #ffd600;
   padding: 20px;
   font-size: 12px;

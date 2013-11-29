@@ -113,6 +113,9 @@
     },
     gotoPage: function(step, substep) {
       var $div;
+      if ((window.isOli != null) || (window.location + '').indexOf('static') > 0) {
+        return;
+      }
       $('div.step').hide().removeClass('current');
       $div = $('div.step.' + step);
       $div.find('.substep').hide();

@@ -8,7 +8,7 @@ App =
 	agency:null
 	shakes:0
 	isMobile:false
-	shakeTimeout: null;
+	shakeTimeout: null
 
 
 	init: (callback)=>
@@ -89,6 +89,8 @@ App =
 			agencies:agencies
 
 	gotoPage:(step, substep)=>
+		if window.isOli? || (window.location+'').indexOf('static') > 0
+			return;
 		$('div.step').hide().removeClass('current');
 		$div = $('div.step.'+step);
 		$div.find('.substep').hide();

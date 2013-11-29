@@ -13,6 +13,7 @@
     code: null,
     agency: null,
     shakes: 0,
+    isMobile: false,
     shakeTimeout: null,
     init: function(callback) {
       App.socket = io.connect(App.config.endpoint);
@@ -24,7 +25,12 @@
         App.agency = data;
         App.shakes = 0;
         App.resetTexts();
-        return $('body').addClass('has-agency');
+        $('body').addClass('has-agency');
+        if (App.isMobile) {
+          return App.gotoPage('pageiphone-shake');
+        } else {
+          return App.gotoPage('page-shake', 'shake-intro');
+        }
       });
       App.socket.on('shake', function() {
         App.shakes++;
@@ -36,9 +42,14 @@
         clearTimeout(App.shakeTimeout);
         $('body').addClass('shake');
         App.shakeTimeout = setTimeout(function() {
-          return $('body').removeClass('shake');
+          $('body').removeClass('shake');
+          if (!App.isMobile) {
+            return App.gotoPage('page-shake', 'shake-repos');
+          }
         }, 500);
-        return console.log('current shakes for ' + App.agency + ' is ' + App.shakes);
+        if (!App.isMobile) {
+          return App.gotoPage('page-shake', 'shake-shake');
+        }
       });
       App.socket.on('agencies', function(data) {
         App.agencies = data;
@@ -100,6 +111,16 @@
         agencies: agencies
       }));
     },
+    gotoPage: function(step, substep) {
+      var $div;
+      $('div.step').hide().removeClass('current');
+      $div = $('div.step.' + step);
+      $div.find('.substep').hide();
+      if (substep != null) {
+        $div.find('.substep').show().addClass('current');
+      }
+      return $div.show().addClass('current');
+    },
     sortAgencies: function(_agencies) {
       var i, key, obj, sorted, _i, _j, _ref, _ref1;
       if (_agencies == null) {
@@ -150,8 +171,10 @@
     });
     App.init();
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-      $('div.step').hide();
-      $('div.page-landing-iphonecode').show();
+      App.gotoPage('pageiphone-landing');
+      App.isMobile = true;
+    } else {
+      App.gotoPage('page-landing', 'landing-intro');
     }
     if (window.DeviceMotionEvent != null) {
       sensitivity = 20;

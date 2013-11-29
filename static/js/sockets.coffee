@@ -7,7 +7,7 @@ App =
 	code:null
 	agency:null
 	shakes:0
-
+	isMobile:false
 	shakeTimeout: null;
 
 
@@ -21,7 +21,10 @@ App =
 			App.shakes = 0;
 			App.resetTexts();
 			$('body').addClass('has-agency');
-
+			if App.isMobile
+				App.gotoPage 'pageiphone-shake'
+			else
+				App.gotoPage 'page-shake', 'shake-intro'
 
 		App.socket.on 'shake', ()->
 			App.shakes++;
@@ -31,13 +34,17 @@ App =
 			$('body').addClass('shake');
 			App.shakeTimeout = setTimeout ()->
 				$('body').removeClass('shake');
+				if !App.isMobile
+					App.gotoPage 'page-shake', 'shake-repos'
 			, 500
-			console.log 'current shakes for ' + App.agency + ' is ' + App.shakes;
+			if !App.isMobile
+				App.gotoPage 'page-shake', 'shake-shake'
 		App.socket.on 'agencies', (data)->
 			App.agencies = data;
 			App.refreshLeaderboards()
 		App.socket.on 'siblingsCount', (count)->
 			console.log 'Eille, y\'a '+count+'personnes connectées man'
+
 		App.socket.on 'code', (code)->
 			App.code = code;
 			App.refreshCodeScreen();
@@ -81,7 +88,13 @@ App =
 			limit:agencies.length
 			agencies:agencies
 
-
+	gotoPage:(step, substep)=>
+		$('div.step').hide().removeClass('current');
+		$div = $('div.step.'+step);
+		$div.find('.substep').hide();
+		if substep?
+			$div.find('.substep').show().addClass('current');
+		$div.show().addClass('current');
 
 	sortAgencies:(_agencies=null)=>
 		if !_agencies?
@@ -123,8 +136,10 @@ $ ->
 	
 	App.init();
 	if /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-		$('div.step').hide();
-		$('div.page-landing-iphonecode').show();
+		App.gotoPage 'pageiphone-landing'
+		App.isMobile = true;
+	else
+		App.gotoPage 'page-landing', 'landing-intro'
 
 	if window.DeviceMotionEvent?
 		# Shake sensitivity (a lower number is more)

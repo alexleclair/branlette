@@ -268,7 +268,11 @@ div.arrow-right {
 
 
 .page-landing {
-    .bras {
+
+
+    .landing-intro {
+
+        .bras {
         position: absolute;
         z-index: -1;
         max-width: 900px;
@@ -278,12 +282,71 @@ div.arrow-right {
         width: 100%;
         height: 100%;
         background: url(../img/bras.png);
+        }
     }
+
+    .landing-code, .landing-confirmation {
+
+        .bras2 { 
+            position: absolute;
+            max-width: 1024px;
+            max-height: 900px;
+            bottom: 0;
+            left: 50%;
+            margin-left: -512px;
+            width: 100%; 
+            height: 100%;
+            background: url(../img/bras2.png) center center;
+        }
+
+        .biphone-contenu {
+            position: absolute;
+            left: 50%;
+            margin-left: -135px;
+            bottom: 50%;
+            margin-bottom: -135px;
     
-}
+            width: 270px;
+            height: 270px;
+            padding: 52px 0;
+    
+            h1 {
+                border-top: 5px solid black;
+                font-size: 37px;
+                line-height: 1em;
+                margin: 0 0 15px 0;
+            }
+    
+            h2 {
+                margin: 0 0 15px 0;
+                font-size: 25px;
+                line-height: 1em;
+    
+            }
+    
+            .code {
+                background: white;
+                font-size: 24px;
+                height: 60px;
+                line-height: 60px;
+                text-align: center;
+                margin: auto;
+    
+                &:hover {
+                    background-color: darken(white, 5%)
+                }
+            }
+        }
+    }
 
 
-.page-landing .main, .page-landing-code .main {
+    .landing-confirmation {
+
+    }
+
+
+    
+    .main {
     width: 1100px;
     position: absolute;
     left: 72px;
@@ -324,70 +387,18 @@ div.arrow-right {
                 font-family: @haas;
             }
         }
+    }
+
+.sidebar {
+        position: fixed;
+        top:52px;
+        right: 52px;
+        width: 600px;
 }
 
 
-.page-landing-code {
-    width: 100%;
-    height: 100%;
-
-
-    .bras2 { 
-        position: absolute;
-        max-width: 1024px;
-        max-height: 900px;
-        bottom: 0;
-        left: 50%;
-        margin-left: -512px;
-        width: 100%; 
-        height: 100%;
-        background: url(../img/bras2.png) center center;
-    
-    }
-
-
-    .biphone-contenu {
-        position: absolute;
-        left: 50%;
-        margin-left: -135px;
-        bottom: 50%;
-        margin-bottom: -135px;
-
-        width: 270px;
-        height: 270px;
-        padding: 52px 0;
-
-        h1 {
-            border-top: 5px solid black;
-            font-size: 37px;
-            line-height: 1em;
-            margin: 0 0 15px 0;
-        }
-
-        h2 {
-            margin: 0 0 15px 0;
-            font-size: 25px;
-            line-height: 1em;
-
-        }
-
-        .code {
-            background: white;
-            font-size: 24px;
-            height: 60px;
-            line-height: 60px;
-            text-align: center;
-            margin: auto;
-
-            &:hover {
-                background-color: darken(white, 5%)
-            }
-        }
-
-    }
 
 }
-
 
 
 .sidebar {
@@ -447,14 +458,6 @@ div.arrow-right {
     }
 }
 
-.page-landing, .page-landing-code {
-    .sidebar {
-        position: fixed;
-        top:52px;
-        right: 52px;
-        width: 600px;
-    }
-}
 
 .page-classement {
 

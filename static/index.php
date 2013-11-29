@@ -28,28 +28,21 @@
 <div class="page-landing step">
     <div class="stepmaster">Page-Landing</div>
 
-    <div class="landing-intro">
+    <div class="landing-intro" style="display: none">
 
-         <div class="bras"></div>
-        <div class="main">
-        <button type="button" class="right start">Let's do this bro.</button>
-        <div class="clear">
-        <h1 class="left">Un contest <span>interagence</span>  de branlette interactive</h1>
-        <p class="right">Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. Fusce egestas ligula ac leo varius dapibus sed sit amet eros. Integer scelerisque egestas dui sit amet aliquet. Nulla posuere mattis ante.</p>
-        </div>
-    </div>
-
+        <div class="bras"></div>
+        
     </div>
 
     <div class="landing-code">
         <div class="bras2">
-        <div class="biphone-contenu">
+        <div class="biphone-contenu" style="display: none">
             <h1>Sur ton mobile var sur:</h1>
             <h2>gatetoecestnoel.com</h2>
             <p>Entre le code suivant pour connecter ton intelligent téléfun.</p>
             <div class="code" data-info="code"></div>
         </div>
-    </div>
+        </div>
     </div>
 
     <div class="landing-confirmation">
@@ -60,7 +53,15 @@
             <p>Bravo</p>
             <div class="code" data-info="code"></div>
         </div>
+        </div>
     </div>
+
+    <div class="main">
+        <button type="button" class="right start">Let's do this bro.</button>
+        <div class="clear">
+        <h1 class="left">Un contest <span>interagence</span>  de branlette interactive</h1>
+        <p class="right">Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. Fusce egestas ligula ac leo varius dapibus sed sit amet eros. Integer scelerisque egestas dui sit amet aliquet. Nulla posuere mattis ante.</p>
+        </div>
     </div>
 
    

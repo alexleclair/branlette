@@ -18,16 +18,24 @@ $(document).ready(function(){
 
 
 	$('.start').click(function(){
-		$('#bras').fadeOut();
-		$('#bras2').fadeIn();
-
-		$(this).fadeOut();
-	});
-
-	$('.start').click(function(){
 		Branlette.gotoPage('page-landing', 'landing-code')
 	});
 
+	$('.btn-leaderboard').click(function(e){
+		e.preventDefault();
+		Branlette.gotoPage('page-classement')
+	});
+
+	$('.btn-change-object').click(function(e){
+		e.preventDefault();
+		objects = Branlette.objects.slice(0);
+		index = objects.indexOf(Branlette.currentObject);
+		if(index >= 0)
+			objects.splice(index, 1);
+		obj = objects[Math.floor(Math.random() * (objects.length-1))];
+		Branlette.changeObject(obj);
+		return false;
+	});
 
 	//$("div.step:not(:first)").hide();
 

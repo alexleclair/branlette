@@ -166,6 +166,9 @@ App =
 					socket.emit 'labels', App.config.labels
 					socket.emit 'agencies', App.agencies;
 
+					socket.on 'object', (obj)->
+						App.sendToSiblings(socket, 'object', obj)
+
 					socket.on 'pick', (agency)->
 						socket.get 'agency', (err, currentAgency)->
 							if !(err? || !currentAgency?) && App.agencies[currentAgency]?

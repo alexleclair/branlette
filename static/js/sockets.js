@@ -56,7 +56,12 @@
         return App.refreshLeaderboards();
       });
       App.socket.on('siblingsCount', function(count) {
-        return console.log('Eille, y\'a ' + count + 'personnes connectées man');
+        if (!App.isMobile && $('div.step.current').is('.page-landing')) {
+          App.gotoPage('page-landing', 'landing-confirmation');
+        }
+        if (App.isMobile && $('div.step.current').is('.pageiphone-landing')) {
+          return App.gotoPage('pageiphone-agence');
+        }
       });
       return App.socket.on('code', function(code) {
         App.code = code;
@@ -76,7 +81,7 @@
       return App.socket.emit('shake', agency);
     },
     resetTexts: function() {
-      var agencies, agency, i, index, _i, _ref;
+      var agencies, agency, i, index, key, source, template, _agencies, _byName, _i, _j, _ref, _ref1;
       agency = App.agency;
       if ((App.labels != null) && (App.labels[agency] != null)) {
         $('.agencyName').text(App.labels[agency]);
@@ -91,7 +96,27 @@
           }
         }
         $('.agencyIndex').text(index);
-        return $('.agenciesCount').text(agencies.length);
+        $('.agenciesCount').text(agencies.length);
+      }
+      if (App.labels != null) {
+        _agencies = [];
+        _byName = {};
+        for (key in App.labels) {
+          _agencies.push(App.labels[key]);
+          _byName[App.labels.key] = key;
+        }
+        _agencies.sort();
+        for (i = _j = 0, _ref1 = _agencies.length; 0 <= _ref1 ? _j < _ref1 : _j > _ref1; i = 0 <= _ref1 ? ++_j : --_j) {
+          _agencies[i] = {
+            name: _agencies[i],
+            key: _byName[_agencies[i]]
+          };
+        }
+        source = $('#template-agencies-list').html();
+        template = Handlebars.compile(source);
+        return $('#agency-picker').html(template({
+          agencies: _agencies
+        }));
       }
     },
     refreshCodeScreen: function() {

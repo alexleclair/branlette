@@ -191,43 +191,8 @@
         <p>* Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. </p></div>
     </div>
     
-    <ul>
-        <li><span>Agence</span></li>
-        <li><span>Akufplottes</span></li>
-        <li><span>Agence</span></li>
-        <li><span>281</span></li>
-        <li><span>288</span></li>
-        <li><span>Akufen</span></li>
-        <li><span>Agence</span></li>
-        <li><span>Cossette</span></li>
-        <li><span>Bos</span></li>
-        <li><span>Agence</span></li>
-        <li><span>Akufplottes</span></li>
-        <li><span>Agence</span></li>
-        <li><span>281</span></li>
-        <li><span>288</span></li>
-        <li><span>Akufen</span></li>
-        <li><span>Agence</span></li>
-        <li><span>Cossette</span></li>
-        <li><span>Bos</span></li>
-        <li><span>Agence</span></li>
-        <li><span>Akufplottes</span></li>
-        <li><span>Agence</span></li>
-        <li><span>281</span></li>
-        <li><span>288</span></li>
-        <li><span>Akufen</span></li>
-        <li><span>Agence</span></li>
-        <li><span>Cossette</span></li>
-        <li><span>Bos</span></li>
-        <li><span>Agence</span></li>
-        <li><span>Akufplottes</span></li>
-        <li><span>Agence</span></li>
-        <li><span>281</span></li>
-        <li><span>288</span></li>
-        <li><span>Akufen</span></li>
-        <li><span>Agence</span></li>
-        <li><span>Cossette</span></li>
-        <li><span>Bos</span></li>
+    <ul id="agency-picker">
+        
     </ul>
 <br><br>
     <h3>Ajouter mon agence de branleur:</h3> <form><input type="text" value="" /></form>

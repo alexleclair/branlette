@@ -13,6 +13,12 @@
                 {{/each_upto}}
             </table>
         </script>
+
+        <script type="text/html" id="template-agencies-list">
+            {{#each agencies}}
+                <li><a class="pick-agency" data-key="{{key}}">{{name}}</a></li>
+            {{/each}}
+        </script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/vendor/handlebars-v1.1.2.js"></script> 

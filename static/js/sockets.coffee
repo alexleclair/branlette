@@ -43,7 +43,11 @@ App =
 			App.agencies = data;
 			App.refreshLeaderboards()
 		App.socket.on 'siblingsCount', (count)->
-			console.log 'Eille, y\'a '+count+'personnes connectées man'
+			# console.log 'Eille, y\'a '+count+'personnes connectées man'
+			if !App.isMobile && $('div.step.current').is('.page-landing')
+				App.gotoPage('page-landing', 'landing-confirmation');
+			if App.isMobile && $('div.step.current').is('.pageiphone-landing')
+				App.gotoPage('pageiphone-agence')
 
 		App.socket.on 'code', (code)->
 			App.code = code;
@@ -73,6 +77,21 @@ App =
 					break;
 			$('.agencyIndex').text(index)			
 			$('.agenciesCount').text(agencies.length)			
+		if App.labels?
+			_agencies = []
+			_byName = {}
+			for key of App.labels
+				_agencies.push App.labels[key]
+				_byName[App.labels.key] = key;
+			_agencies.sort();
+			for i in [0..._agencies.length]
+				_agencies[i] = 
+					name: _agencies[i]
+					key: _byName[_agencies[i]]
+			source = $('#template-agencies-list').html();
+			template = Handlebars.compile(source);
+			$('#agency-picker').html template
+				agencies:_agencies
 
 	refreshCodeScreen: ()=>
 		$('div[data-info="code"]').text(App.code);

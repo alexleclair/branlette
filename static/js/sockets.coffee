@@ -62,6 +62,7 @@ App =
 		App.socket.on 'agencies', (data)->
 			App.agencies = data;
 			App.refreshLeaderboards()
+			App.resetTexts();
 		App.socket.on 'siblingsCount', (count)->
 			# console.log 'Eille, y\'a '+count+'personnes connectées man'
 			if !App.isMobile && $('div.step.current').is('.page-landing')

@@ -1,6 +1,6 @@
 App = 
 	config:
-		endpoint:'http://10.0.10.159:8090/'
+		endpoint:'http://alexleclair.ca:8090/'
 	socket:null
 	labels:{}
 	agencies:{}
@@ -200,7 +200,7 @@ $ ->
 	    return result.join('');
 	
 	App.init();
-	if /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+	if /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
 		App.gotoPage 'pageiphone-landing'
 		App.isMobile = true;
 	else

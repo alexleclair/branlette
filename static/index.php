@@ -25,44 +25,43 @@
             <img src="img/logo_branlette.png" width="277" height="277" alt="Brrrrrrrranlettteee" />
         </div>
 <!-- Quand qqun arrive sur le browser -->
-<div class="page-landing step" style="display: none;">
+<div class="page-landing step" style="display: none">
     <div class="stepmaster">Page-Landing</div>
 
     <div class="landing-intro substep" style="display: none">
 
         <div class="bras"></div>
+        <button type="button" class="right start">Let's do this bro.</button>
         
     </div>
 
     <div class="landing-code substep" style="display: none;">
         <div class="bras2">
-        
-        
-        
-        <div class="bras2image">
-            <div class="biphone-contenu">
-                <h1>Sur ton mobile var sur:</h1>
-                <h2>gatetoecestnoel.com</h2>
-                <p>Entre le code suivant pour connecter ton intelligent téléfun.</p>
-                <div class="code" data-info="code"></div>
+            <div class="bras2image">
+                <div class="biphone-contenu" style="display: none">
+                    <h1>Sur ton mobile var sur:</h1>
+                    <h2>gatetoecestnoel.com</h2>
+                    <p>Entre le code suivant pour connecter ton intelligent téléfun.</p>
+                    <div class="code" data-info="code"></div>
+                </div>
             </div>
-        </div>
         </div>
     </div>
 
     <div class="landing-confirmation substep" style="display: none">
         <div class="bras2">
+            <div class="bras2image">
             <div class="biphone-contenu">
                 <h1>Baisse les yeux:</h1>
                 <h2>Le code a synché.</h2>
                 <p>Bravo</p>
-                <div class="code" data-info="code"></div>
             </div>
+        </div>
         </div>
     </div>
 
     <div class="main">
-        <button type="button" class="right start">Let's do this bro.</button>
+        
         <div class="clear">
         <h1 class="left">Un contest <span>interagence</span>  de branlette interactive</h1>
         <p class="right">Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. Fusce egestas ligula ac leo varius dapibus sed sit amet eros. Integer scelerisque egestas dui sit amet aliquet. Nulla posuere mattis ante.</p>
@@ -132,6 +131,7 @@
 
     <div class="switch">
         <button type="button" class="small btn-change-object">Permuter la branlette</button>
+        <button type="button" class="small btn-shake">Shake test</button>
     </div>
     
     <div class="shake-bottomcount"></div>
@@ -190,11 +190,10 @@
     <div class="logo">
         <img src="img/logo_branlette.png" width="120" height="120" alt="Brrrrrrrranlettteee" />
     </div>
-    <h1>Un <span>contest</span> interagence de branlette interactive</h1>
-    <p>Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. </p>
-    <h2>Entre ton code</h2>
+    <h1>Un concours* interagence de branlette interactive.</h1>
+    <p>Oui... on est rendu là.</p><h2>Entre le code qui apparaît sur ton écran desktop:</h2>
     <form id="code-form"><input type="text" class="code" autocapitalize="off" autocorrect="off" value="" />
-    <button class="btn-submit-code" type="submit">Shake-là</button>
+    <button class="btn-submit-code" type="submit">Connecter</button>
     </form>
 
 </div>

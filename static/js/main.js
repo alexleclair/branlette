@@ -7,13 +7,13 @@ $(document).ready(function(){
 // 	$('.bras').css({'background-position-y':y});
 // 	$('.bras').css({'background-position-x':x});
 
-// 	$('form#code-form').submit(function(e){
-// 		e.preventDefault();
-// 		Branlette.bindToCode($.trim($('input.code').val()).toLowerCase());
-// 		$('div.step').hide();
-// 		$('div.page-shake-iphone').show();
-// 		return false;
-// 	})
+	// $('form#code-form').submit(function(e){
+	// 	e.preventDefault();
+	// 	Branlette.bindToCode($.trim($('input.code').val()).toLowerCase());
+	// 	$('div.step').hide();
+	// 	$('div.page-shake-iphone').show();
+	// 	return false;
+	// })
 // });
 
 
@@ -53,16 +53,16 @@ $(document).ready(function(){
 	});
 
 
-	$('.page-landing-agence-iphone ul li').click(function() {
-		$('.page-landing-agence-iphone').addClass('one-selected');
-		$('.page-landing-agence-iphone ul li').removeClass('active').removeClass('prev-active');
+	$('.pageiphone-agence ul li').click(function() {
+		$('.pageiphone-agence').addClass('one-selected');
+		$('.pageiphone-agence ul li').removeClass('active').removeClass('prev-active');
 		$(this).addClass('active');
 		$(this).prev('li').addClass('prev-active');
 	});
 
 	$('ul li.active').click(function() {
-		$('.page-landing-agence-iphone').removeClass('one-selected');
-		$('.page-landing-agence-iphone ul li').removeClass('active').removeClass('prev-active');
+		$('.pageiphone-agence').removeClass('one-selected');
+		$('.pageiphone-agence ul li').removeClass('active').removeClass('prev-active');
 	});
 
 

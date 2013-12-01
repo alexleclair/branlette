@@ -178,14 +178,52 @@
       $div = $('div.step.' + step);
       if (!$('div.step.current').is('.' + step)) {
         $('div.step').hide().removeClass('current');
+        console.log('Is not current step', step, $div);
       }
       if ((substep != null) && !$div.find('.substep.current').is('.' + substep)) {
+        console.log('Has substep and is not current', substep);
         $div.find('.substep').fadeOut(fadeTime, function(e) {
           $div.find('.substep').removeClass('current');
           return $div.find('.substep.' + substep).fadeIn(fadeTime).addClass('current');
         });
       }
       return $div.fadeIn(fadeTime).addClass('current');
+    },
+    facebookShare: function() {
+      var msg;
+      msg = 'Viens shaker pour ton agence favorite et prend part à la Grande Branlette de Noël.';
+      if (App.agency != null) {
+        msg = 'J\'ai shaké ' + App.shakes + ' fois pour ' + App.labels[App.agency] + ' sur la Grande Branlette De Noël!';
+      }
+      return FB.ui({
+        method: 'feed',
+        name: 'La Grande Branlette de Noël',
+        link: 'http://localhost/',
+        picture: ' http://7cffd474.ngrok.com/img/logo_branlette.png',
+        caption: msg,
+        description: 'Viens participer à la Grande Branlette et aide ton agence à remporter la course!'
+      });
+    },
+    twitterShare: function() {
+      var i, key, msg, params, twitter_url;
+      twitter_url = 'https://twitter.com/share';
+      msg = 'Viens te la shaker pour ton agence préférée sur La Grande Branlette De Noël: ';
+      params = {
+        url: window.location.href,
+        via: 'akufen',
+        text: msg
+      };
+      i = 0;
+      for (key in params) {
+        ++i;
+        if (i === 1) {
+          twitter_url += '?';
+        } else {
+          twitter_url += '&';
+        }
+        twitter_url += encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
+      }
+      return window.open(twitter_url, 'tw-share', 'height=256, width=600');
     },
     sortAgencies: function(_agencies) {
       var i, key, obj, sorted, _i, _j, _ref, _ref1;

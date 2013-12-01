@@ -153,13 +153,44 @@ App =
 		$div = $('div.step.'+step);
 		if !$('div.step.current').is('.'+step)
 			$('div.step').hide().removeClass('current');
+			console.log 'Is not current step', step, $div
 
 
 		if substep? && !$div.find('.substep.current').is('.'+substep)
+			console.log 'Has substep and is not current', substep
+
 			$div.find('.substep').fadeOut fadeTime, (e)=>
 				$div.find('.substep').removeClass('current');
 				$div.find('.substep.'+substep).fadeIn(fadeTime).addClass('current');
 		$div.fadeIn(fadeTime).addClass('current');
+
+	facebookShare:()=>
+		msg = 'Viens shaker pour ton agence favorite et prend part à la Grande Branlette de Noël.'
+		if App.agency?
+			msg = 'J\'ai shaké '+App.shakes+' fois pour ' + App.labels[App.agency]+' sur la Grande Branlette De Noël!';
+		FB.ui
+			method: 'feed'
+			name: 'La Grande Branlette de Noël'
+			link: 'http://localhost/'
+			picture: ' http://7cffd474.ngrok.com/img/logo_branlette.png'
+			caption: msg
+			description: 'Viens participer à la Grande Branlette et aide ton agence à remporter la course!'
+	twitterShare:()=>
+		twitter_url = 'https://twitter.com/share';
+		msg = 'Viens te la shaker pour ton agence préférée sur La Grande Branlette De Noël: '
+		params = 
+			url: window.location.href
+			via:'akufen'
+			text: msg
+		i=0;
+		for key of params
+			++i;
+			if i == 1
+				twitter_url += '?'
+			else
+				twitter_url += '&'
+			twitter_url+=encodeURIComponent(key)+'='+encodeURIComponent(params[key]);
+		window.open twitter_url, 'tw-share', 'height=256, width=600'
 
 	sortAgencies:(_agencies=null)=>
 		if !_agencies?

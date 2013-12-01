@@ -105,6 +105,16 @@ $(document).ready(function(){
 		});
 	});
 
+	$('.icon-facebook').click(function(e){
+		e.preventDefault();
+		Branlette.facebookShare();
+		return false;
+	})
 
+	$('.icon-twitter').click(function(e){
+		e.preventDefault();
+		Branlette.twitterShare();
+		return false;
+	})
 
 });

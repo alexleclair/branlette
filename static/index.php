@@ -131,7 +131,7 @@
     
 
     <div class="switch">
-        <button type="button" class="small btn-change-object">Permuter la branlette</button>
+        <button type="button" class="small btn-change-object">Changer de branlette</button>
         <button type="button" class="small btn-shake">Shake test</button>
     </div>
     
@@ -148,6 +148,10 @@
         </div>
             <p class="right">Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. Fusce egestas ligula ac leo varius dapibus sed sit amet eros. Integer scelerisque egestas dui sit amet aliquet. Nulla posuere mattis ante, a f orci quam, tempor eu tristique vel, ultricies sit amet felis. Mauris volutpat, lacus non viverra porta, nisi mi fringilla risus, pharetra rutrum metus diam a purus.</p>
         </div>
+    </div>
+
+    <div class="shake-droite">
+        dsss
     </div>
 
 </div>

@@ -7,15 +7,15 @@ $(document).ready(function(){
 // 	$('.bras').css({'background-position-y':y});
 // 	$('.bras').css({'background-position-x':x});
 
-	// $('form#code-form').submit(function(e){
-	// 	e.preventDefault();
-	// 	Branlette.bindToCode($.trim($('input.code').val()).toLowerCase());
-	// 	$('div.step').hide();
-	// 	$('div.page-shake-iphone').show();
-	// 	return false;
-	// })
-// });
 
+// });
+	$('form#code-form').submit(function(e){
+		e.preventDefault();
+		Branlette.bindToCode($.trim($('input.code').val()).toLowerCase());
+		$('div.step').hide();
+		$('div.page-shake-iphone').show();
+		return false;
+	});
 
 	$('.start').click(function(){
 		Branlette.gotoPage('page-landing', 'landing-code')

@@ -9,7 +9,7 @@ $(document).ready(function(){
 
 	$('form#code-form').submit(function(e){
 		e.preventDefault();
-		Branlette.bindToCode($.trim($('input.code').val()).toLowerCase());
+		Branlette.bindToCode($.trim($(this).find('input.code').val()).toLowerCase());
 		$('div.step').hide();
 		$('div.page-shake-iphone').show();
 		return false;

@@ -31,8 +31,9 @@
     <div class="landing-intro substep" style="display: none">
 
         <div class="bras"></div>
-        <button type="button" class="right start">Let's do this bro.</button>
-        
+        <div class="main" style="height:240px;">
+        <button type="button" class="start right">Let's do this bro.</button>
+        </div>
     </div>
 
     <div class="landing-code substep" style="display: none;">

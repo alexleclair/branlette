@@ -43,7 +43,7 @@ $(document).ready(function(){
 		if(index >= 0)
 			objects.splice(index, 1);
 		obj = objects[Math.floor(Math.random() * (objects.length-1))];
-		Branlette.changeObject(obj);
+		Branlette.changeObject(obj,true);
 		return false;
 	});
 

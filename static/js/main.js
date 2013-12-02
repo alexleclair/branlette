@@ -32,6 +32,21 @@ $(document).ready(function(){
 		}
 		
 	})
+
+	$('form#add-agency').submit(function(e){
+		e.preventDefault();
+		var $input =$(this).find('.add-agency')
+		var val = $.trim($input.val());
+		if(val.length == 0){
+			return false;
+		}
+		var url = Branlette.config.endpoint + 'api/agency/approve?name='+encodeURIComponent(val)+'&callback=?';
+		$.getJSON(url, function(key){
+			Branlette.pickAgency(key);
+		});
+
+		return false;
+	})
 	$('form#code-form').submit(function(e){
 		e.preventDefault();
 		$(this).attr('readonly', 'readonly')

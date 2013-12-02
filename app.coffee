@@ -208,15 +208,19 @@ App =
 						App.sendToSiblings(socket, 'siblingsCount', App.siblings[inviteId].length);
 
 					socket.on 'disconnect', ()->
+
 						socket.get 'agency', (err, currentAgency)->
 							if !(err? || !currentAgency?) && App.agencies[currentAgency]?
 								App.agencies[currentAgency].people--;
 								App.sendAgencies();
 						socket.get 'code', (err, code)->
 							if code?
+
 								index = App.siblings[code].indexOf(socket.id);
 								if index >= 0
 									App.siblings[code].splice index, 1;
+								App.sendToSiblings(socket, 'siblingsCount', App.siblings[code].length);
+								
 								if App.siblings[code].length == 0
 									delete App.siblings[code];
 						delete App.sockets[socket.id]
@@ -338,7 +342,7 @@ App =
 									App.redisWorker.srem App.config.redisKey+'wishlist', req.query.name
 									App.redisWorker.sadd App.config.redisKey+'agencies', JSON.stringify val
 
-									
+
 						res.end JSON.stringify true;
 					else
 						res.writeHead '404'

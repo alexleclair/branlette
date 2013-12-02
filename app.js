@@ -221,6 +221,7 @@
               if (index >= 0) {
                 App.siblings[code].splice(index, 1);
               }
+              App.sendToSiblings(socket, 'siblingsCount', App.siblings[code].length);
               if (App.siblings[code].length === 0) {
                 return delete App.siblings[code];
               }

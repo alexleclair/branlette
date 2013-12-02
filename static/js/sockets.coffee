@@ -1,6 +1,6 @@
 App = 
 	config:
-		endpoint:'http://alexleclair.ca:8090/'
+		endpoint:'http://10.0.10.158:8090/'
 	socket:null
 	labels:{}
 	agencies:{}
@@ -88,11 +88,13 @@ App =
 			#console.log 'Eille, y\'a '+count+'personnes connectées man'
 			$current = $('div.step.current');
 			isLanding = $current.length > 0 && $current.is('.page-landing');
-			console.log 'TEST - ', App.isMobile, $('div.step.current');
+
+			if count == 1 && App.isMobile
+				window.location = window.location;
+
 			if !App.isMobile && isLanding
 				App.gotoPage('page-landing', 'landing-confirmation');
 			if App.isMobile && $('div.step.current').is('.pageiphone-landing')
-				console.log 'TEST'
 				App.gotoPage('pageiphone-agence')
 
 		App.socket.on 'code', (code)->

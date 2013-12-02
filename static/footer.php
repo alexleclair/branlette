@@ -1,7 +1,7 @@
 
 
         <div id="akfnlogo">
-            <img src="img/logoAKFN-bloc.png" height="40" width="40" />
+            <a href="http://akfn.ca"><img src="img/logoAKFN-bloc.png" height="40" width="40" /></a>
         </div>
 
         <script type="text/html" id="template-leaderboard">

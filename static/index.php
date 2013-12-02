@@ -204,11 +204,12 @@
     <div class="logo">
         <img src="img/logo_branlette.png" width="120" height="120" alt="Brrrrrrrranlettteee" />
     </div>
-    <h1>Un concours* interagence de branlette interactive.</h1>
+    <h1>Un concours* de branlette interactive.</h1>
     <p>Oui... on est rendu là.</p><h2>Entre le code qui apparaît sur ton écran desktop:</h2>
     <form id="code-form"><input type="text" class="code" autocapitalize="off" autocorrect="off" value="" />
     <button class="btn-submit-code" type="submit">Connecter</button>
     </form>
+    <a href="#" class="btn-no-code">Pas de code?</a>
 
 </div>
 

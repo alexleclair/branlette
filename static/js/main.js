@@ -21,7 +21,6 @@ $(document).ready(function(){
 		Branlette.bindToCode($.trim($('input.code').val()).toLowerCase());
 		$(this).blur();
 		$('#logo').focus();
-		$(this).remove();
 		// Branlette.gotoPage('page-shake-iphone')
 		// $('div.step').hide();
 		// $('div.page-shake-iphone').show();
@@ -47,6 +46,12 @@ $(document).ready(function(){
 		Branlette.changeObject(obj);
 		return false;
 	});
+
+	$('.btn-no-code').click(function(e){
+		e.preventDefault();
+		Branlette.gotoPage('pageiphone-agence')
+		return false;
+	})
 
 	//$("div.step:not(:first)").hide();
 

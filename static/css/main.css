@@ -514,7 +514,7 @@ body {
   font-size: 280px;
   text-align: center;
   position: fixed;
-  z-index: 0;
+  z-index: 1;
   width: 1024px;
   height: 400px;
   right: 50%;
@@ -630,10 +630,10 @@ body.object-boule .shake-bras {
 }
 @keyframes shake {
   0% {
-    transform: translate(3px, 3px);
+    transform: translate(0px, 3px);
   }
   50% {
-    transform: translate(-30px, -30px);
+    transform: translate(0px, 130px);
   }
   100% {
     transform: translate(0, 0);
@@ -641,10 +641,10 @@ body.object-boule .shake-bras {
 }
 @-moz-keyframes shake {
   0% {
-    -moz-transform: translate(3px, 0);
+    -moz-transform: translate(0px, 3px);
   }
   50% {
-    -moz-transform: translate(3px, 3px);
+    -moz-transform: translate(0px, 130px);
   }
   100% {
     -moz-transform: translate(0, 0);
@@ -655,25 +655,25 @@ body.object-boule .shake-bras {
     -webkit-transform: translate(0px, 3px);
   }
   50% {
-    -webkit-transform: translate(0px, 30px);
+    -webkit-transform: translate(0px, 130px);
   }
   100% {
     -webkit-transform: translate(0, 0);
   }
 }
-.shaking {
+body.shake .shake-bras {
   animation-name: shake;
-  animation-duration: 150ms;
+  animation-duration: 300ms;
   animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in-out;
   -moz-animation-name: shake;
-  -moz-animation-duration: 150ms;
+  -moz-animation-duration: 300ms;
   -moz-animation-iteration-count: infinite;
-  -moz-animation-timing-function: linear;
+  -moz-animation-timing-function: ease-in-out;
   -webkit-animation-name: shake;
-  -webkit-animation-duration: 150ms;
+  -webkit-animation-duration: 300ms;
   -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
+  -webkit-animation-timing-function: ease-in-out;
 }
 .page-classement .sidebar {
   position: fixed;
@@ -964,9 +964,6 @@ body.object-boule .shake-bras {
 }
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px), (max-width: 768px) {
-  #logo {
-    display: none;
-  }
   #akfnlogo {
     display: none;
   }

@@ -384,6 +384,7 @@ div.arrow-right {
 .sidebar table td {
   padding: 0;
   margin: 0;
+  line-height: 1em;
 }
 .sidebar table tr {
   vertical-align: baseline;
@@ -564,7 +565,13 @@ body.object-jesus .page-shake,
 body.object-nutcracker .page-shake,
 body.object-emballage .page-shake,
 body.object-boite .page-shake,
-body.object-boule .page-shake {
+body.object-boule .page-shake,
+body.object-marie .pageiphone-shake,
+body.object-jesus .pageiphone-shake,
+body.object-nutcracker .pageiphone-shake,
+body.object-emballage .pageiphone-shake,
+body.object-boite .pageiphone-shake,
+body.object-boule .pageiphone-shake {
   background-color: #30b542;
 }
 body.object-canne .page-shake,
@@ -572,44 +579,86 @@ body.object-explosif .page-shake,
 body.object-ange .page-shake,
 body.object-roi .page-shake,
 body.object-canne2 .page-shake,
-body.object-cierge .page-shake {
+body.object-cierge .page-shake,
+body.object-canne .pageiphone-shake,
+body.object-explosif .pageiphone-shake,
+body.object-ange .pageiphone-shake,
+body.object-roi .pageiphone-shake,
+body.object-canne2 .pageiphone-shake,
+body.object-cierge .pageiphone-shake {
   background-color: #ec1d1d;
 }
 body.object-marie .shake-bras {
   background-image: url(../img/marie.jpg);
 }
+body.object-marie .pageiphone-shake div {
+  background-image: url(../img/marie-iphone.jpg);
+}
 body.object-jesus .shake-bras {
   background-image: url(../img/jesus.jpg);
+}
+body.object-jesus .pageiphone-shake div {
+  background-image: url(../img/jesus-iphone.jpg);
 }
 body.object-nutcracker .shake-bras {
   background-image: url(../img/nutcracker.jpg);
 }
+body.object-nutcracker .pageiphone-shake div {
+  background-image: url(../img/nutcracker-iphone.jpg);
+}
 body.object-emballage .shake-bras {
   background-image: url(../img/emballage.jpg);
+}
+body.object-emballage .pageiphone-shake div {
+  background-image: url(../img/emballage-iphone.jpg);
 }
 body.object-boite .shake-bras {
   background-image: url(../img/boite.jpg);
 }
+body.object-boite .pageiphone-shake div {
+  background-image: url(../img/boite-iphone.jpg);
+}
 body.object-canne .shake-bras {
   background-image: url(../img/canne.jpg);
+}
+body.object-canne .pageiphone-shake div {
+  background-image: url(../img/canne-iphone.jpg);
 }
 body.object-explosif .shake-bras {
   background-image: url(../img/explosif.jpg);
 }
+body.object-explosif .pageiphone-shake div {
+  background-image: url(../img/explosif-iphone.jpg);
+}
 body.object-ange .shake-bras {
   background-image: url(../img/ange.jpg);
+}
+body.object-ange .pageiphone-shake div {
+  background-image: url(../img/ange-iphone.jpg);
 }
 body.object-roi .shake-bras {
   background-image: url(../img/roi.jpg);
 }
+body.object-roi .pageiphone-shake div {
+  background-image: url(../img/roi-iphone.jpg);
+}
 body.object-canne2 .shake-bras {
   background-image: url(../img/canne2.jpg);
+}
+body.object-canne2 .pageiphone-shake div {
+  background-image: url(../img/canne2-iphone.jpg);
 }
 body.object-cierge .shake-bras {
   background-image: url(../img/cierge.jpg);
 }
+body.object-cierge .pageiphone-shake div {
+  background-image: url(../img/cierge-iphone.jpg);
+}
 body.object-boule .shake-bras {
   background-image: url(../img/boule.jpg);
+}
+body.object-boule .pageiphone-shake div {
+  background-image: url(../img/boule-iphone.jpg);
 }
 .shake-droite {
   width: 540px;
@@ -1092,6 +1141,9 @@ body.shakelent .shake-bras {
 }
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px), (max-width: 768px) {
+  #logo {
+    display: none;
+  }
   #akfnlogo {
     display: none;
   }

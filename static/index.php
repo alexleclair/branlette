@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
-    <body>
+    <body class="shake">
         <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -98,7 +98,7 @@
 
 <!-- 3 states: 1. intro, 2. shaking, 3. repos/fatigué -->
 
-<div class="page-shake step" style="display: none;">
+<div class="page-shake step">
     <!-- intro -->
     <div class="shake-intro substep">
         <h1 style="display: none;">Allo <span class="agencyName"></span>.<br>Shake comme si y’avait pas de lendemain.</h1>
@@ -121,7 +121,7 @@
     
 
     <!-- repos submit -->
-    <div class="shake-repos substep">
+    <div class="shake-repos substep" style="display: none;">
 
         <div class="fatigue">
             <h1>Deja fatigué?</h1>
@@ -170,7 +170,7 @@
 
 <!-- Classement -->
 
-<div class="page-classement step">
+<div class="page-classement step" style="display: none;">
     <div class="classement">
         <header>
             <div>Hey <span class="agencyName"></span>, Gâte-toé, c'est Noël</div>

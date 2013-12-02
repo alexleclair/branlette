@@ -67,6 +67,8 @@ $(document).ready(function(){
 	});
 
 
+	//$('body.shake .shake-bras').effect('shake',{direction:'up', times:1});
+
 
 	$('.btn-shake').click(function() {
 	$('.shake-bras').effect('shake',{direction:'up', times:1});

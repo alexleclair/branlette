@@ -785,38 +785,38 @@ body.object-boule{
 
 
 @keyframes shake{ 
-                0% { transform: translate(3px, 3px); }
-                50% { transform: translate(-30px, -30px); }
+                0% { transform: translate(0px, 3px); }
+                50% { transform: translate(0px, 130px); }
                 100% { transform: translate(0, 0); }
             }
              
             @-moz-keyframes shake{ 
-                0% { -moz-transform: translate(3px, 0); }
-                50% { -moz-transform: translate(3px, 3px); }
+                0% { -moz-transform: translate(0px, 3px); }
+                50% { -moz-transform: translate(0px, 130px); }
                 100% { -moz-transform: translate(0, 0); }
             }
              
             @-webkit-keyframes shake {
                 0% { -webkit-transform: translate(0px, 3px); }
-                50% { -webkit-transform: translate(00px, 30px); }
+                50% { -webkit-transform: translate(0px, 130px); }
                 100% { -webkit-transform: translate(0, 0); }
             }
              
-            .shaking {
+            body.shake .shake-bras {
                 animation-name: shake; 
-                animation-duration: 150ms; 
+                animation-duration: 300ms; 
                 animation-iteration-count: infinite; 
-                animation-timing-function: linear;
+                animation-timing-function: ease-in-out;
              
                 -moz-animation-name: shake; 
-                -moz-animation-duration: 150ms; 
+                -moz-animation-duration: 300ms; 
                 -moz-animation-iteration-count: infinite; 
-                -moz-animation-timing-function: linear;
+                -moz-animation-timing-function: ease-in-out;
              
                 -webkit-animation-name: shake;
-                -webkit-animation-duration: 150ms;
+                -webkit-animation-duration: 300ms;
                 -webkit-animation-iteration-count: infinite;
-                -webkit-animation-timing-function: linear;
+                -webkit-animation-timing-function: ease-in-out;
             }
 
 
@@ -1268,7 +1268,7 @@ and (max-device-width : 480px),
 (max-width: 768px) {
 
 #logo {
-    display: none;
+    //display: none;
 }
 
 #akfnlogo {

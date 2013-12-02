@@ -41,10 +41,6 @@
       App.socket.on('shake', function() {
         App.shakes++;
         $('div[data-info="shake-sessioncount"]').text(App.shakes);
-        $('.shake-bras').effect('shake', {
-          direction: 'up',
-          times: 1
-        });
         clearTimeout(App.shakeTimeout);
         $('body').addClass('shake');
         App.shakeTimeout = setTimeout(function() {
@@ -53,7 +49,7 @@
           if (!App.isMobile) {
             return App.gotoPage('page-shake', 'shake-repos', 500);
           }
-        }, 1500);
+        }, 1000);
         if (!App.isMobile) {
           return App.gotoPage('page-shake', 'shake-shake', 0);
         }

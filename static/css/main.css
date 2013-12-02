@@ -1037,7 +1037,7 @@ body.shakelent .shake-bras {
   }
 }
 /* iPads (portrait and landscape) ----------- */
-@media only screen and (max-width: 1224px) {
+@media only screen and (max-width: 1224px), and (min-width: 768px) {
   #akfnlogo {
     bottom: 0;
   }
@@ -1193,6 +1193,9 @@ body.shakelent .shake-bras {
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   #logo {
     display: none;
+  }
+  body {
+    width: 100%;
   }
   #akfnlogo {
     display: none;

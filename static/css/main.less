@@ -1242,7 +1242,8 @@ and (max-width: 1640px) {
 
 /* iPads (portrait and landscape) ----------- */
 @media only screen 
-and (max-width : 1224px) {
+and (max-width : 1224px),
+and (min-width : 768px) {
 
 #akfnlogo {
         bottom: 0;
@@ -1440,8 +1441,10 @@ and (orientation : portrait) {
 }
 
 }
+
+
 @media only screen 
-and (max-width : 978px) {
+and (max-width : 978px){
 
     body {
         width: 978px;
@@ -1488,10 +1491,6 @@ and (max-width : 978px) {
 
     }
 
-
-
-
-
 }
 
 
@@ -1503,6 +1502,10 @@ and (max-device-width : 480px) {
 
 #logo {
     display: none;
+}
+
+body {
+    width: 100%;
 }
 
 #akfnlogo {

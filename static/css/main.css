@@ -257,6 +257,12 @@ div.arrow-right {
   background: url(../img/bras.png) no-repeat;
   background-size: contain;
 }
+.page-landing .landing-intro .cta {
+  width: 1100px;
+  position: absolute;
+  left: 72px;
+  bottom: 240px;
+}
 .page-landing .landing-code,
 .page-landing .landing-confirmation {
   overflow: hidden;
@@ -922,6 +928,9 @@ body.shakelent .shake-bras {
   .page-landing .landing-code .biphone-contenu button {
     zoom: 0.7;
   }
+  .page-landing .landing-intro .cta {
+    width: 60%;
+  }
   .page-landing .main {
     box-sizing: border-box;
     width: 60%;
@@ -993,6 +1002,12 @@ body.shakelent .shake-bras {
   #logo {
     zoom: 0.65;
   }
+  .page-landing .landing-intro .cta {
+    box-sizing: border-box;
+    width: 100%;
+    left: 0;
+    padding: 0 52px;
+  }
   .page-landing .landing-intro .bras {
     left: 0;
     background-position: bottom;
@@ -1050,8 +1065,15 @@ body.shakelent .shake-bras {
     right: 52px;
   }
   .page-shake .shake-droite h1 {
+    float: none;
     font-size: 1.4em;
     margin: 0;
+  }
+  .page-shake .shake-droite h2 {
+    width: 100%;
+    float: none;
+    text-align: left;
+    line-height: 1em;
   }
 }
 /* iPads (landscape) ----------- */
@@ -1074,19 +1096,24 @@ body.shakelent .shake-bras {
     display: none;
   }
   .page-landing .landing-intro .bras {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
-    height: 300px;
-    border-bottom: 4px solid black;
+    height: 285px;
     background-size: 400px auto;
     background-position: top center;
   }
-  .page-landing .main button {
+  .page-landing .landing-intro .cta {
     position: relative;
-    top: 300px;
     width: 100%;
+    top: 0;
     box-sizing: border-box;
+    margin-top: -20px;
+  }
+  .page-landing .landing-intro .cta button {
+    margin: auto;
+    display: block;
+    float: none;
   }
   .page-landing .sidebar {
     box-sizing: border-box;
@@ -1096,6 +1123,10 @@ body.shakelent .shake-bras {
     padding: 52px;
     position: relative;
     left: 0;
+  }
+  .page-landing .sidebar header {
+    border-top: 1px solid black;
+    padding-top: 0.5em;
   }
   .page-landing .sidebar table td.agence,
   .page-landing .sidebar table td.position {

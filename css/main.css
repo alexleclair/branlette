@@ -594,6 +594,16 @@ body.object-canne2 .pageiphone-shake,
 body.object-cierge .pageiphone-shake {
   background-color: #ec1d1d;
 }
+.pageiphone-shake {
+  width: 100%;
+  height: 100%;
+}
+.pageiphone-shake div {
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+}
 body.object-marie .shake-bras {
   background-image: url(../img/marie.jpg);
 }
@@ -873,10 +883,6 @@ body.shakelent .shake-bras {
   text-align: right;
   font-size: 16px;
   font-family: 'NHaasGroteskTXStd-65Md';
-}
-.pageiphone-shake {
-  background: url(../img/bras3.png) center center no-repeat #ec1d1d;
-  height: 100%;
 }
 /* ==========================================================================
    Helper classes

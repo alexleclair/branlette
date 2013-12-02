@@ -27,10 +27,6 @@ App =
 	]
 	sounds:[
 		{
-			mp3:'sounds/branlette_00.mp3',
-			ogg:'sounds/branlette_00.ogg',
-		},
-		{
 			mp3:'sounds/branlette_01.mp3',
 			ogg:'sounds/branlette_01.ogg',
 		},
@@ -92,6 +88,7 @@ App =
 		},
 	]
 	currentObject: null;
+	playSounds:true;
 
 	init: (callback)=>
 
@@ -112,7 +109,7 @@ App =
 			else
 				App.gotoPage 'page-shake', 'shake-intro'
 				App.changeObject App.objects[Math.floor(Math.random() * (App.objects.length-1))], true
-				App.playSound();
+				
 
 		App.socket.on 'object', (obj) ->
 			App.changeObject(obj)
@@ -192,6 +189,8 @@ App =
 			$bulle.css('top', x+'px').css('left', y+'px').fadeIn(fadeTime)
 
 	playSound:(sound)->
+		if !App.playSounds
+			return;
 		if !sound?
 			sound = App.sounds[Math.floor(Math.random()*App.sounds.length)];
 			$('#audio source').remove();
@@ -200,6 +199,12 @@ App =
 		html = '<source src="'+sound.ogg+'" type="audio/ogg />'
 		$('#audio-player #audio').append($(html));
 		$('#audio').get(0).play();
+	stopSound:()->
+		$('#audio').get(0).pause();
+		App.playSounds = false;
+	replaySound:()->
+		App.playSounds = true;
+		App.playSound();
 
 	bindToCode: (code)=>
 		App.socket.emit 'registerSibling', code
@@ -259,7 +264,7 @@ App =
 
 				App.pickAgency $(this).attr('data-key');
 				#if App.siblingsCount <= 1 #Only play sound on the phone when there is no desktop
-				App.playSound();
+				#App.playSound();
 				return false;
 
 	refreshCodeScreen: ()=>
@@ -366,6 +371,7 @@ $ ->
 		App.isMobile = true;
 	else
 		App.gotoPage 'page-landing', 'landing-intro', 0
+		App.playSound();
 
 	if window.DeviceMotionEvent?
 		# Shake sensitivity (a lower number is more)

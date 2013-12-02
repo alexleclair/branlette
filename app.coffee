@@ -264,7 +264,7 @@ App =
 							App.config.labels[val.key] = val.label;
 					catch e
 						continue;
-					
+				_modified = 0;
 				
 				for key of App.config.labels
 					#console.log 'Fetching data for ' + key
@@ -274,7 +274,8 @@ App =
 							if !val?
 								val = 0
 							if !App.agencies[_key]?
-								console.log 'added data for '+_key;
+								App.io.sockets.emit 'labels', App.config.labels;
+								App.sendAgencies();
 								App.agencies[_key] = 
 									count:val
 									people:0
@@ -325,6 +326,7 @@ App =
 
 					else if method == 'approve'
 						if req.query? && req.query.name?
+
 							key = req.query.name.toLowerCase().split('');
 							allowedChars = 'abcdefghijklmnopqrstuvwxyz0123456789'.split('');
 							_key = ''
@@ -338,11 +340,15 @@ App =
 									val = 
 										label:req.query.name
 										key: key
-
 									App.redisWorker.srem App.config.redisKey+'wishlist', req.query.name
-									App.redisWorker.sadd App.config.redisKey+'agencies', JSON.stringify val
+									App.redisWorker.sadd App.config.redisKey+'agencies', JSON.stringify(val), (err, reply)->
+										App.loadAgencies();
 
-
+							if req.query? && req.query.callback
+								res.end req.query.callback + '('+JSON.stringify(key)+')';
+							else
+								res.end JSON.stringify key
+							return;
 						res.end JSON.stringify true;
 					else
 						res.writeHead '404'

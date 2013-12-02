@@ -281,7 +281,7 @@
     loadAgencies: function() {
       var _this = this;
       return App.redisWorker.smembers(App.config.redisKey + 'agencies', function(err, reply) {
-        var e, i, key, val, _call, _i, _ref, _results;
+        var e, i, key, val, _call, _i, _modified, _ref, _results;
         if (typeof reply === 'string') {
           reply = [reply];
         }
@@ -296,6 +296,7 @@
             continue;
           }
         }
+        _modified = 0;
         _results = [];
         for (key in App.config.labels) {
           _call = function(_key) {
@@ -305,7 +306,8 @@
                 val = 0;
               }
               if (App.agencies[_key] == null) {
-                console.log('added data for ' + _key);
+                App.io.sockets.emit('labels', App.config.labels);
+                App.sendAgencies();
                 return App.agencies[_key] = {
                   count: val,
                   people: 0
@@ -386,9 +388,17 @@
                     key: key
                   };
                   App.redisWorker.srem(App.config.redisKey + 'wishlist', req.query.name);
-                  return App.redisWorker.sadd(App.config.redisKey + 'agencies', JSON.stringify(val));
+                  return App.redisWorker.sadd(App.config.redisKey + 'agencies', JSON.stringify(val), function(err, reply) {
+                    return App.loadAgencies();
+                  });
                 }
               });
+              if ((req.query != null) && req.query.callback) {
+                res.end(req.query.callback + '(' + JSON.stringify(key) + ')');
+              } else {
+                res.end(JSON.stringify(key));
+              }
+              return;
             }
             return res.end(JSON.stringify(true));
           } else {

@@ -48,13 +48,14 @@ App =
 		App.socket.on 'shake', ()->
 			velocity = new Date().getTime() - App.lastShakeTime
 			_class= 'shakelent'
-			if velocity >= 1000
+			if velocity >= 800
 				_class = 'shakelent'
-			else if velocity >= 650
+			else if velocity >= 450
 				_class = 'shakemedium'
 			else
 				_class = 'shake'
 			App.shakes++;
+			console.log velocity, _class;
 			App.lastShakeTime = new Date().getTime()
 
 			$('div[data-info="shake-sessioncount"]').text(App.shakes);

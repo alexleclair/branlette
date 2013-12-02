@@ -861,7 +861,6 @@ body.shakelent .shake-bras {
 }
 .page-classement .classement table tr {
   border-bottom: 2px solid #000;
-  vertical-align: baseline;
 }
 .page-classement .classement table td {
   padding-top: 11px;
@@ -869,11 +868,14 @@ body.shakelent .shake-bras {
 .page-classement .classement table td.position {
   padding-top: 0px;
   width: 100px;
+  vertical-align: bottom;
 }
 .page-classement .classement table td.agence {
   width: 85%;
+  vertical-align: bottom;
 }
 .page-classement .classement table td.score {
+  vertical-align: baseline;
   text-align: right;
   font-size: 16px;
   font-family: 'NHaasGroteskTXStd-65Md';
@@ -1329,7 +1331,7 @@ body.shakelent .shake-bras {
   .page-classement .classement {
     padding: 5%;
     width: 100%;
-    margin: 90px 0 0 0;
+    margin: 30px 0 0 0;
     box-sizing: border-box;
   }
   .page-classement .classement header {
@@ -1342,17 +1344,29 @@ body.shakelent .shake-bras {
   .page-classement .sidebar {
     width: 100%;
     position: fixed;
+    height: 50px;
+    overflow: hidden;
     top: 0;
     left: 0;
     box-sizing: border-box;
-    padding: 5% 5% 0 5%;
-    background-color: #ffd600;
+    padding: 1% 5% 0 5%;
+    background-color: #30b542;
+    transition: height 0.5s ease;
   }
   .page-classement .sidebar header {
     width: 100%;
   }
-  .page-classement .sidebar .leftscore,
+  .page-classement .sidebar div.leftscore h1 {
+    display: none;
+  }
+  .page-classement .sidebar div.leftscore footer {
+    position: absolute;
+    top: 10px;
+    left: 5%;
+  }
   .page-classement .sidebar p.right {
+    float: right;
+    width: 50%;
     display: none;
   }
 }

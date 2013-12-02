@@ -33,7 +33,7 @@
             <img src="img/logo_branlette.png" width="277" height="277" alt="Brrrrrrrranlettteee" />
         </div>
 <!-- Quand qqun arrive sur le browser -->
-<div class="page-landing step">
+<div class="page-landing step" style="display: none;">
     <div class="stepmaster">Page-Landing</div>
 
     <div class="landing-intro substep">
@@ -98,7 +98,7 @@
 
 <!-- 3 states: 1. intro, 2. shaking, 3. repos/fatigué -->
 
-<div class="page-shake step" style="display: none;">
+<div class="page-shake step">
     <!-- intro -->
     <div class="shake-intro substep">
         <h1 style="display: none;">Allo <span class="agencyName"></span>.<br>Shake comme si y’avait pas de lendemain.</h1>
@@ -139,7 +139,6 @@
 
     <div class="switch">
         <button type="button" class="small btn-change-object">Changer de branlette</button>
-        <button type="button" class="small btn-shake">Shake test</button>
     </div>
     
     <div class="shake-bottomcount"></div>

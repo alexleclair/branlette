@@ -210,17 +210,28 @@ input.button, button[type="button"] {
     &:hover {
         color: white;
         background: black;
-        transition: all 0.1s ease;
+        transition: all 0s ease;
     }
 }
 
 
 button[type="button"].small {
-    width: 200px;
+    width: 210px;
     height: 42px;
-    font-size: 1em;
+    font-size: 15px;
     line-height: 42px;
 }
+
+
+button.btn-change-object {
+    padding-left: 33px;
+    background: url(../img/ui-change.png) 6px 14px no-repeat @jaune;
+
+    &:hover {
+    background: url(../img/ui-change.png) 6px -70px no-repeat black;
+    }
+}
+
 
 a.icon-twitter div {
     text-indent: -9999em;
@@ -512,7 +523,7 @@ div.arrow-right {
                 width: 100%;
                 text-align: left;
                 line-height: 1em;
-                margin-top: 1em;
+                margin-top: 0.5em;
                 margin-left: 1em;
                 text-indent: -1em;
             }
@@ -543,6 +554,14 @@ html,body {
     min-height: 100%;
     height: 100%;
     overflow: hidden;
+
+
+    .sidebar {
+        width: 600px;
+        right: 52px;
+        top: 52px;
+        position: fixed;
+    }
 
     .shake-bras {
         width: 100%;
@@ -607,7 +626,7 @@ html,body {
         font-size: 280px;
         text-align: center;
         position: fixed;
-        z-index: 1001;
+        z-index: 0;
         width: 1024px;
         height: 400px;
         right: 50%;
@@ -731,7 +750,7 @@ body.object-boule{
 }
 
 .shake-droite {
-    width: 530px;
+    width: 540px;
     position: absolute;
     bottom: 52px;
     right: 112px;
@@ -1129,26 +1148,7 @@ and (max-width : 1224px) {
             width: 32%;
         }
 
-        // .sidebar {
-        //     position: fixed;
-        //     top:52px;
-        //     right: 52px;
-        //     width: 300px;
 
-        //     table {
-        //         td.agence, td.position {
-        //             font-size: 18px;
-        //         }
-
-        //         td {
-        //             margin: 0;
-        //             line-height: 2em;
-        //             padding: 0;
-        //         }
-        //     }
-
-
-        // }
 
     }
 
@@ -1181,6 +1181,41 @@ and (max-width : 1224px) {
 
 
  }
+
+
+
+.page-shake {
+
+    .shake-repos .fatigue {
+            width: 30%;
+        h1 {
+            font-size: 72px;
+        }
+
+        h2 {
+            font-size: 12px;
+            line-height: 1.1em;
+        }
+    }
+
+
+    .sidebar {
+        width: 40%;
+    }
+
+    .shake-droite {
+        width: 40%;
+        right: 52px;
+
+
+        h1 {
+            font-size: 1.4em;
+            margin: 0;
+        }
+
+    }
+
+}
 
 
 }

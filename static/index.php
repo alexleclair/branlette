@@ -30,7 +30,7 @@
         <![endif]-->
 
         <div id="logo">
-            <img src="img/logo_branlette.png" width="277" height="277" alt="Brrrrrrrranlettteee" />
+            <a href="/" style="border:0 !important;"><img src="img/logo_branlette.png" width="277" height="277" alt="Brrrrrrrranlettteee" /></a>
         </div>
 <!-- Quand qqun arrive sur le browser -->
 <div class="page-landing step" style="display: none;">

@@ -23,7 +23,7 @@
 
         <!-- Add your site or application content here -->
         <div id="logo">
-            <img src="img/logo_branlette.png" width="277" height="277" alt="Brrrrrrrranlettteee" />
+            <a href="/"><img src="img/logo_branlette.png" width="277" height="277" alt="Brrrrrrrranlettteee" /></a>
         </div>
 
         <div class="wrap2">

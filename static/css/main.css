@@ -81,10 +81,14 @@ textarea {
    Author's custom styles
    ========================================================================== */
 a:link,
-a:visited,
-a:active {
+a:visited {
   text-decoration: none;
   color: black;
+}
+a:active,
+button:active {
+  position: relative;
+  top: 2px;
 }
 a:hover {
   border-bottom: 1px solid black;
@@ -353,7 +357,6 @@ div.arrow-right {
 }
 .sidebar {
   font-family: 'NHaasGroteskTXStd-75Bd';
-  transition: all 0.2s ease;
 }
 .sidebar header {
   zoom: 1;
@@ -961,7 +964,9 @@ body.object-boule .shake-bras {
 }
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px), (max-width: 768px) {
-  #logo,
+  #logo {
+    display: none;
+  }
   #akfnlogo {
     display: none;
   }

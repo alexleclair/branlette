@@ -111,9 +111,14 @@ textarea {
 
 
 
-a:link, a:visited, a:active {
+a:link, a:visited {
     text-decoration: none;
     color: black;
+}
+
+a:active, button:active {
+    position: relative;
+    top: 2px;
 }
 
 a:hover {
@@ -427,7 +432,7 @@ div.arrow-right {
 
 .sidebar {
     font-family: @haasbold;
-    transition: all 0.2s ease;
+    //transition: all 0.2s ease;
 
     header {
         zoom: 1;
@@ -1262,9 +1267,12 @@ and (min-device-width : 320px)
 and (max-device-width : 480px),
 (max-width: 768px) {
 
-
-#logo, #akfnlogo {
+#logo {
     display: none;
+}
+
+#akfnlogo {
+display: none;
 }
 .pageiphone-landing {
     box-sizing: border-box;
@@ -1276,6 +1284,8 @@ and (max-device-width : 480px),
     zoom: 1;
 
     .logo {
+
+        //img {visibility: hidden;}
     }
     
     h1 {

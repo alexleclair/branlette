@@ -75,9 +75,11 @@ App =
 			#console.log 'Eille, y\'a '+count+'personnes connectées man'
 			$current = $('div.step.current');
 			isLanding = $current.length > 0 && $current.is('.page-landing');
+			console.log 'TEST - ', App.isMobile, $('div.step.current');
 			if !App.isMobile && isLanding
 				App.gotoPage('page-landing', 'landing-confirmation');
 			if App.isMobile && $('div.step.current').is('.pageiphone-landing')
+				console.log 'TEST'
 				App.gotoPage('pageiphone-agence')
 
 		App.socket.on 'code', (code)->
@@ -171,7 +173,7 @@ App =
 			$div.find('.substep').not('.'+substep).fadeOut fadeTime, (e)=>
 				$div.find('.substep').removeClass('current');
 				$div.find('.substep.'+substep).fadeIn(fadeTime).addClass('current');
-		$div.fadeIn(fadeTime).addClass('current');
+		$div.addClass('current').fadeIn(fadeTime);
 
 	facebookShare:()=>
 		msg = 'Viens shaker pour ton agence favorite et prend part à la Grande Branlette de Noël.'

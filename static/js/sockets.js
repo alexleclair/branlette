@@ -75,10 +75,12 @@
         var $current, isLanding;
         $current = $('div.step.current');
         isLanding = $current.length > 0 && $current.is('.page-landing');
+        console.log('TEST - ', App.isMobile, $('div.step.current'));
         if (!App.isMobile && isLanding) {
           App.gotoPage('page-landing', 'landing-confirmation');
         }
         if (App.isMobile && $('div.step.current').is('.pageiphone-landing')) {
+          console.log('TEST');
           return App.gotoPage('pageiphone-agence');
         }
       });
@@ -196,7 +198,7 @@
           return $div.find('.substep.' + substep).fadeIn(fadeTime).addClass('current');
         });
       }
-      return $div.fadeIn(fadeTime).addClass('current');
+      return $div.addClass('current').fadeIn(fadeTime);
     },
     facebookShare: function() {
       var msg;

@@ -127,9 +127,14 @@ body p {
 /* CONSTANTS */
 #logo {
   position: fixed;
-  top: 12px;
-  left: 64px;
+  top: 32px;
+  left: 3%;
   z-index: 1000;
+  width: 15%;
+}
+#logo img {
+  width: 100%;
+  height: auto;
 }
 #akfnlogo {
   position: fixed;
@@ -170,13 +175,20 @@ input.button:hover,
 button[type="button"]:hover {
   color: white;
   background: black;
-  transition: all 0.1s ease;
+  transition: all 0s ease;
 }
 button[type="button"].small {
-  width: 200px;
+  width: 210px;
   height: 42px;
-  font-size: 1em;
+  font-size: 15px;
   line-height: 42px;
+}
+button.btn-change-object {
+  padding-left: 33px;
+  background: url(../img/ui-change.png) 6px 14px no-repeat #ffd600;
+}
+button.btn-change-object:hover {
+  background: url(../img/ui-change.png) 6px -70px no-repeat #000000;
 }
 a.icon-twitter div {
   text-indent: -9999em;
@@ -362,7 +374,7 @@ div.arrow-right {
   border: 0;
 }
 .sidebar table {
-  font-size: 58px;
+  font-size: 50px;
   line-height: 1em;
 }
 .sidebar table tr,
@@ -393,13 +405,6 @@ div.arrow-right {
   text-align: right;
   line-height: 40px;
 }
-.page-classement .sidebar,
-.page-shake .sidebar {
-  position: fixed;
-  top: 52px;
-  right: 52px;
-  width: 500px;
-}
 .page-classement .sidebar header,
 .page-shake .sidebar header {
   overflow: hidden;
@@ -410,7 +415,6 @@ div.arrow-right {
 .page-shake .sidebar div.leftscore {
   float: left;
   width: 40%;
-  clear: both;
 }
 .page-classement .sidebar div.leftscore h1,
 .page-shake .sidebar div.leftscore h1 {
@@ -428,6 +432,10 @@ div.arrow-right {
 .page-shake .sidebar div.leftscore footer {
   width: 100%;
   text-align: left;
+  line-height: 1em;
+  margin-top: 0.5em;
+  margin-left: 1em;
+  text-indent: -1em;
 }
 .page-classement .sidebar p.right,
 .page-shake .sidebar p.right {
@@ -448,6 +456,12 @@ body {
   min-height: 100%;
   height: 100%;
   overflow: hidden;
+}
+.page-shake .sidebar {
+  width: 600px;
+  right: 52px;
+  top: 52px;
+  position: fixed;
 }
 .page-shake .shake-bras {
   width: 100%;
@@ -503,7 +517,7 @@ body {
   font-size: 280px;
   text-align: center;
   position: fixed;
-  z-index: 1001;
+  z-index: 0;
   width: 1024px;
   height: 400px;
   right: 50%;
@@ -594,6 +608,29 @@ body.object-cierge .shake-bras {
 body.object-boule .shake-bras {
   background-image: url(../img/boule.jpg);
 }
+.shake-droite {
+  width: 540px;
+  position: absolute;
+  bottom: 52px;
+  right: 112px;
+  border-bottom: 2px solid black;
+}
+.shake-droite h1 {
+  font-size: 30px;
+  float: left;
+  width: 40%;
+  margin-bottom: 0;
+  margin-top: -3px;
+  line-height: 30px;
+}
+.shake-droite h2 {
+  margin-bottom: 0;
+  float: right;
+  text-align: right;
+  width: 60%;
+  font-size: 16px;
+  line-height: 30px;
+}
 @keyframes shake {
   0% {
     transform: translate(3px, 3px);
@@ -641,14 +678,21 @@ body.object-boule .shake-bras {
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
 }
+.page-classement .sidebar {
+  position: fixed;
+  top: 52px;
+  right: 52px;
+  width: 25%;
+}
 .page-classement .classement {
-  width: 860px;
-  margin: 52px 0 0 380px;
+  width: 45%;
+  margin: 52px 0 0 20%;
 }
 .page-classement .classement header {
   zoom: 1;
   overflow: hidden;
   border-bottom: 4px solid #000;
+  margin-bottom: 0.3em;
   line-height: 40px;
 }
 .page-classement .classement header div.right a div {
@@ -660,12 +704,12 @@ body.object-boule .shake-bras {
 .page-classement .classement table {
   font-family: 'NHaasGroteskTXStd-75Bd';
   font-size: 58px;
-  line-height: 1em;
 }
 .page-classement .classement table tr,
 .page-classement .classement table td {
   padding: 0;
   margin: 0;
+  line-height: 1em;
 }
 .page-classement .classement table tr {
   border-bottom: 2px solid #000;
@@ -676,10 +720,10 @@ body.object-boule .shake-bras {
 }
 .page-classement .classement table td.position {
   padding-top: 0px;
-  width: 85px;
+  width: 100px;
 }
 .page-classement .classement table td.agence {
-  width: 400px;
+  width: 85%;
 }
 .page-classement .classement table td.score {
   text-align: right;
@@ -784,17 +828,148 @@ body.object-boule .shake-bras {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
-@media only screen and (max-width: 1500px) {
-  /* Style adjustments for viewports that meet the condition */
+/* Desktops and laptops ----------- */
+@media only screen and (max-width: 1640px) {
+  #logo {
+    width: 15%;
+  }
+  #logo img {
+    width: 100%;
+    height: auto;
+  }
+  .page-landing .landing-code .biphone-contenu h1,
+  .page-landing .landing-code .biphone-contenu h2,
+  .page-landing .landing-code .biphone-contenu button {
+    zoom: 0.7;
+  }
+  .page-landing .main {
+    box-sizing: border-box;
+    width: 60%;
+  }
+  .page-landing .main h1 {
+    font-size: 40px;
+    line-height: 1em;
+  }
+  .page-landing .main h1 span:after {
+    position: relative;
+  }
+  .page-landing .main button {
+    zoom: 0.75;
+  }
+  .page-landing .sidebar {
+    position: fixed;
+    top: 52px;
+    right: 52px;
+    width: 400px;
+  }
+  .page-landing .sidebar table td.agence,
+  .page-landing .sidebar table td.position {
+    font-size: 30px;
+    line-height: 1em;
+    height: 1em;
+    padding: 0.5em 0;
+    margin: 0;
+  }
+  .page-landing .sidebar table td.score {
+    line-height: 1em;
+    height: 1em;
+    padding: 0;
+    margin: 0;
+  }
+  .page-classement .classement #leaderboard .position {
+    width: 80px;
+  }
+  .page-classement .classement #leaderboard .agence {
+    width: 75%;
+  }
+  .page-classement .classement #leaderboard .agence,
+  .page-classement .classement #leaderboard .position {
+    font-size: 0.75em;
+  }
 }
-@media only screen and (max-height: 860px) {
-  
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (max-width: 1224px) {
+  #akfnlogo {
+    bottom: 0;
+  }
+  .page-landing .main {
+    box-sizing: border-box;
+    width: 100%;
+    left: 0;
+    padding: 0 52px;
+  }
+  .page-landing .main h1 {
+    width: 50%;
+    font-size: 36px;
+    line-height: 1em;
+    font-weight: normal;
+  }
+  .page-landing .main h1 span:after {
+    position: relative;
+  }
+  .page-landing .main .right {
+    width: 35%;
+  }
+  #logo {
+    zoom: 0.65;
+  }
+  .page-landing .landing-intro .bras {
+    left: 0;
+    background-position: bottom;
+  }
+  .page-landing .sidebar {
+    width: 32%;
+  }
+  .page-classement .classement #leaderboard .agence,
+  .page-classement .classement #leaderboard .position {
+    font-size: 0.55em;
+  }
+  .page-classement .sidebar div.leftscore,
+  .page-classement .sidebar p.right {
+    width: 100%;
+    float: none;
+  }
+  .page-classement .sidebar p.right {
+    margin-top: 1em;
+  }
+  .page-shake .shake-repos .fatigue {
+    width: 30%;
+  }
+  .page-shake .shake-repos .fatigue h1 {
+    font-size: 72px;
+  }
+  .page-shake .shake-repos .fatigue h2 {
+    font-size: 12px;
+    line-height: 1.1em;
+  }
+  .page-shake .sidebar {
+    width: 40%;
+  }
+  .page-shake .shake-droite {
+    width: 40%;
+    right: 52px;
+  }
+  .page-shake .shake-droite h1 {
+    font-size: 1.4em;
+    margin: 0;
+  }
 }
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-  
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* Styles */
+}
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  /* Styles */
+  .page-landing .landing-intro .bras {
+    box-sizing: border-box;
+    zoom: 0.8;
+    left: 0;
+    bottom: 0;
+  }
 }
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px), (max-width: 768px) {
   #logo,
   #akfnlogo {
     display: none;
@@ -902,6 +1077,35 @@ body.object-boule .shake-bras {
   .pageiphone-agence.one-selected {
     background-color: #30b542;
   }
+  .page-classement .classement {
+    padding: 5%;
+    width: 100%;
+    margin: 90px 0 0 0;
+    box-sizing: border-box;
+  }
+  .page-classement .classement header {
+    display: none;
+  }
+  .page-classement .classement #leaderboard .agence,
+  .page-classement .classement #leaderboard .position {
+    font-size: 0.5em;
+  }
+  .page-classement .sidebar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 5% 5% 0 5%;
+    background-color: #ffd600;
+  }
+  .page-classement .sidebar header {
+    width: 100%;
+  }
+  .page-classement .sidebar .leftscore,
+  .page-classement .sidebar p.right {
+    display: none;
+  }
 }
 /* Smartphones (landscape) ----------- */
 @media only screen and (min-width: 321px) {
@@ -920,110 +1124,6 @@ body.object-boule .shake-bras {
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width: 320px) {
   /* Styles */
-}
-/* iPads (portrait and landscape) ----------- */
-@media only screen and (min-width: 768px) and (max-width: 1224px) {
-  #akfnlogo {
-    bottom: 0;
-  }
-  .page-landing .main {
-    box-sizing: border-box;
-    width: 100%;
-    left: 0;
-    padding: 0 52px;
-  }
-  .page-landing .main h1 {
-    width: 50%;
-    font-size: 42px;
-    line-height: 1em;
-    font-weight: normal;
-  }
-  .page-landing .main h1 span:after {
-    position: relative;
-  }
-  .page-landing .main .right {
-    width: 35%;
-  }
-  #logo {
-    zoom: 0.65;
-  }
-  .page-landing .bras {
-    zoom: 0.65;
-  }
-  .page-landing .sidebar {
-    position: fixed;
-    top: 52px;
-    right: 52px;
-    width: 300px;
-  }
-  .page-landing .sidebar table td.agence,
-  .page-landing .sidebar table td.position {
-    font-size: 18px;
-  }
-  .page-landing .sidebar table td {
-    margin: 0;
-    line-height: 2em;
-    padding: 0;
-  }
-}
-/* iPads (landscape) ----------- */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  /* Styles */
-}
-/* iPads (portrait) ----------- */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  /* Styles */
-  .page-landing .landing-intro .bras {
-    box-sizing: border-box;
-    zoom: 0.8;
-    left: 0;
-    bottom: 0;
-  }
-}
-/* Desktops and laptops ----------- */
-@media only screen and (min-width: 1224px) and (max-width: 1640px) {
-  #logo {
-    zoom: 0.85;
-  }
-  .page-landing .landing-code .biphone-contenu h1,
-  .page-landing .landing-code .biphone-contenu h2,
-  .page-landing .landing-code .biphone-contenu button {
-    zoom: 0.7;
-  }
-  .page-landing .main {
-    box-sizing: border-box;
-    width: 60%;
-  }
-  .page-landing .main h1 {
-    font-size: 40px;
-    line-height: 1em;
-  }
-  .page-landing .main h1 span:after {
-    position: relative;
-  }
-  .page-landing .main button {
-    zoom: 0.75;
-  }
-  .page-landing .sidebar {
-    position: fixed;
-    top: 52px;
-    right: 52px;
-    width: 400px;
-  }
-  .page-landing .sidebar table td.agence,
-  .page-landing .sidebar table td.position {
-    font-size: 30px;
-    line-height: 1em;
-    height: 1em;
-    padding: 0.5em 0;
-    margin: 0;
-  }
-  .page-landing .sidebar table td.score {
-    line-height: 1em;
-    height: 1em;
-    padding: 0;
-    margin: 0;
-  }
 }
 /* Large screens ----------- */
 @media only screen and (min-width: 1824px) {

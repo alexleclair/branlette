@@ -203,6 +203,10 @@
         });
         socket.on('registerSibling', function(inviteId) {
           console.log('INVITED', inviteId);
+          if ((App.siblings == null) || (App.siblings[inviteId] == null)) {
+            socket.emit('wrongcode');
+            return;
+          }
           socket.set('code', inviteId);
           App.attachSiblings(socket, inviteId);
           return App.sendToSiblings(socket, 'siblingsCount', App.siblings[inviteId].length);

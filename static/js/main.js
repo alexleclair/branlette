@@ -12,8 +12,9 @@ $(document).ready(function(){
 	$('form#code-form').submit(function(e){
 		e.preventDefault();
 		Branlette.bindToCode($.trim($('input.code').val()).toLowerCase());
-		$('div.step').hide();
-		$('div.page-shake-iphone').show();
+		Branlette.gotoPage('page-shake-iphone')
+		// $('div.step').hide();
+		// $('div.page-shake-iphone').show();
 		return false;
 	});
 

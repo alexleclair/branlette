@@ -196,6 +196,9 @@ App =
 
 					socket.on 'registerSibling', (inviteId)->
 						console.log 'INVITED',inviteId;
+						if !App.siblings? || !App.siblings[inviteId]?
+							socket.emit 'wrongcode'
+							return;
 						socket.set 'code', inviteId #Same clients share same code/invite id
 						App.attachSiblings(socket, inviteId) 
 						App.sendToSiblings(socket, 'siblingsCount', App.siblings[inviteId].length);

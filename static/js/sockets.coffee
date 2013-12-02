@@ -1,6 +1,6 @@
 App = 
 	config:
-		endpoint:'http://alexleclair.ca:8090/'
+		endpoint:'http://10.0.10.158:8090/'
 	socket:null
 	labels:{}
 	agencies:{}
@@ -63,6 +63,14 @@ App =
 			App.agencies = data;
 			App.refreshLeaderboards()
 			App.resetTexts();
+		App.socket.on 'wrongcode', (data)->
+			alert 'Ce code n\'existe pas.'
+			if App.isMobile
+				App.gotoPage 'pageiphone-landing'
+			else
+				App.gotoPage 'page-landing', 'landing-intro'
+
+
 		App.socket.on 'siblingsCount', (count)->
 			# console.log 'Eille, y\'a '+count+'personnes connectées man'
 			if !App.isMobile && $('div.step.current').is('.page-landing')

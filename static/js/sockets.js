@@ -5,7 +5,7 @@
 
   App = {
     config: {
-      endpoint: 'http://alexleclair.ca:8090/'
+      endpoint: 'http://10.0.10.158:8090/'
     },
     socket: null,
     labels: {},
@@ -62,6 +62,14 @@
         App.agencies = data;
         App.refreshLeaderboards();
         return App.resetTexts();
+      });
+      App.socket.on('wrongcode', function(data) {
+        alert('Ce code n\'existe pas.');
+        if (App.isMobile) {
+          return App.gotoPage('pageiphone-landing');
+        } else {
+          return App.gotoPage('page-landing', 'landing-intro');
+        }
       });
       App.socket.on('siblingsCount', function(count) {
         if (!App.isMobile && $('div.step.current').is('.page-landing')) {

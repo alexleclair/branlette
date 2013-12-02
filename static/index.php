@@ -39,7 +39,7 @@
     <div class="landing-intro substep">
 
         <div class="bras"></div>
-        <div class="main" style="height:240px;">
+        <div class="cta">
         <button type="button" class="start right">Let's do this bro.</button>
         </div>
     </div>

@@ -99,11 +99,9 @@ $(document).ready(function(){
 
 
 	$(".shake-bulle").each(function() {
-		var sheight = $(window).height() - 500;
-		var swidth = $(window).width() - 200;
 
-		var positionX = Math.floor((Math.random()*swidth)+100);
-		var positionY = Math.floor((Math.random()*sheight)+100); 
+		var positionX = Math.floor((Math.random()*900)-100);
+		var positionY = Math.floor((Math.random()*200)-100);
 
 		$(this).css({
 			'top':positionY,

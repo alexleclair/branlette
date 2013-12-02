@@ -309,6 +309,15 @@ div.arrow-right {
         background: url(../img/bras.png) no-repeat;
         background-size: contain;
         }
+
+
+        .cta {
+            width: 1100px;
+            position: absolute;
+            left: 72px;
+            bottom: 240px;
+        }
+
     }
 
     .landing-code, .landing-confirmation {
@@ -1095,7 +1104,10 @@ and (max-width: 1640px) {
             h1,h2,button {zoom: 0.7;}
         }
 
+        .landing-intro .cta {
 
+            width: 60%;
+        }
 
 
         .main {
@@ -1199,6 +1211,8 @@ and (max-width : 1224px) {
                 }
         }
 
+        
+
         .right {
             width: 35%;
         }
@@ -1212,12 +1226,19 @@ and (max-width : 1224px) {
 
     .page-landing {
 
-
+        .landing-intro {
+        .cta {
+        box-sizing: border-box;
+        width: 100%;
+        left: 0;
+        padding: 0 52px;
+        }
         
 
-        .landing-intro .bras {
+        .bras {
             left: 0;
             background-position: bottom;
+        }
         }
 
         .bras2 {
@@ -1318,8 +1339,16 @@ and (max-width : 1224px) {
 
 
         h1 {
+            float: none;
             font-size: 1.4em;
             margin: 0;
+        }
+
+        h2 {
+            width: 100%;
+            float: none;
+            text-align: left;
+            line-height: 1em;            
         }
 
     }
@@ -1365,7 +1394,7 @@ and (max-device-width : 480px),
 (max-width: 768px) {
 
 #logo {
-    //display: none;
+    //
 }
 
 #akfnlogo {
@@ -1374,35 +1403,31 @@ display: none;
 
 .page-landing {
 
-    .landing-intro  .bras {
 
-// position: absolute;
-// z-index: -1;
-// max-width: 900px;
-// max-height: 900px;
-// bottom: 0;
-// left: 170px;
-// width: 100%;
-// height: 100%;
-// background: url(../img/bras.png) no-repeat;
-// background-size: contain;
+    .landing-intro  {
+        .bras {
+            position: relative;
+            top: 0;
+            left: 0;
+            height: 285px;
+            background-size: 400px auto;
+            background-position: top center;
+        }
+    
+        .cta {
+            position: relative;
+            width: 100%;
+            top: 0;
+            box-sizing: border-box;
+                margin-top: -20px;
 
-
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 300px;
-        border-bottom: 4px solid black;
-        background-size: 400px auto;
-        background-position: top center;
-    }
-
-    .main button {
-        position: relative;
-        top: 300px;
-        width: 100%;
-        box-sizing: border-box;
-    }
+            button {
+                margin: auto;
+                display: block;
+                float: none;
+            }
+        }
+    }   
 
     .sidebar {
         box-sizing: border-box;
@@ -1412,6 +1437,11 @@ display: none;
         padding: 52px;
         position: relative;
         left: 0;
+
+        header {
+            border-top: 1px solid black;
+            padding-top: 0.5em;
+        }
 
         table td.agence, table td.position {
             font-size: 20px;

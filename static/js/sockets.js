@@ -324,7 +324,7 @@
     },
     facebookShare: function() {
       var msg;
-      msg = 'Viens shaker pour ton agence favorite et prend part à la Grande Branlette de Noël.';
+      msg = 'Viens shaker pour ton équipe favorite et prend part à la Grande Branlette de Noël.';
       if (App.agency != null) {
         msg = 'J\'ai shaké ' + App.shakes + ' fois pour ' + App.labels[App.agency] + ' sur la Grande Branlette De Noël!';
       }
@@ -334,13 +334,13 @@
         link: 'http://localhost/',
         picture: ' http://7cffd474.ngrok.com/img/logo_branlette.png',
         caption: msg,
-        description: 'Viens participer à la Grande Branlette et aide ton agence à remporter la course!'
+        description: 'En participant à la Grande Branlette, tu aides ton équipe à gagner.'
       });
     },
     twitterShare: function() {
       var i, key, msg, params, twitter_url;
       twitter_url = 'https://twitter.com/share';
-      msg = 'Viens te la shaker pour ton agence préférée sur La Grande Branlette De Noël: ';
+      msg = 'Viens te la shaker pour ton équipe préférée sur La Grande Branlette De Noël: ';
       params = {
         url: window.location.href,
         via: 'akufen',

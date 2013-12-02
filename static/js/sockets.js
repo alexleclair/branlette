@@ -16,7 +16,14 @@
     isMobile: false,
     shakeTimeout: null,
     lastShakeTime: 0,
+    siblingsCount: 0,
     objects: ['marie', 'jesus', 'nutcracker', 'emballage', 'boite', 'canne', 'explosif', 'ange', 'roi', 'canne2', 'cierge', 'boule'],
+    sounds: [
+      {
+        mp3: 'http://dl.dropbox.com/u/1538714/article_resources/cat.m4a',
+        ogg: 'http://dl.dropbox.com/u/1538714/article_resources/cat.ogg'
+      }
+    ],
     currentObject: null,
     init: function(callback) {
       App.socket = io.connect(App.config.endpoint);
@@ -33,11 +40,15 @@
           return App.gotoPage('pageiphone-shake');
         } else {
           App.gotoPage('page-shake', 'shake-intro');
-          return App.changeObject(App.objects[Math.floor(Math.random() * (App.objects.length - 1))]);
+          App.changeObject(App.objects[Math.floor(Math.random() * (App.objects.length - 1))], true);
+          return App.playSound();
         }
       });
       App.socket.on('object', function(obj) {
         return App.changeObject(obj);
+      });
+      App.socket.on('disconnect', function() {
+        return window.location = window.location;
       });
       App.socket.on('shake', function() {
         var velocity, _class;
@@ -51,7 +62,6 @@
           _class = 'shake';
         }
         App.shakes++;
-        console.log(velocity, _class);
         App.lastShakeTime = new Date().getTime();
         $('div[data-info="shake-sessioncount"]').text(App.shakes);
         clearTimeout(App.shakeTimeout);
@@ -85,6 +95,7 @@
       });
       App.socket.on('siblingsCount', function(count) {
         var $current, isLanding;
+        App.siblingsCount = count;
         $current = $('div.step.current');
         isLanding = $current.length > 0 && $current.is('.page-landing');
         if (count === 1 && App.isMobile) {
@@ -101,6 +112,30 @@
         App.code = code;
         return App.refreshCodeScreen();
       });
+    },
+    displayMessage: function(msg, x, y, fadeTime) {
+      var $bulle;
+      if (fadeTime == null) {
+        fadeTime = 200;
+      }
+      if (x == null) {
+        x = Math.random() * ($(window).width() / 2) + $(window).width() / 4;
+      }
+      if (y == null) {
+        y = Math.random() * ($(window).height() / 2) + $(window).height() / 4;
+      }
+      $bulle = $('.shake-bulle');
+      return $bulle.fadeOut(fadeTime, function() {
+        $bulle.find('h3').text(msg);
+        return $bulle.css('top', x + 'px').css('left', y + 'px').fadeIn(fadeTime);
+      });
+    },
+    playSound: function(sound) {
+      if (sound == null) {
+        sound = App.sounds[Math.floor(Math.random() * App.sounds.length)];
+      }
+      $('#audio').html('<source src="' + sound.mp3 + '" type="audio/mpeg" />' + '<source src="' + sound.ogg + '" type="audio/ogg" />');
+      return $('#audio').get(0).play();
     },
     bindToCode: function(code) {
       return App.socket.emit('registerSibling', code);
@@ -173,6 +208,9 @@
         return $('#agency-picker li a').click(function(e) {
           e.preventDefault();
           App.pickAgency($(this).attr('data-key'));
+          if (App.siblingsCount <= 1) {
+            App.playSound();
+          }
           return false;
         });
       }

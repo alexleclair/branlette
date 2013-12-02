@@ -237,7 +237,11 @@ App =
 							console.log '[error] ', err.message, err
 
 		generateCode:(id)->
-			return (id+1000).toString(36)
+			allowedChars = 'abcdefghijklmnopqrstuvwxyz0123456789'.split("");			
+			code = ''
+			for i in[0...3]
+				code += '' + allowedChars[Math.floor(Math.random()*allowedChars.length)];
+			return code+''+(id+1000).toString(36)
 
 		sendAgencies:()->
 			App.io.sockets.emit 'agencies', App.agencies

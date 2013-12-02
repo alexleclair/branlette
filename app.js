@@ -270,7 +270,13 @@
       });
     },
     generateCode: function(id) {
-      return (id + 1000).toString(36);
+      var allowedChars, code, i, _i;
+      allowedChars = 'abcdefghijklmnopqrstuvwxyz0123456789'.split("");
+      code = '';
+      for (i = _i = 0; _i < 3; i = ++_i) {
+        code += '' + allowedChars[Math.floor(Math.random() * allowedChars.length)];
+      }
+      return code + '' + (id + 1000).toString(36);
     },
     sendAgencies: function() {
       return App.io.sockets.emit('agencies', App.agencies);

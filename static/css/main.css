@@ -391,7 +391,7 @@ div.arrow-right {
   border-bottom: 2px solid #000;
 }
 .sidebar table td {
-  padding-top: 17px;
+  padding: 0.3em 0 0.2em 0;
 }
 .sidebar table td.position {
   padding-top: 0px;
@@ -692,6 +692,9 @@ body.object-boule .pageiphone-shake div {
   width: 60%;
   font-size: 16px;
   line-height: 30px;
+}
+.shake-droite h2 .agencyPeople {
+  color: #ffd600;
 }
 @keyframes shake {
   0% {
@@ -1351,7 +1354,6 @@ body.shakelent .shake-bras {
     box-sizing: border-box;
     padding: 1% 5% 0 5%;
     background-color: #30b542;
-    transition: height 0.5s ease;
   }
   .page-classement .sidebar header {
     width: 100%;

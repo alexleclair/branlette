@@ -28,7 +28,12 @@
       updateRedisTimer: 5000,
       labels: {
         acolyte: 'Acolyte Communication',
+        adviso: 'Adviso',
+        bloom: 'Bloom',
+        fairplay: 'Fairplay',
+        onf: 'ONF',
         akufen: 'Akufen',
+        attraction: 'Attraction',
         braque: 'Agence Braque',
         alfred: 'Alfred info',
         amazone: 'Amazone communications gestion',
@@ -36,16 +41,19 @@
         bcp: 'BCP',
         beauchemin: 'Beauchemin',
         bbr: 'Bleublancrouge',
+        bulle: 'Production Bulle',
         bob: 'Bob',
         brad: 'Brad',
         cap: 'Cap Communication',
         carat: 'Carat',
         cart1er: 'CART1ER',
+        cavalerie: 'La Cavalerie',
         gccom: 'CGCOM',
         cossette: 'Cossette',
         coutu: 'Coutu Communication',
         cri: 'CRI',
         cundari: 'Cundari',
+        decodca: 'decod.ca',
         defi: 'Défi marketing',
         dentsubos: 'DentsuBos',
         desarts: 'DesArts Communication',
@@ -59,6 +67,7 @@
         gvm: 'Groupe GVM',
         aod: 'Group Média AOD',
         hop: 'HOP comportement de marque',
+        invisible: 'la compagnie invisible',
         jazz: 'Jazz Marketing Communications',
         jwt: 'JWT',
         kabane: 'Kabane',
@@ -68,6 +77,8 @@
         dompteurs: 'Les Dompteurs de souris',
         evades: 'Les Évadés',
         lg2: 'lg2',
+        lp8: 'LP8',
+        lusio: 'Lusio films',
         marketel: 'Marketel',
         martel: 'Martel et compagnie',
         mediaexperts: 'Media Experts',
@@ -84,6 +95,7 @@
         palm: 'PALM + HAVAS',
         pheromone: 'Phéromone',
         publicis: 'Publicis',
+        rc: 'Radio-Canada',
         republik: 'Republik',
         reservoir: 'Réservoir Publicité Conseil',
         ressac: 'Ressac',
@@ -101,10 +113,13 @@
         trinergie: 'Trinergie',
         uber: 'Über',
         upperkut: 'Upperkut',
+        v: 'V',
+        version10: 'version10',
         wasabi: 'Wasabi Communications',
         youville: 'Youville Communauté Créative',
         zip: 'ZiP communication',
-        imedia: 'Imédia'
+        imedia: 'Imédia',
+        picbois: 'Picbois Production'
       }
     },
     agencies: {},
@@ -112,8 +127,7 @@
     sockets: {},
     connCounter: 0,
     init: function(config) {
-      var express, key, _call,
-        _this = this;
+      var express;
       if (config != null) {
         this.config = this._mergeOptions(this.config(config));
       }
@@ -136,29 +150,13 @@
         return res.send(500, 'Oops ! Something went super wrong.');
       });
       this.redisWorker = this.redis.createClient(App.config.redisPort, App.config.redisHost);
-      for (key in App.config.labels) {
-        console.log('Fetching data for ' + key);
-        _call = function(_key) {
-          return _this.redisWorker.get(App.config.redisKey + 'agency:' + _key, function(err, reply) {
-            var val;
-            val = reply;
-            if (val == null) {
-              val = 0;
-            }
-            return App.agencies[_key] = {
-              count: val,
-              people: 0
-            };
-          });
-        };
-        _call(key);
-      }
+      App.loadAgencies();
       setInterval(this._saveScores, this.config.updateRedisTimer);
+      setInterval(this.loadAgencies, this.config.updateRedisTimer);
       return this.io.on('connection', function(socket) {
         var code;
         ++App.connCounter;
         code = App.generateCode(App.connCounter);
-        console.log('Code is' + code);
         App.siblings[code] = [];
         App.sockets[socket.id] = socket;
         socket.set('code', code);
@@ -176,9 +174,7 @@
             }
             if (App.agencies[agency] != null) {
               socket.set('agency', agency);
-              console.log('setting +1 on agency ' + agency, App.agencies[agency]);
               App.agencies[agency].people++;
-              console.log('set +1 on agency ' + agency, App.agencies[agency]);
             }
             App.sendToSiblings(socket, 'pick', agency);
             return App.sendAgencies();
@@ -253,7 +249,6 @@
             try {
               socketId = App.siblings[code][i];
               if (App.sockets[socketId] != null) {
-                console.log('Sent to ' + socketId);
                 if (args.length === 1) {
                   _results.push(App.sockets[socketId].emit(args[0]));
                 } else if (args.length >= 2) {
@@ -282,11 +277,52 @@
       }
       return code + '' + (id + 1000).toString(36);
     },
+    loadAgencies: function() {
+      var _this = this;
+      return App.redisWorker.smembers(App.config.redisKey + 'agencies', function(err, reply) {
+        var e, i, key, val, _call, _i, _ref, _results;
+        if (typeof reply === 'string') {
+          reply = [reply];
+        }
+        for (i = _i = 0, _ref = reply.length; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
+          try {
+            val = JSON.parse(reply[i]);
+            if (App.config.labels[val.key] == null) {
+              App.config.labels[val.key] = val.label;
+            }
+          } catch (_error) {
+            e = _error;
+            continue;
+          }
+        }
+        _results = [];
+        for (key in App.config.labels) {
+          _call = function(_key) {
+            return App.redisWorker.get(App.config.redisKey + 'agency:' + _key, function(err, reply) {
+              val = reply;
+              if (val == null) {
+                val = 0;
+              }
+              if (App.agencies[_key] == null) {
+                console.log('added data for ' + _key);
+                return App.agencies[_key] = {
+                  count: val,
+                  people: 0
+                };
+              }
+            });
+          };
+          _results.push(_call(key));
+        }
+        return _results;
+      });
+    },
     sendAgencies: function() {
       return App.io.sockets.emit('agencies', App.agencies);
     },
     _handleAPICalls: function(req, res) {
-      var method, module, parts;
+      var allowedChars, i, key, method, module, obj, parts, _i, _key, _ref,
+        _this = this;
       parts = req.url.split('?')[0].split('/');
       if (parts.length < 4) {
         res.writeHead('500');
@@ -300,6 +336,65 @@
           res.setHeader('Content-Type', 'application/json');
           res.send(JSON.stringify(App.agencies));
           return false;
+        case "agency":
+          if (method === 'add') {
+            if ((req.query != null) && (req.query.name != null)) {
+              App.redisWorker.sadd(App.config.redisKey + 'wishlist', req.query.name);
+            }
+            return res.end(JSON.stringify(true));
+          } else if (method === 'wishlist') {
+            return App.redisWorker.smembers(App.config.redisKey + 'wishlist', function(err, reply) {
+              return res.end(JSON.stringify(reply));
+            });
+          } else if (method === 'refuse') {
+            if ((req.query != null) && (req.query.name != null)) {
+              App.redisWorker.srem(App.config.redisKey + 'wishlist', req.query.name);
+            }
+            return res.end(JSON.stringify(true));
+          } else if (method === 'remove') {
+            if ((req.query != null) && (req.query.key != null) && (App.config.labels[req.query.key] != null)) {
+              obj = {
+                label: App.config.labels[req.query.key],
+                key: req.query.key
+              };
+              App.redisWorker.srem(App.config.redisKey + 'agencies', JSON.stringify(obj));
+              if (App.config.labels[req.query.key] != null) {
+                delete App.config.labels[req.query.key];
+              }
+              if (App.agencies[req.query.key] != null) {
+                delete App.agencies[req.query.key];
+              }
+            }
+            return res.end(JSON.stringify(true));
+          } else if (method === 'approve') {
+            if ((req.query != null) && (req.query.name != null)) {
+              key = req.query.name.toLowerCase().split('');
+              allowedChars = 'abcdefghijklmnopqrstuvwxyz0123456789'.split('');
+              _key = '';
+              for (i = _i = 0, _ref = key.length; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
+                if (allowedChars.indexOf(key[i]) >= 0) {
+                  _key += key[i];
+                }
+              }
+              key = _key;
+              App.redisWorker.get(App.config.redisKey + 'agency:' + key, function(err, reply) {
+                var val;
+                if (reply === null) {
+                  val = {
+                    label: req.query.name,
+                    key: key
+                  };
+                  App.redisWorker.srem(App.config.redisKey + 'wishlist', req.query.name);
+                  return App.redisWorker.sadd(App.config.redisKey + 'agencies', JSON.stringify(val));
+                }
+              });
+            }
+            return res.end(JSON.stringify(true));
+          } else {
+            res.writeHead('404');
+            return res.end('Method ' + method + ' not found');
+          }
+          break;
         default:
           res.writeHead('404');
           return res.end('Module ' + module + ' not found');

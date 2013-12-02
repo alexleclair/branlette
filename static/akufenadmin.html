@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title>Akufen Admin</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+<div class="agencies">
+	<h1>Agences</h1>
+</div>
+
+<div class="wishlist">
+	<h1>Agences en attente</h1>
+</div>
+<div class="skeleton skeleton-agency" data-key="">
+	<div class="count">0</div><div class="name">Akufen</div><div class="actions"><a class="remove" href="#">Supprimer</a></div>
+</div>
+
+<script type="text/javascript">
+window.config = {
+	host:'http://localhost'
+}
+$(function(){
+	$.get(config.host+'/api/stats/', function(data){
+		console.log('data is ', data)
+	})
+});
+</script>
+</body>
+</html>

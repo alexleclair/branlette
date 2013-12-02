@@ -29,7 +29,12 @@ App =
 			updateRedisTimer:5000
 			labels:
 				acolyte:	'Acolyte Communication'
+				adviso:		'Adviso'
+				bloom:		'Bloom'
+				fairplay:	'Fairplay'
+				onf:		'ONF'
 				akufen:		'Akufen'
+				attraction:	'Attraction'
 				braque:		'Agence Braque'
 				alfred:		'Alfred info'
 				amazone:	'Amazone communications gestion'
@@ -37,16 +42,19 @@ App =
 				bcp:		'BCP'
 				beauchemin:	'Beauchemin'
 				bbr:		'Bleublancrouge'
+				bulle:		'Production Bulle'
 				bob:		'Bob'
 				brad:		'Brad'
 				cap:		'Cap Communication'
 				carat:		'Carat'
 				cart1er:	'CART1ER'
+				cavalerie:	'La Cavalerie'
 				gccom:		'CGCOM'
 				cossette:	'Cossette'
 				coutu:		'Coutu Communication'
 				cri:		'CRI'
 				cundari:	'Cundari'
+				decodca:	'decod.ca'
 				defi:		'Défi marketing'
 				dentsubos:	'DentsuBos'
 				desarts:	'DesArts Communication'
@@ -60,6 +68,7 @@ App =
 				gvm:		'Groupe GVM'
 				aod:		'Group Média AOD'
 				hop:		'HOP comportement de marque'
+				invisible:	'la compagnie invisible'
 				jazz:		'Jazz Marketing Communications'
 				jwt:		'JWT'
 				kabane:		'Kabane'
@@ -69,6 +78,8 @@ App =
 				dompteurs:	'Les Dompteurs de souris'
 				evades:		'Les Évadés'
 				lg2:		'lg2'
+				lp8:		'LP8'
+				lusio:		'Lusio films'
 				marketel:	'Marketel'
 				martel:		'Martel et compagnie'
 				mediaexperts:'Media Experts'
@@ -85,6 +96,7 @@ App =
 				palm:		'PALM + HAVAS'
 				pheromone:	'Phéromone'
 				publicis:	'Publicis'
+				rc:			'Radio-Canada'
 				republik:	'Republik'
 				reservoir:	'Réservoir Publicité Conseil'
 				ressac:		'Ressac'
@@ -102,10 +114,13 @@ App =
 				trinergie:	'Trinergie'
 				uber:		'Über'
 				upperkut:	'Upperkut'
+				v:			'V'
+				version10:	'version10'
 				wasabi:		'Wasabi Communications'
 				youville:	'Youville Communauté Créative'
 				zip:		'ZiP communication'
 				imedia:		'Imédia'
+				picbois:	'Picbois Production'
 
 		agencies:{}
 		siblings:{}
@@ -140,23 +155,14 @@ App =
 
 				@redisWorker = @redis.createClient(App.config.redisPort, App.config.redisHost)
 				
-				for key of App.config.labels
-					console.log 'Fetching data for ' + key
-					_call = (_key)=>
-						@redisWorker.get App.config.redisKey + 'agency:'+_key, (err, reply)=>
-							val = reply
-							if !val?
-								val = 0
-							App.agencies[_key] = 
-								count:val
-								people:0
-					_call key;
+				App.loadAgencies();
+
 				setInterval @_saveScores, @config.updateRedisTimer
+				setInterval @loadAgencies, @config.updateRedisTimer
 
 				@io.on 'connection', (socket)->
 					++App.connCounter;
 					code = App.generateCode(App.connCounter);
-					console.log 'Code is' + code;
 					App.siblings[code] = []
 					App.sockets[socket.id] = socket;
 					socket.set 'code', code;
@@ -175,9 +181,7 @@ App =
 								App.agencies[currentAgency].people--;
 							if App.agencies[agency]?
 								socket.set 'agency', agency
-								console.log 'setting +1 on agency '+agency, App.agencies[agency]
 								App.agencies[agency].people++
-								console.log 'set +1 on agency '+agency, App.agencies[agency]
 							
 							App.sendToSiblings(socket, 'pick', agency)
 
@@ -231,7 +235,6 @@ App =
 						try
 							socketId = App.siblings[code][i];
 							if App.sockets[socketId]?
-								console.log 'Sent to ' + socketId;
 								if args.length == 1 #ugly hack
 									App.sockets[socketId].emit(args[0]);
 								else if args.length >= 2
@@ -245,6 +248,33 @@ App =
 			for i in[0...3]
 				code += '' + allowedChars[Math.floor(Math.random()*allowedChars.length)];
 			return code+''+(id+1000).toString(36)
+
+		loadAgencies:()->
+			App.redisWorker.smembers App.config.redisKey+'agencies', (err, reply)=>
+				if typeof reply == 'string'
+					reply = [reply]
+				for i in[0...reply.length]
+					try
+						val = JSON.parse reply[i]
+						if !App.config.labels[val.key]?
+							App.config.labels[val.key] = val.label;
+					catch e
+						continue;
+					
+				
+				for key of App.config.labels
+					#console.log 'Fetching data for ' + key
+					_call = (_key)=>
+						App.redisWorker.get App.config.redisKey + 'agency:'+_key, (err, reply)=>
+							val = reply
+							if !val?
+								val = 0
+							if !App.agencies[_key]?
+								console.log 'added data for '+_key;
+								App.agencies[_key] = 
+									count:val
+									people:0
+					_call key;
 
 		sendAgencies:()->
 			App.io.sockets.emit 'agencies', App.agencies
@@ -263,6 +293,56 @@ App =
 					res.setHeader 'Content-Type', 'application/json'	
 					res.send JSON.stringify App.agencies;
 					return false;
+				when "agency"
+					if method == 'add'
+						if req.query? && req.query.name?
+							App.redisWorker.sadd App.config.redisKey+'wishlist', req.query.name
+						res.end JSON.stringify true;
+					else if method == 'wishlist'
+						App.redisWorker.smembers App.config.redisKey+'wishlist', (err, reply)=>
+							res.end JSON.stringify reply;
+
+					else if method == 'refuse'
+						if req.query? && req.query.name?
+							App.redisWorker.srem App.config.redisKey+'wishlist', req.query.name
+						res.end JSON.stringify true;
+					
+					else if method == 'remove'
+						if req.query? && req.query.key? && App.config.labels[req.query.key]?
+							obj = 
+								label:App.config.labels[req.query.key];
+								key:req.query.key;
+							App.redisWorker.srem App.config.redisKey+'agencies', JSON.stringify obj
+							if App.config.labels[req.query.key]?
+								delete App.config.labels[req.query.key];
+							if App.agencies[req.query.key]?
+								delete App.agencies[req.query.key];
+						res.end JSON.stringify true;
+
+					else if method == 'approve'
+						if req.query? && req.query.name?
+							key = req.query.name.toLowerCase().split('');
+							allowedChars = 'abcdefghijklmnopqrstuvwxyz0123456789'.split('');
+							_key = ''
+							for i in [0...key.length]
+								if allowedChars.indexOf(key[i]) >= 0
+									_key += key[i];
+							key = _key;
+							App.redisWorker.get App.config.redisKey + 'agency:'+key, (err, reply)=>
+								if reply == null
+
+									val = 
+										label:req.query.name
+										key: key
+
+									App.redisWorker.srem App.config.redisKey+'wishlist', req.query.name
+									App.redisWorker.sadd App.config.redisKey+'agencies', JSON.stringify val
+
+									
+						res.end JSON.stringify true;
+					else
+						res.writeHead '404'
+						res.end 'Method ' + method + ' not found'
 				else
 					res.writeHead '404'
 					res.end 'Module ' + module + ' not found'

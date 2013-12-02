@@ -157,8 +157,8 @@
 
 
         <div class="shake-droite">
-        <h1>30184 shakes</h1>
-        <h2><span class="agencyBranleurCount">0</span> branleurs connectés chez <span class="agencyName"></span></h2>
+        <h1><span class='agencyShakes'>0</span> shakes</h1>
+        <h2><span class="agencyBranleurCount agencyPeople">0</span> branleurs connectés chez <span class="agencyName"></span></h2>
         </div>
     </div>
 

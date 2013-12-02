@@ -113,7 +113,7 @@ App =
 		agency = App.agency;
 		if App.labels? && App.labels[agency]?	
 			$('.agencyName').text(App.labels[agency])
-		if App.agencies? && App.agencies[agency]
+		if App.agencies? && App.agencies[agency]?
 			agencies = App.sortAgencies();
 			index = -1;
 			for i in [0...agencies.length]
@@ -121,7 +121,9 @@ App =
 					index = i+1;
 					break;
 			$('.agencyIndex').text(index)			
-			$('.agenciesCount').text(agencies.length)			
+			$('.agenciesCount').text(agencies.length)	
+			$('.agencyShakes').text(App.agencies[agency].count)		
+			$('.agencyPeople').text(App.agencies[agency].people)		
 		if App.labels?
 			_agencies = []
 			_byName = {}

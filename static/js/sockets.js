@@ -124,7 +124,7 @@
       if ((App.labels != null) && (App.labels[agency] != null)) {
         $('.agencyName').text(App.labels[agency]);
       }
-      if ((App.agencies != null) && App.agencies[agency]) {
+      if ((App.agencies != null) && (App.agencies[agency] != null)) {
         agencies = App.sortAgencies();
         index = -1;
         for (i = _i = 0, _ref = agencies.length; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
@@ -135,6 +135,8 @@
         }
         $('.agencyIndex').text(index);
         $('.agenciesCount').text(agencies.length);
+        $('.agencyShakes').text(App.agencies[agency].count);
+        $('.agencyPeople').text(App.agencies[agency].people);
       }
       if (App.labels != null) {
         _agencies = [];

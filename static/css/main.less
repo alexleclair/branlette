@@ -469,7 +469,7 @@ div.arrow-right {
         }
 
         tr {
-            vertical-align: baseline;
+            vertical-align: bottom;
             border-bottom: 2px solid #000;
         }
 
@@ -1285,6 +1285,10 @@ and (max-width : 1224px) {
         width: 100%;
         left: 0;
         padding: 0 52px;
+
+            button {
+                float: left;
+            }
         }
         
 
@@ -1436,15 +1440,66 @@ and (orientation : portrait) {
 }
 
 }
+@media only screen 
+and (max-width : 978px) {
 
+    body {
+        width: 978px;
+        min-height: 600px;
+        position: relative;
+    }
+
+    #akfnlogo {
+        position: absolute;
+    }
+
+    .page-landing {
+
+        .landing-intro .bras {
+            background-attachment: fixed;
+            background-position: top;
+            background-size: auto;
+            zoom: 0.9;
+
+        }
+
+        .sidebar {
+            position: absolute;
+            right: 52px;
+        }
+
+        .main {
+            width: 100%;
+            position: relative;
+            top: 550px;
+            bottom: auto;
+        }
+    
+    .landing-intro .cta {
+        position:relative;
+        top:500px;
+        overflow: hidden;
+        zoom: 1;
+        left:0;
+        button {
+        float: left;
+        }
+    }
+
+    }
+
+
+
+
+
+}
 
 
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen 
 and (min-device-width : 320px) 
-and (max-device-width : 480px),
-(max-width: 768px) {
+and (max-device-width : 480px) {
 
 #logo {
     display: none;

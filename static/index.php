@@ -36,7 +36,7 @@
 <div class="page-landing step">
     <div class="stepmaster">Page-Landing</div>
 
-    <div class="landing-intro substep" style="display: none">
+    <div class="landing-intro substep">
 
         <div class="bras"></div>
         <div class="cta">
@@ -57,7 +57,7 @@
         </div>
     </div>
 
-    <div class="landing-confirmation substep">
+    <div class="landing-confirmation substep" style="display: none">
         <div class="bras2">
             <div class="bras2image">
             <div class="biphone-contenu">

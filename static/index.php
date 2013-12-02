@@ -230,7 +230,7 @@
     <h3>Ajouter mon agence de branleur:</h3> <form><input type="text" value="" /></form>
 </div>
 
-<div class="pageiphone-shake" style="display: none;">
+<div class="pageiphone-shake step" style="display: none;">
 
         <div>
 

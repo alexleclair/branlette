@@ -15,7 +15,7 @@
     shakes: 0,
     isMobile: false,
     shakeTimeout: null,
-    lastShakeTime: 0,
+    lastShakeTimes: [],
     siblingsCount: 0,
     objects: ['marie', 'jesus', 'nutcracker', 'emballage', 'boite', 'canne', 'explosif', 'ange', 'roi', 'canne2', 'cierge', 'boule'],
     sounds: [
@@ -99,12 +99,23 @@
         return window.location = window.location;
       });
       App.socket.on('shake', function() {
-        var velocity, _class;
-        velocity = new Date().getTime() - App.lastShakeTime;
+        var i, total, velocity, _class, _i, _ref;
+        App.lastShakeTimes.push(new Date().getTime());
+        if (App.lastShakeTimes.length > 5) {
+          App.lastShakeTimes.splice(0, 1);
+        }
+        total = 0;
+        for (i = _i = 1, _ref = App.lastShakeTimes.length; 1 <= _ref ? _i < _ref : _i > _ref; i = 1 <= _ref ? ++_i : --_i) {
+          total += App.lastShakeTimes[i] - App.lastShakeTimes[i - 1];
+        }
+        velocity = 1000;
+        if (App.lastShakeTimes.length > 1) {
+          velocity = total / App.lastShakeTimes.length - 1;
+        }
         _class = 'shakelent';
-        if (velocity >= 800) {
+        if (velocity >= 350) {
           _class = 'shakelent';
-        } else if (velocity >= 450) {
+        } else if (velocity >= 170) {
           _class = 'shakemedium';
         } else {
           _class = 'shake';

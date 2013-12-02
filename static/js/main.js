@@ -9,9 +9,19 @@ $(document).ready(function(){
 
 
 // });
+	$(window).on('keydown', function(e){
+		if($('.step.current').is('.pageiphone-shake')){ //Prevent shake to undo bullshit
+			e.preventDefault();
+			return false;
+		}
+	})
 	$('form#code-form').submit(function(e){
 		e.preventDefault();
+		$(this).attr('readonly', 'readonly')
 		Branlette.bindToCode($.trim($('input.code').val()).toLowerCase());
+		$(this).blur();
+		$('#logo').focus();
+		$(this).remove();
 		// Branlette.gotoPage('page-shake-iphone')
 		// $('div.step').hide();
 		// $('div.page-shake-iphone').show();

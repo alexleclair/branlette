@@ -239,8 +239,9 @@
 </div>
 
 <div id="audio-player" style="display:none">
-    <audio id="audio" preload="none">
-
+    <audio id="audio">
+        <source src="" type="audio/mpeg" class="mp3" />
+        <source src="" type="audio/ogg" class="ogg" />
     </audio>
 </div>
 

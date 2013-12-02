@@ -27,13 +27,77 @@ App =
 	]
 	sounds:[
 		{
-			mp3:'http://dl.dropbox.com/u/1538714/article_resources/cat.m4a',
-			ogg:'http://dl.dropbox.com/u/1538714/article_resources/cat.ogg',
-		}
+			mp3:'sounds/branlette_00.mp3',
+			ogg:'sounds/branlette_00.ogg',
+		},
+		{
+			mp3:'sounds/branlette_01.mp3',
+			ogg:'sounds/branlette_01.ogg',
+		},
+		{
+			mp3:'sounds/branlette_02.mp3',
+			ogg:'sounds/branlette_02.ogg',
+		},
+		{
+			mp3:'sounds/branlette_03.mp3',
+			ogg:'sounds/branlette_03.ogg',
+		},
+		{
+			mp3:'sounds/branlette_04.mp3',
+			ogg:'sounds/branlette_04.ogg',
+		},
+		{
+			mp3:'sounds/branlette_05.mp3',
+			ogg:'sounds/branlette_05.ogg',
+		},
+		{
+			mp3:'sounds/branlette_06.mp3',
+			ogg:'sounds/branlette_06.ogg',
+		},
+		{
+			mp3:'sounds/branlette_07.mp3',
+			ogg:'sounds/branlette_07.ogg',
+		},
+		{
+			mp3:'sounds/branlette_08.mp3',
+			ogg:'sounds/branlette_08.ogg',
+		},
+		{
+			mp3:'sounds/branlette_09.mp3',
+			ogg:'sounds/branlette_09.ogg',
+		},
+		{
+			mp3:'sounds/branlette_10.mp3',
+			ogg:'sounds/branlette_10.ogg',
+		},
+		{
+			mp3:'sounds/branlette_11.mp3',
+			ogg:'sounds/branlette_11.ogg',
+		},
+		{
+			mp3:'sounds/branlette_12.mp3',
+			ogg:'sounds/branlette_12.ogg',
+		},
+		{
+			mp3:'sounds/branlette_13.mp3',
+			ogg:'sounds/branlette_13.ogg',
+		},
+		{
+			mp3:'sounds/branlette_14.mp3',
+			ogg:'sounds/branlette_14.ogg',
+		},
+		{
+			mp3:'sounds/branlette_15.mp3',
+			ogg:'sounds/branlette_15.ogg',
+		},
 	]
 	currentObject: null;
 
 	init: (callback)=>
+
+		$('#audio').on 'ended', (e)->
+			App.playSound();
+
 		App.socket = io.connect(App.config.endpoint);
 		App.socket.on 'labels', (data)->
 			App.labels = data;
@@ -130,8 +194,11 @@ App =
 	playSound:(sound)->
 		if !sound?
 			sound = App.sounds[Math.floor(Math.random()*App.sounds.length)];
-
-		$('#audio').html('<source src="'+sound.mp3+'" type="audio/mpeg" />' + '<source src="'+sound.ogg+'" type="audio/ogg" />')
+			$('#audio source').remove();
+		html = '<source src="'+sound.mp3+'" type="audio/mpeg" />';
+		$('#audio-player #audio').append($(html));
+		html = '<source src="'+sound.ogg+'" type="audio/ogg />'
+		$('#audio-player #audio').append($(html));
 		$('#audio').get(0).play();
 
 	bindToCode: (code)=>
@@ -191,8 +258,8 @@ App =
 				e.preventDefault();
 
 				App.pickAgency $(this).attr('data-key');
-				if App.siblingsCount <= 1 #Only play sound on the phone when there is no desktop
-					App.playSound();
+				#if App.siblingsCount <= 1 #Only play sound on the phone when there is no desktop
+				App.playSound();
 				return false;
 
 	refreshCodeScreen: ()=>

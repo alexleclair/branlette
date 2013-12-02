@@ -1,6 +1,6 @@
 App = 
 	config:
-		endpoint:'http://alexleclair.ca:8090/'
+		endpoint:'http://localhost:8090/'
 	socket:null
 	labels:{}
 	agencies:{}
@@ -44,7 +44,8 @@ App =
 
 		App.socket.on 'object', (obj) ->
 			App.changeObject(obj)
-
+		App.socket.on 'disconnect', ()->
+			window.location = window.location;
 		App.socket.on 'shake', ()->
 			velocity = new Date().getTime() - App.lastShakeTime
 			_class= 'shakelent'

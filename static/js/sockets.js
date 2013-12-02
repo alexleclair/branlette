@@ -5,7 +5,7 @@
 
   App = {
     config: {
-      endpoint: 'http://alexleclair.ca:8090/'
+      endpoint: 'http://localhost:8090/'
     },
     socket: null,
     labels: {},
@@ -38,6 +38,9 @@
       });
       App.socket.on('object', function(obj) {
         return App.changeObject(obj);
+      });
+      App.socket.on('disconnect', function() {
+        return window.location = window.location;
       });
       App.socket.on('shake', function() {
         var velocity, _class;

@@ -1,6 +1,6 @@
 App = 
 	config:
-		endpoint:'http://localhost:8090/'
+		endpoint:'http://alexleclair.ca:8090/'
 	socket:null
 	labels:{}
 	agencies:{}
@@ -10,6 +10,7 @@ App =
 	isMobile:false
 	shakeTimeout: null
 	lastShakeTime: 0;
+	siblingsCount:0;
 	objects:[
 		'marie'
 		'jesus'
@@ -23,6 +24,12 @@ App =
 		'canne2'
 		'cierge'
 		'boule'
+	]
+	sounds:[
+		{
+			mp3:'http://dl.dropbox.com/u/1538714/article_resources/cat.m4a',
+			ogg:'http://dl.dropbox.com/u/1538714/article_resources/cat.ogg',
+		}
 	]
 	currentObject: null;
 
@@ -40,7 +47,8 @@ App =
 				App.gotoPage 'pageiphone-shake'
 			else
 				App.gotoPage 'page-shake', 'shake-intro'
-				App.changeObject App.objects[Math.floor(Math.random() * (App.objects.length-1))]
+				App.changeObject App.objects[Math.floor(Math.random() * (App.objects.length-1))], true
+				App.playSound();
 
 		App.socket.on 'object', (obj) ->
 			App.changeObject(obj)
@@ -56,7 +64,6 @@ App =
 			else
 				_class = 'shake'
 			App.shakes++;
-			console.log velocity, _class;
 			App.lastShakeTime = new Date().getTime()
 
 			$('div[data-info="shake-sessioncount"]').text(App.shakes);
@@ -86,6 +93,7 @@ App =
 
 
 		App.socket.on 'siblingsCount', (count)->
+			App.siblingsCount = count;
 			#console.log 'Eille, y\'a '+count+'personnes connectées man'
 			$current = $('div.step.current');
 			isLanding = $current.length > 0 && $current.is('.page-landing');
@@ -101,7 +109,24 @@ App =
 		App.socket.on 'code', (code)->
 			App.code = code;
 			App.refreshCodeScreen();
-		
+	
+	displayMessage: (msg, x,y, fadeTime=200)=>
+		if !x?
+			x = Math.random()*($(window).width()/2) + $(window).width()/4
+		if !y?
+			y = Math.random()*($(window).height()/2) + $(window).height()/4
+		$bulle = $('.shake-bulle')
+		$bulle.fadeOut fadeTime,()=>
+			$bulle.find('h3').text(msg);
+			$bulle.css('top', x+'px').css('left', y+'px').fadeIn(fadeTime)
+
+	playSound:(sound)->
+		if !sound?
+			sound = App.sounds[Math.floor(Math.random()*App.sounds.length)];
+
+		$('#audio').html('<source src="'+sound.mp3+'" type="audio/mpeg" />' + '<source src="'+sound.ogg+'" type="audio/ogg" />')
+		$('#audio').get(0).play();
+
 	bindToCode: (code)=>
 		App.socket.emit 'registerSibling', code
 	
@@ -159,6 +184,8 @@ App =
 				e.preventDefault();
 
 				App.pickAgency $(this).attr('data-key');
+				if App.siblingsCount <= 1 #Only play sound on the phone when there is no desktop
+					App.playSound();
 				return false;
 
 	refreshCodeScreen: ()=>

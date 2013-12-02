@@ -49,7 +49,9 @@ $(document).ready(function(){
 
 	$('.btn-no-code').click(function(e){
 		e.preventDefault();
+
 		Branlette.gotoPage('pageiphone-agence')
+
 		return false;
 	})
 
@@ -74,6 +76,7 @@ $(document).ready(function(){
 		$('.pageiphone-agence ul li').removeClass('active').removeClass('prev-active');
 		$(this).addClass('active');
 		$(this).prev('li').addClass('prev-active');
+		
 	});
 
 	$('ul li.active').click(function() {

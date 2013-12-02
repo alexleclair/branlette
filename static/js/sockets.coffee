@@ -1,6 +1,6 @@
 App = 
 	config:
-		endpoint:'http://10.0.10.158:8090/'
+		endpoint:'http://alexleclair.ca:8090/'
 	socket:null
 	labels:{}
 	agencies:{}

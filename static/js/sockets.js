@@ -20,9 +20,6 @@
     objects: ['marie', 'jesus', 'nutcracker', 'emballage', 'boite', 'canne', 'explosif', 'ange', 'roi', 'canne2', 'cierge', 'boule'],
     sounds: [
       {
-        mp3: 'sounds/branlette_00.mp3',
-        ogg: 'sounds/branlette_00.ogg'
-      }, {
         mp3: 'sounds/branlette_01.mp3',
         ogg: 'sounds/branlette_01.ogg'
       }, {
@@ -70,6 +67,7 @@
       }
     ],
     currentObject: null,
+    playSounds: true,
     init: function(callback) {
       $('#audio').on('ended', function(e) {
         return App.playSound();
@@ -88,8 +86,7 @@
           return App.gotoPage('pageiphone-shake');
         } else {
           App.gotoPage('page-shake', 'shake-intro');
-          App.changeObject(App.objects[Math.floor(Math.random() * (App.objects.length - 1))], true);
-          return App.playSound();
+          return App.changeObject(App.objects[Math.floor(Math.random() * (App.objects.length - 1))], true);
         }
       });
       App.socket.on('object', function(obj) {
@@ -191,6 +188,9 @@
     },
     playSound: function(sound) {
       var html;
+      if (!App.playSounds) {
+        return;
+      }
       if (sound == null) {
         sound = App.sounds[Math.floor(Math.random() * App.sounds.length)];
         $('#audio source').remove();
@@ -200,6 +200,14 @@
       html = '<source src="' + sound.ogg + '" type="audio/ogg />';
       $('#audio-player #audio').append($(html));
       return $('#audio').get(0).play();
+    },
+    stopSound: function() {
+      $('#audio').get(0).pause();
+      return App.playSounds = false;
+    },
+    replaySound: function() {
+      App.playSounds = true;
+      return App.playSound();
     },
     bindToCode: function(code) {
       return App.socket.emit('registerSibling', code);
@@ -272,7 +280,6 @@
         return $('#agency-picker li a').click(function(e) {
           e.preventDefault();
           App.pickAgency($(this).attr('data-key'));
-          App.playSound();
           return false;
         });
       }
@@ -317,7 +324,7 @@
     },
     facebookShare: function() {
       var msg;
-      msg = 'Viens shaker pour ton agence favorite et prend part à la Grande Branlette de Noël.';
+      msg = 'Viens shaker pour ton équipe favorite et prend part à la Grande Branlette de Noël.';
       if (App.agency != null) {
         msg = 'J\'ai shaké ' + App.shakes + ' fois pour ' + App.labels[App.agency] + ' sur la Grande Branlette De Noël!';
       }
@@ -327,13 +334,13 @@
         link: 'http://localhost/',
         picture: ' http://7cffd474.ngrok.com/img/logo_branlette.png',
         caption: msg,
-        description: 'Viens participer à la Grande Branlette et aide ton agence à remporter la course!'
+        description: 'En participant à la Grande Branlette, tu aides ton équipe à gagner.'
       });
     },
     twitterShare: function() {
       var i, key, msg, params, twitter_url;
       twitter_url = 'https://twitter.com/share';
-      msg = 'Viens te la shaker pour ton agence préférée sur La Grande Branlette De Noël: ';
+      msg = 'Viens te la shaker pour ton équipe préférée sur La Grande Branlette De Noël: ';
       params = {
         url: window.location.href,
         via: 'akufen',
@@ -405,6 +412,7 @@
       App.isMobile = true;
     } else {
       App.gotoPage('page-landing', 'landing-intro', 0);
+      App.playSound();
     }
     if (window.DeviceMotionEvent != null) {
       sensitivity = 20;

@@ -10,16 +10,34 @@ $(document).ready(function(){
 
 // });
 	$(window).on('keydown', function(e){
-		if($('.step.current').is('.pageiphone-shake')){ //Prevent shake to undo bullshit
+		// if($('.step.current').is('.pageiphone-shake')){ //Prevent shake to undo bullshit
+		// 	e.preventDefault();
+		// 	return false;
+		// }
+		var $input = $('#code-form input.code');
+		if($input.is(':focus')){
 			e.preventDefault();
+			var allowedChars = 'abcdefghijklmnopqrstuvwxyz0123456789'.split('');
+			var char = String.fromCharCode(e.which).toLowerCase()
+			if(allowedChars.indexOf(char) >= 0){
+				$input.val($input.val()+char)
+			}
+			else if(e.which == 8){
+				$input.val($input.val().substr(0,$input.val().length-1))
+			}
+			else if(e.which == 13){
+				$('#code-form').submit();
+			}
 			return false;
 		}
+		
 	})
 	$('form#code-form').submit(function(e){
 		e.preventDefault();
 		$(this).attr('readonly', 'readonly')
 		Branlette.bindToCode($.trim($('input.code').val()).toLowerCase());
 		$(this).blur();
+		$('form#code-form input.code').blur();
 		$('#logo').focus();
 		// Branlette.gotoPage('page-shake-iphone')
 		// $('div.step').hide();
@@ -101,6 +119,7 @@ $(document).ready(function(){
 	});
 
 
+
 	$(".shake-bulle").each(function() {
 
 		var positionX = Math.floor((Math.random()*900)-100);
@@ -137,3 +156,13 @@ $(document).ready(function(){
 	})
 
 });
+
+
+
+window.iOSversion = function() {
+  if (/iP(hone|od|ad)/.test(navigator.platform)) {
+    // supports iOS 2.0 and later: <http://bit.ly/TJjs1V>
+    var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+    return [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];
+  }
+}

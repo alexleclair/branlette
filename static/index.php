@@ -33,10 +33,10 @@
             <img src="img/logo_branlette.png" width="277" height="277" alt="Brrrrrrrranlettteee" />
         </div>
 <!-- Quand qqun arrive sur le browser -->
-<div class="page-landing step" style="display: none">
+<div class="page-landing step">
     <div class="stepmaster">Page-Landing</div>
 
-    <div class="landing-intro substep" style="display: none">
+    <div class="landing-intro substep">
 
         <div class="bras"></div>
         <div class="main" style="height:240px;">
@@ -98,8 +98,7 @@
 
 <!-- 3 states: 1. intro, 2. shaking, 3. repos/fatigué -->
 
-<div class="page-shake step">
-    <div class="stepmaster">page-shake</div>
+<div class="page-shake step" style="display: none;">
     <!-- intro -->
     <div class="shake-intro substep">
         <h1 style="display: none;">Allo <span class="agencyName"></span>.<br>Shake comme si y’avait pas de lendemain.</h1>
@@ -156,11 +155,16 @@
         </div>
             <p class="right">Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. Fusce egestas ligula ac leo varius dapibus sed sit amet eros. Integer scelerisque egestas dui sit amet aliquet. Nulla posuere mattis ante, a f orci quam, tempor eu tristique vel, ultricies sit amet felis. Mauris volutpat, lacus non viverra porta, nisi mi fringilla risus, pharetra rutrum metus diam a purus.</p>
         </div>
+
+
+        <div class="shake-droite">
+        <h1>30184 shakes</h1>
+        <h2><span class="agencyBranleurCount">0</span> branleurs connectés chez <span class="agencyName"></span></h2>
+        </div>
     </div>
 
-    <div class="shake-droite">
-        dsss
-    </div>
+    
+
 
 </div>
 
@@ -168,7 +172,6 @@
 <!-- Classement -->
 
 <div class="page-classement step" style="display: none;">
-    <div class="stepmaster">page-classement</div>
     <div class="classement">
         <header>
             <div>Hey <span class="agencyName"></span>, Gâte-toé, c'est Noël</div>
@@ -183,11 +186,11 @@
             <div class="left">Hey <span class="agencyName"></span>, Gâte-toé, c'est Noël</div>
             <div class="right"><a href="#twitter" class="icon-twitter"><div>twitter</div></a><a href="#facebook" class="icon-facebook"><div>facebook</div></a></div>
         </header>
+            <p class="right">Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. Fusce egestas ligula ac leo varius dapibus sed sit amet eros. Integer scelerisque egestas dui sit amet aliquet. Nulla posuere mattis ante, a f orci quam, tempor eu tristique vel, ultricies sit amet felis. Mauris volutpat, lacus non viverra porta, nisi mi fringilla risus, pharetra rutrum metus diam a purus.</p>
         <div class="leftscore">
             <h1><span class="agencyIndex">?</span>/<span class="agenciesCount">?</span></h1>
             <footer><a href="/"><div class="arrow-left"></div>Retour à la branlette</a></footer>
         </div>
-            <p class="right">Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. Fusce egestas ligula ac leo varius dapibus sed sit amet eros. Integer scelerisque egestas dui sit amet aliquet. Nulla posuere mattis ante, a f orci quam, tempor eu tristique vel, ultricies sit amet felis. Mauris volutpat, lacus non viverra porta, nisi mi fringilla risus, pharetra rutrum metus diam a purus.</p>
         </div>
     </div>
 
@@ -199,7 +202,6 @@
 
 <!-- Quand il pogne son iphone pis qu'il check dedans -->
 <div class="pageiphone-landing step" style="display: none;">
-    <div class="stepmaster">page-landing-iphonecode</div>
     <div class="logo">
         <img src="img/logo_branlette.png" width="120" height="120" alt="Brrrrrrrranlettteee" />
     </div>
@@ -214,7 +216,6 @@
 <!-- Liste d'agence à choisir dans le iphone -->
 
 <div class="pageiphone-agence step" style="display: none;">
-    <div class="stepmaster">page-landing-agence-iphone</div>
     <div class="logo">
         <img src="img/logo_branlette.png" width="100" height="100" alt="Brrrrrrrranlettteee" />
         <div class="right">

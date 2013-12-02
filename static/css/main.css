@@ -714,10 +714,10 @@ body.object-boule .shake-bras {
 }
 .page-classement .classement table td.position {
   padding-top: 0px;
-  width: 85px;
+  width: 100px;
 }
 .page-classement .classement table td.agence {
-  width: 400px;
+  width: 85%;
 }
 .page-classement .classement table td.score {
   text-align: right;
@@ -867,9 +867,15 @@ body.object-boule .shake-bras {
     padding: 0;
     margin: 0;
   }
+  .page-classement .classement #leaderboard .position {
+    width: 80px;
+  }
+  .page-classement .classement #leaderboard .agence {
+    width: 75%;
+  }
   .page-classement .classement #leaderboard .agence,
   .page-classement .classement #leaderboard .position {
-    font-size: 0.85em;
+    font-size: 0.75em;
   }
 }
 /* iPads (portrait and landscape) ----------- */

@@ -98,7 +98,7 @@
 
 <!-- 3 states: 1. intro, 2. shaking, 3. repos/fatigué -->
 
-<div class="page-shake step">
+<div class="page-shake step" style="display: none;">
     <!-- intro -->
     <div class="shake-intro substep">
         <h1 style="display: none;">Allo <span class="agencyName"></span>.<br>Shake comme si y’avait pas de lendemain.</h1>
@@ -170,7 +170,7 @@
 
 <!-- Classement -->
 
-<div class="page-classement step" style="display: none;">
+<div class="page-classement step">
     <div class="classement">
         <header>
             <div>Hey <span class="agencyName"></span>, Gâte-toé, c'est Noël</div>
@@ -181,8 +181,8 @@
     </div>
 </div>
     <div class="sidebar">
-        <header>
-            <div class="left">Hey <span class="agencyName"></span>, Gâte-toé, c'est Noël</div>
+        <header><!-- 
+            <div class="left">Hey <span class="agencyName"></span>, Gâte-toé, c'est Noël</div> -->
             <div class="right"><a href="#twitter" class="icon-twitter"><div>twitter</div></a><a href="#facebook" class="icon-facebook"><div>facebook</div></a></div>
         </header>
             <p class="right">Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. Fusce egestas ligula ac leo varius dapibus sed sit amet eros. Integer scelerisque egestas dui sit amet aliquet. Nulla posuere mattis ante, a f orci quam, tempor eu tristique vel, ultricies sit amet felis. Mauris volutpat, lacus non viverra porta, nisi mi fringilla risus, pharetra rutrum metus diam a purus.</p>

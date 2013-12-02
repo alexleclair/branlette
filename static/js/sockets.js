@@ -15,6 +15,7 @@
     shakes: 0,
     isMobile: false,
     shakeTimeout: null,
+    lastShakeTime: 0,
     objects: ['marie', 'jesus', 'nutcracker', 'emballage', 'boite', 'canne', 'explosif', 'ange', 'roi', 'canne2', 'cierge', 'boule'],
     currentObject: null,
     init: function(callback) {
@@ -39,12 +40,26 @@
         return App.changeObject(obj);
       });
       App.socket.on('shake', function() {
+        var velocity, _class;
+        velocity = new Date().getTime() - App.lastShakeTime;
+        _class = 'shakelent';
+        if (velocity >= 1000) {
+          _class = 'shakelent';
+        } else if (velocity >= 650) {
+          _class = 'shakemedium';
+        } else {
+          _class = 'shake';
+        }
         App.shakes++;
+        App.lastShakeTime = new Date().getTime();
         $('div[data-info="shake-sessioncount"]').text(App.shakes);
         clearTimeout(App.shakeTimeout);
-        $('body').addClass('shake');
+        if (!$('body').is('.' + _class)) {
+          $('body').removeClass('shake').removeClass('shakemedium').removeClass('shakelent');
+        }
+        $('body').addClass(_class);
         App.shakeTimeout = setTimeout(function() {
-          $('body').removeClass('shake');
+          $('body').removeClass('shake').removeClass('shakemedium').removeClass('shakelent');
           $('.shake-bras').stop(true);
           if (!App.isMobile) {
             return App.gotoPage('page-shake', 'shake-repos', 500);

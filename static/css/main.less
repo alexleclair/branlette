@@ -102,6 +102,7 @@ textarea {
 
 
 @jaune: #ffd600;
+@green: #30b542;
 @haas: 'NHaasGroteskTXStd-65Md';
 @haasbold:'NHaasGroteskTXStd-75Bd';
 @swift: 'SwiftLTStd-Regular';
@@ -158,9 +159,15 @@ body p {
 
 #logo { 
     position: fixed;
-    top: 12px;
-    left: 64px;
+    top: 32px;
+    left: 3%;
     z-index: 1000;
+    width: 15%;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 #akfnlogo {
@@ -203,17 +210,28 @@ input.button, button[type="button"] {
     &:hover {
         color: white;
         background: black;
-        transition: all 0.1s ease;
+        transition: all 0s ease;
     }
 }
 
 
 button[type="button"].small {
-    width: 200px;
+    width: 210px;
     height: 42px;
-    font-size: 1em;
+    font-size: 15px;
     line-height: 42px;
 }
+
+
+button.btn-change-object {
+    padding-left: 33px;
+    background: url(../img/ui-change.png) 6px 14px no-repeat @jaune;
+
+    &:hover {
+    background: url(../img/ui-change.png) 6px -70px no-repeat black;
+    }
+}
+
 
 a.icon-twitter div {
     text-indent: -9999em;
@@ -427,7 +445,7 @@ div.arrow-right {
         }
     }
     table {
-        font-size: 58px;
+        font-size: 50px;
         line-height: 1em;
 
         tr, td {
@@ -476,10 +494,6 @@ div.arrow-right {
     // }
 
     .sidebar {
-        position: fixed;
-        top: 52px;
-        right: 52px;
-        width: 500px;
 
         header {
             overflow: hidden;
@@ -491,7 +505,6 @@ div.arrow-right {
         div.leftscore {
             float: left;
             width: 40%;
-            clear: both;
 
 
             h1 {
@@ -509,6 +522,10 @@ div.arrow-right {
             footer {
                 width: 100%;
                 text-align: left;
+                line-height: 1em;
+                margin-top: 0.5em;
+                margin-left: 1em;
+                text-indent: -1em;
             }
         }
 
@@ -537,6 +554,14 @@ html,body {
     min-height: 100%;
     height: 100%;
     overflow: hidden;
+
+
+    .sidebar {
+        width: 600px;
+        right: 52px;
+        top: 52px;
+        position: fixed;
+    }
 
     .shake-bras {
         width: 100%;
@@ -601,7 +626,7 @@ html,body {
         font-size: 280px;
         text-align: center;
         position: fixed;
-        z-index: 1001;
+        z-index: 0;
         width: 1024px;
         height: 400px;
         right: 50%;
@@ -724,6 +749,33 @@ body.object-boule{
     .shake-bras {background-image: url(../img/boule.jpg);}
 }
 
+.shake-droite {
+    width: 540px;
+    position: absolute;
+    bottom: 52px;
+    right: 112px;
+    border-bottom: 2px solid black;
+
+    h1 {
+        font-size: 30px;
+        float: left;
+        width: 40%;
+        margin-bottom: 0;
+        margin-top: -3px;
+        line-height: 30px;
+
+    }
+
+    h2 {
+        margin-bottom: 0;
+        float: right;
+        text-align: right;
+        width: 60%;
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+}
 
 
 
@@ -765,14 +817,23 @@ body.object-boule{
 
 .page-classement {
 
+
+    .sidebar {
+        position: fixed;
+        top: 52px;
+        right: 52px;
+        width: 25%;
+        }
+
 .classement {
-    width: 860px;
-    margin: 52px 0 0 380px;
+    width: 45%;
+    margin: 52px 0 0 20%;
 
         header {
             zoom: 1;
             overflow: hidden;
             border-bottom: 4px solid #000;
+            margin-bottom: 0.3em;
             line-height:  40px;
             div.right {
     
@@ -791,12 +852,12 @@ body.object-boule{
         table {
             font-family: @haasbold;
             font-size: 58px;
-            line-height: 1em;
     
     
             tr, td {
                 padding: 0;
                 margin: 0;
+                line-height: 1em;
             }
     
             tr {
@@ -810,11 +871,11 @@ body.object-boule{
     
             td.position {
                 padding-top: 0px;
-                width: 85px;
+                width: 100px;
             }
     
             td.agence {
-                width: 400px;
+                width: 85%;
     
             }
             td.score {
@@ -940,37 +1001,266 @@ body.object-boule{
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
-@media only screen and (max-width: 1500px) {
-    /* Style adjustments for viewports that meet the condition */
-    
-    
-}
-
-@media only screen and (max-height: 860px) {
-
-    .page-landing .main .clear {
-        //background: #30b542 !important;
-    }
-
-    .page-landing .bras2 {
-    }
-
-}
-
+/* Desktops and laptops ----------- */
 @media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 568px) {
+and (max-width: 1640px) {
+
+        #logo {
+            width: 15%;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+
+    .page-landing {
+
+        .landing-code .biphone-contenu {
+            
+            h1,h2,button {zoom: 0.7;}
+        }
+
+
+
+
+        .main {
+            box-sizing: border-box;
+            width: 60%;
+
+            h1 {
+                font-size: 40px;
+                line-height: 1em;
+
+                span:after {
+                    position: relative;
+                }
+            }
+
+            button {
+                zoom: 0.75;
+            }
+
+        }
+
+        .sidebar {
+            position: fixed;
+            top:52px;
+            right: 52px;
+            width: 400px;
+
+            table td.agence, table td.position {
+                font-size: 30px;
+                line-height: 1em;
+                height: 1em;
+                padding:0.5em 0;
+                margin: 0;
+
+            }
+            table td.score {
+                line-height: 1em;
+                height: 1em;
+                padding: 0;
+                margin: 0;
+            }
+
+        }
+    }
+
+ .page-classement {
+
+
+
+
+
+    .classement {
+
+        #leaderboard .position {
+            width: 80px;
+        }
+
+        #leaderboard .agence {
+            width: 75%;
+        }
+
+        #leaderboard .agence, #leaderboard .position {
+            font-size: 0.75em;
+        }
+    }
+
+    // .sidebar {
+    //     width: 20%;
+    // }
+
+
+ }
 
 
 
 }
+
+
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (max-width : 1224px) {
+
+#akfnlogo {
+        bottom: 0;
+    }
+
+    .page-landing .main {
+        box-sizing: border-box;
+        width: 100%;
+        left: 0;
+        padding: 0 52px;
+
+        h1 {
+        width: 50%;
+        font-size: 36px;
+        line-height: 1em;
+        font-weight: normal;
+            span:after {
+                position: relative;
+                }
+        }
+
+        .right {
+            width: 35%;
+        }
+    }
+
+    #logo {
+            zoom: 0.65;
+        }
+
+
+
+    .page-landing {
+
+
+        
+
+        .landing-intro .bras {
+            left: 0;
+            background-position: bottom;
+        }
+
+        .bras2 {
+            
+        }
+
+        .sidebar {
+            width: 32%;
+        }
+
+
+
+    }
+
+.page-classement {
+
+
+
+
+
+    .classement {
+
+
+        #leaderboard .agence, #leaderboard .position {
+            font-size: 0.55em;
+        }
+    }
+
+    .sidebar {
+        div.leftscore,p.right {
+            width: 100%;
+            float: none;
+        }
+
+        p.right {
+            margin-top: 1em;
+        }
+
+    }
+
+
+
+ }
+
+
+
+.page-shake {
+
+    .shake-repos .fatigue {
+            width: 30%;
+        h1 {
+            font-size: 72px;
+        }
+
+        h2 {
+            font-size: 12px;
+            line-height: 1.1em;
+        }
+    }
+
+
+    .sidebar {
+        width: 40%;
+    }
+
+    .shake-droite {
+        width: 40%;
+        right: 52px;
+
+
+        h1 {
+            font-size: 1.4em;
+            margin: 0;
+        }
+
+    }
+
+}
+
+
+}
+
+
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+/* Styles */
+
+.page-landing .landing-intro .bras {
+    box-sizing: border-box;
+    zoom: 0.8;
+    left: 0;
+    bottom: 0;
+}
+
+}
+
 
 
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen 
 and (min-device-width : 320px) 
-and (max-device-width : 480px) {
+and (max-device-width : 480px),
+(max-width: 768px) {
 
 
 #logo, #akfnlogo {
@@ -1107,6 +1397,49 @@ button.btn-submit-code {
     }
 
 
+.page-classement {
+
+
+
+
+
+    .classement {
+        header {display:none}
+        box-sizing: border-box;
+        padding: 5%;
+        width: 100%;
+        margin: 90px 0 0 0;
+        box-sizing: border-box;
+
+
+        #leaderboard .agence, #leaderboard .position {
+            font-size: 0.5em;
+        }
+    }
+
+    .sidebar {
+
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+      padding: 5% 5% 0 5%;
+      background-color: @jaune;
+        header {
+            width: 100%;
+        }
+
+        .leftscore, p.right {
+            display: none;
+        }
+
+    }
+
+
+ }
+
+
 
 }
 
@@ -1132,170 +1465,10 @@ and (max-width : 320px) {
 /* Styles */
 }
 
-/* iPads (portrait and landscape) ----------- */
-@media only screen 
-and (min-width : 768px) 
-and (max-width : 1224px) {
-
-#akfnlogo {
-        bottom: 0;
-    }
-
-    .page-landing .main {
-        box-sizing: border-box;
-        width: 100%;
-        left: 0;
-        padding: 0 52px;
-
-        h1 {
-        width: 50%;
-        font-size: 42px;
-        line-height: 1em;
-        font-weight: normal;
-            span:after {
-                position: relative;
-                }
-        }
-
-        .right {
-            width: 35%;
-        }
-    }
-
-    #logo {
-            zoom: 0.65;
-        }
-
-
-
-    .page-landing {
-
-
-        
-
-        .bras {
-            zoom: 0.65;
-        }
-
-        .bras2 {
-            
-        }
-
-        .sidebar {
-            position: fixed;
-            top:52px;
-            right: 52px;
-            width: 300px;
-
-            table {
-                td.agence, td.position {
-                    font-size: 18px;
-                }
-
-                td {
-                    margin: 0;
-                    line-height: 2em;
-                    padding: 0;
-                }
-            }
-
-
-        }
-
-    }
-
-}
-
-/* iPads (landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : landscape) {
-/* Styles */
-}
-
-/* iPads (portrait) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : portrait) {
-/* Styles */
-
-.page-landing .landing-intro .bras {
-    box-sizing: border-box;
-    zoom: 0.8;
-    left: 0;
-    bottom: 0;
-}
-
-}
-
-
-/* Desktops and laptops ----------- */
-@media only screen 
-and (min-width : 1224px)
-and (max-width: 1640px) {
-
-        #logo {
-            zoom: 0.85;
-        }
-
-
-    .page-landing {
-
-        .landing-code .biphone-contenu {
-            
-            h1,h2,button {zoom: 0.7;}
-        }
 
 
 
 
-        .main {
-            box-sizing: border-box;
-            width: 60%;
-
-            h1 {
-                font-size: 40px;
-                line-height: 1em;
-
-                span:after {
-                    position: relative;
-                }
-            }
-
-            button {
-                zoom: 0.75;
-            }
-
-        }
-
-        .sidebar {
-            position: fixed;
-            top:52px;
-            right: 52px;
-            width: 400px;
-
-            table td.agence, table td.position {
-                font-size: 30px;
-                line-height: 1em;
-                height: 1em;
-                padding:0.5em 0;
-                margin: 0;
-
-            }
-            table td.score {
-                line-height: 1em;
-                height: 1em;
-                padding: 0;
-                margin: 0;
-            }
-
-        }
-    }
-
-
-}
 
 /* Large screens ----------- */
 @media only screen 

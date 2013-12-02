@@ -1,6 +1,6 @@
 App = 
 	config:
-		endpoint:'http://10.0.10.158:8090/'
+		endpoint:'http://alexleclair.ca:8090/'
 	socket:null
 	labels:{}
 	agencies:{}
@@ -72,8 +72,10 @@ App =
 
 
 		App.socket.on 'siblingsCount', (count)->
-			# console.log 'Eille, y\'a '+count+'personnes connectées man'
-			if !App.isMobile && $('div.step.current').is('.page-landing')
+			#console.log 'Eille, y\'a '+count+'personnes connectées man'
+			$current = $('div.step.current');
+			isLanding = $current.length > 0 && $current.is('.page-landing');
+			if !App.isMobile && isLanding
 				App.gotoPage('page-landing', 'landing-confirmation');
 			if App.isMobile && $('div.step.current').is('.pageiphone-landing')
 				App.gotoPage('pageiphone-agence')
@@ -155,19 +157,18 @@ App =
 			agencies:agencies
 
 	gotoPage:(step, substep, fadeTime=500)=>
+
 		if window.isOli? || (window.location+'').indexOf('static') > 0
 			return;
 
 		$div = $('div.step.'+step);
 		if !$('div.step.current').is('.'+step)
 			$('div.step').hide().removeClass('current');
-			console.log 'Is not current step', step, $div
 
 
 		if substep? && !$div.find('.substep.current').is('.'+substep)
-			console.log 'Has substep and is not current', substep
 
-			$div.find('.substep').fadeOut fadeTime, (e)=>
+			$div.find('.substep').not('.'+substep).fadeOut fadeTime, (e)=>
 				$div.find('.substep').removeClass('current');
 				$div.find('.substep.'+substep).fadeIn(fadeTime).addClass('current');
 		$div.fadeIn(fadeTime).addClass('current');
@@ -240,10 +241,10 @@ $ ->
 	
 	App.init();
 	if /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-		App.gotoPage 'pageiphone-landing'
+		App.gotoPage 'pageiphone-landing', null, 0
 		App.isMobile = true;
 	else
-		App.gotoPage 'page-landing', 'landing-intro'
+		App.gotoPage 'page-landing', 'landing-intro', 0
 
 	if window.DeviceMotionEvent?
 		# Shake sensitivity (a lower number is more)

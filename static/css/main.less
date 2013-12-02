@@ -784,40 +784,108 @@ body.object-boule{
 
 
 
-@keyframes shake{ 
-                0% { transform: translate(0px, 3px); }
-                50% { transform: translate(0px, 130px); }
-                100% { transform: translate(0, 0); }
-            }
+@keyframes shake { 
+    0% { transform: translate(0px, 3px); }
+    50% { transform: translate(0px, 130px); }
+    100% { transform: translate(0, 0); }
+}
              
-            @-moz-keyframes shake{ 
-                0% { -moz-transform: translate(0px, 3px); }
-                50% { -moz-transform: translate(0px, 130px); }
-                100% { -moz-transform: translate(0, 0); }
-            }
+@-moz-keyframes shake{ 
+    0% { -moz-transform: translate(0px, 3px); }
+    50% { -moz-transform: translate(0px, 130px); }
+    100% { -moz-transform: translate(0, 0); }
+}
              
-            @-webkit-keyframes shake {
-                0% { -webkit-transform: translate(0px, 3px); }
-                50% { -webkit-transform: translate(0px, 130px); }
-                100% { -webkit-transform: translate(0, 0); }
-            }
+@-webkit-keyframes shake {
+    0% { -webkit-transform: translate(0px, 3px); }
+    50% { -webkit-transform: translate(0px, 130px); }
+    100% { -webkit-transform: translate(0, 0); }
+}
+
+
+@keyframes shakemedium{ 
+    0% { transform: translate(0px, 3px); }
+    50% { transform: translate(0px, 130px); }
+    100% { transform: translate(0, 0); }
+}
              
-            body.shake .shake-bras {
-                animation-name: shake; 
-                animation-duration: 300ms; 
-                animation-iteration-count: infinite; 
-                animation-timing-function: ease-in-out;
+@-moz-keyframes shakemedium{ 
+    0% { -moz-transform: translate(0px, 3px); }
+    50% { -moz-transform: translate(0px, 130px); }
+    100% { -moz-transform: translate(0, 0); }
+}
              
-                -moz-animation-name: shake; 
-                -moz-animation-duration: 300ms; 
-                -moz-animation-iteration-count: infinite; 
-                -moz-animation-timing-function: ease-in-out;
+@-webkit-keyframes shakemedium {
+    0% { -webkit-transform: translate(0px, 3px); }
+    50% { -webkit-transform: translate(0px, 130px); }
+    100% { -webkit-transform: translate(0, 0); }
+}
+
+@keyframes shakelent{ 
+    0% { transform: translate(0px, 3px); }
+    50% { transform: translate(0px, 130px); }
+    100% { transform: translate(0, 0); }
+}
              
-                -webkit-animation-name: shake;
-                -webkit-animation-duration: 300ms;
-                -webkit-animation-iteration-count: infinite;
-                -webkit-animation-timing-function: ease-in-out;
-            }
+@-moz-keyframes shakelent{ 
+    0% { -moz-transform: translate(0px, 3px); }
+    50% { -moz-transform: translate(0px, 130px); }
+    100% { -moz-transform: translate(0, 0); }
+}
+             
+@-webkit-keyframes shakelent {
+    0% { -webkit-transform: translate(0px, 3px); }
+    50% { -webkit-transform: translate(0px, 130px); }
+    100% { -webkit-transform: translate(0, 0); }
+}
+
+body.shake, body.shakelent, body.shakemedium {
+    .shake-bras {
+        animation-iteration-count: infinite; 
+        -moz-animation-iteration-count: infinite; 
+        -webkit-animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        -moz-animation-timing-function: ease-in-out;
+        -webkit-animation-timing-function: ease-in-out;  
+    }
+}
+
+body.shake .shake-bras {
+    animation-name: shake; 
+    -moz-animation-name: shake; 
+    -webkit-animation-name: shake;
+
+    animation-duration: 250ms; 
+    -moz-animation-duration: 250ms; 
+    -webkit-animation-duration: 250ms;
+}
+
+body.shakemedium .shake-bras {
+    animation-name: shakemedium; 
+    -moz-animation-name: shakemedium; 
+    -webkit-animation-name: shakemedium;
+
+    animation-duration: 550ms; 
+    -moz-animation-duration: 550ms;
+    -webkit-animation-duration: 550ms;
+}
+
+body.shakelent .shake-bras {
+    animation-name: shakelent; 
+    -moz-animation-name: shakelent; 
+    -webkit-animation-name: shakelent;
+
+    animation-duration: 850ms; 
+    -moz-animation-duration: 850ms; 
+    -webkit-animation-duration: 850ms;
+}
+
+
+
+
+            
+
+
 
 
 .page-classement {
@@ -1158,6 +1226,32 @@ and (max-width : 1224px) {
 
         .sidebar {
             width: 32%;
+
+            header {
+
+                .left {
+                    display: block;
+                    line-height: 1em;
+                    width: 60%;
+                    margin-bottom: 0.5em;
+                }
+            }
+
+            table td.agence, table td.position {
+                font-size: 24px;
+                line-height: 1em;
+                height: 1em;
+                padding:0.5em 0;
+                margin: 0;
+
+            }
+            table td.score {
+                line-height: 1em;
+                height: 1em;
+                padding: 0;
+                margin: 0;
+            }
+
         }
 
 
@@ -1179,6 +1273,9 @@ and (max-width : 1224px) {
     }
 
     .sidebar {
+
+
+
         div.leftscore,p.right {
             width: 100%;
             float: none;
@@ -1274,6 +1371,100 @@ and (max-device-width : 480px),
 #akfnlogo {
 display: none;
 }
+
+.page-landing {
+
+    .landing-intro  .bras {
+
+// position: absolute;
+// z-index: -1;
+// max-width: 900px;
+// max-height: 900px;
+// bottom: 0;
+// left: 170px;
+// width: 100%;
+// height: 100%;
+// background: url(../img/bras.png) no-repeat;
+// background-size: contain;
+
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 300px;
+        border-bottom: 4px solid black;
+        background-size: 400px auto;
+        background-position: top center;
+    }
+
+    .main button {
+        position: relative;
+        top: 300px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .sidebar {
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0;
+        top: 0;
+        padding: 52px;
+        position: relative;
+        left: 0;
+
+        table td.agence, table td.position {
+            font-size: 20px;
+        }
+        table td.score {
+            }
+        footer {
+            margin-top: 1em;
+            line-height: 1em;
+        }
+        }
+
+        .main:first-child {
+            height: 800px !important;
+        }
+
+        .main {
+            position: relative;
+            top: 0;
+            margin-top: 0;
+            height: auto;
+
+            &:first-child {
+                min-height: 300px;
+            }
+
+            div.clear {
+                border-top: 0;
+            }
+
+
+            h1 {
+                font-size: 20px;
+                float: none;
+                width: 100%;
+
+                span:after {
+                    font-size: 1em;
+                    top: -5px;
+                    left: 0;
+                }
+            }
+            .right {
+                float: none;
+                width: 100%;
+            }
+        }
+
+
+}
+
+
+
 .pageiphone-landing {
     box-sizing: border-box;
     padding: 25px;
@@ -1305,6 +1496,8 @@ display: none;
         margin-bottom: 0.5em;
         font-size: 16px;
     }
+
+
     
 }
 input.code, input[type="text"] {
@@ -1409,10 +1602,6 @@ button.btn-submit-code {
 
 .page-classement {
 
-
-
-
-
     .classement {
         header {display:none}
         box-sizing: border-box;
@@ -1420,7 +1609,6 @@ button.btn-submit-code {
         width: 100%;
         margin: 90px 0 0 0;
         box-sizing: border-box;
-
 
         #leaderboard .agence, #leaderboard .position {
             font-size: 0.5em;

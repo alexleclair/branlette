@@ -384,6 +384,7 @@ div.arrow-right {
 .sidebar table td {
   padding: 0;
   margin: 0;
+  line-height: 1em;
 }
 .sidebar table tr {
   vertical-align: baseline;
@@ -1092,6 +1093,9 @@ body.shakelent .shake-bras {
 }
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px), (max-width: 768px) {
+  #logo {
+    display: none;
+  }
   #akfnlogo {
     display: none;
   }

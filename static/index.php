@@ -33,14 +33,14 @@
             <a href="/" style="border:0 !important;"><img src="img/logo_branlette.png" width="277" height="277" alt="Brrrrrrrranlettteee" /></a>
         </div>
 <!-- Quand qqun arrive sur le browser -->
-<div class="page-landing step" style="display: none;">
+<div class="page-landing step">
     <div class="stepmaster">Page-Landing</div>
 
-    <div class="landing-intro substep">
+    <div class="landing-intro substep" style="display: none">
 
         <div class="bras"></div>
         <div class="cta">
-        <button type="button" class="start right">Let's do this bro.</button>
+        <button type="button" class="start right">Une p&#8217tite vite</button>
         </div>
     </div>
 
@@ -57,13 +57,13 @@
         </div>
     </div>
 
-    <div class="landing-confirmation substep" style="display: none">
+    <div class="landing-confirmation substep">
         <div class="bras2">
             <div class="bras2image">
             <div class="biphone-contenu">
-                <h1>Baisse les yeux:</h1>
-                <h2>Le code a synché.</h2>
-                <p>Bravo</p>
+                <h1>C&#8217;est bien synché...</h1>
+                <h2>Baisse les yeux:</h2>
+                <p>Regarde sur ton mobile, et sélectionne ton agence pour qui tu vas shaker ton téléphone a batterie.</p><p style="text-align: center; font-size: 30px;">&darr;<p>
             </div>
         </div>
         </div>
@@ -72,8 +72,8 @@
     <div class="main">
         
         <div class="clear">
-        <h1 class="left">Un contest <span>interagence</span>  de branlette interactive</h1>
-        <p class="right">Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. Fusce egestas ligula ac leo varius dapibus sed sit amet eros. Integer scelerisque egestas dui sit amet aliquet. Nulla posuere mattis ante.</p>
+        <h1 class="left">Un concours <span>interagence</span>  de branlette interactive</h1>
+        <p class="right">Le temps des fêtes est le moment idéal pour souligner le beau travail accompli durant l'année par nos confrères et amis de l'industrie... mais pas cette fois.</p>
         </div>
     </div>
 
@@ -170,7 +170,7 @@
 
 <!-- Classement -->
 
-<div class="page-classement step">
+<div class="page-classement step" style="display: none;">
     <div class="classement">
         <header>
             <div>Hey <span class="agencyName"></span>, Gâte-toé, c'est Noël</div>

@@ -1,5 +1,7 @@
 
 $(document).ready(function(){
+
+	Branlette.stopSound();
 // 	$('html').mousemove(function(e){
 // 	var y = e.pageY*-0.05;
 // 	var x = e.pageX*-0.05;

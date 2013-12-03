@@ -37,32 +37,26 @@
     <div class="stepmaster">Page-Landing</div>
 
     <div class="landing-intro substep" style="display: none;">
-
         <div class="bras"></div>
         <div class="cta">
-        <button type="button" class="start right">Une p&#8217tite vite</button>
+            <button type="button" class="start right">Une p&#8217tite vite</button>
         </div>
     </div>
 
-    <div class="landing-code substep">
-        <div class="bras2">
-
-        </div>
-        <div class="bras2image">
-            <div class="code" data-info="code"></div>
-
-                <div class="biphone-contenu" style="display: none">
-                    <!-- <h1>Sur ton mobile var sur:</h1>
-                    <h2>gatetoecestnoel.com</h2>
-                    <p>Entre le code suivant pour connecter ton intelligent téléfun.</p> -->
-                    
-            </div>
-        </div>
-    </div>
-
-    <div class="landing-confirmation substep" style="display: none">
+    <div class="landing-code substep" style="display: none">
         <div class="bras2">
             <div class="bras2image">
+            <div class="code" data-info="code"></div>
+                <div class="biphone-contenu">
+            </div>
+        </div>
+        </div>
+        
+    </div>
+
+    <div class="landing-confirmation substep">
+        <div class="bras2 bras3">
+            <div class="bras3image">
             <div class="biphone-contenu">
                 <h1>C&#8217;est bien synché...</h1>
                 <h2>Baisse les yeux:</h2>

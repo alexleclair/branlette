@@ -307,22 +307,22 @@ div.arrow-right {
 .page-landing .landing-code .bras2,
 .page-landing .landing-confirmation .bras2 {
   position: absolute;
-  width: 88%;
+  width: 100%;
   height: 100%;
-  background: url(../img/bras2.jpg) no-repeat left;
+  left: 0;
+  top: 0;
+  background: url(../img/bras2.jpg) no-repeat center;
   background-size: auto 100%;
+  max-width: 1440px;
   max-height: 1440px;
-  margin-left: 12%;
 }
 .page-landing .landing-code .bras2image,
 .page-landing .landing-confirmation .bras2image {
-  height: 100%;
-  width: 88%;
-  position: absolute;
-  left: 0;
-  top: 0;
   z-index: 2;
-  margin-left: 12%;
+  position: absolute;
+  background: orange;
+  width: 100%;
+  height: 100%;
 }
 .page-landing .landing-code .bras2image .code,
 .page-landing .landing-confirmation .bras2image .code {

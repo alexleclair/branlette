@@ -146,17 +146,17 @@ $(document).ready(function(){
 		});
 	});
 
-	$('.bras2image').css({
-			'width': $(window).height()
-	});
+	// $('.bras2image').css({
+	// 		'width': $(window).height()
+	// });
 
-	$(window).resize(function() {
+	// $(window).resize(function() {
 
-		$('.bras2image').css({
-			'width': $(window).height(),
-		});
+	// 	$('.bras2image').css({
+	// 		'width': $(window).height(),
+	// 	});
 
-	});
+	// });
 
 	// $(window).resize(function() {
 

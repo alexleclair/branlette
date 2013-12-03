@@ -49,7 +49,7 @@
 
         </div>
         <div class="bras2image">
-        <div class="code" data-info="code"></div>
+            <div class="code" data-info="code"></div>
 
                 <div class="biphone-contenu" style="display: none">
                     <!-- <h1>Sur ton mobile var sur:</h1>

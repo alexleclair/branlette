@@ -87,14 +87,19 @@ App =
 			ogg:'sounds/branlette_15.ogg',
 		},
 	]
+	silenceSound:
+		mp3:'sounds/silence.mp3',
+		ogg:'sounds/silence.ogg',
 	currentObject: null;
 	playSounds:true;
 
 	init: (callback)=>
 
 		$('#audio').on 'ended', (e)->
-			App.playSound();
-
+			if !App.isMobile
+				App.playSound();
+			else
+				App.playSound(App.silenceSound);
 		App.socket = io.connect(App.config.endpoint);
 		App.socket.on 'labels', (data)->
 			App.labels = data;
@@ -193,7 +198,7 @@ App =
 			return;
 		if !sound?
 			sound = App.sounds[Math.floor(Math.random()*App.sounds.length)];
-			$('#audio source').remove();
+		$('#audio source').remove();
 		html = '<source src="'+sound.mp3+'" type="audio/mpeg" />';
 		$('#audio-player #audio').append($(html));
 		html = '<source src="'+sound.ogg+'" type="audio/ogg />'
@@ -265,6 +270,8 @@ App =
 				App.pickAgency $(this).attr('data-key');
 				#if App.siblingsCount <= 1 #Only play sound on the phone when there is no desktop
 				#App.playSound();
+				App.playSound(App.silenceSound);
+
 				return false;
 
 	refreshCodeScreen: ()=>

@@ -393,11 +393,11 @@ div.arrow-right {
   line-height: 1em;
 }
 .sidebar table tr {
-  vertical-align: baseline;
+  vertical-align: bottom;
   border-bottom: 2px solid #000;
 }
 .sidebar table td {
-  padding-top: 17px;
+  padding: 0.3em 0 0.2em 0;
 }
 .sidebar table td.position {
   padding-top: 0px;
@@ -698,6 +698,9 @@ body.object-boule .pageiphone-shake div {
   width: 60%;
   font-size: 16px;
   line-height: 30px;
+}
+.shake-droite h2 .agencyPeople {
+  color: #ffd600;
 }
 @keyframes shake {
   0% {
@@ -1043,7 +1046,7 @@ body.shakelent .shake-bras {
   }
 }
 /* iPads (portrait and landscape) ----------- */
-@media only screen and (max-width: 1224px) {
+@media only screen and (max-width: 1224px), and (min-width: 768px) {
   #akfnlogo {
     bottom: 0;
   }
@@ -1073,6 +1076,9 @@ body.shakelent .shake-bras {
     width: 100%;
     left: 0;
     padding: 0 52px;
+  }
+  .page-landing .landing-intro .cta button {
+    float: left;
   }
   .page-landing .landing-intro .bras {
     left: 0;
@@ -1156,10 +1162,49 @@ body.shakelent .shake-bras {
     bottom: 0;
   }
 }
+@media only screen and (max-width: 978px) {
+  body {
+    width: 978px;
+    min-height: 600px;
+    position: relative;
+  }
+  #akfnlogo {
+    position: absolute;
+  }
+  .page-landing .landing-intro .bras {
+    background-attachment: fixed;
+    background-position: top;
+    background-size: auto;
+    zoom: 0.9;
+  }
+  .page-landing .sidebar {
+    position: absolute;
+    right: 52px;
+  }
+  .page-landing .main {
+    width: 100%;
+    position: relative;
+    top: 550px;
+    bottom: auto;
+  }
+  .page-landing .landing-intro .cta {
+    position: relative;
+    top: 500px;
+    overflow: hidden;
+    zoom: 1;
+    left: 0;
+  }
+  .page-landing .landing-intro .cta button {
+    float: left;
+  }
+}
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px), (max-width: 768px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   #logo {
     display: none;
+  }
+  body {
+    width: 100%;
   }
   #akfnlogo {
     display: none;
@@ -1360,7 +1405,6 @@ body.shakelent .shake-bras {
     box-sizing: border-box;
     padding: 1% 5% 0 5%;
     background-color: #30b542;
-    transition: height 0.5s ease;
   }
   .page-classement .sidebar header {
     width: 100%;

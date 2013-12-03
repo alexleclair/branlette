@@ -150,7 +150,7 @@ App =
 				$('.shake-bras').stop(true);
 				if !App.isMobile
 					App.gotoPage 'page-shake', 'shake-repos',500
-			, 1000
+			, 2500
 			if !App.isMobile
 				App.gotoPage 'page-shake', 'shake-shake', 0
 		App.socket.on 'agencies', (data)->
@@ -282,6 +282,7 @@ App =
 
 		source = $('#template-leaderboard').html();
 		template = Handlebars.compile(source);
+
 		$('#top5').html template 
 			limit:5
 			agencies:agencies
@@ -382,7 +383,7 @@ $ ->
 
 	if window.DeviceMotionEvent?
 		# Shake sensitivity (a lower number is more)
-		sensitivity = 20;
+		sensitivity = 40;
 
 		# Position variables
 		x1 = 0

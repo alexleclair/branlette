@@ -33,6 +33,23 @@ $(document).ready(function(){
 		
 	})
 
+	$('#logo a, a.back-to-business').click(function(e){
+		//var $current = $('div.step.current');
+		if(!Branlette.isMobile){
+			e.preventDefault();
+			if(Branlette.agency == null){
+				Branlette.gotoPage('page-landing');
+			}
+			else if(Branlette.siblingsCount > 1){
+				Branlette.gotoPage('page-shake');
+			}
+			else{
+				Branlette.gotoPage('page-landing', 'landing-intro');
+			}
+			return false;
+		}
+	})
+
 	$('form#add-agency').submit(function(e){
 		e.preventDefault();
 		var $input =$(this).find('.add-agency')

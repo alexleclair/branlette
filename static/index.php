@@ -191,7 +191,7 @@
             <p class="right">Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. Fusce egestas ligula ac leo varius dapibus sed sit amet eros. Integer scelerisque egestas dui sit amet aliquet. Nulla posuere mattis ante, a f orci quam, tempor eu tristique vel, ultricies sit amet felis. Mauris volutpat, lacus non viverra porta, nisi mi fringilla risus, pharetra rutrum metus diam a purus.</p>
         <div class="leftscore">
             <h1><span class="agencyIndex">?</span>/<span class="agenciesCount">?</span></h1>
-            <footer><a href="/"><div class="arrow-left"></div>Retour à la branlette</a></footer>
+            <footer><a href="/" class="back-to-business"><div class="arrow-left"></div>Retour à la branlette</a></footer>
         </div>
         </div>
     </div>

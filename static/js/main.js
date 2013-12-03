@@ -156,15 +156,31 @@ $(document).ready(function(){
 
 	$('.bras2image').css({
 			'width': $(window).height()
-		});
+	});
 
 	$(window).resize(function() {
-	
 
 		$('.bras2image').css({
-			'width': $(window).height()
+			'width': $(window).height(),
 		});
+
 	});
+
+	// $(window).resize(function() {
+
+	// //285
+	// 	var ratio = 1024 / $(window).height();
+	// 	// height = 100
+	// 	// ? = ?
+	
+	// //410
+
+	// $('.bras2image').css({
+	// 		'width': $(window).height(),
+	// 	});
+	// $('.biphone-contenu').css('zoom',1/ratio);
+
+	// });
 
 	$('.icon-facebook').click(function(e){
 		e.preventDefault();

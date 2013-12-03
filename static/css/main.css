@@ -80,6 +80,9 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+.picto {
+  font-family: 'pictosregular';
+}
 a:link,
 a:visited {
   text-decoration: none;
@@ -141,9 +144,18 @@ body p {
   height: auto;
 }
 #akfnlogo {
+  padding: 0;
+  margin: 0;
   position: fixed;
   bottom: 52px;
   right: 52px;
+  line-height: 40px;
+}
+#akfnlogo a {
+  height: 40px;
+  width: 40px;
+  border: 0 !important;
+  display: inline-block;
 }
 .stepmaster {
   display: none;
@@ -189,10 +201,35 @@ button[type="button"].small {
 }
 button.btn-change-object {
   padding-left: 33px;
-  background: url(../img/ui-change.png) 6px 14px no-repeat #ffd600;
 }
-button.btn-change-object:hover {
-  background: url(../img/ui-change.png) 6px -70px no-repeat #000000;
+.stopSound {
+  font-family: 'pictosregular' !important;
+  font-size: 20px;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  top: 1px;
+}
+.stopSound:hover {
+  border: 0;
+  color: #ffd600;
+  font-weight: normal;
+}
+.stopSound .stopped {
+  display: none;
+}
+.stopSound.stopped .stopped {
+  display: block;
+}
+.stopSound.stopped .playing {
+  display: none;
+}
+.stopSound.playing .playing {
+  display: block;
+}
+.stopSound.playing .stopped {
+  display: none;
 }
 a.icon-twitter div {
   text-indent: -9999em;
@@ -274,6 +311,7 @@ div.arrow-right {
   height: 100%;
   background: url(../img/bras2.png) no-repeat 23%;
   background-size: auto 100%;
+  max-height: 1024px;
 }
 .page-landing .landing-code .bras2image,
 .page-landing .landing-confirmation .bras2image {
@@ -287,10 +325,10 @@ div.arrow-right {
 .page-landing .landing-confirmation .biphone-contenu {
   position: absolute;
   overflow: hidden;
-  top: 26%;
-  left: 15%;
-  width: 24%;
-  height: 40%;
+  top: 21%;
+  left: 14%;
+  width: 26%;
+  height: 34%;
 }
 .page-landing .landing-code .biphone-contenu h1,
 .page-landing .landing-confirmation .biphone-contenu h1 {
@@ -359,7 +397,7 @@ div.arrow-right {
   position: fixed;
   top: 52px;
   right: 52px;
-  width: 600px;
+  width: 35%;
 }
 .sidebar {
   font-family: 'NHaasGroteskTXStd-75Bd';
@@ -387,14 +425,13 @@ div.arrow-right {
   line-height: 1em;
 }
 .sidebar table tr {
-  vertical-align: bottom;
   border-bottom: 2px solid #000;
+  vertical-align: top;
 }
 .sidebar table td {
-  padding: 0.3em 0 0.2em 0;
+  padding: 2% 0 1% 0;
 }
 .sidebar table td.position {
-  padding-top: 0px;
   width: 85px;
 }
 .sidebar table td.agence {
@@ -865,20 +902,13 @@ body.shakelent .shake-bras {
 .page-classement .classement table tr {
   border-bottom: 2px solid #000;
 }
-.page-classement .classement table td {
-  padding-top: 11px;
-}
 .page-classement .classement table td.position {
-  padding-top: 0px;
   width: 100px;
-  vertical-align: bottom;
 }
 .page-classement .classement table td.agence {
   width: 85%;
-  vertical-align: bottom;
 }
 .page-classement .classement table td.score {
-  vertical-align: baseline;
   text-align: right;
   font-size: 16px;
   font-family: 'NHaasGroteskTXStd-65Md';
@@ -1009,21 +1039,10 @@ body.shakelent .shake-bras {
     position: fixed;
     top: 52px;
     right: 52px;
-    width: 400px;
   }
   .page-landing .sidebar table td.agence,
   .page-landing .sidebar table td.position {
-    font-size: 30px;
-    line-height: 1em;
-    height: 1em;
-    padding: 0.5em 0;
-    margin: 0;
-  }
-  .page-landing .sidebar table td.score {
-    line-height: 1em;
-    height: 1em;
-    padding: 0;
-    margin: 0;
+    font-size: 36px;
   }
   .page-classement .classement #leaderboard .position {
     width: 80px;
@@ -1037,7 +1056,7 @@ body.shakelent .shake-bras {
   }
 }
 /* iPads (portrait and landscape) ----------- */
-@media only screen and (max-width: 1224px), and (min-width: 768px) {
+@media only screen and (max-width: 1224px) and (min-width: 978px) {
   #akfnlogo {
     bottom: 0;
   }
@@ -1086,17 +1105,7 @@ body.shakelent .shake-bras {
   }
   .page-landing .sidebar table td.agence,
   .page-landing .sidebar table td.position {
-    font-size: 24px;
-    line-height: 1em;
-    height: 1em;
-    padding: 0.5em 0;
-    margin: 0;
-  }
-  .page-landing .sidebar table td.score {
-    line-height: 1em;
-    height: 1em;
-    padding: 0;
-    margin: 0;
+    font-size: 30px;
   }
   .page-classement .classement #leaderboard .agence,
   .page-classement .classement #leaderboard .position {
@@ -1156,24 +1165,43 @@ body.shakelent .shake-bras {
 @media only screen and (max-width: 978px) {
   body {
     width: 978px;
-    min-height: 600px;
+    min-height: 1024px;
     position: relative;
   }
   #akfnlogo {
     position: absolute;
   }
   .page-landing .landing-intro .bras {
-    background-attachment: fixed;
-    background-position: top;
-    background-size: auto;
-    zoom: 0.9;
+    background: url(../img/bras.png) no-repeat top center #30b542;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 978px;
+    max-width: 978px;
+    max-height: 678px;
   }
   .page-landing .sidebar {
     position: absolute;
     right: 52px;
+    width: 32%;
+  }
+  .page-landing .sidebar header .left {
+    display: block;
+    line-height: 1em;
+    width: 60%;
+    margin-bottom: 0.5em;
+  }
+  .page-landing .sidebar table td.agence,
+  .page-landing .sidebar table td.position {
+    font-size: 24px;
   }
   .page-landing .main {
     width: 100%;
+    padding: 52px;
+    left: 0;
+    box-sizing: border-box;
     position: relative;
     top: 550px;
     bottom: auto;
@@ -1183,7 +1211,7 @@ body.shakelent .shake-bras {
     top: 500px;
     overflow: hidden;
     zoom: 1;
-    left: 0;
+    left: 52px;
   }
   .page-landing .landing-intro .cta button {
     float: left;
@@ -1199,76 +1227,6 @@ body.shakelent .shake-bras {
   }
   #akfnlogo {
     display: none;
-  }
-  .page-landing .landing-intro .bras {
-    position: relative;
-    top: 0;
-    left: 0;
-    height: 285px;
-    background-size: 400px auto;
-    background-position: top center;
-  }
-  .page-landing .landing-intro .cta {
-    position: relative;
-    width: 100%;
-    top: 0;
-    box-sizing: border-box;
-    margin-top: -20px;
-  }
-  .page-landing .landing-intro .cta button {
-    margin: auto;
-    display: block;
-    float: none;
-  }
-  .page-landing .sidebar {
-    box-sizing: border-box;
-    width: 100%;
-    margin: 0;
-    top: 0;
-    padding: 52px;
-    position: relative;
-    left: 0;
-  }
-  .page-landing .sidebar header {
-    border-top: 1px solid black;
-    padding-top: 0.5em;
-  }
-  .page-landing .sidebar table td.agence,
-  .page-landing .sidebar table td.position {
-    font-size: 20px;
-  }
-  .page-landing .sidebar footer {
-    margin-top: 1em;
-    line-height: 1em;
-  }
-  .page-landing .main:first-child {
-    height: 800px !important;
-  }
-  .page-landing .main {
-    position: relative;
-    top: 0;
-    margin-top: 0;
-    height: auto;
-  }
-  .page-landing .main:first-child {
-    min-height: 300px;
-  }
-  .page-landing .main div.clear {
-    border-top: 0;
-  }
-  .page-landing .main h1 {
-    font-size: 20px;
-    float: none;
-    width: 100%;
-  }
-  .page-landing .main h1 span:after {
-    font-size: 1em;
-    top: -5px;
-    left: 0;
-  }
-  .page-landing .main .right {
-    float: none;
-    width: 100%;
   }
   .pageiphone-landing {
     box-sizing: border-box;
@@ -1433,6 +1391,12 @@ body.shakelent .shake-bras {
   /* Styles */
 }
 /* Large screens ----------- */
+@media only screen and (min-width: 1824px) {
+  .bras2 {
+    max-height: 1024px;
+    top: 0;
+  }
+}
 /* iPhone 4 ----------- */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
   /* Styles */

@@ -71,7 +71,7 @@ audio:not([controls]) {
 @font-face {font-family: 'SwiftLTStd-Bold';src: url('fonts/25ED78_2_0.eot');src: url('fonts/25ED78_2_0.eot?#iefix') format('embedded-opentype'),url('fonts/25ED78_2_0.woff') format('woff'),url('fonts/25ED78_2_0.ttf') format('truetype');}
 @font-face {font-family: 'NHaasGroteskTXStd-65Md';src: url('fonts/25ED78_3_0.eot');src: url('fonts/25ED78_3_0.eot?#iefix') format('embedded-opentype'),url('fonts/25ED78_3_0.woff') format('woff'),url('fonts/25ED78_3_0.ttf') format('truetype');}
 @font-face {font-family: 'NHaasGroteskTXStd-75Bd';src: url('fonts/25ED78_4_0.eot');src: url('fonts/25ED78_4_0.eot?#iefix') format('embedded-opentype'),url('fonts/25ED78_4_0.woff') format('woff'),url('webfonts/25ED78_4_0.ttf') format('truetype');}
- 
+@font-face {font-family: 'pictosregular';src: url('fonts/pictos-webfont.eot');src: url('fonts/pictos-webfont.eot?#iefix') format('embedded-opentype'),url('fonts/pictos-webfont.woff') format('woff'),url('fonts/pictos-webfont.ttf') format('truetype');font-weight: normal;font-style: normal;}
 
 
 html {

@@ -170,6 +170,19 @@ $(document).ready(function(){
 		return false;
 	})
 
+	$('.stopSound').click(function() {
+		if(Branlette.playSounds){
+			Branlette.stopSound();
+			$(this).removeClass('playing').addClass('stopped')
+		}
+		else{
+			Branlette.replaySound();
+			$(this).removeClass('stopped').addClass('playing')
+		}
+		return false;
+	})
+
+
 });
 
 

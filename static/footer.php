@@ -1,7 +1,8 @@
 
 
         <div id="akfnlogo">
-            <a href="http://akfn.ca"><img src="img/logoAKFN-bloc.png" height="40" width="40" /></a>
+            <a href="#" class="stopSound"><span class="playing">></span><span class="stopped"><</span></a>
+            <a href="http://akfn.ca" target="_blank"><img src="img/logoAKFN-bloc.png" height="40" width="40" /></a>
         </div>
 
         <script type="text/html" id="template-leaderboard">

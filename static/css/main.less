@@ -108,7 +108,8 @@ textarea {
 @swift: 'SwiftLTStd-Regular';
 @swiftitalic: 'SwiftLTStd-Italic';
 @swiftbold: 'SwiftLTStd-Bold';
-
+@pictos: 'pictosregular';
+.picto {font-family: @pictos;}
 
 
 a:link, a:visited {
@@ -176,9 +177,19 @@ body p {
 }
 
 #akfnlogo {
+    padding: 0;
+    margin: 0;
     position: fixed;
     bottom: 52px;
     right: 52px;
+    line-height: 40px;
+
+    a {
+    height: 40px;
+    width: 40px;
+    border: 0 !important;
+    display: inline-block;
+    }
 }
 
 .stepmaster {
@@ -230,10 +241,48 @@ button[type="button"].small {
 
 button.btn-change-object {
     padding-left: 33px;
-    background: url(../img/ui-change.png) 6px 14px no-repeat @jaune;
+    //background: url(../img/ui-change.png) 6px 14px no-repeat @jaune;
 
     &:hover {
-    background: url(../img/ui-change.png) 6px -70px no-repeat black;
+    //background: url(../img/ui-change.png) 6px -70px no-repeat black;
+    }
+}
+
+.stopSound {
+    font-family: @pictos !important;
+    font-size: 20px;
+    text-align: center;
+    padding:0;
+    margin: 0;
+    position: relative;
+    top:1px;
+
+    &:hover {
+        border: 0;
+        color: @jaune;
+        font-weight: normal;
+
+    }
+    .stopped {
+        display: none;
+    }
+
+    &.stopped {
+        .stopped {
+            display: block;
+        }
+
+        .playing {
+            display: none;
+        }
+    }
+    &.playing {
+        .playing {
+            display: block;
+        }
+        .stopped {
+            display: none;
+        }
     }
 }
 
@@ -329,6 +378,7 @@ div.arrow-right {
             height: 100%;
             background: url(../img/bras2.png) no-repeat 23% ;
             background-size: auto 100%;
+            max-height: 1024px;
         }
 
         .bras2image {
@@ -343,10 +393,10 @@ div.arrow-right {
         .biphone-contenu {
             position: absolute;
             overflow: hidden;
-            top: 26%;
-            left: 15%;
-            width: 24%;
-            height: 40%;
+            top: 21%;
+            left: 14%;
+            width: 26%;
+            height: 34%;
     
             h1 {
                 border-top: 5px solid black;
@@ -433,7 +483,7 @@ div.arrow-right {
         position: fixed;
         top:52px;
         right: 52px;
-        width: 600px;
+            width: 35%;
 }
 
 }
@@ -469,16 +519,15 @@ div.arrow-right {
         }
 
         tr {
-            vertical-align: bottom;
             border-bottom: 2px solid #000;
+            vertical-align: top;
         }
 
         td {
-            padding: 0.3em 0 0.2em 0;
+            padding: 2% 0 1% 0;
         }
 
         td.position {
-            padding-top: 0px;
             width: 85px;
         }
 
@@ -661,9 +710,9 @@ html,body {
             z-index:2;
             margin-top: -150px;
             h1 {
-        font-size: 120px;
-        line-height: 1em;
-        margin-bottom: 0.5em;
+                font-size: 120px;
+                line-height: 1em;
+                margin-bottom: 0.5em;
                 font-weight: normal;
 
             }
@@ -1002,22 +1051,17 @@ body.shakelent .shake-bras {
             }
     
             td {
-                padding-top: 11px;
             }
     
             td.position {
-                padding-top: 0px;
                 width: 100px;
-                vertical-align: bottom;
             }
     
             td.agence {
                 width: 85%;
-                vertical-align: bottom;
     
             }
             td.score {
-                vertical-align: baseline;
                 text-align:right;
                 font-size: 16px;
                 font-family: @haas;
@@ -1186,21 +1230,12 @@ and (max-width: 1640px) {
             position: fixed;
             top:52px;
             right: 52px;
-            width: 400px;
 
             table td.agence, table td.position {
-                font-size: 30px;
-                line-height: 1em;
-                height: 1em;
-                padding:0.5em 0;
-                margin: 0;
-
+                font-size: 36px;
+                
             }
             table td.score {
-                line-height: 1em;
-                height: 1em;
-                padding: 0;
-                margin: 0;
             }
 
         }
@@ -1242,8 +1277,8 @@ and (max-width: 1640px) {
 
 /* iPads (portrait and landscape) ----------- */
 @media only screen 
-and (max-width : 1224px),
-and (min-width : 768px) {
+and (max-width : 1224px)
+and (min-width : 978px) {
 
 #akfnlogo {
         bottom: 0;
@@ -1317,18 +1352,7 @@ and (min-width : 768px) {
             }
 
             table td.agence, table td.position {
-                font-size: 24px;
-                line-height: 1em;
-                height: 1em;
-                padding:0.5em 0;
-                margin: 0;
-
-            }
-            table td.score {
-                line-height: 1em;
-                height: 1em;
-                padding: 0;
-                margin: 0;
+                font-size: 30px;
             }
 
         }
@@ -1448,7 +1472,7 @@ and (max-width : 978px){
 
     body {
         width: 978px;
-        min-height: 600px;
+        min-height: 1024px;
         position: relative;
     }
 
@@ -1459,20 +1483,44 @@ and (max-width : 978px){
     .page-landing {
 
         .landing-intro .bras {
-            background-attachment: fixed;
-            background-position: top;
-            background-size: auto;
-            zoom: 0.9;
-
+            
+            background: url(../img/bras.png) no-repeat  top center @green;
+            position: absolute;
+            top:0;
+            left:0;
+            margin: 0;
+            padding: 0;
+            width: 978px;
+            max-width: 978px;
+            max-height: 678px;
         }
 
         .sidebar {
             position: absolute;
             right: 52px;
+            width: 32%;
+
+            header {
+
+                .left {
+                    display: block;
+                    line-height: 1em;
+                    width: 60%;
+                    margin-bottom: 0.5em;
+                }
+            }
+
+            table td.agence, table td.position {
+                font-size: 24px;
+            }
+
         }
 
         .main {
             width: 100%;
+            padding: 52px;
+            left: 0;
+            box-sizing: border-box;
             position: relative;
             top: 550px;
             bottom: auto;
@@ -1483,7 +1531,7 @@ and (max-width : 978px){
         top:500px;
         overflow: hidden;
         zoom: 1;
-        left:0;
+        left:52px;
         button {
         float: left;
         }
@@ -1511,103 +1559,6 @@ body {
 #akfnlogo {
 display: none;
 }
-
-.page-landing {
-
-    .landing-intro  {
-        .bras {
-            position: relative;
-            top: 0;
-            left: 0;
-            height: 285px;
-            background-size: 400px auto;
-            background-position: top center;
-        }
-    
-        .cta {
-            position: relative;
-            width: 100%;
-            top: 0;
-            box-sizing: border-box;
-                margin-top: -20px;
-
-            button {
-                margin: auto;
-                display: block;
-                float: none;
-            }
-        }
-    }
-
-    .landing-code {
-
-    }
-
-    .sidebar {
-        box-sizing: border-box;
-        width: 100%;
-        margin: 0;
-        top: 0;
-        padding: 52px;
-        position: relative;
-        left: 0;
-
-        header {
-            border-top: 1px solid black;
-            padding-top: 0.5em;
-        }
-
-        table td.agence, table td.position {
-            font-size: 20px;
-        }
-        table td.score {
-            }
-        footer {
-            margin-top: 1em;
-            line-height: 1em;
-        }
-        }
-
-        .main:first-child {
-            height: 800px !important;
-        }
-
-        .main {
-            position: relative;
-            top: 0;
-            margin-top: 0;
-            height: auto;
-
-            &:first-child {
-                min-height: 300px;
-            }
-
-            div.clear {
-                border-top: 0;
-            }
-
-
-            h1 {
-                font-size: 20px;
-                float: none;
-                width: 100%;
-
-                span:after {
-                    font-size: 1em;
-                    top: -5px;
-                    left: 0;
-                }
-            }
-            .right {
-                float: none;
-                width: 100%;
-            }
-        }
-
-
-}
-
-
 
 .pageiphone-landing {
     box-sizing: border-box;
@@ -1832,6 +1783,12 @@ and (max-width : 320px) {
 /* Large screens ----------- */
 @media only screen 
 and (min-width : 1824px) {
+
+    .bras2 {
+        max-height: 1024px;
+        top: 0;
+    }
+
 }
 
 /* iPhone 4 ----------- */

@@ -66,11 +66,19 @@
         ogg: 'sounds/branlette_15.ogg'
       }
     ],
+    silenceSound: {
+      mp3: 'sounds/silence.mp3',
+      ogg: 'sounds/silence.ogg'
+    },
     currentObject: null,
     playSounds: true,
     init: function(callback) {
       $('#audio').on('ended', function(e) {
-        return App.playSound();
+        if (!App.isMobile) {
+          return App.playSound();
+        } else {
+          return App.playSound(App.silenceSound);
+        }
       });
       App.socket = io.connect(App.config.endpoint);
       App.socket.on('labels', function(data) {
@@ -193,8 +201,8 @@
       }
       if (sound == null) {
         sound = App.sounds[Math.floor(Math.random() * App.sounds.length)];
-        $('#audio source').remove();
       }
+      $('#audio source').remove();
       html = '<source src="' + sound.mp3 + '" type="audio/mpeg" />';
       $('#audio-player #audio').append($(html));
       html = '<source src="' + sound.ogg + '" type="audio/ogg />';
@@ -280,6 +288,7 @@
         return $('#agency-picker li a').click(function(e) {
           e.preventDefault();
           App.pickAgency($(this).attr('data-key'));
+          App.playSound(App.silenceSound);
           return false;
         });
       }

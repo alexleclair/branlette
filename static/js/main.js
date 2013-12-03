@@ -33,6 +33,14 @@ $(document).ready(function(){
 		
 	})
 
+	$('#logo a, a.back-to-business').click(function(e){
+		if(!Branlette.isMobile){
+			e.preventDefault();
+			Branlette.gotoPage('page-landing');
+			return false;
+		}
+	})
+
 	$('form#add-agency').submit(function(e){
 		e.preventDefault();
 		var $input =$(this).find('.add-agency')

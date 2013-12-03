@@ -139,7 +139,7 @@
           if (!App.isMobile) {
             return App.gotoPage('page-shake', 'shake-repos', 500);
           }
-        }, 1000);
+        }, 2500);
         if (!App.isMobile) {
           return App.gotoPage('page-shake', 'shake-shake', 0);
         }
@@ -424,7 +424,7 @@
       App.playSound();
     }
     if (window.DeviceMotionEvent != null) {
-      sensitivity = 20;
+      sensitivity = 40;
       x1 = 0;
       y1 = 0;
       z1 = 0;

@@ -36,7 +36,7 @@
 <div class="page-landing step">
     <div class="stepmaster">Page-Landing</div>
 
-    <div class="landing-intro substep">
+    <div class="landing-intro substep" style="display: none;">
 
         <div class="bras"></div>
         <div class="cta">
@@ -44,15 +44,18 @@
         </div>
     </div>
 
-    <div class="landing-code substep" style="display: none;">
+    <div class="landing-code substep">
         <div class="bras2">
-            <div class="bras2image">
+
+        </div>
+        <div class="bras2image">
+        <div class="code" data-info="code"></div>
+
                 <div class="biphone-contenu" style="display: none">
-                    <h1>Sur ton mobile var sur:</h1>
+                    <!-- <h1>Sur ton mobile var sur:</h1>
                     <h2>gatetoecestnoel.com</h2>
-                    <p>Entre le code suivant pour connecter ton intelligent téléfun.</p>
-                    <div class="code" data-info="code"></div>
-                </div>
+                    <p>Entre le code suivant pour connecter ton intelligent téléfun.</p> -->
+                    
             </div>
         </div>
     </div>
@@ -65,7 +68,7 @@
                 <h2>Baisse les yeux:</h2>
                 <p>Regarde sur ton mobile, et sélectionne ton agence pour qui tu vas shaker ton téléphone a batterie.</p><p style="text-align: center; font-size: 30px;">&darr;<p>
             </div>
-        </div>
+            </div>
         </div>
     </div>
 

@@ -148,7 +148,7 @@ body p {
   padding: 0;
   margin: 0;
   position: fixed;
-  bottom: 52px;
+  bottom: 0px;
   right: 52px;
   line-height: 40px;
 }
@@ -263,13 +263,10 @@ div.arrow-left {
   height: 0;
   border-top: 5px solid transparent;
   /* left arrow slant */
-
   border-bottom: 5px solid transparent;
   /* right arrow slant */
-
   border-right: 5px solid #ffd600;
   /* bottom, add background color here */
-
   font-size: 0;
   line-height: 0;
   display: inline-block;
@@ -280,13 +277,10 @@ div.arrow-right {
   height: 0;
   border-top: 5px solid transparent;
   /* left arrow slant */
-
   border-bottom: 5px solid transparent;
   /* right arrow slant */
-
   border-left: 5px solid #ffd600;
   /* bottom, add background color here */
-
   font-size: 0;
   line-height: 0;
   display: inline-block;
@@ -736,10 +730,10 @@ body.object-boule .pageiphone-shake div.image {
   background-image: url(../img/boule-iphone.jpg);
 }
 .shake-droite {
-  width: 510px;
+  width: 600px;
   position: absolute;
   bottom: 52px;
-  right: 142px;
+  right: 52px;
   border-bottom: 4px solid black;
 }
 .shake-droite h1 {
@@ -960,7 +954,6 @@ body.shakelent .shake-bras {
   border: 0;
   overflow: hidden;
   /* IE 6/7 fallback */
-
   *text-indent: -9999px;
 }
 .ir:before {
@@ -1023,10 +1016,8 @@ body.shakelent .shake-bras {
 .clearfix:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .clearfix:after {
   clear: both;
@@ -1109,6 +1100,34 @@ body.shakelent .shake-bras {
   }
   .page-shake .shake-intro h1 {
     zoom: 0.75;
+  }
+  .page-shake .shake-repos .fatigue {
+    width: 30%;
+  }
+  .page-shake .shake-repos .fatigue h1 {
+    font-size: 72px;
+  }
+  .page-shake .shake-repos .fatigue h2 {
+    font-size: 12px;
+    line-height: 1.1em;
+  }
+  .page-shake .sidebar {
+    width: 40%;
+  }
+  .page-shake .shake-droite {
+    width: 40%;
+    right: 52px;
+  }
+  .page-shake .shake-droite h1 {
+    float: none;
+    font-size: 1.4em;
+    margin: 0;
+  }
+  .page-shake .shake-droite h2 {
+    width: 100%;
+    float: none;
+    text-align: left;
+    line-height: 1em;
   }
 }
 @media only screen and (max-width: 1224px) {
@@ -1226,9 +1245,6 @@ body.shakelent .shake-bras {
     line-height: 1em;
   }
 }
-@media only screen and (max-height: 790px) {
-  
-}
 /* iPads (landscape) ----------- */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
   /* Styles */
@@ -1238,6 +1254,11 @@ body.shakelent .shake-bras {
   /* Styles */
 }
 @media only screen and (max-width: 978px) {
+  #logo {
+    left: 52px;
+    top: 52px;
+    width: 200px;
+  }
   .page-landing {
     display: block;
     width: 978px;
@@ -1250,6 +1271,7 @@ body.shakelent .shake-bras {
   .page-landing .landing-code .bras2,
   .page-landing .landing-confirmation .bras2 {
     background-position: top left;
+    min-height: 978px;
   }
   .page-landing .landing-code .bras2 .biphone-contenu,
   .page-landing .landing-confirmation .bras2 .biphone-contenu {
@@ -1271,6 +1293,7 @@ body.shakelent .shake-bras {
   }
   #akfnlogo {
     position: fixed;
+    bottom: 0;
     right: 52px;
   }
   .page-classement {
@@ -1280,6 +1303,34 @@ body.shakelent .shake-bras {
   }
   .page-classement .classement {
     margin-top: 52px;
+  }
+}
+@media only screen and (max-height: 768px) {
+  .page-landing .landing-code .bras2,
+  .page-landing .landing-confirmation .bras2 {
+    background-position: top center;
+    background-size: 800px;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu {
+    left: 50%;
+    width: 150px;
+    margin-left: -155px;
+    top: 120px;
+    bottom: auto;
+    height: 160px;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu h1,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu h1 {
+    font-size: 18px;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu h2,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu h2 {
+    font-size: 12px;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu .code,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu .code {
+    zoom: 0.7;
   }
 }
 /* Smartphones (portrait and landscape) ----------- */
@@ -1520,8 +1571,8 @@ body.shakelent .shake-bras {
 @media only screen and (max-width: 320px) {
   /* Styles */
 }
-/* Large screens ----------- */
-@media only screen and (min-width: 1921px) {
+/* Large and small screens ----------- */
+@media only screen and (min-width: 1921px) and (min-height: 1200px) {
   .page-landing .landing-code .bras2,
   .page-landing .landing-confirmation .bras2 {
     background-size: 1440px auto;
@@ -1580,29 +1631,6 @@ body.shakelent .shake-bras {
     height: 43px;
   }
 }
-@media only screen and (max-width: 978px) and (min-height: 978px) {
-  .page-landing .landing-code .bras2,
-  .page-landing .landing-confirmation .bras2 {
-    background-position: bottom left;
-  }
-  .page-landing .landing-code .bras2 .biphone-contenu,
-  .page-landing .landing-confirmation .bras2 .biphone-contenu {
-    top: auto;
-    bottom: 770px;
-    left: 303px;
-    width: 170px;
-    height: 43px;
-  }
-  .page-landing .sidebar {
-    margin-top: 0;
-  }
-  .page-landing .main {
-    position: fixed;
-    top: auto ;
-    width: 978px;
-    bottom: 52px;
-  }
-}
 /* iPhone 4 ----------- */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
   /* Styles */
@@ -1619,7 +1647,6 @@ body.shakelent .shake-bras {
     background: transparent !important;
     color: #000 !important;
     /* Black prints faster: h5bp.com/s */
-  
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -1634,8 +1661,8 @@ body.shakelent .shake-bras {
     content: " (" attr(title) ")";
   }
   /*
-       * Don't show links for images, or javascript/internal links
-       */
+     * Don't show links for images, or javascript/internal links
+     */
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
@@ -1649,7 +1676,6 @@ body.shakelent .shake-bras {
   thead {
     display: table-header-group;
     /* h5bp.com/t */
-  
   }
   tr,
   img {
@@ -1658,7 +1684,7 @@ body.shakelent .shake-bras {
   img {
     max-width: 100% !important;
   }
-  @page  {
+  @page {
     margin: 0.5cm;
   }
   p,

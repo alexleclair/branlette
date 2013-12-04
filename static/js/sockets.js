@@ -476,7 +476,7 @@
       App.isMobile = true;
     }
     App.init();
-    if (window.DeviceMotionEvent != null) {
+    if (App.isMobile && (window.DeviceMotionEvent != null)) {
       sensitivity = 30;
       x1 = 0;
       y1 = 0;

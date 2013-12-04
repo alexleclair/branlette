@@ -443,8 +443,8 @@ $ ->
 	# else
 	# 	App.playSound();
 	App.init();
-	
-	if window.DeviceMotionEvent?
+
+	if App.isMobile && window.DeviceMotionEvent?
 		# Shake sensitivity (a lower number is more)
 		sensitivity = 30;
 

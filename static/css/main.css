@@ -523,6 +523,7 @@ body {
 }
 .page-shake .shake-intro header span:first-child {
   padding-right: 3em;
+  padding-bottom: 0.75em;
   border-bottom: 4px solid black;
 }
 .page-shake .shake-intro h1 {
@@ -726,7 +727,7 @@ body.object-boule .pageiphone-shake div {
   position: absolute;
   bottom: 52px;
   right: 142px;
-  border-bottom: 2px solid black;
+  border-bottom: 4px solid black;
 }
 .shake-droite h1 {
   font-size: 30px;
@@ -1090,11 +1091,8 @@ body.shakelent .shake-bras {
   .page-classement .classement #leaderboard .position {
     font-size: 0.75em;
   }
-  .page-shake .shake-intro {
+  .page-shake .shake-intro h1 {
     zoom: 0.75;
-  }
-  .page-shake .shake-intro header {
-    zoom: 1.25;
   }
 }
 @media only screen and (max-width: 1224px) {
@@ -1180,11 +1178,8 @@ body.shakelent .shake-bras {
   .page-classement .sidebar p.right {
     margin-top: 1em;
   }
-  .page-shake .shake-intro {
+  .page-shake .shake-intro h1 {
     zoom: 0.5;
-  }
-  .page-shake .shake-intro header {
-    zoom: 2;
   }
   .page-shake .shake-repos .fatigue {
     width: 30%;

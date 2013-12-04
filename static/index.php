@@ -33,10 +33,10 @@
             <a href="/" style="border:0 !important;"><img src="img/logo_branlette.png" width="277" height="277" alt="Brrrrrrrranlettteee" /></a>
         </div>
 <!-- Quand qqun arrive sur le browser -->
-<div class="page-landing step">
+<div class="page-landing step" style="display: none">
     <div class="stepmaster">Page-Landing</div>
 
-    <div class="landing-intro substep" style="display: none;">
+    <div class="landing-intro" style="display: none;">
         <div class="bras"></div>
         <div class="cta">
             <button type="button" class="start right">Une p&#8217tite vite</button>
@@ -45,23 +45,22 @@
 
     <div class="landing-code substep" style="display: none">
         <div class="bras2">
-            <div class="bras2image">
-            <div class="code" data-info="code"></div>
-                <div class="biphone-contenu">
+            <div class="biphone-contenu" style="display: none">
+                <h1>Sur ton mobile var sur:</h1>
+                <h2>gatetoecestnoel.com</h2>
+                <p>Entre le code suivant pour connecter ton intelligent téléfun.</p>
+                <div class="code" data-info="code"></div>
             </div>
-        </div>
         </div>
         
     </div>
 
-    <div class="landing-confirmation substep">
-        <div class="bras2 bras3">
-            <div class="bras3image">
+    <div class="landing-confirmation substep" style="display: none">
+        <div class="bras2">
             <div class="biphone-contenu">
                 <h1>C&#8217;est bien synché...</h1>
                 <h2>Baisse les yeux:</h2>
                 <p>Regarde sur ton mobile, et sélectionne ton agence pour qui tu vas shaker ton téléphone a batterie.</p><p style="text-align: center; font-size: 30px;">&darr;<p>
-            </div>
             </div>
         </div>
     </div>
@@ -95,7 +94,7 @@
 
 <!-- 3 states: 1. intro, 2. shaking, 3. repos/fatigué -->
 
-<div class="page-shake step" style="display: none;">
+<div class="page-shake step" style="display: block">
     <!-- intro -->
     <div class="shake-intro substep">
         <h1 style="display: none;">Allo <span class="agencyName"></span>.<br>Shake comme si y’avait pas de lendemain.</h1>
@@ -135,7 +134,7 @@
     
 
     <div class="switch">
-        <button type="button" class="small btn-change-object">Changer de branlette</button>
+        <button type="button" class="small btn-change-object"><span class="picto">;</span>Changer de branlette</button>
     </div>
     
     <div class="shake-bottomcount"></div>

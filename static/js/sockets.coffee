@@ -162,7 +162,7 @@ App =
 			if App.isMobile
 				App.gotoPage 'pageiphone-landing'
 			else
-				App.gotoPage 'page-landing', 'landing-intro'
+				App.gotoPage 'page-landing', 'landing-code'
 
 
 		App.socket.on 'siblingsCount', (count)->
@@ -378,7 +378,7 @@ $ ->
 		App.gotoPage 'pageiphone-landing', null, 0
 		App.isMobile = true;
 	else
-		App.gotoPage 'page-landing', 'landing-intro', 0
+		App.gotoPage 'page-landing', 'landing-code', 0
 		App.playSound();
 
 	if window.DeviceMotionEvent?

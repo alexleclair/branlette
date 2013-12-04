@@ -1592,19 +1592,11 @@ and (max-height : 790px) {
 and (min-device-width : 768px) 
 and (max-device-width : 1024px) 
 and (orientation : landscape) {
-/* Styles */
-}
-
-/* iPads (portrait) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : portrait) {
-/* Styles */
-
 
 
 }
+
+
 
 
 @media only screen 
@@ -1648,7 +1640,7 @@ and (max-width : 978px){
                     left: 305px;
 
                     .code {
-                        zoom: 0.7;
+                        zoom: 0.6;
                     }
                 }
             }
@@ -1713,7 +1705,7 @@ and (max-height : 768px) {
                     font-size: 12px;
                 }
                 .code {
-                    zoom: 0.7;
+                    //zoom: 0.5;
                 }
                 }
             }
@@ -1722,6 +1714,32 @@ and (max-height : 768px) {
 
 }
 
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+/* Styles */
+
+    .page-landing {
+        width: 768px;
+
+        .landing-code, .landing-confirmation {
+
+            .bras2 {
+                background-position: -100px top;
+    
+                .biphone-contenu {
+                top: 175px;
+                left: 205px;
+                }
+            }
+        }
+    }
+
+
+}
 
 
 /* Smartphones (portrait and landscape) ----------- */

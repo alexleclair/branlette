@@ -1258,13 +1258,6 @@ body.shakelent .shake-bras {
   
 }
 /* iPads (landscape) ----------- */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  /* Styles */
-}
-/* iPads (portrait) ----------- */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  /* Styles */
-}
 @media only screen and (max-width: 978px) {
   #logo {
     left: 52px;
@@ -1292,7 +1285,7 @@ body.shakelent .shake-bras {
   }
   .page-landing .landing-code .bras2 .biphone-contenu .code,
   .page-landing .landing-confirmation .bras2 .biphone-contenu .code {
-    zoom: 0.7;
+    zoom: 0.6;
   }
   .page-landing .main {
     width: 100%;
@@ -1340,9 +1333,21 @@ body.shakelent .shake-bras {
   .page-landing .landing-confirmation .bras2 .biphone-contenu h2 {
     font-size: 12px;
   }
-  .page-landing .landing-code .bras2 .biphone-contenu .code,
-  .page-landing .landing-confirmation .bras2 .biphone-contenu .code {
-    zoom: 0.7;
+}
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  /* Styles */
+  .page-landing {
+    width: 768px;
+  }
+  .page-landing .landing-code .bras2,
+  .page-landing .landing-confirmation .bras2 {
+    background-position: -100px top;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu {
+    top: 175px;
+    left: 205px;
   }
 }
 /* Smartphones (portrait and landscape) ----------- */

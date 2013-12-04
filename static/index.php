@@ -81,7 +81,7 @@
         
         <div class="clear">
         <h1 class="left">Un concours <span>festif</span> de branlette interactive</h1>
-        <p class="right">Comme le temps des fêtes se doit un moment de joie et d'allégresse, nous invitons clients, agences et amis de l'industrie à venir se mesurer à un concours de branlette interactive.</p>
+        <p class="right">Puisque le temps des fêtes est un moment propice pour se réunir et célébrer, nous invitons clients, agences et amis de l'industrie à venir mesurer leur vigueur dans un amical combat de poigne.</p>
         </div>
     </div>
 

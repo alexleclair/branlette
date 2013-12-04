@@ -437,12 +437,13 @@ $ ->
 	        result.push(options.fn(ary[i]));
 	    return result.join('');
 	
-	App.init();
+	
 	if /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
 		App.isMobile = true;
 	# else
 	# 	App.playSound();
-
+	App.init();
+	
 	if window.DeviceMotionEvent?
 		# Shake sensitivity (a lower number is more)
 		sensitivity = 30;

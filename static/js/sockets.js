@@ -472,10 +472,10 @@
       }
       return result.join('');
     });
-    App.init();
     if (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
       App.isMobile = true;
     }
+    App.init();
     if (window.DeviceMotionEvent != null) {
       sensitivity = 30;
       x1 = 0;

@@ -18,6 +18,7 @@
     lastShakeTimes: [],
     siblingsCount: 0,
     objects: ['marie', 'jesus', 'nutcracker', 'emballage', 'boite', 'canne', 'explosif', 'ange', 'roi', 'canne2', 'cierge', 'boule'],
+    messages: ['Enweille, lâche pas la banane!', 'T\'y es presque, hein?', 'Allez, viens!', 'Pas game d\'aller plus vite.', 'Arrête pas!', 'Tes parents seraient fiers de toi.'],
     sounds: [
       {
         mp3: 'sounds/branlette_01.mp3',
@@ -178,20 +179,21 @@
       });
     },
     displayMessage: function(msg, x, y, fadeTime) {
-      var $bulle;
+      var $bulle, $parent;
       if (fadeTime == null) {
         fadeTime = 200;
       }
+      $bulle = $('.shake-bulle');
+      $parent = $bulle.parent();
       if (x == null) {
-        x = Math.random() * ($(window).width() / 2) + $(window).width() / 4;
+        x = Math.random() * ($parent.width() / 1);
       }
       if (y == null) {
-        y = Math.random() * ($(window).height() / 2) + $(window).height() / 4;
+        y = Math.random() * ($parent.height() / 1) - 200;
       }
-      $bulle = $('.shake-bulle');
       return $bulle.fadeOut(fadeTime, function() {
         $bulle.find('h3').text(msg);
-        return $bulle.css('top', x + 'px').css('left', y + 'px').fadeTo(fadeTime, 1);
+        return $bulle.css('top', y + 'px').css('left', x + 'px').fadeTo(fadeTime, 1);
       });
     },
     playSound: function(sound) {

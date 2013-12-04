@@ -25,6 +25,16 @@ App =
 		'cierge'
 		'boule'
 	]
+
+	messages:[
+		'Enweille, lâche pas la banane!',
+		'T\'y es presque, hein?',
+		'Allez, viens!',
+		'Pas game d\'aller plus vite.',
+		'Arrête pas!',
+		'Tes parents seraient fiers de toi.'
+	]
+
 	sounds:[
 		{
 			mp3:'sounds/branlette_01.mp3',
@@ -184,14 +194,15 @@ App =
 			App.refreshCodeScreen();
 	
 	displayMessage: (msg, x,y, fadeTime=200)=>
-		if !x?
-			x = Math.random()*($(window).width()/2) + $(window).width()/4
-		if !y?
-			y = Math.random()*($(window).height()/2) + $(window).height()/4
 		$bulle = $('.shake-bulle')
+		$parent = $bulle.parent();
+		if !x?
+			x = Math.random()*($parent.width()/1) #+ $parent.width()/4
+		if !y?
+			y = Math.random()*($parent.height()/1)-200 #+ $(window).height()/4
 		$bulle.fadeOut fadeTime,()=>
 			$bulle.find('h3').text(msg);
-			$bulle.css('top', x+'px').css('left', y+'px').fadeTo(fadeTime, 1);
+			$bulle.css('top', y+'px').css('left', x+'px').fadeTo(fadeTime, 1);
 
 
 	playSound:(sound)->

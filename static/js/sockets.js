@@ -191,11 +191,11 @@
       $bulle = $('.shake-bulle');
       return $bulle.fadeOut(fadeTime, function() {
         $bulle.find('h3').text(msg);
-        return $bulle.css('top', x + 'px').css('left', y + 'px').fadeIn(fadeTime);
+        return $bulle.css('top', x + 'px').css('left', y + 'px').fadeTo(fadeTime, 1);
       });
     },
     playSound: function(sound) {
-      var html;
+      var e, html;
       if (!App.playSounds) {
         return;
       }
@@ -207,10 +207,19 @@
       $('#audio-player #audio').append($(html));
       html = '<source src="' + sound.ogg + '" type="audio/ogg />';
       $('#audio-player #audio').append($(html));
-      return $('#audio').get(0).play();
+      try {
+        return $('#audio').get(0).play();
+      } catch (_error) {
+        e = _error;
+      }
     },
     stopSound: function() {
-      $('#audio').get(0).pause();
+      var e;
+      try {
+        $('#audio').get(0).pause();
+      } catch (_error) {
+        e = _error;
+      }
       return App.playSounds = false;
     },
     replaySound: function() {

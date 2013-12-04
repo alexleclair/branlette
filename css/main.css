@@ -138,6 +138,7 @@ body p {
   left: 3%;
   z-index: 1000;
   width: 15%;
+  max-width: 250px;
 }
 #logo img {
   width: 100%;
@@ -199,8 +200,12 @@ button[type="button"].small {
   font-size: 15px;
   line-height: 42px;
 }
-button.btn-change-object {
-  padding-left: 33px;
+button.btn-change-object span {
+  font-size: 18px;
+  margin-right: 0.3em;
+}
+.leftscore h1 {
+  display: none;
 }
 .stopSound {
   font-family: 'pictosregular' !important;
@@ -313,45 +318,29 @@ div.arrow-right {
 .page-landing .landing-code .bras2,
 .page-landing .landing-confirmation .bras2 {
   position: absolute;
-  width: 88%;
+  width: 100%;
   height: 100%;
-  background: url(../img/bras2.jpg) no-repeat left;
-  background-size: auto 100%;
-  max-height: 1440px;
-  margin-left: 12%;
-}
-.page-landing .landing-code .bras2image,
-.page-landing .landing-confirmation .bras2image {
-  height: 100%;
-  width: 88%;
-  position: absolute;
   left: 0;
   top: 0;
-  z-index: 2;
-  margin-left: 12%;
-}
-.page-landing .landing-code .bras2image .code,
-.page-landing .landing-confirmation .bras2image .code {
-  position: absolute;
-  z-index: 2;
-  font-size: 100%;
-  margin: 0;
-  text-align: center;
-  margin-left: 31%;
-  margin-top: 36%;
-  width: 17%;
   max-width: 1440px;
-  height: 4%;
+  max-height: 1440px;
+  min-width: 978px;
+  background: url(../img/bras2.jpg) no-repeat 100px top;
+  background-size: 1200px auto;
 }
 .page-landing .landing-code .biphone-contenu,
 .page-landing .landing-confirmation .biphone-contenu {
-  position: relative;
+  position: absolute;
+  width: 213px;
+  height: 252px;
+  top: 228px;
+  left: 472px;
 }
 .page-landing .landing-code .biphone-contenu h1,
 .page-landing .landing-confirmation .biphone-contenu h1 {
   border-top: 5px solid black;
   padding-top: 5%;
-  font-size: 42px;
+  font-size: 30px;
   line-height: 1em;
   margin: 0 0 15px 0;
 }
@@ -364,15 +353,11 @@ div.arrow-right {
 .page-landing .landing-code .biphone-contenu .code,
 .page-landing .landing-confirmation .biphone-contenu .code {
   font-size: 24px;
+  background: white;
   line-height: 60px;
   margin: 0;
   text-align: center;
-  background: pink;
-  width: 10%;
-  margin-left: 32%;
-  margin-top: 35%;
-  width: 17%;
-  height: 4%;
+  display: block;
 }
 .page-landing .main {
   width: 1100px;
@@ -523,7 +508,7 @@ body {
 .page-shake .shake-bras {
   width: 100%;
   height: 110%;
-  background-size: contain;
+  background-size: auto 100%;
   background-position: center bottom;
   background-repeat: no-repeat;
   z-index: 0;
@@ -552,6 +537,7 @@ body {
   font-size: 12px;
   width: 250px;
   z-index: 1000;
+  text-align: left;
 }
 .page-shake .shake-bulle h3 {
   border-top: 1px solid black;
@@ -612,6 +598,9 @@ body {
 }
 .page-shake .shake-repos .fatigue footer div {
   float: left;
+}
+body.has-agency .leftscore h1 {
+  display: block;
 }
 body.object-marie .page-shake,
 body.object-jesus .page-shake,
@@ -724,10 +713,10 @@ body.object-boule .pageiphone-shake div {
   background-image: url(../img/boule-iphone.jpg);
 }
 .shake-droite {
-  width: 540px;
+  width: 510px;
   position: absolute;
   bottom: 52px;
-  right: 112px;
+  right: 142px;
   border-bottom: 2px solid black;
 }
 .shake-droite h1 {
@@ -1043,6 +1032,25 @@ body.shakelent .shake-bras {
   .page-landing .landing-intro .cta {
     width: 60%;
   }
+  .page-landing .landing-code .bras2,
+  .page-landing .landing-confirmation .bras2 {
+    background-size: 1100px auto;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu {
+    left: 441px;
+    top: 200px;
+    width: 194px;
+    height: 232px;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu h1,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu h1 {
+    font-size: 24px;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu h2,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu h2 {
+    font-size: 18px;
+  }
   .page-landing .main {
     box-sizing: border-box;
     width: 60%;
@@ -1077,8 +1085,7 @@ body.shakelent .shake-bras {
     font-size: 0.75em;
   }
 }
-/* iPads (portrait and landscape) ----------- */
-@media only screen and (max-width: 1224px) and (min-width: 978px) {
+@media only screen and (max-width: 1224px) {
   #akfnlogo {
     bottom: 0;
   }
@@ -1103,6 +1110,26 @@ body.shakelent .shake-bras {
   #logo {
     zoom: 0.65;
   }
+  .page-landing .landing-code .bras2,
+  .page-landing .landing-confirmation .bras2 {
+    background-size: 978px auto;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu {
+    top: 168px;
+    left: 404px;
+    width: 170px;
+    height: 43px;
+    line-height: 43px;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu h2,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu h2 {
+    font-size: 1em;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu .code,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu .code {
+    zoom: 0.8;
+  }
   .page-landing .landing-intro .cta {
     box-sizing: border-box;
     width: 100%;
@@ -1113,10 +1140,6 @@ body.shakelent .shake-bras {
     float: left;
   }
   .page-landing .landing-intro .bras {
-    left: 0;
-    background-position: bottom;
-  }
-  .page-landing .bras2 {
     left: 0;
     background-position: bottom;
   }
@@ -1174,6 +1197,9 @@ body.shakelent .shake-bras {
     line-height: 1em;
   }
 }
+@media only screen and (max-height: 790px) {
+  
+}
 /* iPads (landscape) ----------- */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
   /* Styles */
@@ -1181,52 +1207,29 @@ body.shakelent .shake-bras {
 /* iPads (portrait) ----------- */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   /* Styles */
-  .page-landing .landing-intro .bras,
-  .page-landing .landing-code .bras2 {
-    box-sizing: border-box;
-    zoom: 0.8;
-    left: 0;
-    bottom: 0;
-  }
 }
 @media only screen and (max-width: 978px) {
-  body {
+  .page-landing {
+    display: block;
     width: 978px;
-    min-height: 1024px;
-    position: relative;
-  }
-  #akfnlogo {
-    position: absolute;
-    top: 850px;
-  }
-  .page-landing .landing-intro .bras {
-    background: url(../img/bras.png) no-repeat top center #30b542;
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    width: 978px;
-    max-width: 978px;
-    max-height: 678px;
-  }
-  .page-landing .landing-code .bras2 .bras2image {
-    width: 978px !important;
   }
   .page-landing .sidebar {
-    position: absolute;
-    right: 52px;
-    width: 32%;
+    position: relative;
+    float: right;
+    margin-top: -240px;
   }
-  .page-landing .sidebar header .left {
-    display: block;
-    line-height: 1em;
-    width: 60%;
-    margin-bottom: 0.5em;
+  .page-landing .landing-code .bras2,
+  .page-landing .landing-confirmation .bras2 {
+    background-position: top left;
   }
-  .page-landing .sidebar table td.agence,
-  .page-landing .sidebar table td.position {
-    font-size: 24px;
+  .page-landing .landing-code .bras2 .biphone-contenu,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu {
+    top: 165px;
+    left: 305px;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu .code,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu .code {
+    zoom: 0.7;
   }
   .page-landing .main {
     width: 100%;
@@ -1237,15 +1240,17 @@ body.shakelent .shake-bras {
     top: 550px;
     bottom: auto;
   }
-  .page-landing .landing-intro .cta {
-    position: relative;
-    top: 500px;
-    overflow: hidden;
-    zoom: 1;
-    left: 52px;
+  #akfnlogo {
+    position: fixed;
+    right: 52px;
   }
-  .page-landing .landing-intro .cta button {
-    float: left;
+  .page-classement {
+    width: 978px;
+    position: relative;
+    background: #30b542;
+  }
+  .page-classement .classement {
+    margin-top: 52px;
   }
 }
 /* Smartphones (portrait and landscape) ----------- */
@@ -1422,10 +1427,86 @@ body.shakelent .shake-bras {
   /* Styles */
 }
 /* Large screens ----------- */
-@media only screen and (min-width: 1824px) {
-  .bras2 {
-    max-height: 1024px;
-    top: 0;
+@media only screen and (min-width: 1921px) {
+  .page-landing .landing-code .bras2,
+  .page-landing .landing-confirmation .bras2 {
+    background-size: 1440px auto;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu {
+    width: 248px;
+    height: 282px;
+    top: 263px;
+    left: 548px;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu h1,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu h1 {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 1920px) and (min-height: 1200px) {
+  .page-landing .landing-code .bras2,
+  .page-landing .landing-confirmation .bras2 {
+    background-position: bottom left;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu {
+    top: auto;
+    width: 213px;
+    height: 252px;
+    bottom: 733px;
+    left: 371px;
+  }
+}
+@media only screen and (max-width: 1640px) and (min-height: 1100px) {
+  .page-landing .landing-code .bras2,
+  .page-landing .landing-confirmation .bras2 {
+    background-position: bottom left;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu {
+    left: 341px;
+    top: auto;
+    bottom: 676px;
+    width: 194px;
+    height: 232px;
+  }
+}
+@media only screen and (max-width: 1224px) and (min-height: 978px) {
+  .page-landing .landing-code .bras2,
+  .page-landing .landing-confirmation .bras2 {
+    background-position: bottom left;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu {
+    top: auto;
+    bottom: 770px;
+    left: 303px;
+    width: 170px;
+    height: 43px;
+  }
+}
+@media only screen and (max-width: 978px) and (min-height: 978px) {
+  .page-landing .landing-code .bras2,
+  .page-landing .landing-confirmation .bras2 {
+    background-position: bottom left;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu {
+    top: auto;
+    bottom: 770px;
+    left: 303px;
+    width: 170px;
+    height: 43px;
+  }
+  .page-landing .sidebar {
+    margin-top: 0;
+  }
+  .page-landing .main {
+    position: fixed;
+    top: auto ;
+    width: 978px;
+    bottom: 52px;
   }
 }
 /* iPhone 4 ----------- */

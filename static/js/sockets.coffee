@@ -191,7 +191,8 @@ App =
 		$bulle = $('.shake-bulle')
 		$bulle.fadeOut fadeTime,()=>
 			$bulle.find('h3').text(msg);
-			$bulle.css('top', x+'px').css('left', y+'px').fadeIn(fadeTime)
+			$bulle.css('top', x+'px').css('left', y+'px').fadeTo(fadeTime, 1);
+
 
 	playSound:(sound)->
 		if !App.playSounds
@@ -203,9 +204,16 @@ App =
 		$('#audio-player #audio').append($(html));
 		html = '<source src="'+sound.ogg+'" type="audio/ogg />'
 		$('#audio-player #audio').append($(html));
-		$('#audio').get(0).play();
+		try
+			$('#audio').get(0).play();
+		catch e
+			# ...
 	stopSound:()->
-		$('#audio').get(0).pause();
+		try
+			$('#audio').get(0).pause();
+		catch e
+			# ...
+		
 		App.playSounds = false;
 	replaySound:()->
 		App.playSounds = true;

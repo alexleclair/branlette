@@ -263,10 +263,13 @@ div.arrow-left {
   height: 0;
   border-top: 5px solid transparent;
   /* left arrow slant */
+
   border-bottom: 5px solid transparent;
   /* right arrow slant */
+
   border-right: 5px solid #ffd600;
   /* bottom, add background color here */
+
   font-size: 0;
   line-height: 0;
   display: inline-block;
@@ -277,10 +280,13 @@ div.arrow-right {
   height: 0;
   border-top: 5px solid transparent;
   /* left arrow slant */
+
   border-bottom: 5px solid transparent;
   /* right arrow slant */
+
   border-left: 5px solid #ffd600;
   /* bottom, add background color here */
+
   font-size: 0;
   line-height: 0;
   display: inline-block;
@@ -288,7 +294,7 @@ div.arrow-right {
 }
 /* LOADING */
 .page-loading {
-  background: url('../img/loader.gif') no-repeat center center #30b542;
+  background: url('../img/loader2.gif') no-repeat center center #30b542;
   background-size: auto 75%;
   height: 100%;
   width: 100%;
@@ -952,6 +958,7 @@ body.shakelent .shake-bras {
   border: 0;
   overflow: hidden;
   /* IE 6/7 fallback */
+
   *text-indent: -9999px;
 }
 .ir:before {
@@ -1014,8 +1021,10 @@ body.shakelent .shake-bras {
 .clearfix:after {
   content: " ";
   /* 1 */
+
   display: table;
   /* 2 */
+
 }
 .clearfix:after {
   clear: both;
@@ -1243,7 +1252,13 @@ body.shakelent .shake-bras {
     line-height: 1em;
   }
 }
+@media only screen and (max-height: 790px) {
+  
+}
 /* iPads (landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  
+}
 @media only screen and (max-width: 978px) {
   #logo {
     left: 52px;
@@ -1657,6 +1672,7 @@ body.shakelent .shake-bras {
     background: transparent !important;
     color: #000 !important;
     /* Black prints faster: h5bp.com/s */
+  
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -1671,8 +1687,8 @@ body.shakelent .shake-bras {
     content: " (" attr(title) ")";
   }
   /*
-     * Don't show links for images, or javascript/internal links
-     */
+       * Don't show links for images, or javascript/internal links
+       */
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
@@ -1686,6 +1702,7 @@ body.shakelent .shake-bras {
   thead {
     display: table-header-group;
     /* h5bp.com/t */
+  
   }
   tr,
   img {
@@ -1694,7 +1711,7 @@ body.shakelent .shake-bras {
   img {
     max-width: 100% !important;
   }
-  @page {
+  @page  {
     margin: 0.5cm;
   }
   p,

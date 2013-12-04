@@ -5,7 +5,7 @@
 
   App = {
     config: {
-      endpoint: 'http://alexleclair.ca:8090/'
+      endpoint: 'http://branlettedenoel.com/'
     },
     socket: null,
     labels: {},
@@ -472,11 +472,11 @@
       }
       return result.join('');
     });
-    App.init();
     if (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
       App.isMobile = true;
     }
-    if (window.DeviceMotionEvent != null) {
+    App.init();
+    if (App.isMobile && (window.DeviceMotionEvent != null)) {
       sensitivity = 30;
       x1 = 0;
       y1 = 0;

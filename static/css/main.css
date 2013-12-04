@@ -204,6 +204,9 @@ button.btn-change-object span {
   font-size: 18px;
   margin-right: 0.3em;
 }
+.leftscore h1 {
+  display: none;
+}
 .stopSound {
   font-family: 'pictosregular' !important;
   font-size: 20px;
@@ -589,6 +592,9 @@ body {
 }
 .page-shake .shake-repos .fatigue footer div {
   float: left;
+}
+body.has-agency .leftscore h1 {
+  display: block;
 }
 body.object-marie .page-shake,
 body.object-jesus .page-shake,

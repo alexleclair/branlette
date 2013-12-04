@@ -1,16 +1,6 @@
 
 $(document).ready(function(){
 
-	Branlette.stopSound();
-// 	$('html').mousemove(function(e){
-// 	var y = e.pageY*-0.05;
-// 	var x = e.pageX*-0.05;
-	
-// 	$('.bras').css({'background-position-y':y});
-// 	$('.bras').css({'background-position-x':x});
-
-
-// });
 	$(window).on('keydown', function(e){
 		// if($('.step.current').is('.pageiphone-shake')){ //Prevent shake to undo bullshit
 		// 	e.preventDefault();

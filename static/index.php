@@ -12,7 +12,7 @@
         <meta property="og:title" content="La Grande Branlette de Noël"/>
         <meta property="og:url" content="http://branlettedenoel.com/"/>
         <meta property="og:site_name" content="La Grande Branlette de Noël"/>
-        <meta property="og:site_name" content="Viens te la shaker pour ton équipe préférée sur La Grande Branlette De Noël.">
+        <meta property="og:description" content="Viens te la shaker pour ton équipe préférée sur La Grande Branlette De Noël.">
 
 
 

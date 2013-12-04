@@ -1307,10 +1307,17 @@ body.shakelent .shake-bras {
   .page-classement {
     width: 978px;
     position: relative;
+    zoom: 1;
+    overflow: hidden;
     background: #30b542;
   }
   .page-classement .classement {
     margin-top: 52px;
+    float: left;
+  }
+  .page-classement .sidebar {
+    position: relative;
+    float: right;
   }
 }
 @media only screen and (max-height: 768px) {

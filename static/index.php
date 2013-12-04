@@ -80,7 +80,7 @@
     <div class="main">
         
         <div class="clear">
-        <h1 class="left">Un concours <span>festif</span> de branlette interactive</h1>
+        <h1 class="left">Un autre concours de <span>branlette interactive</span></h1>
         <p class="right">Puisque le temps des fêtes est un moment propice pour se réunir et célébrer, nous invitons clients, agences et amis de l'industrie à venir mesurer leur vigueur dans un amical combat de poigne.</p>
         </div>
     </div>

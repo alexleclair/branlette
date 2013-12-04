@@ -199,6 +199,16 @@ App =
 		App.socket.on 'code', (code)->
 			App.code = code;
 			App.refreshCodeScreen();
+
+		App.socket.on 'connect', ()->
+				setTimeout ()->
+					if App.isMobile
+						App.gotoPage 'pageiphone-landing', null
+					else
+						App.gotoPage 'page-landing', 'landing-code'
+						App.playSound();
+				, 500
+				
 	
 	displayMessage: (msg, x,y, fadeTime=200, timer=null)=>
 		$bulle = $('.shake-bulle')
@@ -429,11 +439,9 @@ $ ->
 	
 	App.init();
 	if /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-		App.gotoPage 'pageiphone-landing', null, 0
 		App.isMobile = true;
-	else
-		App.gotoPage 'page-landing', 'landing-code', 0
-		App.playSound();
+	# else
+	# 	App.playSound();
 
 	if window.DeviceMotionEvent?
 		# Shake sensitivity (a lower number is more)

@@ -182,9 +182,19 @@
           return App.gotoPage('pageiphone-agence');
         }
       });
-      return App.socket.on('code', function(code) {
+      App.socket.on('code', function(code) {
         App.code = code;
         return App.refreshCodeScreen();
+      });
+      return App.socket.on('connect', function() {
+        return setTimeout(function() {
+          if (App.isMobile) {
+            return App.gotoPage('pageiphone-landing', null);
+          } else {
+            App.gotoPage('page-landing', 'landing-code');
+            return App.playSound();
+          }
+        }, 500);
       });
     },
     displayMessage: function(msg, x, y, fadeTime, timer) {
@@ -464,11 +474,7 @@
     });
     App.init();
     if (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-      App.gotoPage('pageiphone-landing', null, 0);
       App.isMobile = true;
-    } else {
-      App.gotoPage('page-landing', 'landing-code', 0);
-      App.playSound();
     }
     if (window.DeviceMotionEvent != null) {
       sensitivity = 30;

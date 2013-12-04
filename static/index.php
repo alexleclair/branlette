@@ -46,9 +46,9 @@
     <div class="landing-code substep" style="display: none">
         <div class="bras2">
             <div class="biphone-contenu" style="display: none">
-                <h1>Sur ton mobile var sur:</h1>
-                <h2>gatetoecestnoel.com</h2>
-                <p>Entre le code suivant pour connecter ton intelligent téléfun.</p>
+                <h1>Sur ton mobile, va sur:</h1>
+                <h2>branlettedenoel.com</h2>
+                <p>Entre le code pour le synchroniser avec l'écran.</p>
                 <div class="code" data-info="code"></div>
             </div>
         </div>
@@ -60,7 +60,7 @@
             <div class="biphone-contenu">
                 <h1>C&#8217;est bien synché...</h1>
                 <h2>Baisse les yeux:</h2>
-                <p>Regarde sur ton mobile, et sélectionne ton agence pour qui tu vas shaker ton téléphone a batterie.</p><p style="text-align: center; font-size: 30px;">&darr;<p>
+                <p>Regarde sur ton mobile, et sélectionne ton agence pour qui tu vas shaker ton téléphone.</p><p style="text-align: center; font-size: 30px;">&darr;<p>
             </div>
         </div>
     </div>
@@ -68,8 +68,8 @@
     <div class="main">
         
         <div class="clear">
-        <h1 class="left">Un grand concours de <span>branlette</span>  interactive</h1>
-        <p class="right">Le temps des fêtes est le moment idéal pour se réunir et célébrer. Nous invitons donc clients, agences et amis de l'industrie à venir participer à ce petit concours.</p>
+        <h1 class="left">Un concours <span>festif</span> de branlette interactive</h1>
+        <p class="right">Comme le temps des fêtes se doit un moment de joie et d'allégresse, nous invitons clients, agences et amis de l'industrie à venir se mesurer à un concours de branlette interactive.</p>
         </div>
     </div>
 
@@ -182,7 +182,7 @@
             <div class="left">Hey <span class="agencyName"></span>, Gâte-toé, c'est Noël</div> -->
             <div class="right"><a href="#twitter" class="icon-twitter"><div>twitter</div></a><a href="#facebook" class="icon-facebook"><div>facebook</div></a></div>
         </header>
-            <p class="right">Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. Fusce egestas ligula ac leo varius dapibus sed sit amet eros. Integer scelerisque egestas dui sit amet aliquet. Nulla posuere mattis ante, a f orci quam, tempor eu tristique vel, ultricies sit amet felis. Mauris volutpat, lacus non viverra porta, nisi mi fringilla risus, pharetra rutrum metus diam a purus.</p>
+            <p class="right">À toutes les semaines, nous allons faire faire des affaires nices à plein de monde nice, selon le nombre de shakes, donc share-lé.</p>
         <div class="leftscore">
             <h1><span class="agencyIndex">?</span>/<span class="agenciesCount">?</span></h1>
             <footer><a href="/" class="back-to-business"><div class="arrow-left"></div>Retour à la branlette</a></footer>
@@ -230,10 +230,12 @@
 
 <div class="pageiphone-shake step" style="display: none;">
 
-        <div>
+    <div class="shake-menu">
+        <div class="count"><div data-info="shake-sessioncount">0</div>&nbsp;shakes</div>
+        <a href="#" class="btn-leaderboard"><div class="arrow-right"></div>Classement</a>
+    </div>
 
-        </div>
-
+    <div class="image"></div>
 </div>
 
 <div id="audio-player" style="display:none">

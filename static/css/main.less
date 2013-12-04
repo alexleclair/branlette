@@ -635,16 +635,33 @@ html,body {
     }
 
 
-    .shake-intro h1 {
+
+    .shake-intro {
         position: absolute;
-        bottom: 20%;
-        line-height: 120px;
-        margin: 0;
         left: 104px;
+        bottom: 10%;
         max-width: 1024px;
         width: 90%;
-        font-size: 120px;
+
+        header {
+            display: none;
+            font-size: 16px;
+            font-family: @haasbold;
+            width: 30%;
+            margin-bottom: 2em;
+
+            span:first-child {
+                padding-right: 3em;
+                border-bottom: 4px solid black;
+            }
+        }
+
+        h1 {
+            font-size: 7em;
+            line-height: 1em;
+        }
     }
+
 
     .switch {
         position: fixed;
@@ -741,8 +758,15 @@ html,body {
     }
 }
 
-body.has-agency .leftscore h1 {
-    display: block;
+body.has-agency {
+
+    .leftscore h1 {
+        display: block;
+    }
+
+    .page-shake .shake-intro header {
+        display: block;
+    }
 }
 
 // vert
@@ -1291,8 +1315,12 @@ and (max-width: 1640px) {
 
  .page-shake {
 
-    .shake-intro {
-        zoom: 0.7;
+    .shake-intro  {
+        zoom: 0.75;
+
+        header {
+            zoom: 1.25;
+        }
     }
  }
 
@@ -1437,11 +1465,14 @@ and (max-width : 1224px) {
 
  }
 
-
  .page-shake {
 
-    .shake-intro h1 {
-        zoom: 0.8;
+    .shake-intro  {
+        zoom: 0.5;
+
+        header {
+            zoom: 2;
+        }
     }
  }
 .page-shake {

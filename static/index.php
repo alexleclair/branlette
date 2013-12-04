@@ -41,7 +41,7 @@
             <a href="/" style="border:0 !important;"><img src="img/logo_branlette.png" width="277" height="277" alt="Brrrrrrrranlettteee" /></a>
         </div>
 <!-- Quand qqun arrive sur le browser -->
-<div class="page-landing step" style="display: none">
+<div class="page-landing step">
     <div class="stepmaster">Page-Landing</div>
 
     <!-- <div class="landing-intro" style="display: none;">
@@ -51,7 +51,7 @@
         </div>
     </div> -->
 
-    <div class="landing-code substep" style="display: none">
+    <div class="landing-code substep">
         <div class="bras2">
             <div class="biphone-contenu" style="display: none">
                 <h1>Sur ton mobile, va sur:</h1>
@@ -102,7 +102,7 @@
 
 <!-- 3 states: 1. intro, 2. shaking, 3. repos/fatigué -->
 
-<div class="page-shake step">
+<div class="page-shake step" style="display: none">
     <!-- intro -->
     <div class="shake-intro substep">
         <header><span>Allo <span class="agencyName"></span></span></header>

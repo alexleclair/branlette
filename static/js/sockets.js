@@ -322,7 +322,21 @@
           _agencies.push(App.labels[key]);
           _byName[App.labels[key]] = key;
         }
-        _agencies.sort();
+        _agencies.sort(function(a, b) {
+          var _a, _b;
+          if ((a != null) && (b != null)) {
+            _a = a.toLowerCase();
+            _b = b.toLowerCase();
+            if (_a < _b) {
+              return -1;
+            }
+            if (_a > _b) {
+              return 1;
+            }
+            return 0;
+          }
+          return 0;
+        });
         for (i = _j = 0, _ref1 = _agencies.length; 0 <= _ref1 ? _j < _ref1 : _j > _ref1; i = 0 <= _ref1 ? ++_j : --_j) {
           _agencies[i] = {
             name: _agencies[i],

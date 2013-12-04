@@ -307,7 +307,18 @@ App =
 			for key of App.labels
 				_agencies.push App.labels[key]
 				_byName[App.labels[key]] = key;
-			_agencies.sort();
+			_agencies.sort (a,b)=>
+				if a? && b?
+					_a = a.toLowerCase()
+					_b = b.toLowerCase();
+					if _a < _b
+						return -1;
+					if _a > _b
+
+						return 1;
+					return 0;
+				return 0;
+
 			for i in [0..._agencies.length]
 				_agencies[i] = 
 					name: _agencies[i]

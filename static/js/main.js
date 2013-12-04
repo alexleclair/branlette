@@ -40,6 +40,15 @@ $(document).ready(function(){
 			}
 			return false;
 		}
+		else{
+			e.preventDefault();
+			if(Branlette.agency == null){
+				Branlette.gotoPage('pageiphone-agence');
+			}
+			else {
+				Branlette.gotoPage('pageiphone-shake');
+			}
+		}
 	})
 
 	$('form#add-agency').submit(function(e){

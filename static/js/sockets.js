@@ -360,15 +360,15 @@
       }
       $div = $('div.step.' + step);
       if (!$('div.step.current').is('.' + step)) {
-        $('div.step').hide().removeClass('current');
+        $('div.step').finish().hide().removeClass('current');
       }
       if ((substep != null) && !$div.find('.substep.current').is('.' + substep)) {
-        $div.find('.substep').not('.' + substep).fadeOut(fadeTime, function(e) {
+        $div.find('.substep').not('.' + substep).finish().fadeOut(fadeTime, function(e) {
           $div.find('.substep').removeClass('current');
-          return $div.find('.substep.' + substep).fadeIn(fadeTime).addClass('current');
+          return $div.find('.substep.' + substep).finish().fadeIn(fadeTime).addClass('current');
         });
       }
-      $div.addClass('current').fadeIn(fadeTime);
+      $div.addClass('current').finish().fadeIn(fadeTime);
       page = '/virtual/' + step;
       if (substep != null) {
         page += '/' + substep;

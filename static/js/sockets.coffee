@@ -339,15 +339,15 @@ App =
 
 		$div = $('div.step.'+step);
 		if !$('div.step.current').is('.'+step)
-			$('div.step').hide().removeClass('current');
+			$('div.step').finish().hide().removeClass('current');
 
 
 		if substep? && !$div.find('.substep.current').is('.'+substep)
 
-			$div.find('.substep').not('.'+substep).fadeOut fadeTime, (e)=>
+			$div.find('.substep').not('.'+substep).finish().fadeOut fadeTime, (e)=>
 				$div.find('.substep').removeClass('current');
-				$div.find('.substep.'+substep).fadeIn(fadeTime).addClass('current');
-		$div.addClass('current').fadeIn(fadeTime);
+				$div.find('.substep.'+substep).finish().fadeIn(fadeTime).addClass('current');
+		$div.addClass('current').finish().fadeIn(fadeTime);
 
 		page = '/virtual/'+step;
 		if substep?

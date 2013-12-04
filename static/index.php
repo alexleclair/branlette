@@ -41,6 +41,10 @@
             <a href="/" style="border:0 !important;"><img src="img/logo_branlette.png" width="277" height="277" alt="Brrrrrrrranlettteee" /></a>
         </div>
 <!-- Quand qqun arrive sur le browser -->
+
+<div class="page-loading step">
+</div>
+
 <div class="page-landing step" style="display: none">
     <div class="stepmaster">Page-Landing</div>
 
@@ -102,7 +106,7 @@
 
 <!-- 3 states: 1. intro, 2. shaking, 3. repos/fatigué -->
 
-<div class="page-shake step">
+<div class="page-shake step" style="display: none">
     <!-- intro -->
     <div class="shake-intro substep">
         <header><span>Allo <span class="agencyName"></span></span></header>

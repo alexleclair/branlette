@@ -635,16 +635,34 @@ html,body {
     }
 
 
-    .shake-intro h1 {
+
+    .shake-intro {
         position: absolute;
-        bottom: 150px;
-        line-height: 120px;
-        margin: 0;
-        left: 52px;
+        left: 104px;
+        bottom: 10%;
         max-width: 1024px;
         width: 90%;
-        font-size: 120px;
+
+        header {
+            display: none;
+            font-size: 16px;
+            font-family: @haasbold;
+            width: 30%;
+            margin-bottom: 2em;
+
+            span:first-child {
+                padding-right: 3em;
+                padding-bottom: 0.75em;
+                border-bottom: 4px solid black;
+            }
+        }
+
+        h1 {
+            font-size: 7em;
+            line-height: 1em;
+        }
     }
+
 
     .switch {
         position: fixed;
@@ -741,8 +759,15 @@ html,body {
     }
 }
 
-body.has-agency .leftscore h1 {
-    display: block;
+body.has-agency {
+
+    .leftscore h1 {
+        display: block;
+    }
+
+    .page-shake .shake-intro header {
+        display: block;
+    }
 }
 
 // vert
@@ -873,7 +898,7 @@ body.object-boule{
     position: absolute;
     bottom: 52px;
     right: 142px;
-    border-bottom: 2px solid black;
+    border-bottom: 4px solid black;
 
     h1 {
         font-size: 30px;
@@ -1289,6 +1314,20 @@ and (max-width: 1640px) {
 
  }
 
+ .page-shake {
+
+    .shake-intro  {
+
+        header {
+        }
+
+        h1 {
+
+        zoom: 0.75;
+        }
+    }
+ }
+
 
 
 }
@@ -1430,8 +1469,19 @@ and (max-width : 1224px) {
 
  }
 
+ .page-shake {
 
+    .shake-intro  {
 
+        header {
+        }
+
+        h1 {
+
+        zoom: 0.5;
+        }
+    }
+ }
 .page-shake {
 
     .shake-repos .fatigue {

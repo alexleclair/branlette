@@ -94,10 +94,11 @@
 
 <!-- 3 states: 1. intro, 2. shaking, 3. repos/fatigué -->
 
-<div class="page-shake step" style="display: none">
+<div class="page-shake step">
     <!-- intro -->
     <div class="shake-intro substep">
-        <h1 style="display: none;">Allo <span class="agencyName"></span>.<br>Shake comme si y’avait pas de lendemain.</h1>
+        <header><span>Allo <span class="agencyName"></span></span></header>
+        <h1>Shake comme si y’avait pas de lendemain.</h1>
     </div>
 
     <!-- shake -->

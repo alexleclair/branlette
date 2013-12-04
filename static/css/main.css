@@ -507,15 +507,28 @@ body {
   background-repeat: no-repeat;
   z-index: 0;
 }
-.page-shake .shake-intro h1 {
+.page-shake .shake-intro {
   position: absolute;
-  bottom: 150px;
-  line-height: 120px;
-  margin: 0;
-  left: 52px;
+  left: 104px;
+  bottom: 10%;
   max-width: 1024px;
   width: 90%;
-  font-size: 120px;
+}
+.page-shake .shake-intro header {
+  display: none;
+  font-size: 16px;
+  font-family: 'NHaasGroteskTXStd-75Bd';
+  width: 30%;
+  margin-bottom: 2em;
+}
+.page-shake .shake-intro header span:first-child {
+  padding-right: 3em;
+  padding-bottom: 0.75em;
+  border-bottom: 4px solid black;
+}
+.page-shake .shake-intro h1 {
+  font-size: 7em;
+  line-height: 1em;
 }
 .page-shake .switch {
   position: fixed;
@@ -594,6 +607,9 @@ body {
   float: left;
 }
 body.has-agency .leftscore h1 {
+  display: block;
+}
+body.has-agency .page-shake .shake-intro header {
   display: block;
 }
 body.object-marie .page-shake,
@@ -711,7 +727,7 @@ body.object-boule .pageiphone-shake div {
   position: absolute;
   bottom: 52px;
   right: 142px;
-  border-bottom: 2px solid black;
+  border-bottom: 4px solid black;
 }
 .shake-droite h1 {
   font-size: 30px;
@@ -1075,6 +1091,9 @@ body.shakelent .shake-bras {
   .page-classement .classement #leaderboard .position {
     font-size: 0.75em;
   }
+  .page-shake .shake-intro h1 {
+    zoom: 0.75;
+  }
 }
 @media only screen and (max-width: 1224px) {
   #akfnlogo {
@@ -1158,6 +1177,9 @@ body.shakelent .shake-bras {
   }
   .page-classement .sidebar p.right {
     margin-top: 1em;
+  }
+  .page-shake .shake-intro h1 {
+    zoom: 0.5;
   }
   .page-shake .shake-repos .fatigue {
     width: 30%;

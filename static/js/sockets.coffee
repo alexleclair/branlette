@@ -207,7 +207,7 @@ App =
 					else
 						App.gotoPage 'page-landing', 'landing-code'
 						App.playSound();
-				, 500
+				, 1500
 				
 	
 	displayMessage: (msg, x,y, fadeTime=200, timer=null)=>

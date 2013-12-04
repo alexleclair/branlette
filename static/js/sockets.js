@@ -194,7 +194,7 @@
             App.gotoPage('page-landing', 'landing-code');
             return App.playSound();
           }
-        }, 500);
+        }, 1500);
       });
     },
     displayMessage: function(msg, x, y, fadeTime, timer) {

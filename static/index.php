@@ -224,7 +224,8 @@
         
     </ul>
 <br><br>
-    <h3>Ajouter mon agence de branleur:</h3> <form id="add-agency"><input type="text" class="add-agency" value="" /></form>
+    <h3>Ajouter mon agence de branleur:</h3> <form id="add-agency"><input type="text" class="add-agency" value="" />
+    <input type="submit" value="Ajouter" class="button" /></form>
 </div>
 
 <div class="pageiphone-shake step" style="display: none;">

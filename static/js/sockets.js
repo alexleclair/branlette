@@ -5,7 +5,7 @@
 
   App = {
     config: {
-      endpoint: 'http://alexleclair.ca:8090/'
+      endpoint: 'http://10.0.10.158:8090/'
     },
     socket: null,
     labels: {},
@@ -195,7 +195,7 @@
       });
     },
     playSound: function(sound) {
-      var html;
+      var e, html;
       if (!App.playSounds) {
         return;
       }
@@ -207,10 +207,19 @@
       $('#audio-player #audio').append($(html));
       html = '<source src="' + sound.ogg + '" type="audio/ogg />';
       $('#audio-player #audio').append($(html));
-      return $('#audio').get(0).play();
+      try {
+        return $('#audio').get(0).play();
+      } catch (_error) {
+        e = _error;
+      }
     },
     stopSound: function() {
-      $('#audio').get(0).pause();
+      var e;
+      try {
+        $('#audio').get(0).pause();
+      } catch (_error) {
+        e = _error;
+      }
       return App.playSounds = false;
     },
     replaySound: function() {

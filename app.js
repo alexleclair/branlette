@@ -26,6 +26,7 @@
       redisKey: 'noel:dev:',
       wwwPath: './static/',
       updateRedisTimer: 5000,
+      sendAgenciesTimer: 2500,
       labels: {
         acolyte: 'Acolyte Communication',
         adviso: 'Adviso',
@@ -153,6 +154,7 @@
       App.loadAgencies();
       setInterval(this._saveScores, this.config.updateRedisTimer);
       setInterval(this.loadAgencies, this.config.updateRedisTimer);
+      setInterval(App.sendAgencies, this.config.sendAgenciesTimer);
       return this.io.on('connection', function(socket) {
         var code;
         ++App.connCounter;
@@ -177,7 +179,7 @@
               App.agencies[agency].people++;
             }
             App.sendToSiblings(socket, 'pick', agency);
-            return App.sendAgencies();
+            return App.sendAgencies(socket);
           });
         });
         socket.on('shake', function(agency) {
@@ -186,15 +188,14 @@
           }
           if ((agency != null) && (App.agencies[agency] != null)) {
             App.agencies[agency].count++;
-            App.sendAgencies();
           } else {
             socket.get('agency', function(err, currentAgency) {
               if (!((err != null) || (currentAgency == null)) && (App.agencies[currentAgency] != null)) {
-                App.agencies[currentAgency].count++;
-                return App.sendAgencies();
+                return App.agencies[currentAgency].count++;
               }
             });
           }
+          App.sendAgencies(socket);
           return App.sendToSiblings(socket, 'shake', agency);
         });
         socket.on('registerSibling', function(inviteId) {
@@ -211,7 +212,7 @@
           socket.get('agency', function(err, currentAgency) {
             if (!((err != null) || (currentAgency == null)) && (App.agencies[currentAgency] != null)) {
               App.agencies[currentAgency].people--;
-              return App.sendAgencies();
+              return App.sendAgencies(socket);
             }
           });
           socket.get('code', function(err, code) {
@@ -320,7 +321,19 @@
         return _results;
       });
     },
-    sendAgencies: function() {
+    sendAgencies: function(socket) {
+      var e;
+      if (socket == null) {
+        socket = null;
+      }
+      if (socket != null) {
+        try {
+          App.sendToSiblings(socket, 'agencies', App.agencies);
+        } catch (_error) {
+          e = _error;
+        }
+        return;
+      }
       return App.io.sockets.emit('agencies', App.agencies);
     },
     _handleAPICalls: function(req, res) {

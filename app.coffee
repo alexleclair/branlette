@@ -27,6 +27,7 @@ App =
 			redisKey:'noel:dev:'
 			wwwPath:'./static/'
 			updateRedisTimer:5000
+			sendAgenciesTimer:2500;
 			labels:
 				acolyte:	'Acolyte Communication'
 				adviso:		'Adviso'
@@ -159,6 +160,7 @@ App =
 
 				setInterval @_saveScores, @config.updateRedisTimer
 				setInterval @loadAgencies, @config.updateRedisTimer
+				setInterval App.sendAgencies, @config.sendAgenciesTimer
 
 				@io.on 'connection', (socket)->
 					++App.connCounter;
@@ -185,17 +187,16 @@ App =
 							
 							App.sendToSiblings(socket, 'pick', agency)
 
-							App.sendAgencies();
+							App.sendAgencies(socket); #send to siblings
 
 					socket.on 'shake', (agency=null)->
 						if agency? && App.agencies[agency]?
 							App.agencies[agency].count++;
-							App.sendAgencies();
 						else
 							socket.get 'agency', (err, currentAgency)->
 								if !(err? || !currentAgency?) && App.agencies[currentAgency]?
 									App.agencies[currentAgency].count++;
-									App.sendAgencies();
+						App.sendAgencies(socket);
 						App.sendToSiblings(socket, 'shake', agency)
 
 					socket.on 'registerSibling', (inviteId)->
@@ -212,7 +213,7 @@ App =
 						socket.get 'agency', (err, currentAgency)->
 							if !(err? || !currentAgency?) && App.agencies[currentAgency]?
 								App.agencies[currentAgency].people--;
-								App.sendAgencies();
+								App.sendAgencies(socket);
 						socket.get 'code', (err, code)->
 							if code?
 
@@ -281,7 +282,14 @@ App =
 									people:0
 					_call key;
 
-		sendAgencies:()->
+		sendAgencies:(socket=null)->
+			if socket?
+				try
+					App.sendToSiblings(socket, 'agencies', App.agencies);
+				catch e
+					
+				return;
+			
 			App.io.sockets.emit 'agencies', App.agencies
 
 		_handleAPICalls: (req, res) ->

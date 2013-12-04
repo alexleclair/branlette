@@ -1,6 +1,6 @@
 App = 
 	config:
-		endpoint:'http://alexleclair.ca:8090/'
+		endpoint:'http://10.0.10.158:8090/'
 	socket:null
 	labels:{}
 	agencies:{}
@@ -203,9 +203,16 @@ App =
 		$('#audio-player #audio').append($(html));
 		html = '<source src="'+sound.ogg+'" type="audio/ogg />'
 		$('#audio-player #audio').append($(html));
-		$('#audio').get(0).play();
+		try
+			$('#audio').get(0).play();
+		catch e
+			# ...
 	stopSound:()->
-		$('#audio').get(0).pause();
+		try
+			$('#audio').get(0).pause();
+		catch e
+			# ...
+		
 		App.playSounds = false;
 	replaySound:()->
 		App.playSounds = true;

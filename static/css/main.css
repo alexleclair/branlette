@@ -509,10 +509,10 @@ body {
 }
 .page-shake .shake-intro h1 {
   position: absolute;
-  bottom: 150px;
+  bottom: 20%;
   line-height: 120px;
   margin: 0;
-  left: 52px;
+  left: 104px;
   max-width: 1024px;
   width: 90%;
   font-size: 120px;
@@ -1075,6 +1075,9 @@ body.shakelent .shake-bras {
   .page-classement .classement #leaderboard .position {
     font-size: 0.75em;
   }
+  .page-shake .shake-intro {
+    zoom: 0.7;
+  }
 }
 @media only screen and (max-width: 1224px) {
   #akfnlogo {
@@ -1158,6 +1161,9 @@ body.shakelent .shake-bras {
   }
   .page-classement .sidebar p.right {
     margin-top: 1em;
+  }
+  .page-shake .shake-intro h1 {
+    zoom: 0.8;
   }
   .page-shake .shake-repos .fatigue {
     width: 30%;

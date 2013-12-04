@@ -133,7 +133,7 @@
     <div class="shake-repos substep" style="display: none;">
 
         <div class="fatigue">
-            <h1>Deja fatigué?</h1>
+            <h1>Déjà fatigué?</h1>
             <h2>Tu as shaké <div data-info="shake-sessioncount" style="display: inline">0</div> fois. Hey, Bravo. Fais pas ton égoïste. Partage ton plaisir pis ton score de branlette. Pas game!</h2>
             <footer><a href="#twitter" class="icon-twitter"><div>twitter</div></a><a href="#facebook" class="icon-facebook"><div>facebook</div></a></footer>
         </div>

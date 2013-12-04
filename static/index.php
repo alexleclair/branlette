@@ -6,8 +6,15 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
+        <title>La Grande Branlette de Noël</title>
+        <meta name="description" content="Viens te la shaker pour ton équipe préférée sur La Grande Branlette De Noël.">
+        <meta property="og:image" content="http://branlettedenoel.com/img/logo_branlette.png"/>
+        <meta property="og:title" content="La Grande Branlette de Noël"/>
+        <meta property="og:url" content="http://branlettedenoel.com/"/>
+        <meta property="og:site_name" content="La Grande Branlette de Noël"/>
+
+
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->

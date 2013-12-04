@@ -79,7 +79,6 @@
     currentObject: null,
     playSounds: true,
     init: function(callback) {
-      App.displayMessage();
       $('#audio').on('ended', function(e) {
         if (!App.isMobile) {
           return App.playSound();
@@ -98,11 +97,15 @@
         App.resetTexts();
         $('body').addClass('has-agency');
         if (App.isMobile) {
-          return App.gotoPage('pageiphone-shake');
+          App.gotoPage('pageiphone-shake');
+          if (App.siblingsCount < 2) {
+            App.changeObject(App.objects[Math.floor(Math.random() * (App.objects.length - 1))], true);
+          }
         } else {
           App.gotoPage('page-shake', 'shake-intro');
-          return App.changeObject(App.objects[Math.floor(Math.random() * (App.objects.length - 1))], true);
+          App.changeObject(App.objects[Math.floor(Math.random() * (App.objects.length - 1))], true);
         }
+        return setTimeout(App.displayMessage, 5000);
       });
       App.socket.on('object', function(obj) {
         return App.changeObject(obj);

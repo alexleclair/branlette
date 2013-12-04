@@ -108,9 +108,6 @@ App =
 	playSounds:true;
 
 	init: (callback)=>
-
-		App.displayMessage();
-
 		$('#audio').on 'ended', (e)->
 			if !App.isMobile
 				App.playSound();
@@ -127,9 +124,13 @@ App =
 			$('body').addClass('has-agency');
 			if App.isMobile
 				App.gotoPage 'pageiphone-shake'
+				if App.siblingsCount < 2
+					App.changeObject App.objects[Math.floor(Math.random() * (App.objects.length-1))], true
 			else
 				App.gotoPage 'page-shake', 'shake-intro'
 				App.changeObject App.objects[Math.floor(Math.random() * (App.objects.length-1))], true
+
+			setTimeout App.displayMessage, 5000;
 				
 
 		App.socket.on 'object', (obj) ->

@@ -36,12 +36,12 @@
 <div class="page-landing step" style="display: none">
     <div class="stepmaster">Page-Landing</div>
 
-    <div class="landing-intro" style="display: none;">
+    <!-- <div class="landing-intro" style="display: none;">
         <div class="bras"></div>
         <div class="cta">
             <button type="button" class="start right">Une p&#8217tite vite</button>
         </div>
-    </div>
+    </div> -->
 
     <div class="landing-code substep" style="display: none">
         <div class="bras2">
@@ -68,8 +68,8 @@
     <div class="main">
         
         <div class="clear">
-        <h1 class="left">Un concours <span>interagence</span>  de branlette interactive</h1>
-        <p class="right">Le temps des fêtes est le moment idéal pour souligner le beau travail accompli durant l'année par nos confrères et amis de l'industrie... mais pas cette fois.</p>
+        <h1 class="left">Un grand concours de <span>branlette</span>  interactive</h1>
+        <p class="right">Le temps des fêtes est le moment idéal pour se réunir et célébrer. Nous invitons donc clients, agences et amis de l'industrie à venir participer à ce petit concours.</p>
         </div>
     </div>
 
@@ -94,7 +94,7 @@
 
 <!-- 3 states: 1. intro, 2. shaking, 3. repos/fatigué -->
 
-<div class="page-shake step" style="display: block">
+<div class="page-shake step" style="display: none">
     <!-- intro -->
     <div class="shake-intro substep">
         <h1 style="display: none;">Allo <span class="agencyName"></span>.<br>Shake comme si y’avait pas de lendemain.</h1>

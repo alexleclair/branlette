@@ -1070,7 +1070,6 @@ body.shakelent .shake-bras {
     font-size: 0.75em;
   }
 }
-/* iPads (portrait and landscape) ----------- */
 @media only screen and (max-width: 1224px) {
   #akfnlogo {
     bottom: 0;
@@ -1102,11 +1101,19 @@ body.shakelent .shake-bras {
   }
   .page-landing .landing-code .bras2 .biphone-contenu,
   .page-landing .landing-confirmation .bras2 .biphone-contenu {
-    top: 185px;
+    top: 168px;
     left: 404px;
     width: 170px;
     height: 43px;
     line-height: 43px;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu h2,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu h2 {
+    font-size: 1em;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu .code,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu .code {
+    zoom: 0.8;
   }
   .page-landing .landing-intro .cta {
     box-sizing: border-box;
@@ -1184,32 +1191,27 @@ body.shakelent .shake-bras {
   /* Styles */
 }
 @media only screen and (max-width: 978px) {
-  body {
-    background: url(../img/bras2.jpg) no-repeat top left #30b542;
-    background-size: 978px auto;
-    padding: 0;
-    margin: 0;
-    z-index: 1;
-    position: relative;
-  }
   .page-landing {
     display: block;
-    position: relative;
     width: 978px;
   }
   .page-landing .sidebar {
-    position: absolute;
+    position: relative;
+    float: right;
+    margin-top: -240px;
   }
   .page-landing .landing-code .bras2,
   .page-landing .landing-confirmation .bras2 {
-    background: none;
-    top: 0;
-    left: 0;
+    background-position: top left;
   }
   .page-landing .landing-code .bras2 .biphone-contenu,
   .page-landing .landing-confirmation .bras2 .biphone-contenu {
-    top: 185px;
+    top: 165px;
     left: 305px;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu .code,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu .code {
+    zoom: 0.7;
   }
   .page-landing .main {
     width: 100%;
@@ -1411,6 +1413,73 @@ body.shakelent .shake-bras {
   .page-landing .landing-code .bras2,
   .page-landing .landing-confirmation .bras2 {
     background-size: 1440px auto;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu {
+    width: 248px;
+    height: 282px;
+    top: 263px;
+    left: 548px;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu h1,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu h1 {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 1920px) and (min-height: 1200px) {
+  .page-landing .landing-code .bras2,
+  .page-landing .landing-confirmation .bras2 {
+    background-position: bottom left;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu {
+    top: auto;
+    width: 213px;
+    height: 252px;
+    bottom: 733px;
+    left: 371px;
+  }
+}
+@media only screen and (max-width: 1640px) and (min-height: 1100px) {
+  .page-landing .landing-code .bras2,
+  .page-landing .landing-confirmation .bras2 {
+    background-position: bottom left;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu {
+    left: 341px;
+    top: auto;
+    bottom: 676px;
+    width: 194px;
+    height: 232px;
+  }
+}
+@media only screen and (max-width: 1224px) and (min-height: 978px) {
+  .page-landing .landing-code .bras2,
+  .page-landing .landing-confirmation .bras2 {
+    background-position: bottom left;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu {
+    top: auto;
+    bottom: 770px;
+    left: 303px;
+    width: 170px;
+    height: 43px;
+  }
+}
+@media only screen and (max-width: 978px) and (min-height: 978px) {
+  .page-landing .landing-code .bras2,
+  .page-landing .landing-confirmation .bras2 {
+    background-position: bottom left;
+  }
+  .page-landing .landing-code .bras2 .biphone-contenu,
+  .page-landing .landing-confirmation .bras2 .biphone-contenu {
+    top: auto;
+    bottom: 770px;
+    left: 303px;
+    width: 170px;
+    height: 43px;
   }
 }
 /* iPhone 4 ----------- */

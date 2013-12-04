@@ -5,7 +5,7 @@
 
   App = {
     config: {
-      endpoint: 'http://10.0.10.158:8090/'
+      endpoint: 'http://alexleclair.ca:8090/'
     },
     socket: null,
     labels: {},
@@ -191,7 +191,7 @@
       $bulle = $('.shake-bulle');
       return $bulle.fadeOut(fadeTime, function() {
         $bulle.find('h3').text(msg);
-        return $bulle.css('top', x + 'px').css('left', y + 'px').fadeIn(fadeTime);
+        return $bulle.css('top', x + 'px').css('left', y + 'px').fadeTo(fadeTime, 1);
       });
     },
     playSound: function(sound) {

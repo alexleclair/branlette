@@ -1,6 +1,6 @@
 App = 
 	config:
-		endpoint:'http://10.0.10.158:8090/'
+		endpoint:'http://alexleclair.ca:8090/'
 	socket:null
 	labels:{}
 	agencies:{}
@@ -191,7 +191,8 @@ App =
 		$bulle = $('.shake-bulle')
 		$bulle.fadeOut fadeTime,()=>
 			$bulle.find('h3').text(msg);
-			$bulle.css('top', x+'px').css('left', y+'px').fadeIn(fadeTime)
+			$bulle.css('top', x+'px').css('left', y+'px').fadeTo(fadeTime, 1);
+
 
 	playSound:(sound)->
 		if !App.playSounds

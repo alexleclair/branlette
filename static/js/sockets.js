@@ -472,7 +472,7 @@
       App.playSound();
     }
     if (window.DeviceMotionEvent != null) {
-      sensitivity = 40;
+      sensitivity = 30;
       x1 = 0;
       y1 = 0;
       z1 = 0;

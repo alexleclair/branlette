@@ -437,7 +437,7 @@ $ ->
 
 	if window.DeviceMotionEvent?
 		# Shake sensitivity (a lower number is more)
-		sensitivity = 40;
+		sensitivity = 30;
 
 		# Position variables
 		x1 = 0

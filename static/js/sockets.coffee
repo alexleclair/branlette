@@ -255,6 +255,7 @@ App =
 	
 	pickAgency: (agency)->
 		App.socket.emit 'pick', agency;
+		ga('send','pageview', '/virtual/pick/'+agency)
 
 	shake: (agency)->
 		if !agency?
@@ -271,6 +272,8 @@ App =
 
 		if sendToServer
 			App.socket.emit 'object', obj
+		ga('send','pageview', '/virtual/background/'+obj)
+
 
 
 	resetTexts:()=>
@@ -345,6 +348,18 @@ App =
 				$div.find('.substep').removeClass('current');
 				$div.find('.substep.'+substep).fadeIn(fadeTime).addClass('current');
 		$div.addClass('current').fadeIn(fadeTime);
+
+		page = '/virtual/'+step;
+		if substep?
+			page += '/'+substep
+
+		if !App.lastPage? || App.lastPage != page
+			ga('send','pageview', page)
+			console.log 'tracked', page
+		App.lastPage = page;
+
+
+
 
 	facebookShare:()=>
 		msg = 'Viens shaker pour ton équipe favorite et prend part à la Grande Branlette de Noël.'

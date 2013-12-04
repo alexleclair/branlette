@@ -659,73 +659,73 @@ body.object-cierge .pageiphone-shake {
 body.object-marie .shake-bras {
   background-image: url(../img/marie.jpg);
 }
-body.object-marie .pageiphone-shake div {
+body.object-marie .pageiphone-shake div.image {
   background-image: url(../img/marie-iphone.jpg);
 }
 body.object-jesus .shake-bras {
   background-image: url(../img/jesus.jpg);
 }
-body.object-jesus .pageiphone-shake div {
+body.object-jesus .pageiphone-shake div.image {
   background-image: url(../img/jesus-iphone.jpg);
 }
 body.object-nutcracker .shake-bras {
   background-image: url(../img/nutcracker.jpg);
 }
-body.object-nutcracker .pageiphone-shake div {
+body.object-nutcracker .pageiphone-shake div.image {
   background-image: url(../img/nutcracker-iphone.jpg);
 }
 body.object-emballage .shake-bras {
   background-image: url(../img/emballage.jpg);
 }
-body.object-emballage .pageiphone-shake div {
+body.object-emballage .pageiphone-shake div.image {
   background-image: url(../img/emballage-iphone.jpg);
 }
 body.object-boite .shake-bras {
   background-image: url(../img/boite.jpg);
 }
-body.object-boite .pageiphone-shake div {
+body.object-boite .pageiphone-shake div.image {
   background-image: url(../img/boite-iphone.jpg);
 }
 body.object-canne .shake-bras {
   background-image: url(../img/canne.jpg);
 }
-body.object-canne .pageiphone-shake div {
+body.object-canne .pageiphone-shake div.image {
   background-image: url(../img/canne-iphone.jpg);
 }
 body.object-explosif .shake-bras {
   background-image: url(../img/explosif.jpg);
 }
-body.object-explosif .pageiphone-shake div {
+body.object-explosif .pageiphone-shake div.image {
   background-image: url(../img/explosif-iphone.jpg);
 }
 body.object-ange .shake-bras {
   background-image: url(../img/ange.jpg);
 }
-body.object-ange .pageiphone-shake div {
+body.object-ange .pageiphone-shake div.image {
   background-image: url(../img/ange-iphone.jpg);
 }
 body.object-roi .shake-bras {
   background-image: url(../img/roi.jpg);
 }
-body.object-roi .pageiphone-shake div {
+body.object-roi .pageiphone-shake div.image {
   background-image: url(../img/roi-iphone.jpg);
 }
 body.object-canne2 .shake-bras {
   background-image: url(../img/canne2.jpg);
 }
-body.object-canne2 .pageiphone-shake div {
+body.object-canne2 .pageiphone-shake div.image {
   background-image: url(../img/canne2-iphone.jpg);
 }
 body.object-cierge .shake-bras {
   background-image: url(../img/cierge.jpg);
 }
-body.object-cierge .pageiphone-shake div {
+body.object-cierge .pageiphone-shake div.image {
   background-image: url(../img/cierge-iphone.jpg);
 }
 body.object-boule .shake-bras {
   background-image: url(../img/boule.jpg);
 }
-body.object-boule .pageiphone-shake div {
+body.object-boule .pageiphone-shake div.image {
   background-image: url(../img/boule-iphone.jpg);
 }
 .shake-droite {
@@ -1360,6 +1360,46 @@ body.shakelent .shake-bras {
   #add-agency button {
     border-radius: 0;
   }
+  .pageiphone-shake .shake-nombre {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    font-size: 48px;
+    text-align: center;
+  }
+  .pageiphone-shake .shake-menu {
+    width: 100%;
+    position: fixed;
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 1% 5% 0 5%;
+    background-color: #30b542;
+  }
+  .pageiphone-shake .shake-menu .count {
+    float: left;
+    width: 30%;
+    line-height: 50px;
+  }
+  .pageiphone-shake .shake-menu .count div {
+    display: inline;
+  }
+  .pageiphone-shake .shake-menu .btn-leaderboard {
+    text-align: right;
+    width: 70%;
+    float: right;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+  }
+  .pageiphone-shake .shake-menu .btn-leaderboard div {
+    position: relative;
+    top: -5px;
+    display: inline;
+  }
   .pageiphone-agence {
     background: #ec1d1d;
   }
@@ -1388,9 +1428,9 @@ body.shakelent .shake-bras {
   }
   .pageiphone-agence ul li {
     font-family: 'NHaasGroteskTXStd-75Bd';
-    line-height: 48px;
+    line-height: 1em;
     font-size: 30px;
-    padding: 0 25px;
+    padding: 0 25px 0.75em 25px;
   }
   .pageiphone-agence ul li span {
     border-bottom: 1px solid black;
@@ -1408,6 +1448,9 @@ body.shakelent .shake-bras {
   .pageiphone-agence.one-selected {
     background-color: #30b542;
   }
+  .page-classement {
+    width: 100%;
+  }
   .page-classement .classement {
     padding: 5%;
     width: 100%;
@@ -1417,9 +1460,12 @@ body.shakelent .shake-bras {
   .page-classement .classement header {
     display: none;
   }
+  .page-classement .classement #leaderboard td {
+    padding: 3% 0 1.5% 0;
+  }
   .page-classement .classement #leaderboard .agence,
   .page-classement .classement #leaderboard .position {
-    font-size: 0.5em;
+    font-size: 0.3em;
   }
   .page-classement .sidebar {
     width: 100%;

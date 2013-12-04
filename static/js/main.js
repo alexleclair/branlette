@@ -30,7 +30,7 @@ $(document).ready(function(){
 		if(!Branlette.isMobile){
 			e.preventDefault();
 			if(Branlette.agency == null){
-				Branlette.gotoPage('page-landing');
+				Branlette.gotoPage('page-landing', 'landing-code');
 			}
 			else if(Branlette.siblingsCount > 1){
 				Branlette.gotoPage('page-shake');

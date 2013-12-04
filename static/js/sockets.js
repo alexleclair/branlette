@@ -258,7 +258,8 @@
       return App.socket.emit('registerSibling', code);
     },
     pickAgency: function(agency) {
-      return App.socket.emit('pick', agency);
+      App.socket.emit('pick', agency);
+      return ga('send', 'pageview', '/virtual/pick/' + agency);
     },
     shake: function(agency) {
       if (agency == null) {
@@ -280,8 +281,9 @@
       $('body').addClass('object-' + obj);
       App.currentObject = obj;
       if (sendToServer) {
-        return App.socket.emit('object', obj);
+        App.socket.emit('object', obj);
       }
+      return ga('send', 'pageview', '/virtual/background/' + obj);
     },
     resetTexts: function() {
       var agencies, agency, i, index, key, source, template, _agencies, _byName, _i, _j, _ref, _ref1;
@@ -349,7 +351,7 @@
       }));
     },
     gotoPage: function(step, substep, fadeTime) {
-      var $div;
+      var $div, page;
       if (fadeTime == null) {
         fadeTime = 500;
       }
@@ -366,7 +368,16 @@
           return $div.find('.substep.' + substep).fadeIn(fadeTime).addClass('current');
         });
       }
-      return $div.addClass('current').fadeIn(fadeTime);
+      $div.addClass('current').fadeIn(fadeTime);
+      page = '/virtual/' + step;
+      if (substep != null) {
+        page += '/' + substep;
+      }
+      if ((App.lastPage == null) || App.lastPage !== page) {
+        ga('send', 'pageview', page);
+        console.log('tracked', page);
+      }
+      return App.lastPage = page;
     },
     facebookShare: function() {
       var msg;

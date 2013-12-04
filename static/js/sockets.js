@@ -375,7 +375,6 @@
       }
       if ((App.lastPage == null) || App.lastPage !== page) {
         ga('send', 'pageview', page);
-        console.log('tracked', page);
       }
       return App.lastPage = page;
     },

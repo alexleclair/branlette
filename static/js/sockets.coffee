@@ -355,7 +355,7 @@ App =
 
 		if !App.lastPage? || App.lastPage != page
 			ga('send','pageview', page)
-			console.log 'tracked', page
+			#console.log 'tracked', page
 		App.lastPage = page;
 
 

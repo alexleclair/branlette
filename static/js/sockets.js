@@ -19,6 +19,11 @@
     siblingsCount: 0,
     objects: ['marie', 'jesus', 'nutcracker', 'emballage', 'boite', 'canne', 'explosif', 'ange', 'roi', 'canne2', 'cierge', 'boule'],
     messages: ['Enweille, lâche pas la banane!', 'T\'y es presque, hein?', 'Allez, viens!', 'Pas game d\'aller plus vite.', 'Arrête pas!', 'Tes parents seraient fiers de toi.'],
+    messagesTimeout: {
+      min: 3000,
+      max: 9000,
+      timerId: null
+    },
     sounds: [
       {
         mp3: 'sounds/branlette_01.mp3',
@@ -74,6 +79,7 @@
     currentObject: null,
     playSounds: true,
     init: function(callback) {
+      App.displayMessage();
       $('#audio').on('ended', function(e) {
         if (!App.isMobile) {
           return App.playSound();
@@ -178,23 +184,40 @@
         return App.refreshCodeScreen();
       });
     },
-    displayMessage: function(msg, x, y, fadeTime) {
-      var $bulle, $parent;
+    displayMessage: function(msg, x, y, fadeTime, timer) {
+      var $bulle, $parent, index, _msgs;
       if (fadeTime == null) {
         fadeTime = 200;
       }
+      if (timer == null) {
+        timer = null;
+      }
       $bulle = $('.shake-bulle');
       $parent = $bulle.parent();
+      if (msg == null) {
+        _msgs = App.messages.slice(0);
+        index = _msgs.indexOf($bulle.find('h3').text());
+        if (index >= 0) {
+          _msgs.splice(index, 1);
+        }
+        msg = _msgs[Math.floor(Math.random() * _msgs.length)];
+      }
       if (x == null) {
         x = Math.random() * ($parent.width() / 1);
       }
       if (y == null) {
         y = Math.random() * ($parent.height() / 1) - 200;
       }
-      return $bulle.fadeOut(fadeTime, function() {
+      $bulle.fadeOut(fadeTime, function() {
         $bulle.find('h3').text(msg);
         return $bulle.css('top', y + 'px').css('left', x + 'px').fadeTo(fadeTime, 1);
       });
+      if (timer == null) {
+        timer = Math.random() * (App.messagesTimeout.max - App.messagesTimeout.min) + App.messagesTimeout.min;
+      }
+      if ((timer != null) && timer > 0) {
+        return App.messagesTimeout.timerId = setTimeout(App.displayMessage, timer);
+      }
     },
     playSound: function(sound) {
       var e, html;

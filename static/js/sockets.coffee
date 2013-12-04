@@ -34,6 +34,10 @@ App =
 		'Arrête pas!',
 		'Tes parents seraient fiers de toi.'
 	]
+	messagesTimeout:
+		min:3000
+		max:9000
+		timerId:null
 
 	sounds:[
 		{
@@ -104,6 +108,8 @@ App =
 	playSounds:true;
 
 	init: (callback)=>
+
+		App.displayMessage();
 
 		$('#audio').on 'ended', (e)->
 			if !App.isMobile
@@ -193,9 +199,16 @@ App =
 			App.code = code;
 			App.refreshCodeScreen();
 	
-	displayMessage: (msg, x,y, fadeTime=200)=>
+	displayMessage: (msg, x,y, fadeTime=200, timer=null)=>
 		$bulle = $('.shake-bulle')
 		$parent = $bulle.parent();
+		if !msg?
+			_msgs = App.messages.slice(0);
+			index = _msgs.indexOf($bulle.find('h3').text())
+			if index >= 0
+				_msgs.splice(index, 1);
+			msg = _msgs[Math.floor(Math.random()*_msgs.length)];
+
 		if !x?
 			x = Math.random()*($parent.width()/1) #+ $parent.width()/4
 		if !y?
@@ -203,6 +216,12 @@ App =
 		$bulle.fadeOut fadeTime,()=>
 			$bulle.find('h3').text(msg);
 			$bulle.css('top', y+'px').css('left', x+'px').fadeTo(fadeTime, 1);
+		if !timer?
+			timer = Math.random()*(App.messagesTimeout.max-App.messagesTimeout.min) + App.messagesTimeout.min
+
+		if timer? && timer > 0
+			App.messagesTimeout.timerId = setTimeout(App.displayMessage, timer)
+
 
 
 	playSound:(sound)->

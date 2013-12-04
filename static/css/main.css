@@ -1487,6 +1487,15 @@ body.shakelent .shake-bras {
     width: 170px;
     height: 43px;
   }
+  .page-landing .sidebar {
+    margin-top: 0;
+  }
+  .page-landing .main {
+    position: fixed;
+    top: auto;
+    width: 978px;
+    bottom: 52px;
+  }
 }
 /* iPhone 4 ----------- */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {

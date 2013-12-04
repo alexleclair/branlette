@@ -8,7 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>La Grande Branlette de Noël</title>
         <meta name="description" content="Viens te la shaker pour ton équipe préférée sur La Grande Branlette De Noël.">
-        <meta property="og:image" content="http://branlettedenoel.com/img/logo_branlette.png"/>
+        <meta property="og:image" content="http://branlettedenoel.com/img/logo_branlette_fb.png"/>
         <meta property="og:title" content="La Grande Branlette de Noël"/>
         <meta property="og:url" content="http://branlettedenoel.com/"/>
         <meta property="og:site_name" content="La Grande Branlette de Noël"/>

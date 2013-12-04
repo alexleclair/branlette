@@ -29,10 +29,15 @@ App =
 	messages:[
 		'Enweille, lâche pas la banane!',
 		'T\'y es presque, hein?',
-		'Allez, viens!',
+		'Allez, viens! On est bien!',
 		'Pas game d\'aller plus vite.',
 		'Arrête pas!',
 		'Tes parents seraient fiers de toi.'
+		'Spit on it!'
+		'T\'es à deux doigts de l\'avoir!'
+		'Donne-toi un bon coup de main',
+		'Essayes sans les mains'
+		''
 	]
 	messagesTimeout:
 		min:3000

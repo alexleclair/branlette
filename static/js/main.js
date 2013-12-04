@@ -1,6 +1,26 @@
 
 $(document).ready(function(){
-
+	var keys = [];
+	var konami = [38,38,40,40,37,39,37,39,66,65]
+	$(window).on('keyup', function(e){
+		keys.push(e.which);
+		if(keys.length > konami.length){
+			keys.splice(0,1);
+		}
+		if(keys.length != konami.length){
+			return;
+		}
+		var doKonami = true;
+		for(var i=0; i<keys.length; ++i){
+			if(keys[i] != konami[i]){
+				doKonami = false;
+				break;
+			}
+		}
+		if(doKonami){
+			window.location = 'http://www.google.ca/'
+		}
+	})
 	$(window).on('keydown', function(e){
 		// if($('.step.current').is('.pageiphone-shake')){ //Prevent shake to undo bullshit
 		// 	e.preventDefault();

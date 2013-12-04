@@ -38,8 +38,8 @@ ASCII ART INCOMING:
  ,88888P"      ,dP"'     `"Yb,,d888888P"`8,
 ,8888P"      ,dP'           `Y888888P"   `Y,
 d88P"      ,d8"               "888P"      )b
-8P"      ,d8d'     Normand     `8"       ,d8
-8      ,d888)      Veilleux     Y,     ,d88P
+8P"      ,d8d'     Mornand     `8"       ,d8
+8      ,d888)      Leivveux     Y,     ,d88P
 8    ,d88888'                   `Yba,,d888P'
 8  ,d8888888                      ``"""""'
 8,d888888P"8
@@ -74,6 +74,8 @@ d88P"      ,d8"               "888P"      )b
 Y,     ,d88P
 `Ya,,,d888P'
   ``""""''
+
+  (merci Normand Veilleux!)
 
 
                                                       $$$

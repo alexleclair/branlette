@@ -112,7 +112,7 @@ App =
 	currentObject: null;
 	playSounds:true;
 
-	init: (callback)=>
+	init: (forceAgency=null, forceCode=null, callback)=>
 		$('.shake-bulle').hide();
 		$('#audio').on 'ended', (e)->
 			if !App.isMobile
@@ -206,6 +206,12 @@ App =
 			App.refreshCodeScreen();
 
 		App.socket.on 'connect', ()->
+				console.log 'test', forceAgency, forceCode;
+				if forceCode?
+					App.bindToCode forceCode;
+				else if forceAgency
+					App.pickAgency forceAgency;
+					
 				setTimeout ()->
 					if App.isMobile
 						App.gotoPage 'pageiphone-landing', null
@@ -458,7 +464,19 @@ $ ->
 		App.isMobile = true;
 	# else
 	# 	App.playSound();
-	App.init();
+
+	forceCode = null;
+	forceAgency = null;
+	url = window.location.href + '';
+	url = url.split('#');
+	if url.length > 1
+		url = url[1].split('/')
+		if url.length >=2
+			forceAgency = url[1]
+		if url.length >= 3
+			forceCode = url[2]
+
+	App.init(forceAgency, forceCode);
 
 	if App.isMobile && window.DeviceMotionEvent?
 		# Shake sensitivity (a lower number is more)

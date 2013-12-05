@@ -75,7 +75,13 @@
     },
     currentObject: null,
     playSounds: true,
-    init: function(callback) {
+    init: function(forceAgency, forceCode, callback) {
+      if (forceAgency == null) {
+        forceAgency = null;
+      }
+      if (forceCode == null) {
+        forceCode = null;
+      }
       $('.shake-bulle').hide();
       $('#audio').on('ended', function(e) {
         if (!App.isMobile) {
@@ -185,6 +191,12 @@
         return App.refreshCodeScreen();
       });
       return App.socket.on('connect', function() {
+        console.log('test', forceAgency, forceCode);
+        if (forceCode != null) {
+          App.bindToCode(forceCode);
+        } else if (forceAgency) {
+          App.pickAgency(forceAgency);
+        }
         return setTimeout(function() {
           if (App.isMobile) {
             return App.gotoPage('pageiphone-landing', null);
@@ -472,7 +484,7 @@
   };
 
   $(function() {
-    var sensitivity, x1, x2, y1, y2, z1, z2;
+    var forceAgency, forceCode, sensitivity, url, x1, x2, y1, y2, z1, z2;
     Handlebars.registerHelper('each_upto', function(ary, max, options) {
       var i, result, _i, _ref;
       if (!ary || ary.length === 0) {
@@ -487,7 +499,20 @@
     if (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
       App.isMobile = true;
     }
-    App.init();
+    forceCode = null;
+    forceAgency = null;
+    url = window.location.href + '';
+    url = url.split('#');
+    if (url.length > 1) {
+      url = url[1].split('/');
+      if (url.length >= 2) {
+        forceAgency = url[1];
+      }
+      if (url.length >= 3) {
+        forceCode = url[2];
+      }
+    }
+    App.init(forceAgency, forceCode);
     if (App.isMobile && (window.DeviceMotionEvent != null)) {
       sensitivity = 30;
       x1 = 0;

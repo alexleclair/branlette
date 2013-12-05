@@ -5,6 +5,7 @@ App =
 	labels:{}
 	agencies:{}
 	code:null
+	siblingCode:null;
 	agency:null
 	shakes:0
 	isMobile:false
@@ -112,7 +113,7 @@ App =
 	currentObject: null;
 	playSounds:true;
 
-	init: (callback)=>
+	init: (forceAgency=null, forceCode=null, callback)=>
 		$('.shake-bulle').hide();
 		$('#audio').on 'ended', (e)->
 			if !App.isMobile
@@ -181,6 +182,8 @@ App =
 			App.resetTexts();
 		App.socket.on 'wrongcode', (data)->
 			alert 'Ce code n\'existe pas.'
+			forceCode = null;
+			forceAgency = null;
 			if App.isMobile
 				App.gotoPage 'pageiphone-landing'
 			else
@@ -194,21 +197,37 @@ App =
 			isLanding = $current.length > 0 && $current.is('.page-landing');
 
 			if count == 1 && App.isMobile
-				window.location = window.location;
+				window.location = '/';
+
+			if forceAgency?
+				App.pickAgency forceAgency;
+				App.changeObject App.objects[Math.floor(Math.random() * (App.objects.length-1))], true
+				#forceAgency = null;
+				return;
 
 			if !App.isMobile && isLanding
 				App.gotoPage('page-landing', 'landing-confirmation');
 			if App.isMobile && $('div.step.current').is('.pageiphone-landing')
 				App.gotoPage('pageiphone-agence')
 
+
+
 		App.socket.on 'code', (code)->
 			App.code = code;
 			App.refreshCodeScreen();
 
 		App.socket.on 'connect', ()->
+				if forceCode?
+					App.bindToCode forceCode;
+				else if forceAgency
+					App.pickAgency forceAgency;
+
 				setTimeout ()->
 					if App.isMobile
-						App.gotoPage 'pageiphone-landing', null
+						if !forceAgency?
+							App.gotoPage 'pageiphone-landing', null
+						else
+							App.gotoPage 'pageiphone-shake'
 					else
 						App.gotoPage 'page-landing', 'landing-code'
 						App.playSound();
@@ -266,6 +285,7 @@ App =
 		App.playSound();
 
 	bindToCode: (code)=>
+		App.siblingCode = code;
 		App.socket.emit 'registerSibling', code
 	
 	pickAgency: (agency)->
@@ -389,20 +409,24 @@ App =
 
 	facebookShare:()=>
 		msg = 'Viens shaker pour ton équipe favorite et prend part à la Grande Branlette de Noël.'
+		href = window.location.href + ''
+		href = href.split('#')[0]
 		if App.agency?
 			msg = 'J\'ai shaké '+App.shakes+' fois pour ' + App.labels[App.agency]+' sur la Grande Branlette de Noël!';
 		FB.ui
 			method: 'feed'
 			name: 'La Grande Branlette de Noël'
-			link: 'http://localhost/'
-			picture: ' http://7cffd474.ngrok.com/img/logo_branlette.png'
+			link: href
+			picture: 'http://branlettedenoel.com/img/logo_branlette.png'
 			caption: msg
 			description: 'En participant à la Grande Branlette, tu aides ton équipe à gagner.'
 	twitterShare:()=>
 		twitter_url = 'https://twitter.com/share';
+		href = window.location.href + ''
+		href = href.split('#')[0]
 		msg = 'Viens te la shaker pour ton équipe préférée sur La Grande Branlette de Noël: '
 		params = 
-			url: window.location.href
+			url: href
 			via:'akufen'
 			text: msg
 		i=0;
@@ -458,7 +482,19 @@ $ ->
 		App.isMobile = true;
 	# else
 	# 	App.playSound();
-	App.init();
+
+	forceCode = null;
+	forceAgency = null;
+	url = window.location.href + '';
+	url = url.split('#');
+	if url.length > 1
+		url = url[1].split('/')
+		if url.length >=2
+			forceAgency = url[1]
+		if url.length >= 3
+			forceCode = url[2]
+
+	App.init(forceAgency, forceCode);
 
 	if App.isMobile && window.DeviceMotionEvent?
 		# Shake sensitivity (a lower number is more)

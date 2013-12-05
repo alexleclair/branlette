@@ -11,6 +11,7 @@
     labels: {},
     agencies: {},
     code: null,
+    siblingCode: null,
     agency: null,
     shakes: 0,
     isMobile: false,
@@ -75,7 +76,13 @@
     },
     currentObject: null,
     playSounds: true,
-    init: function(callback) {
+    init: function(forceAgency, forceCode, callback) {
+      if (forceAgency == null) {
+        forceAgency = null;
+      }
+      if (forceCode == null) {
+        forceCode = null;
+      }
       $('.shake-bulle').hide();
       $('#audio').on('ended', function(e) {
         if (!App.isMobile) {
@@ -159,6 +166,8 @@
       });
       App.socket.on('wrongcode', function(data) {
         alert('Ce code n\'existe pas.');
+        forceCode = null;
+        forceAgency = null;
         if (App.isMobile) {
           return App.gotoPage('pageiphone-landing');
         } else {
@@ -171,7 +180,12 @@
         $current = $('div.step.current');
         isLanding = $current.length > 0 && $current.is('.page-landing');
         if (count === 1 && App.isMobile) {
-          window.location = window.location;
+          window.location = '/';
+        }
+        if (forceAgency != null) {
+          App.pickAgency(forceAgency);
+          App.changeObject(App.objects[Math.floor(Math.random() * (App.objects.length - 1))], true);
+          return;
         }
         if (!App.isMobile && isLanding) {
           App.gotoPage('page-landing', 'landing-confirmation');
@@ -185,9 +199,18 @@
         return App.refreshCodeScreen();
       });
       return App.socket.on('connect', function() {
+        if (forceCode != null) {
+          App.bindToCode(forceCode);
+        } else if (forceAgency) {
+          App.pickAgency(forceAgency);
+        }
         return setTimeout(function() {
           if (App.isMobile) {
-            return App.gotoPage('pageiphone-landing', null);
+            if (forceAgency == null) {
+              return App.gotoPage('pageiphone-landing', null);
+            } else {
+              return App.gotoPage('pageiphone-shake');
+            }
           } else {
             App.gotoPage('page-landing', 'landing-code');
             return App.playSound();
@@ -263,6 +286,7 @@
       return App.playSound();
     },
     bindToCode: function(code) {
+      App.siblingCode = code;
       return App.socket.emit('registerSibling', code);
     },
     pickAgency: function(agency) {
@@ -401,26 +425,30 @@
       return App.lastPage = page;
     },
     facebookShare: function() {
-      var msg;
+      var href, msg;
       msg = 'Viens shaker pour ton équipe favorite et prend part à la Grande Branlette de Noël.';
+      href = window.location.href + '';
+      href = href.split('#')[0];
       if (App.agency != null) {
         msg = 'J\'ai shaké ' + App.shakes + ' fois pour ' + App.labels[App.agency] + ' sur la Grande Branlette de Noël!';
       }
       return FB.ui({
         method: 'feed',
         name: 'La Grande Branlette de Noël',
-        link: 'http://localhost/',
-        picture: ' http://7cffd474.ngrok.com/img/logo_branlette.png',
+        link: href,
+        picture: 'http://branlettedenoel.com/img/logo_branlette.png',
         caption: msg,
         description: 'En participant à la Grande Branlette, tu aides ton équipe à gagner.'
       });
     },
     twitterShare: function() {
-      var i, key, msg, params, twitter_url;
+      var href, i, key, msg, params, twitter_url;
       twitter_url = 'https://twitter.com/share';
+      href = window.location.href + '';
+      href = href.split('#')[0];
       msg = 'Viens te la shaker pour ton équipe préférée sur La Grande Branlette de Noël: ';
       params = {
-        url: window.location.href,
+        url: href,
         via: 'akufen',
         text: msg
       };
@@ -472,7 +500,7 @@
   };
 
   $(function() {
-    var sensitivity, x1, x2, y1, y2, z1, z2;
+    var forceAgency, forceCode, sensitivity, url, x1, x2, y1, y2, z1, z2;
     Handlebars.registerHelper('each_upto', function(ary, max, options) {
       var i, result, _i, _ref;
       if (!ary || ary.length === 0) {
@@ -487,7 +515,20 @@
     if (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
       App.isMobile = true;
     }
-    App.init();
+    forceCode = null;
+    forceAgency = null;
+    url = window.location.href + '';
+    url = url.split('#');
+    if (url.length > 1) {
+      url = url[1].split('/');
+      if (url.length >= 2) {
+        forceAgency = url[1];
+      }
+      if (url.length >= 3) {
+        forceCode = url[2];
+      }
+    }
+    App.init(forceAgency, forceCode);
     if (App.isMobile && (window.DeviceMotionEvent != null)) {
       sensitivity = 30;
       x1 = 0;

@@ -80,7 +80,12 @@ $(document).ready(function(){
 		}
 		var url = Branlette.config.endpoint + 'api/agency/approve?name='+encodeURIComponent(val)+'&callback=?';
 		$.getJSON(url, function(key){
-			Branlette.pickAgency(key);
+			url = key;
+			if(Branlette.siblingsCount >= 2){
+				url += '/'+Branlette.siblingCode;
+			}
+			window.location = '?'+new Date().getTime()+'#!/'+url
+			//Branlette.pickAgency(key);
 		});
 
 		return false;

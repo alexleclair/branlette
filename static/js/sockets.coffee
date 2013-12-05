@@ -271,7 +271,10 @@ App =
 		$('#audio-player #audio').append($(html));
 		try
 			$('#audio').get(0).play();
+			$('#audio').get(0).currentTime = 0;
+			
 		catch e
+			console.log 'err', e
 			# ...
 	stopSound:()->
 		try

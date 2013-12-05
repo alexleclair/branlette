@@ -267,9 +267,11 @@
       html = '<source src="' + sound.ogg + '" type="audio/ogg />';
       $('#audio-player #audio').append($(html));
       try {
-        return $('#audio').get(0).play();
+        $('#audio').get(0).play();
+        return $('#audio').get(0).currentTime = 0;
       } catch (_error) {
         e = _error;
+        return console.log('err', e);
       }
     },
     stopSound: function() {

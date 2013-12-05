@@ -86,7 +86,7 @@ textarea {
 a:link,
 a:visited {
   text-decoration: none;
-  color: black;
+  color: #111;
 }
 a:active,
 button:active {
@@ -94,7 +94,7 @@ button:active {
   top: 2px;
 }
 a:hover {
-  border-bottom: 1px solid black;
+  color: #ffd600;
 }
 .left {
   float: left;
@@ -911,6 +911,7 @@ body.shakelent .shake-bras {
   border-bottom: 4px solid #000;
   margin-bottom: 0.3em;
   line-height: 40px;
+  font-family: 'NHaasGroteskTXStd-75Bd';
 }
 .page-classement .classement header div.right a div {
   display: inline-block;
@@ -1428,21 +1429,23 @@ body.shakelent .shake-bras {
   }
   h3 {
     box-sizing: border-box;
-    padding-top: 0.55em;
+    padding-top: 0;
     line-height: 1em;
     margin: 0 25px 0.5em 25px;
-    border-top: 4px solid black;
   }
-  #add-agency {
+  .add-agency-form {
     box-sizing: border-box;
-    padding: 0 25px 25px 25px;
+    padding: 0 25px 0px 25px;
     background-color: #ec1d1d;
     zoom: 1;
     overflow: hidden;
     margin-bottom: 1em;
   }
-  #add-agency button {
+  .add-agency-form button {
     border-radius: 0;
+  }
+  .add-agency-form:last-child {
+    padding-bottom: 25px;
   }
   .pageiphone-shake .shake-nombre {
     position: fixed;
@@ -1490,7 +1493,7 @@ body.shakelent .shake-bras {
   .pageiphone-agence .logo {
     zoom: 1;
     overflow: hidden;
-    padding: 35px 25px 25px 25px;
+    padding: 35px 25px 5px 25px;
   }
   .pageiphone-agence .logo img {
     width: 35%;
@@ -1500,7 +1503,7 @@ body.shakelent .shake-bras {
     width: 60%;
   }
   .pageiphone-agence .right h1 {
-    border-bottom: 6px solid black;
+    border-bottom: 4px solid black;
     padding-bottom: 0.3em;
     font-size: 14px;
   }
@@ -1514,11 +1517,15 @@ body.shakelent .shake-bras {
     font-family: 'NHaasGroteskTXStd-75Bd';
     line-height: 1em;
     font-size: 30px;
-    padding: 0 25px 0.75em 25px;
+    padding: 0 25px 0 25px;
+  }
+  .pageiphone-agence ul li:first-child span {
+    border-top: 1px solid black;
   }
   .pageiphone-agence ul li span {
     border-bottom: 1px solid black;
     display: block;
+    padding: 7px 0 5px 0;
   }
   .pageiphone-agence .prev-active span {
     border-bottom: 1px solid transparent;
@@ -1655,6 +1662,15 @@ body.shakelent .shake-bras {
     left: 303px;
     width: 170px;
     height: 43px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  a.icon-facebook,
+  a.icon-twitter {
+    /* Reference the @2x Sprite */
+    background-image: url(branlette_sprite@2x.png);
+    /* Translate the @2x sprite's dimensions back to 1x */
+    background-size: 144px 144px;
   }
 }
 /* iPhone 4 ----------- */

@@ -114,7 +114,7 @@ textarea {
 
 a:link, a:visited {
     text-decoration: none;
-    color: black;
+    color: #111;
 }
 
 a:active, button:active {
@@ -123,7 +123,9 @@ a:active, button:active {
 }
 
 a:hover {
-    border-bottom: 1px solid black;
+    color: @jaune;
+
+    //border-bottom: 1px solid black;
 }
 
 
@@ -626,13 +628,14 @@ div.arrow-right {
 html,body {
     height: 100%;
 }
+
+
 .page-shake {
     //background: url(../img/bras3.png) center center no-repeat #ec1d1d;
     background-color: #ec1d1d;
     min-height: 100%;
     height: 100%;
     overflow: hidden;
-
 
     .sidebar {
         width: 600px;
@@ -649,8 +652,6 @@ html,body {
         background-repeat: no-repeat;
         z-index:0;
     }
-
-
 
     .shake-intro {
         position: absolute;
@@ -758,8 +759,6 @@ html,body {
                 font-weight: normal;
                 font-size: 16px;
                 line-height: 16px;
-
-
 
                 div  {
                     color: @jaune;
@@ -1048,13 +1047,12 @@ body.shakelent .shake-bras {
 .page-classement {
     padding-bottom: 52px;
 
-
     .sidebar {
         position: fixed;
         top: 52px;
         right: 52px;
         width: 25%;
-        }
+    }
 
 .classement {
     width: 45%;
@@ -1066,6 +1064,7 @@ body.shakelent .shake-bras {
             border-bottom: 4px solid #000;
             margin-bottom: 0.3em;
             line-height:  40px;
+            font-family: @haasbold;
             div.right {
     
                 a div {
@@ -1305,12 +1304,7 @@ and (max-width: 1640px) {
         }
     }
 
- .page-classement {
-
-
-
-
-
+.page-classement {
     .classement {
 
         #leaderboard .position {
@@ -1331,13 +1325,12 @@ and (max-width: 1640px) {
  .page-shake {
 
     .shake-intro  {
+    width: 50%;
+    
+    header {
+    }
 
-width: 50%;
-        header {
-        }
-
-        h1 {
-
+    h1 {
         zoom: 0.75;
         }
     }
@@ -1846,15 +1839,15 @@ button.btn-submit-code, input[type="submit"] {
 
 
 h3 {box-sizing: border-box;
-padding-top:0.55em;
+padding-top:0;
 line-height:1em;
 margin: 0 25px 0.5em 25px;
-border-top: 4px solid black;
-            }
+}
 
-#add-agency {
+
+.add-agency-form {
 box-sizing:border-box;
-padding:0 25px 25px 25px;
+padding:0 25px 0px 25px;
 background-color: #ec1d1d;
 zoom:1;
 overflow:hidden;
@@ -1863,7 +1856,13 @@ margin-bottom: 1em;
     button {
         border-radius: 0;
     }
+
+    &:last-child {
+        padding-bottom: 25px;
+    }
 }
+
+
 
 .pageiphone-shake {
 
@@ -1921,24 +1920,23 @@ margin-bottom: 1em;
        .logo {
         zoom: 1;
         overflow: hidden;
-        padding: 35px 25px 25px 25px;
+        padding: 35px 25px 5px 25px;
 
-        img {
-            width: 35%;
-            height: auto;
+            img {
+                width: 35%;
+                height: auto;
+            }
         }
-       }
 
-       .right {
+        .right {
         width: 60%;
 
-        h1 {
-            border-bottom: 6px solid black;
-            padding-bottom: 0.3em;
-            font-size:14px;
+            h1 {
+                border-bottom: 4px solid black;
+                padding-bottom: 0.3em;
+                font-size:14px;
+            }
         }
-
-       }
 
         ul {
             margin: 0;
@@ -1951,14 +1949,19 @@ margin-bottom: 1em;
             font-family: @haasbold;
             line-height: 1em;
             font-size: 30px;
-            padding: 0 25px 0.75em 25px;
+            padding: 0 25px 0 25px;
 
-
+            &:first-child span {
+                    border-top: 1px solid black;
+            }
 
             span {
                 border-bottom: 1px solid black;
                 display: block;
+                padding: 7px 0 5px 0;
             }
+
+
         }
         .prev-active {
             span {
@@ -1977,7 +1980,6 @@ margin-bottom: 1em;
             background-color: #30b542;
         }
     }
-
 
 .page-classement {
     width: 100%;
@@ -2167,6 +2169,17 @@ and (min-height: 978px) {
                 }
             }
         }
+    }
+}
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), 
+only screen and (min-device-pixel-ratio: 2) {
+    a.icon-facebook, a.icon-twitter{
+        /* Reference the @2x Sprite */
+        background-image: url(branlette_sprite@2x.png);
+        /* Translate the @2x sprite's dimensions back to 1x */
+        background-size: 144px 144px; 
     }
 }
 

@@ -357,15 +357,17 @@ Y,     ,d88P
     <div class="logo">
         <img src="img/logo_branlette.png" width="100" height="100" alt="Brrrrrrrranlettteee" />
         <div class="right">
-        <h1>Tu branles pour qui? *</h1>
-        <p>* Etiam nulla ipsum, hendrerit sit amet vestibulum ac, mollis eget leo. </p></div>
+        <h1>Tu branles pour qui?*</h1>
+        <p>* Tape le nom de ton agence ou scroll la liste pour la trouver:</p>
+        </div>
     </div>
+    <form class="add-agency-form"><input type="text" class="add-agency" value="" />
+    <input type="submit" value="Ajouter" class="button" /></form>
     
     <ul id="agency-picker">
         
-    </ul>
-<br><br>
-    <h3>Ajouter mon agence de branleur:</h3> <form id="add-agency"><input type="text" class="add-agency" value="" />
+    </ul><br>
+    <h3>Toujours pas trouvé?<br>Ajoute-là:</h3> <form class="add-agency-form"><input type="text" class="add-agency" value="" />
     <input type="submit" value="Ajouter" class="button" /></form>
 </div>
 

@@ -185,6 +185,8 @@ button[type="button"] {
   height: 70px;
   padding: 2px 0 0 0;
   line-height: 70px;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
   transition: all 0.4s ease;
   margin: 0;
 }
@@ -192,6 +194,8 @@ input.button:hover,
 button[type="button"]:hover {
   color: white;
   background: black;
+  -webkit-transition: all 0s ease;
+  -moz-transition: all 0s ease;
   transition: all 0s ease;
 }
 button[type="button"].small {
@@ -263,13 +267,10 @@ div.arrow-left {
   height: 0;
   border-top: 5px solid transparent;
   /* left arrow slant */
-
   border-bottom: 5px solid transparent;
   /* right arrow slant */
-
   border-right: 5px solid #ffd600;
   /* bottom, add background color here */
-
   font-size: 0;
   line-height: 0;
   display: inline-block;
@@ -280,13 +281,10 @@ div.arrow-right {
   height: 0;
   border-top: 5px solid transparent;
   /* left arrow slant */
-
   border-bottom: 5px solid transparent;
   /* right arrow slant */
-
   border-left: 5px solid #ffd600;
   /* bottom, add background color here */
-
   font-size: 0;
   line-height: 0;
   display: inline-block;
@@ -370,7 +368,7 @@ div.arrow-right {
   width: 57%;
   position: absolute;
   left: 72px;
-  bottom: 102px;
+  bottom: 52px;
 }
 .page-landing .main div.clear {
   padding: 20px 0 0 0;
@@ -381,7 +379,7 @@ div.arrow-right {
 }
 .page-landing .main h1 {
   margin: 0;
-  width: 60%;
+  width: 50%;
   font-size: 52px;
   line-height: 52px;
   font-weight: bold;
@@ -390,10 +388,11 @@ div.arrow-right {
 .page-landing .main h1 span {
   position: relative;
   font-size: 50%;
+  line-height: 0;
   top: -0.75em;
 }
 .page-landing .main p {
-  width: 285px;
+  width: 300px;
 }
 .page-landing .main p:before {
   content: '* ';
@@ -453,6 +452,8 @@ div.arrow-right {
 .sidebar footer {
   text-align: right;
   line-height: 40px;
+  line-height: 1em;
+  padding-top: 0.5em;
 }
 .page-classement .sidebar header,
 .page-shake .sidebar header {
@@ -962,7 +963,6 @@ body.shakelent .shake-bras {
   border: 0;
   overflow: hidden;
   /* IE 6/7 fallback */
-
   *text-indent: -9999px;
 }
 .ir:before {
@@ -1025,10 +1025,8 @@ body.shakelent .shake-bras {
 .clearfix:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .clearfix:after {
   clear: both;
@@ -1077,6 +1075,7 @@ body.shakelent .shake-bras {
     font-size: 18px;
   }
   .page-landing .main {
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 57%;
   }
@@ -1132,7 +1131,11 @@ body.shakelent .shake-bras {
   }
 }
 @media only screen and (max-width: 1224px) {
+  #akfnlogo {
+    bottom: 20px;
+  }
   .page-landing .main {
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 100%;
     left: 0;
@@ -1174,6 +1177,7 @@ body.shakelent .shake-bras {
     zoom: 0.8;
   }
   .page-landing .landing-intro .cta {
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 100%;
     left: 0;
@@ -1257,9 +1261,6 @@ body.shakelent .shake-bras {
   }
 }
 /* iPads (landscape) ----------- */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  
-}
 @media only screen and (max-width: 978px) {
   #logo {
     left: 52px;
@@ -1271,17 +1272,23 @@ body.shakelent .shake-bras {
     width: 978px;
   }
   .page-landing .sidebar {
-    position: relative;
+    position: fixed;
     float: right;
-    margin-top: -240px;
+    margin-top: 0px;
+  }
+  .page-landing .sidebar table td.agence,
+  .page-landing .sidebar table td.position {
+    font-size: 20px;
   }
   .page-landing .landing-code .bras2,
   .page-landing .landing-confirmation .bras2 {
+    background-attachment: fixed;
     background-position: top left;
     min-height: 978px;
   }
   .page-landing .landing-code .bras2 .biphone-contenu,
   .page-landing .landing-confirmation .bras2 .biphone-contenu {
+    position: fixed;
     top: 165px;
     left: 305px;
   }
@@ -1293,15 +1300,19 @@ body.shakelent .shake-bras {
     width: 100%;
     padding: 52px;
     left: 0;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
-    position: relative;
-    top: 520px;
+    position: fixed;
+    top: 540px;
     bottom: auto;
   }
+  .page-landing .main .right {
+    width: 40%;
+  }
   #akfnlogo {
-    position: absolute;
-    top: 610px;
-    left: 846px;
+    position: fixed;
+    top: 650px;
+    right: 52px;
     width: 100px;
   }
   #akfnlogo a {
@@ -1330,6 +1341,7 @@ body.shakelent .shake-bras {
   .page-landing .landing-confirmation .bras2 {
     background-position: top center;
     background-size: 800px;
+    min-height: 800px;
   }
   .page-landing .landing-code .bras2 .biphone-contenu,
   .page-landing .landing-confirmation .bras2 .biphone-contenu {
@@ -1349,16 +1361,22 @@ body.shakelent .shake-bras {
     font-size: 12px;
   }
   .main {
-    top: 480px;
+    position: fixed;
+    top: 450px !important;
   }
   .page-shake .shake-intro h1 {
     font-size: 36px;
     line-height: 36px;
   }
 }
-@media only screen and (max-height: 768px) and (max-width: 978px) {
+@media only screen and (max-height: 810px) and (max-width: 978px) {
+  .page-landing .landing-classement .bras2,
+  .page-landing .landing-code .bras2 {
+    background-attachment: fixed;
+  }
   .page-landing .main {
-    top: 420px;
+    position: fixed;
+    top: 400px !important;
   }
 }
 /* iPads (portrait) ----------- */
@@ -1389,6 +1407,7 @@ body.shakelent .shake-bras {
     display: none;
   }
   .pageiphone-landing {
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 25px;
     background: #ec1d1d;
@@ -1440,12 +1459,14 @@ body.shakelent .shake-bras {
     font-size: 13px;
   }
   h3 {
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding-top: 0;
     line-height: 1em;
     margin: 0 25px 0.5em 25px;
   }
   .add-agency-form {
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 25px 0px 25px;
     background-color: #ec1d1d;
@@ -1474,6 +1495,7 @@ body.shakelent .shake-bras {
     overflow: hidden;
     top: 0;
     left: 0;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 1% 5% 0 5%;
     background-color: #30b542;
@@ -1555,10 +1577,11 @@ body.shakelent .shake-bras {
     width: 100%;
   }
   .page-classement .classement {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     padding: 5%;
     width: 100%;
     margin: 30px 0 0 0;
-    box-sizing: border-box;
   }
   .page-classement .classement header {
     display: none;
@@ -1577,6 +1600,7 @@ body.shakelent .shake-bras {
     overflow: hidden;
     top: 0;
     left: 0;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 1% 5% 0 5%;
     background-color: #30b542;
@@ -1655,9 +1679,9 @@ body.shakelent .shake-bras {
   }
   .page-landing .landing-code .bras2 .biphone-contenu,
   .page-landing .landing-confirmation .bras2 .biphone-contenu {
-    left: 341px;
+    left: 301px;
     top: auto;
-    bottom: 676px;
+    bottom: 596px;
     width: 194px;
     height: 232px;
   }
@@ -1680,10 +1704,8 @@ body.shakelent .shake-bras {
   a.icon-facebook,
   a.icon-twitter {
     /* Reference the @2x Sprite */
-  
     background-image: url(branlette_sprite@2x.png);
     /* Translate the @2x sprite's dimensions back to 1x */
-  
     background-size: 144px 144px;
   }
 }
@@ -1703,7 +1725,6 @@ body.shakelent .shake-bras {
     background: transparent !important;
     color: #000 !important;
     /* Black prints faster: h5bp.com/s */
-  
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -1718,8 +1739,8 @@ body.shakelent .shake-bras {
     content: " (" attr(title) ")";
   }
   /*
-       * Don't show links for images, or javascript/internal links
-       */
+     * Don't show links for images, or javascript/internal links
+     */
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
@@ -1733,7 +1754,6 @@ body.shakelent .shake-bras {
   thead {
     display: table-header-group;
     /* h5bp.com/t */
-  
   }
   tr,
   img {
@@ -1742,7 +1762,7 @@ body.shakelent .shake-bras {
   img {
     max-width: 100% !important;
   }
-  @page  {
+  @page {
     margin: 0.5cm;
   }
   p,

@@ -171,10 +171,10 @@ Y,     ,d88P
         </div>
 <!-- Quand qqun arrive sur le browser -->
 
-<div class="page-loading step" style="display: none">
+<div class="page-loading step">
 </div>
 
-<div class="page-landing step">
+<div class="page-landing step" style="display: none">
     <div class="stepmaster">Page-Landing</div>
 
     <!-- <div class="landing-intro" style="display: none;">
@@ -184,7 +184,7 @@ Y,     ,d88P
         </div>
     </div> -->
 
-    <div class="landing-code substep">
+    <div class="landing-code substep" style="display: none">
         <div class="bras2">
             <div class="biphone-contenu" style="display: none">
                 <h1>Sur ton mobile, va sur:</h1>

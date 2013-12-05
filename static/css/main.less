@@ -540,7 +540,7 @@ div.arrow-right {
         }
 
         td {
-            padding: 2% 0 1% 0;
+            padding: 0.3em 0 0.1em 0;
         }
 
         td.position {
@@ -552,7 +552,8 @@ div.arrow-right {
 
         }
         td.score {
-            text-align:right;
+            text-align: right;
+            vertical-align: middle !important;
             font-size: 16px;
             font-family: @haas;
         }
@@ -747,7 +748,7 @@ html,body {
             h1 {
                 font-size: 120px;
                 line-height: 1em;
-                margin-bottom: 0.5em;
+                margin-bottom: 0.1em;
                 font-weight: normal;
 
             }
@@ -918,19 +919,22 @@ body.object-boule{
         font-size: 30px;
         float: left;
         width: 40%;
-        margin-bottom: 0;
-        margin-top: -3px;
+        position: absolute;
+        bottom: 0;
+        margin: 0;
         line-height: 30px;
-
     }
 
     h2 {
-        margin-bottom: 0;
-        float: right;
+
+        margin: 0;
+        position: absolute;
+        bottom: 0;
+        right: 0;
         text-align: right;
         width: 50%;
         font-size: 16px;
-        line-height: 1em;
+        line-height: 30px;
 
         .agencyPeople {
             color: @jaune;
@@ -1097,7 +1101,7 @@ body.shakelent .shake-bras {
         }
 
         td {
-            padding: 2% 0 1% 0;
+            padding: 0.3em 0 0.1em 0;
         }
 
         td.position {
@@ -1109,6 +1113,7 @@ body.shakelent .shake-bras {
 
         }
         td.score {
+            vertical-align: middle !important;
             text-align:right;
             font-size: 16px;
             font-family: @haas;

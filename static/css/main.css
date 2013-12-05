@@ -430,7 +430,7 @@ div.arrow-right {
   vertical-align: top;
 }
 .sidebar table td {
-  padding: 2% 0 1% 0;
+  padding: 0.3em 0 0.1em 0;
 }
 .sidebar table td.position {
   width: 85px;
@@ -440,6 +440,7 @@ div.arrow-right {
 }
 .sidebar table td.score {
   text-align: right;
+  vertical-align: middle !important;
   font-size: 16px;
   font-family: 'NHaasGroteskTXStd-65Md';
 }
@@ -592,7 +593,7 @@ body {
 .page-shake .shake-repos .fatigue h1 {
   font-size: 120px;
   line-height: 1em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.1em;
   font-weight: normal;
 }
 .page-shake .shake-repos .fatigue h2 {
@@ -737,17 +738,20 @@ body.object-boule .pageiphone-shake div.image {
   font-size: 30px;
   float: left;
   width: 40%;
-  margin-bottom: 0;
-  margin-top: -3px;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
   line-height: 30px;
 }
 .shake-droite h2 {
-  margin-bottom: 0;
-  float: right;
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   text-align: right;
   width: 50%;
   font-size: 16px;
-  line-height: 1em;
+  line-height: 30px;
 }
 .shake-droite h2 .agencyPeople {
   color: #ffd600;
@@ -928,7 +932,7 @@ body.shakelent .shake-bras {
   vertical-align: top;
 }
 .page-classement .classement table td {
-  padding: 2% 0 1% 0;
+  padding: 0.3em 0 0.1em 0;
 }
 .page-classement .classement table td.position {
   width: 85px;
@@ -937,6 +941,7 @@ body.shakelent .shake-bras {
   width: 400px;
 }
 .page-classement .classement table td.score {
+  vertical-align: middle !important;
   text-align: right;
   font-size: 16px;
   font-family: 'NHaasGroteskTXStd-65Md';

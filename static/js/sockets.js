@@ -5,7 +5,7 @@
 
   App = {
     config: {
-      endpoint: 'http://branlettedenoel.com/'
+      endpoint: 'http://branlettedenoel.com:8090/'
     },
     socket: null,
     labels: {},

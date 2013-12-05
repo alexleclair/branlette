@@ -239,7 +239,7 @@ Y,     ,d88P
     <!-- intro -->
     <div class="shake-intro substep">
         <header><span>Allo <span class="agencyName"></span></span></header>
-        <h1>Shake comme si y’avait pas de lendemain.</h1>
+        <h1>Shake ton téléphone comme si y’avait pas de lendemain.</h1>
     </div>
 
     <!-- shake -->

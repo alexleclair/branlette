@@ -263,13 +263,10 @@ div.arrow-left {
   height: 0;
   border-top: 5px solid transparent;
   /* left arrow slant */
-
   border-bottom: 5px solid transparent;
   /* right arrow slant */
-
   border-right: 5px solid #ffd600;
   /* bottom, add background color here */
-
   font-size: 0;
   line-height: 0;
   display: inline-block;
@@ -280,13 +277,10 @@ div.arrow-right {
   height: 0;
   border-top: 5px solid transparent;
   /* left arrow slant */
-
   border-bottom: 5px solid transparent;
   /* right arrow slant */
-
   border-left: 5px solid #ffd600;
   /* bottom, add background color here */
-
   font-size: 0;
   line-height: 0;
   display: inline-block;
@@ -522,26 +516,25 @@ body {
 }
 .page-shake .shake-intro {
   position: absolute;
-  left: 104px;
-  bottom: 10%;
-  max-width: 1024px;
-  width: 90%;
+  left: 52px;
+  bottom: 152px;
+  width: 40%;
 }
 .page-shake .shake-intro header {
   display: none;
   font-size: 16px;
   font-family: 'NHaasGroteskTXStd-75Bd';
-  width: 30%;
   margin-bottom: 2em;
 }
 .page-shake .shake-intro header span:first-child {
   padding-right: 3em;
-  padding-bottom: 0.75em;
-  border-bottom: 4px solid black;
+  padding-bottom: 0.25em;
+  border-bottom: 2px solid black;
 }
 .page-shake .shake-intro h1 {
-  font-size: 7em;
-  line-height: 1em;
+  margin: 0;
+  font-size: 80px;
+  line-height: 80px;
 }
 .page-shake .switch {
   position: fixed;
@@ -959,7 +952,6 @@ body.shakelent .shake-bras {
   border: 0;
   overflow: hidden;
   /* IE 6/7 fallback */
-
   *text-indent: -9999px;
 }
 .ir:before {
@@ -1022,10 +1014,8 @@ body.shakelent .shake-bras {
 .clearfix:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .clearfix:after {
   clear: both;
@@ -1106,11 +1096,9 @@ body.shakelent .shake-bras {
   .page-classement .classement #leaderboard .position {
     font-size: 0.75em;
   }
-  .page-shake .shake-intro {
-    width: 50%;
-  }
   .page-shake .shake-intro h1 {
-    zoom: 0.75;
+    font-size: 58px;
+    line-height: 58px;
   }
   .page-shake .shake-repos .fatigue {
     width: 30%;
@@ -1222,7 +1210,8 @@ body.shakelent .shake-bras {
     margin-top: 1em;
   }
   .page-shake .shake-intro h1 {
-    zoom: 0.5;
+    font-size: 40px;
+    line-height: 40px;
   }
   .page-shake .shake-repos .fatigue {
     width: 30%;
@@ -1235,15 +1224,33 @@ body.shakelent .shake-bras {
     line-height: 1.1em;
   }
   .page-shake .sidebar {
-    width: 40%;
+    width: 30%;
+  }
+  .page-shake .sidebar header {
+    line-height: 1em;
+  }
+  .page-shake .sidebar header .left {
+    width: 60%;
+    font-size: 13px;
+    line-height: 13px;
+  }
+  .page-shake .sidebar div.leftscore h1 {
+    width: 100%;
+    font-size: 1.7em;
+  }
+  .page-shake .sidebar div.leftscore footer {
+    width: 100%;
+  }
+  .page-shake .sidebar p.right {
+    font-size: 0.7em;
   }
   .page-shake .shake-droite {
-    width: 40%;
+    width: 30%;
     right: 52px;
   }
   .page-shake .shake-droite h1 {
     float: none;
-    font-size: 1.4em;
+    font-size: 1.2em;
     margin: 0;
   }
   .page-shake .shake-droite h2 {
@@ -1253,13 +1260,7 @@ body.shakelent .shake-bras {
     line-height: 1em;
   }
 }
-@media only screen and (max-height: 790px) {
-  
-}
 /* iPads (landscape) ----------- */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  
-}
 @media only screen and (max-width: 978px) {
   #logo {
     left: 52px;
@@ -1295,7 +1296,7 @@ body.shakelent .shake-bras {
     left: 0;
     box-sizing: border-box;
     position: relative;
-    top: 420px;
+    top: 520px;
     bottom: auto;
   }
   #akfnlogo {
@@ -1347,6 +1348,14 @@ body.shakelent .shake-bras {
   .page-landing .landing-code .bras2 .biphone-contenu h2,
   .page-landing .landing-confirmation .bras2 .biphone-contenu h2 {
     font-size: 12px;
+  }
+  .main {
+    top: 480px;
+  }
+}
+@media only screen and (max-height: 768px) and (max-width: 978px) {
+  .page-landing .main {
+    top: 420px;
   }
 }
 /* iPads (portrait) ----------- */
@@ -1691,7 +1700,6 @@ body.shakelent .shake-bras {
     background: transparent !important;
     color: #000 !important;
     /* Black prints faster: h5bp.com/s */
-  
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -1706,8 +1714,8 @@ body.shakelent .shake-bras {
     content: " (" attr(title) ")";
   }
   /*
-       * Don't show links for images, or javascript/internal links
-       */
+     * Don't show links for images, or javascript/internal links
+     */
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
@@ -1721,7 +1729,6 @@ body.shakelent .shake-bras {
   thead {
     display: table-header-group;
     /* h5bp.com/t */
-  
   }
   tr,
   img {
@@ -1730,7 +1737,7 @@ body.shakelent .shake-bras {
   img {
     max-width: 100% !important;
   }
-  @page  {
+  @page {
     margin: 0.5cm;
   }
   p,

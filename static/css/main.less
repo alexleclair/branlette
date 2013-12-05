@@ -181,7 +181,7 @@ body p {
     padding: 0;
     margin: 0;
     position: fixed;
-    bottom: 0px;
+    bottom: 52px;
     right: 52px;
     line-height: 40px;
 
@@ -448,7 +448,7 @@ div.arrow-right {
     width: 1100px;
     position: absolute;
     left: 72px;
-    bottom: 52px;
+    bottom: 102px;
 
         div.clear {
             padding: 20px 0 0 0;
@@ -467,13 +467,19 @@ div.arrow-right {
         font-weight: bold;
         position: relative;
 
+        span {
+            position: relative;
+            font-size: 50%;
+            top: -0.75em;
+        }
 
-            span:after {
-                content: '*';
-                font-size: 26px;
-                position: absolute;
-                top:-10px;
-            }
+
+            // span:after {
+            //     content: '*';
+            //     font-size: 26px;
+            //     position: absolute;
+            //     top:-10px;
+            // }
         }
 
         p {
@@ -576,6 +582,7 @@ div.arrow-right {
         div.leftscore {
             float: left;
             width: 40%;
+            position: relative;
 
 
             h1 {
@@ -903,7 +910,7 @@ body.object-boule{
 .shake-droite {
     width: 600px;
     position: absolute;
-    bottom: 52px;
+    bottom: 102px;
     right: 52px;
     border-bottom: 4px solid black;
 
@@ -921,9 +928,9 @@ body.object-boule{
         margin-bottom: 0;
         float: right;
         text-align: right;
-        width: 60%;
+        width: 50%;
         font-size: 16px;
-        line-height: 30px;
+        line-height: 1em;
 
         .agencyPeople {
             color: @jaune;
@@ -1325,6 +1332,7 @@ and (max-width: 1640px) {
 
     .shake-intro  {
 
+width: 50%;
         header {
         }
 
@@ -1385,7 +1393,7 @@ and (max-width: 1640px) {
 and (max-width : 1224px) {
 
 #akfnlogo {
-        bottom: 0;
+        //bottom: 0;
     }
 
     .page-landing .main {
@@ -1525,7 +1533,6 @@ and (max-width : 1224px) {
         }
 
         h1 {
-
         zoom: 0.5;
         }
     }
@@ -1650,15 +1657,22 @@ and (max-width : 978px){
             left: 0;
             box-sizing: border-box;
             position: relative;
-            top: 550px;
+            top: 420px;
             bottom: auto;
         }
     }
 
     #akfnlogo {
-        position: fixed;
-        bottom: 0;
-        right: 52px;
+        position: absolute;
+        top: 610px;
+        left: 846px;
+        width: 100px;
+
+        a {
+            float: left;
+            width: 40px;
+            display: block;
+        }
     }
 
     .page-classement {
@@ -1781,11 +1795,11 @@ display: none;
         line-height: 1em;
         font-size: 30px;
     
-        span:after {
-                content: '*';
-                top: -10px;
-                position: absolute;
-            }
+        // span:after {
+        //         content: '*';
+        //         top: -10px;
+        //         position: absolute;
+        //     }
     }
     
     h2 {

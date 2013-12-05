@@ -238,7 +238,7 @@ Y,     ,d88P
 <div class="page-shake step" style="display: none">
     <!-- intro -->
     <div class="shake-intro substep">
-        <header><span>Allo <span class="agencyName"></span></span></header>
+        <!-- <header><span>Allo <span class="agencyName"></span></span></header> -->
         <h1>Shake ton téléphone comme si y’avait pas de lendemain.</h1>
     </div>
 

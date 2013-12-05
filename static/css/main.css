@@ -585,8 +585,8 @@ body {
 .page-shake .shake-repos .fatigue {
   position: absolute;
   width: 480px;
-  bottom: 15%;
-  left: 104px;
+  bottom: 152px;
+  left: 52px;
   z-index: 2;
 }
 .page-shake .shake-repos .fatigue h1 {
@@ -1097,8 +1097,8 @@ body.shakelent .shake-bras {
     font-size: 0.75em;
   }
   .page-shake .shake-intro h1 {
-    font-size: 58px;
-    line-height: 58px;
+    font-size: 60px;
+    line-height: 60px;
   }
   .page-shake .shake-repos .fatigue {
     width: 30%;
@@ -1111,10 +1111,10 @@ body.shakelent .shake-bras {
     line-height: 1.1em;
   }
   .page-shake .sidebar {
-    width: 40%;
+    width: 33%;
   }
   .page-shake .shake-droite {
-    width: 40%;
+    width: 33%;
     right: 52px;
   }
   .page-shake .shake-droite h1 {
@@ -1210,8 +1210,8 @@ body.shakelent .shake-bras {
     margin-top: 1em;
   }
   .page-shake .shake-intro h1 {
-    font-size: 40px;
-    line-height: 40px;
+    font-size: 50px;
+    line-height: 50px;
   }
   .page-shake .shake-repos .fatigue {
     width: 30%;
@@ -1351,6 +1351,10 @@ body.shakelent .shake-bras {
   }
   .main {
     top: 480px;
+  }
+  .page-shake .shake-intro h1 {
+    font-size: 36px;
+    line-height: 36px;
   }
 }
 @media only screen and (max-height: 768px) and (max-width: 978px) {
@@ -1677,10 +1681,8 @@ body.shakelent .shake-bras {
   a.icon-facebook,
   a.icon-twitter {
     /* Reference the @2x Sprite */
-  
     background-image: url(branlette_sprite@2x.png);
     /* Translate the @2x sprite's dimensions back to 1x */
-  
     background-size: 144px 144px;
   }
 }

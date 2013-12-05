@@ -321,7 +321,7 @@ Y,     ,d88P
             <div class="left"><a href="/" class="back-to-business"><div class="arrow-left"></div>Retour à la branlette</a></div>
             <div class="right"><a href="#twitter" class="icon-twitter"><div>twitter</div></a><a href="#facebook" class="icon-facebook"><div>facebook</div></a></div>
         </header>
-            <p class="right">Plus tu shakes, plus on  donne: 1 canne de conserve par 25 000 shakes* jusqu'au 21 décembre, mettons.</p>
+            <p class="right">Plus tu shakes, plus on donne: 1 canne de conserve par 25 000 shakes jusqu'au 21 d&eacute;cembre, mettons. (Et si y'en a trop, on s'garde une p'tite g&circ;ne)</p>
         <div class="leftscore">
             <h1><span class="agencyIndex">?</span>/<span class="agenciesCount">?</span></h1>
             <!-- <footer><a href="/" class="back-to-business"><div class="arrow-left"></div>Retour à la branlette</a></footer> -->

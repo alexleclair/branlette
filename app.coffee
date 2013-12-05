@@ -181,8 +181,8 @@ App =
 
 				@express.get '/api/*', @_handleAPICalls
 				@express.post '/api/*', @_handleAPICalls
-				@express.get '/*', @_handleHttpRequest
-
+				#@express.get '/*', @_handleHttpRequest
+				@express.use express.static('static')
 				@express.use express.bodyParser()
 				@express.use (err, req, res, next)->
 				  console.error(err.stack);

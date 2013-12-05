@@ -50,7 +50,7 @@
       this.io.set('log level', 1);
       this.express.get('/api/*', this._handleAPICalls);
       this.express.post('/api/*', this._handleAPICalls);
-      this.express.get('/*', this._handleHttpRequest);
+      this.express.use(express["static"]('static'));
       this.express.use(express.bodyParser());
       this.express.use(function(err, req, res, next) {
         console.error(err.stack);

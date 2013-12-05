@@ -27,47 +27,47 @@
     },
     sounds: [
       {
-        mp3: 'sounds/branlette_01.mp3',
-        ogg: 'sounds/branlette_01.ogg'
+        mp3: 'http://alexleclair.ca:8090/sounds/branlette_01.mp3',
+        ogg: 'http://alexleclair.ca:8090/sounds/branlette_01.ogg'
       }, {
-        mp3: 'sounds/branlette_02.mp3',
-        ogg: 'sounds/branlette_02.ogg'
+        mp3: 'http://alexleclair.ca:8090/sounds/branlette_02.mp3',
+        ogg: 'http://alexleclair.ca:8090/sounds/branlette_02.ogg'
       }, {
-        mp3: 'sounds/branlette_03.mp3',
-        ogg: 'sounds/branlette_03.ogg'
+        mp3: 'http://alexleclair.ca:8090/sounds/branlette_03.mp3',
+        ogg: 'http://alexleclair.ca:8090/sounds/branlette_03.ogg'
       }, {
-        mp3: 'sounds/branlette_04.mp3',
-        ogg: 'sounds/branlette_04.ogg'
+        mp3: 'http://alexleclair.ca:8090/sounds/branlette_04.mp3',
+        ogg: 'http://alexleclair.ca:8090/sounds/branlette_04.ogg'
       }, {
-        mp3: 'sounds/branlette_05.mp3',
-        ogg: 'sounds/branlette_05.ogg'
+        mp3: 'http://alexleclair.ca:8090/sounds/branlette_05.mp3',
+        ogg: 'http://alexleclair.ca:8090/sounds/branlette_05.ogg'
       }, {
-        mp3: 'sounds/branlette_06.mp3',
-        ogg: 'sounds/branlette_06.ogg'
+        mp3: 'http://alexleclair.ca:8090/sounds/branlette_06.mp3',
+        ogg: 'http://alexleclair.ca:8090/sounds/branlette_06.ogg'
       }, {
-        mp3: 'sounds/branlette_07.mp3',
-        ogg: 'sounds/branlette_07.ogg'
+        mp3: 'http://alexleclair.ca:8090/sounds/branlette_07.mp3',
+        ogg: 'http://alexleclair.ca:8090/sounds/branlette_07.ogg'
       }, {
-        mp3: 'sounds/branlette_08.mp3',
-        ogg: 'sounds/branlette_08.ogg'
+        mp3: 'http://alexleclair.ca:8090/sounds/branlette_08.mp3',
+        ogg: 'http://alexleclair.ca:8090/sounds/branlette_08.ogg'
       }, {
-        mp3: 'sounds/branlette_09.mp3',
-        ogg: 'sounds/branlette_09.ogg'
+        mp3: 'http://alexleclair.ca:8090/sounds/branlette_09.mp3',
+        ogg: 'http://alexleclair.ca:8090/sounds/branlette_09.ogg'
       }, {
-        mp3: 'sounds/branlette_10.mp3',
-        ogg: 'sounds/branlette_10.ogg'
+        mp3: 'http://alexleclair.ca:8090/sounds/branlette_10.mp3',
+        ogg: 'http://alexleclair.ca:8090/sounds/branlette_10.ogg'
       }, {
-        mp3: 'sounds/branlette_11.mp3',
-        ogg: 'sounds/branlette_11.ogg'
+        mp3: 'http://alexleclair.ca:8090/sounds/branlette_11.mp3',
+        ogg: 'http://alexleclair.ca:8090/sounds/branlette_11.ogg'
       }, {
-        mp3: 'sounds/branlette_12.mp3',
-        ogg: 'sounds/branlette_12.ogg'
+        mp3: 'http://alexleclair.ca:8090/sounds/branlette_12.mp3',
+        ogg: 'http://alexleclair.ca:8090/sounds/branlette_12.ogg'
       }, {
-        mp3: 'sounds/branlette_13.mp3',
-        ogg: 'sounds/branlette_13.ogg'
+        mp3: 'http://alexleclair.ca:8090/sounds/branlette_13.mp3',
+        ogg: 'http://alexleclair.ca:8090/sounds/branlette_13.ogg'
       }, {
-        mp3: 'sounds/branlette_14.mp3',
-        ogg: 'sounds/branlette_14.ogg'
+        mp3: 'http://alexleclair.ca:8090/sounds/branlette_14.mp3',
+        ogg: 'http://alexleclair.ca:8090/sounds/branlette_14.ogg'
       }
     ],
     silenceSound: {

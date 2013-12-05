@@ -428,7 +428,7 @@
       var href, msg;
       msg = 'Viens shaker pour ton équipe favorite et prend part à la Grande Branlette de Noël.';
       href = window.location.href + '';
-      href = href.split('#')[0];
+      href = href.split('?')[0].split('#')[0];
       if (App.agency != null) {
         msg = 'J\'ai shaké ' + App.shakes + ' fois pour ' + App.labels[App.agency] + ' sur la Grande Branlette de Noël!';
       }
@@ -445,7 +445,7 @@
       var href, i, key, msg, params, twitter_url;
       twitter_url = 'https://twitter.com/share';
       href = window.location.href + '';
-      href = href.split('#')[0];
+      href = href.split('?')[0].split('#')[0];
       msg = 'Viens te la shaker pour ton équipe préférée sur La Grande Branlette de Noël: ';
       params = {
         url: href,

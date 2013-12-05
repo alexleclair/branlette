@@ -56,7 +56,7 @@ $(document).ready(function(){
 				Branlette.gotoPage('page-shake');
 			}
 			else{
-				Branlette.gotoPage('page-landing', 'landing-intro');
+				Branlette.gotoPage('page-landing', 'landing-code');
 			}
 			return false;
 		}

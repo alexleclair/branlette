@@ -116,6 +116,7 @@ App =
 	init: (forceAgency=null, forceCode=null, callback)=>
 		$('.shake-bulle').hide();
 		$('#audio').on 'ended', (e)->
+			#alert 'ended'
 			if !App.isMobile
 				App.playSound();
 			else

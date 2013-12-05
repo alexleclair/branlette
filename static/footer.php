@@ -17,7 +17,7 @@
 
         <script type="text/html" id="template-agencies-list">
             {{#each agencies}}
-                <li><a class="pick-agency" data-key="{{key}}">{{name}}</a></li>
+                <li><a class="pick-agency" data-key="{{key}}"><span>{{name}}</span></a></li>
             {{/each}}
         </script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

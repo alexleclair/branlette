@@ -71,7 +71,7 @@ $(document).ready(function(){
 		}
 	})
 
-	$('form#add-agency').submit(function(e){
+	$('form.add-agency-form').submit(function(e){
 		e.preventDefault();
 		var $input =$(this).find('.add-agency')
 		var val = $.trim($input.val());

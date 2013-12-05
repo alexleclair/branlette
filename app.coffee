@@ -24,7 +24,7 @@ App =
 			port:8080
 			redisHost:'localhost'
 			redisPort:6379
-			redisKey:'noel:prod:'
+			redisKey:'noel:prod2:'
 			wwwPath:'./static/'
 			updateRedisTimer:5000
 			sendAgenciesTimer:2500;

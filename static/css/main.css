@@ -1313,7 +1313,7 @@ body.shakelent .shake-bras {
     float: right;
   }
 }
-@media only screen and (max-height: 768px) {
+@media only screen and (max-height: 810px) {
   .page-landing .landing-code .bras2,
   .page-landing .landing-confirmation .bras2 {
     background-position: top center;

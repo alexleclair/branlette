@@ -174,7 +174,7 @@ Y,     ,d88P
 <div class="page-loading step" style="display: none">
 </div>
 
-<div class="page-landing step" style="display: none">
+<div class="page-landing step">
     <div class="stepmaster">Page-Landing</div>
 
     <!-- <div class="landing-intro" style="display: none;">
@@ -184,7 +184,7 @@ Y,     ,d88P
         </div>
     </div> -->
 
-    <div class="landing-code substep" style="display: none">
+    <div class="landing-code substep">
         <div class="bras2">
             <div class="biphone-contenu" style="display: none">
                 <h1>Sur ton mobile, va sur:</h1>
@@ -235,16 +235,16 @@ Y,     ,d88P
 
 <!-- 3 states: 1. intro, 2. shaking, 3. repos/fatigué -->
 
-<div class="page-shake step">
+<div class="page-shake step" style="display: none;">
     <!-- intro -->
-    <div class="shake-intro substep">
+    <div class="shake-intro substep" style="display: none;">
         <!-- <header><span>Allo <span class="agencyName"></span></span></header> -->
         <h1>Shake ton téléphone comme si y’avait pas de lendemain.</h1>
     </div>
 
     <!-- shake -->
 
-    <div class="shake-shake substep">
+    <div class="shake-shake substep" style="display: none;">
         <div class="shake-nombre">  
         <div data-info="shake-sessioncount">0</div>
 

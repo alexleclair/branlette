@@ -655,28 +655,29 @@ html,body {
 
     .shake-intro {
         position: absolute;
-        left: 104px;
-        bottom: 10%;
-        max-width: 1024px;
-        width: 90%;
+        left: 52px;
+        bottom: 152px;
+        width: 40%;
 
         header {
             display: none;
             font-size: 16px;
             font-family: @haasbold;
-            width: 30%;
             margin-bottom: 2em;
+
 
             span:first-child {
                 padding-right: 3em;
-                padding-bottom: 0.75em;
-                border-bottom: 4px solid black;
+                padding-bottom: 0.25em;
+                border-bottom: 2px solid black;
+                
             }
         }
 
         h1 {
-            font-size: 7em;
-            line-height: 1em;
+            margin: 0;
+            font-size: 80px;
+            line-height: 80px;
         }
     }
 
@@ -1325,14 +1326,14 @@ and (max-width: 1640px) {
  .page-shake {
 
     .shake-intro  {
-    width: 50%;
     
     header {
     }
 
     h1 {
-        zoom: 0.75;
-        }
+        font-size: 58px;
+        line-height: 58px;
+    }
     }
  }
 
@@ -1523,10 +1524,12 @@ and (max-width : 1224px) {
     .shake-intro  {
 
         header {
+
         }
 
         h1 {
-        zoom: 0.5;
+            font-size:  40px;
+            line-height: 40px;
         }
     }
  }
@@ -1546,17 +1549,50 @@ and (max-width : 1224px) {
 
 
     .sidebar {
-        width: 40%;
+        width: 30%;
+
+        header {
+            line-height: 1em;
+
+            .left {
+                width: 60%;
+                font-size: 13px;
+                line-height: 13px;
+            }
+        }
+
+
+        div.leftscore {
+                //float: none;
+                //display: block;
+                //width: 100%;
+                h1 {
+                    width: 100%;
+                    font-size: 1.7em;
+
+                }
+
+                footer {
+                    width: 100%;
+                }
+        }
+
+        p.right {
+            // float: none;
+            // display: block;
+            // width: 100%;
+            font-size: 0.7em;
+        }
     }
 
     .shake-droite {
-        width: 40%;
+        width: 30%;
         right: 52px;
 
 
         h1 {
             float: none;
-            font-size: 1.4em;
+            font-size: 1.2em;
             margin: 0;
         }
 
@@ -1644,13 +1680,13 @@ and (max-width : 978px){
             }
         }
 
-            .main {
+        .main {
             width: 100%;
             padding: 52px;
             left: 0;
             box-sizing: border-box;
             position: relative;
-            top: 420px;
+            top: 520px;
             bottom: auto;
         }
     }
@@ -1719,6 +1755,20 @@ and (max-height : 768px) {
                 }
             }
         }
+    }
+
+    .main {
+        top: 480px;
+    }
+
+}
+
+@media only screen
+and (max-height : 768px)
+and (max-width : 978px) {
+
+    .page-landing .main {
+        top: 420px;
     }
 
 }

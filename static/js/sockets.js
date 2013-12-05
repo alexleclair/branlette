@@ -271,7 +271,6 @@
         return $('#audio').get(0).currentTime = 0;
       } catch (_error) {
         e = _error;
-        return console.log('err', e);
       }
     },
     stopSound: function() {

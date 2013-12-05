@@ -148,7 +148,7 @@ body p {
   padding: 0;
   margin: 0;
   position: fixed;
-  bottom: 0px;
+  bottom: 52px;
   right: 52px;
   line-height: 40px;
 }
@@ -263,13 +263,10 @@ div.arrow-left {
   height: 0;
   border-top: 5px solid transparent;
   /* left arrow slant */
-
   border-bottom: 5px solid transparent;
   /* right arrow slant */
-
   border-right: 5px solid #ffd600;
   /* bottom, add background color here */
-
   font-size: 0;
   line-height: 0;
   display: inline-block;
@@ -280,13 +277,10 @@ div.arrow-right {
   height: 0;
   border-top: 5px solid transparent;
   /* left arrow slant */
-
   border-bottom: 5px solid transparent;
   /* right arrow slant */
-
   border-left: 5px solid #ffd600;
   /* bottom, add background color here */
-
   font-size: 0;
   line-height: 0;
   display: inline-block;
@@ -370,7 +364,7 @@ div.arrow-right {
   width: 1100px;
   position: absolute;
   left: 72px;
-  bottom: 52px;
+  bottom: 102px;
 }
 .page-landing .main div.clear {
   padding: 20px 0 0 0;
@@ -387,11 +381,10 @@ div.arrow-right {
   font-weight: bold;
   position: relative;
 }
-.page-landing .main h1 span:after {
-  content: '*';
-  font-size: 26px;
-  position: absolute;
-  top: -10px;
+.page-landing .main h1 span {
+  position: relative;
+  font-size: 50%;
+  top: -0.75em;
 }
 .page-landing .main p {
   width: 285px;
@@ -464,6 +457,7 @@ div.arrow-right {
 .page-shake .sidebar div.leftscore {
   float: left;
   width: 40%;
+  position: relative;
 }
 .page-classement .sidebar div.leftscore h1,
 .page-shake .sidebar div.leftscore h1 {
@@ -736,7 +730,7 @@ body.object-boule .pageiphone-shake div.image {
 .shake-droite {
   width: 600px;
   position: absolute;
-  bottom: 52px;
+  bottom: 102px;
   right: 52px;
   border-bottom: 4px solid black;
 }
@@ -752,9 +746,9 @@ body.object-boule .pageiphone-shake div.image {
   margin-bottom: 0;
   float: right;
   text-align: right;
-  width: 60%;
+  width: 50%;
   font-size: 16px;
-  line-height: 30px;
+  line-height: 1em;
 }
 .shake-droite h2 .agencyPeople {
   color: #ffd600;
@@ -958,7 +952,6 @@ body.shakelent .shake-bras {
   border: 0;
   overflow: hidden;
   /* IE 6/7 fallback */
-
   *text-indent: -9999px;
 }
 .ir:before {
@@ -1021,10 +1014,8 @@ body.shakelent .shake-bras {
 .clearfix:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .clearfix:after {
   clear: both;
@@ -1105,6 +1096,9 @@ body.shakelent .shake-bras {
   .page-classement .classement #leaderboard .position {
     font-size: 0.75em;
   }
+  .page-shake .shake-intro {
+    width: 50%;
+  }
   .page-shake .shake-intro h1 {
     zoom: 0.75;
   }
@@ -1138,9 +1132,6 @@ body.shakelent .shake-bras {
   }
 }
 @media only screen and (max-width: 1224px) {
-  #akfnlogo {
-    bottom: 0;
-  }
   .page-landing .main {
     box-sizing: border-box;
     width: 100%;
@@ -1252,13 +1243,7 @@ body.shakelent .shake-bras {
     line-height: 1em;
   }
 }
-@media only screen and (max-height: 790px) {
-  
-}
 /* iPads (landscape) ----------- */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  
-}
 @media only screen and (max-width: 978px) {
   #logo {
     left: 52px;
@@ -1294,13 +1279,19 @@ body.shakelent .shake-bras {
     left: 0;
     box-sizing: border-box;
     position: relative;
-    top: 550px;
+    top: 420px;
     bottom: auto;
   }
   #akfnlogo {
-    position: fixed;
-    bottom: 0;
-    right: 52px;
+    position: absolute;
+    top: 610px;
+    left: 846px;
+    width: 100px;
+  }
+  #akfnlogo a {
+    float: left;
+    width: 40px;
+    display: block;
   }
   .page-classement {
     width: 978px;
@@ -1383,11 +1374,6 @@ body.shakelent .shake-bras {
     position: relative;
     line-height: 1em;
     font-size: 30px;
-  }
-  .pageiphone-landing h1 span:after {
-    content: '*';
-    top: -10px;
-    position: absolute;
   }
   .pageiphone-landing h2 {
     margin-bottom: 0.5em;
@@ -1672,7 +1658,6 @@ body.shakelent .shake-bras {
     background: transparent !important;
     color: #000 !important;
     /* Black prints faster: h5bp.com/s */
-  
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -1687,8 +1672,8 @@ body.shakelent .shake-bras {
     content: " (" attr(title) ")";
   }
   /*
-       * Don't show links for images, or javascript/internal links
-       */
+     * Don't show links for images, or javascript/internal links
+     */
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
@@ -1702,7 +1687,6 @@ body.shakelent .shake-bras {
   thead {
     display: table-header-group;
     /* h5bp.com/t */
-  
   }
   tr,
   img {
@@ -1711,7 +1695,7 @@ body.shakelent .shake-bras {
   img {
     max-width: 100% !important;
   }
-  @page  {
+  @page {
     margin: 0.5cm;
   }
   p,

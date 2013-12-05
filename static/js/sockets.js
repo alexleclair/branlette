@@ -18,6 +18,7 @@
     shakeTimeout: null,
     lastShakeTimes: [],
     siblingsCount: 0,
+    lastShake: 0,
     objects: ['marie', 'jesus', 'nutcracker', 'boite', 'canne', 'explosif', 'ange', 'roi', 'canne2', 'cierge', 'boule'],
     messages: ['Enweille, lâche pas la banane!', 'T\'y es presque, hein?', 'Allez, viens! On est bien!', 'Pas game d\'aller plus vite.', 'Arrête pas!', 'Tes parents seraient fiers de toi.', 'Spit on it!', 'T\'es à deux doigts de l\'avoir!', 'Donne-toi un bon coup de main', 'Essayes sans les mains'],
     messagesTimeout: {
@@ -299,6 +300,12 @@
       return ga('send', 'pageview', '/virtual/pick/' + agency);
     },
     shake: function(agency) {
+      var now;
+      now = new Date().getTime();
+      if ((now - App.lastShake) < 200) {
+        return;
+      }
+      App.lastShake = now;
       if (agency == null) {
         agency = App.agency;
       }

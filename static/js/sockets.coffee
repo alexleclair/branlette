@@ -12,6 +12,7 @@ App =
 	shakeTimeout: null
 	lastShakeTimes: [];
 	siblingsCount:0;
+	lastShake:0
 	objects:[
 		'marie'
 		'jesus'
@@ -303,6 +304,10 @@ App =
 		ga('send','pageview', '/virtual/pick/'+agency)
 
 	shake: (agency)->
+		now = new Date().getTime();
+		if (now - App.lastShake) < 200
+			return;
+		App.lastShake = now;
 		if !agency?
 			agency = App.agency;
 		App.socket.emit('shake', agency);

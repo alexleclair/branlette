@@ -208,7 +208,7 @@ Y,     ,d88P
     <div class="main">
         <div class="clear">
         <h1 class="left">Un concours de branlette<span>*</span> interactive</h1>
-        <p class="right">Nous invitons clients, agences et amis de l'industrie à venir mesurer leur vigueur dans un amical combat de poigne: plus tu shakes, plus on  donne. <br><br>1 canne de conserve par 25&nbsp;000 shakes* jusqu'au 21 décembre, mettons (Et si y'a trop de branlette, on s'garde une p'tite g&ecirc;ne sur la quantité qu'on donne).</p>
+        <p class="right">Nous invitons clients, agences et amis de l'industrie à venir mesurer leur vigueur dans un amical combat de poigne: plus tu shakes, plus on  donne. <br><br>1 canne de conserve par 10&nbsp;000 shakes* jusqu'au 21 décembre, mettons (Et si y'a trop de branlette, on s'garde une p'tite g&ecirc;ne sur la quantité qu'on donne).</p>
         </div>
     </div>
 
@@ -280,14 +280,14 @@ Y,     ,d88P
 
     <div class="sidebar">
         <header>
-            <div class="left">Hey <span class="agencyName"></span> gâte-toé, c'est Noël</div>
+            <div class="left">Hey <span class="agencyName"></span> gâte-toi, c'est Noël</div>
             <div class="right"><a href="#twitter" class="icon-twitter"><div>twitter</div></a><a href="#facebook" class="icon-facebook"><div>facebook</div></a></div>
         </header>
         <div class="leftscore">
             <h1><span class="agencyIndex">?</span>/<span class="agenciesCount">?</span></h1>
             <footer><a href="#" class="btn-leaderboard"><div class="arrow-right"></div>Voir le classement complet</a></footer>
         </div>
-            <p class="right">Nous invitons clients, agences et amis de l'industrie à venir mesurer leur vigueur dans un amical combat de poigne: plus tu shakes, plus on  donne. <br><br>1 canne de conserve par 25&nbsp;000 shakes* jusqu'au 21 décembre, mettons (Et si y'a trop de branlette, on s'garde une p'tite g&ecirc;ne sur la quantité qu'on donne)</p>
+            <p class="right">Nous invitons clients, agences et amis de l'industrie à venir mesurer leur vigueur dans un amical combat de poigne: plus tu shakes, plus on  donne. <br><br>1 canne de conserve par 10&nbsp;000 shakes* jusqu'au 21 décembre, mettons (Et si y'a trop de branlette, on s'garde une p'tite g&ecirc;ne sur la quantité qu'on donne)</p>
         </div>
 
 
@@ -308,7 +308,7 @@ Y,     ,d88P
 <div class="page-classement step" style="display: none;">
     <div class="classement">
         <header>
-            <div>Hey <span class="agencyName"></span>, Gâte-toé, c'est Noël</div>
+            <div>Hey <span class="agencyName"></span>, Gâte-toi, c'est Noël</div>
         
         </header>
     <div id="leaderboard">
@@ -317,11 +317,11 @@ Y,     ,d88P
 </div>
     <div class="sidebar">
         <header>
-            <!-- <div class="left">Hey <span class="agencyName"></span>, Gâte-toé, c'est Noël</div> -->
+            <!-- <div class="left">Hey <span class="agencyName"></span>, Gâte-toi, c'est Noël</div> -->
             <div class="left"><a href="/" class="back-to-business"><div class="arrow-left"></div>Retour à la branlette</a></div>
             <div class="right"><a href="#twitter" class="icon-twitter"><div>twitter</div></a><a href="#facebook" class="icon-facebook"><div>facebook</div></a></div>
         </header>
-            <p class="right">Plus tu shakes, plus on donne: 1 canne de conserve par 25 000 shakes jusqu'au 21 d&eacute;cembre, mettons. (Et si y'a trop de branlette, on s'garde une p'tite g&ecirc;ne sur la quantité qu'on donne)</p>
+            <p class="right">Plus tu shakes, plus on donne: 1 canne de conserve par 10 000 shakes jusqu'au 21 d&eacute;cembre, mettons. (Et si y'a trop de branlette, on s'garde une p'tite g&ecirc;ne sur la quantité qu'on donne)</p>
         <div class="leftscore">
             <h1><span class="agencyIndex">?</span>/<span class="agenciesCount">?</span></h1>
             <!-- <footer><a href="/" class="back-to-business"><div class="arrow-left"></div>Retour à la branlette</a></footer> -->

@@ -76,6 +76,7 @@
     currentObject: null,
     playSounds: true,
     init: function(callback) {
+      $('.shake-bulle').hide();
       $('#audio').on('ended', function(e) {
         if (!App.isMobile) {
           return App.playSound();
@@ -213,10 +214,10 @@
         msg = _msgs[Math.floor(Math.random() * _msgs.length)];
       }
       if (x == null) {
-        x = Math.random() * ($parent.width() / 1);
+        x = Math.random() * ($parent.width() / 3);
       }
       if (y == null) {
-        y = Math.random() * ($parent.height() / 1) - 200;
+        y = Math.random() * ($parent.height() / 2);
       }
       $bulle.fadeOut(fadeTime, function() {
         $bulle.find('h3').text(msg);

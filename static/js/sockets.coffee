@@ -113,6 +113,7 @@ App =
 	playSounds:true;
 
 	init: (callback)=>
+		$('.shake-bulle').hide();
 		$('#audio').on 'ended', (e)->
 			if !App.isMobile
 				App.playSound();
@@ -134,7 +135,6 @@ App =
 			else
 				App.gotoPage 'page-shake', 'shake-intro'
 				App.changeObject App.objects[Math.floor(Math.random() * (App.objects.length-1))], true
-
 			setTimeout App.displayMessage, 5000;
 				
 
@@ -226,9 +226,9 @@ App =
 			msg = _msgs[Math.floor(Math.random()*_msgs.length)];
 
 		if !x?
-			x = Math.random()*($parent.width()/1) #+ $parent.width()/4
+			x = Math.random()*($parent.width()/3) #+ $parent.width()/4
 		if !y?
-			y = Math.random()*($parent.height()/1)-200 #+ $(window).height()/4
+			y = Math.random()*($parent.height()/2) #+ $(window).height()/4
 		$bulle.fadeOut fadeTime,()=>
 			$bulle.find('h3').text(msg);
 			$bulle.css('top', y+'px').css('left', x+'px').fadeTo(fadeTime, 1);

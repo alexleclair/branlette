@@ -27,47 +27,47 @@
     },
     sounds: [
       {
-        mp3: 'http://alexleclair.ca:8090/sounds/branlette_01.mp3',
-        ogg: 'http://alexleclair.ca:8090/sounds/branlette_01.ogg'
+        mp3: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_01.mp3',
+        ogg: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_01.ogg'
       }, {
-        mp3: 'http://alexleclair.ca:8090/sounds/branlette_02.mp3',
-        ogg: 'http://alexleclair.ca:8090/sounds/branlette_02.ogg'
+        mp3: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_02.mp3',
+        ogg: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_02.ogg'
       }, {
-        mp3: 'http://alexleclair.ca:8090/sounds/branlette_03.mp3',
-        ogg: 'http://alexleclair.ca:8090/sounds/branlette_03.ogg'
+        mp3: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_03.mp3',
+        ogg: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_03.ogg'
       }, {
-        mp3: 'http://alexleclair.ca:8090/sounds/branlette_04.mp3',
-        ogg: 'http://alexleclair.ca:8090/sounds/branlette_04.ogg'
+        mp3: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_04.mp3',
+        ogg: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_04.ogg'
       }, {
-        mp3: 'http://alexleclair.ca:8090/sounds/branlette_05.mp3',
-        ogg: 'http://alexleclair.ca:8090/sounds/branlette_05.ogg'
+        mp3: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_05.mp3',
+        ogg: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_05.ogg'
       }, {
-        mp3: 'http://alexleclair.ca:8090/sounds/branlette_06.mp3',
-        ogg: 'http://alexleclair.ca:8090/sounds/branlette_06.ogg'
+        mp3: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_06.mp3',
+        ogg: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_06.ogg'
       }, {
-        mp3: 'http://alexleclair.ca:8090/sounds/branlette_07.mp3',
-        ogg: 'http://alexleclair.ca:8090/sounds/branlette_07.ogg'
+        mp3: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_07.mp3',
+        ogg: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_07.ogg'
       }, {
-        mp3: 'http://alexleclair.ca:8090/sounds/branlette_08.mp3',
-        ogg: 'http://alexleclair.ca:8090/sounds/branlette_08.ogg'
+        mp3: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_08.mp3',
+        ogg: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_08.ogg'
       }, {
-        mp3: 'http://alexleclair.ca:8090/sounds/branlette_09.mp3',
-        ogg: 'http://alexleclair.ca:8090/sounds/branlette_09.ogg'
+        mp3: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_09.mp3',
+        ogg: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_09.ogg'
       }, {
-        mp3: 'http://alexleclair.ca:8090/sounds/branlette_10.mp3',
-        ogg: 'http://alexleclair.ca:8090/sounds/branlette_10.ogg'
+        mp3: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_10.mp3',
+        ogg: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_10.ogg'
       }, {
-        mp3: 'http://alexleclair.ca:8090/sounds/branlette_11.mp3',
-        ogg: 'http://alexleclair.ca:8090/sounds/branlette_11.ogg'
+        mp3: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_11.mp3',
+        ogg: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_11.ogg'
       }, {
-        mp3: 'http://alexleclair.ca:8090/sounds/branlette_12.mp3',
-        ogg: 'http://alexleclair.ca:8090/sounds/branlette_12.ogg'
+        mp3: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_12.mp3',
+        ogg: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_12.ogg'
       }, {
-        mp3: 'http://alexleclair.ca:8090/sounds/branlette_13.mp3',
-        ogg: 'http://alexleclair.ca:8090/sounds/branlette_13.ogg'
+        mp3: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_13.mp3',
+        ogg: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_13.ogg'
       }, {
-        mp3: 'http://alexleclair.ca:8090/sounds/branlette_14.mp3',
-        ogg: 'http://alexleclair.ca:8090/sounds/branlette_14.ogg'
+        mp3: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_14.mp3',
+        ogg: 'http://alexleclair.ca/~stax/branlette/sounds/branlette_14.ogg'
       }
     ],
     silenceSound: {
@@ -84,11 +84,15 @@
         forceCode = null;
       }
       $('.shake-bulle').hide();
-      $('#audio').on('ended', function(e) {
-        if (!App.isMobile) {
-          return App.playSound();
-        } else {
-          return App.playSound(App.silenceSound);
+      $('#audio').on('timeupdate', function(e) {
+        var audio;
+        audio = $('#audio').get(0);
+        if (audio.currentTime >= audio.duration && audio.duration > 0) {
+          if (!App.isMobile) {
+            return App.playSound();
+          } else {
+            return App.playSound(App.silenceSound);
+          }
         }
       });
       App.socket = io.connect(App.config.endpoint);

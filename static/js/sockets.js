@@ -413,26 +413,30 @@
       return App.lastPage = page;
     },
     facebookShare: function() {
-      var msg;
+      var href, msg;
       msg = 'Viens shaker pour ton équipe favorite et prend part à la Grande Branlette de Noël.';
+      href = window.location.href + '';
+      href = href.split('#')[0];
       if (App.agency != null) {
         msg = 'J\'ai shaké ' + App.shakes + ' fois pour ' + App.labels[App.agency] + ' sur la Grande Branlette de Noël!';
       }
       return FB.ui({
         method: 'feed',
         name: 'La Grande Branlette de Noël',
-        link: 'http://localhost/',
-        picture: ' http://7cffd474.ngrok.com/img/logo_branlette.png',
+        link: href,
+        picture: 'http://branlettedenoel.com/img/logo_branlette.png',
         caption: msg,
         description: 'En participant à la Grande Branlette, tu aides ton équipe à gagner.'
       });
     },
     twitterShare: function() {
-      var i, key, msg, params, twitter_url;
+      var href, i, key, msg, params, twitter_url;
       twitter_url = 'https://twitter.com/share';
+      href = window.location.href + '';
+      href = href.split('#')[0];
       msg = 'Viens te la shaker pour ton équipe préférée sur La Grande Branlette de Noël: ';
       params = {
-        url: window.location.href,
+        url: href,
         via: 'akufen',
         text: msg
       };

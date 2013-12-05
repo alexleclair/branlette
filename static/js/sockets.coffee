@@ -211,7 +211,7 @@ App =
 					App.bindToCode forceCode;
 				else if forceAgency
 					App.pickAgency forceAgency;
-					
+
 				setTimeout ()->
 					if App.isMobile
 						App.gotoPage 'pageiphone-landing', null
@@ -395,20 +395,24 @@ App =
 
 	facebookShare:()=>
 		msg = 'Viens shaker pour ton équipe favorite et prend part à la Grande Branlette de Noël.'
+		href = window.location.href + ''
+		href = href.split('#')[0]
 		if App.agency?
 			msg = 'J\'ai shaké '+App.shakes+' fois pour ' + App.labels[App.agency]+' sur la Grande Branlette de Noël!';
 		FB.ui
 			method: 'feed'
 			name: 'La Grande Branlette de Noël'
-			link: 'http://localhost/'
-			picture: ' http://7cffd474.ngrok.com/img/logo_branlette.png'
+			link: href
+			picture: 'http://branlettedenoel.com/img/logo_branlette.png'
 			caption: msg
 			description: 'En participant à la Grande Branlette, tu aides ton équipe à gagner.'
 	twitterShare:()=>
 		twitter_url = 'https://twitter.com/share';
+		href = window.location.href + ''
+		href = href.split('#')[0]
 		msg = 'Viens te la shaker pour ton équipe préférée sur La Grande Branlette de Noël: '
 		params = 
-			url: window.location.href
+			url: href
 			via:'akufen'
 			text: msg
 		i=0;

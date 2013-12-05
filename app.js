@@ -23,105 +23,11 @@
       port: 8080,
       redisHost: 'localhost',
       redisPort: 6379,
-      redisKey: 'noel:dev:',
+      redisKey: 'noel:prod:',
       wwwPath: './static/',
       updateRedisTimer: 5000,
       sendAgenciesTimer: 2500,
-      labels: {
-        acolyte: 'Acolyte Communication',
-        adviso: 'Adviso',
-        bloom: 'Bloom',
-        fairplay: 'Fairplay',
-        onf: 'ONF',
-        akufen: 'Akufen',
-        attraction: 'Attraction',
-        braque: 'Agence Braque',
-        alfred: 'Alfred info',
-        amazone: 'Amazone communications gestion',
-        amuse: 'Amuse/Lowe Roche',
-        bcp: 'BCP',
-        beauchemin: 'Beauchemin',
-        bbr: 'Bleublancrouge',
-        bulle: 'Production Bulle',
-        bob: 'Bob',
-        brad: 'Brad',
-        cap: 'Cap Communication',
-        carat: 'Carat',
-        cart1er: 'CART1ER',
-        cavalerie: 'La Cavalerie',
-        gccom: 'CGCOM',
-        cossette: 'Cossette',
-        coutu: 'Coutu Communication',
-        cri: 'CRI',
-        cundari: 'Cundari',
-        decodca: 'decod.ca',
-        defi: 'Défi marketing',
-        dentsubos: 'DentsuBos',
-        desarts: 'DesArts Communication',
-        draft: 'Draftfcb',
-        ecorce: 'Écorce',
-        egzakt: 'Egzakt',
-        em: 'EM L\'agence',
-        espacem: 'Espace M',
-        gendron: 'Gendron Communication',
-        generation: 'Génération',
-        gvm: 'Groupe GVM',
-        aod: 'Group Média AOD',
-        hop: 'HOP comportement de marque',
-        invisible: 'la compagnie invisible',
-        jazz: 'Jazz Marketing Communications',
-        jwt: 'JWT',
-        kabane: 'Kabane',
-        kbsp: 'kbs+p',
-        lesaint: 'Le saint publicité et design',
-        lemieux: 'Lemieux Bédard',
-        dompteurs: 'Les Dompteurs de souris',
-        evades: 'Les Évadés',
-        lg2: 'lg2',
-        lp8: 'LP8',
-        lusio: 'Lusio films',
-        marketel: 'Marketel',
-        martel: 'Martel et compagnie',
-        mediaexperts: 'Media Experts',
-        mediavation: 'Mediavation',
-        merlicom: 'Merlicom',
-        minimal: 'Minimal Médias',
-        morrow: 'Morrow',
-        nolin: 'Nolin BBDO',
-        nurun: 'Nurun',
-        ogilvy: 'Ogilvy Montréal',
-        orangetango: 'orangetango',
-        otis: 'Otis Léger Marketing',
-        oui: 'Oui Marketing',
-        palm: 'PALM + HAVAS',
-        pheromone: 'Phéromone',
-        publicis: 'Publicis',
-        rc: 'Radio-Canada',
-        republik: 'Republik',
-        reservoir: 'Réservoir Publicité Conseil',
-        ressac: 'Ressac',
-        revolver3: 'revolver3',
-        svyr: 'Saint-Jacques Vallée Y&R',
-        sidlee: 'Sid Lee',
-        tamtam: 'TAM-TAM\\TBWA',
-        tank: 'TANK',
-        taxi: 'TAXI',
-        tequila: 'Tequila communication et marketing',
-        terrain: 'Terrain marketing',
-        tonik: 'Tonik Groupimage',
-        touche: 'Touché! PHD',
-        tp1: 'TP1',
-        trinergie: 'Trinergie',
-        uber: 'Über',
-        upperkut: 'Upperkut',
-        v: 'V',
-        version10: 'version10',
-        wasabi: 'Wasabi Communications',
-        youville: 'Youville Communauté Créative',
-        zip: 'ZiP communication',
-        imedia: 'Imédia',
-        picbois: 'Picbois Production'
-      }
+      labels: {}
     },
     agencies: {},
     siblings: {},
@@ -283,6 +189,9 @@
       var _this = this;
       return App.redisWorker.smembers(App.config.redisKey + 'agencies', function(err, reply) {
         var e, i, key, val, _call, _i, _modified, _ref, _results;
+        if (reply == null) {
+          return;
+        }
         if (typeof reply === 'string') {
           reply = [reply];
         }
@@ -351,6 +260,10 @@
         case "stats":
           res.setHeader('Content-Type', 'application/json');
           res.send(JSON.stringify(App.agencies));
+          return false;
+        case "labels":
+          res.setHeader('Content-Type', 'application/json');
+          res.send(JSON.stringify(App.config.labels));
           return false;
         case "agency":
           if (method === 'add') {

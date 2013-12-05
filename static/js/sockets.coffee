@@ -16,7 +16,6 @@ App =
 		'marie'
 		'jesus'
 		'nutcracker'
-		'emballage'
 		'boite'
 		'canne'
 		'explosif'
@@ -38,7 +37,6 @@ App =
 		'T\'es à deux doigts de l\'avoir!'
 		'Donne-toi un bon coup de main',
 		'Essayes sans les mains'
-		''
 	]
 	messagesTimeout:
 		min:3000

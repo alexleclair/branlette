@@ -5,6 +5,7 @@ App =
 	labels:{}
 	agencies:{}
 	code:null
+	siblingCode:null;
 	agency:null
 	shakes:0
 	isMobile:false
@@ -181,6 +182,8 @@ App =
 			App.resetTexts();
 		App.socket.on 'wrongcode', (data)->
 			alert 'Ce code n\'existe pas.'
+			forceCode = null;
+			forceAgency = null;
 			if App.isMobile
 				App.gotoPage 'pageiphone-landing'
 			else
@@ -194,19 +197,26 @@ App =
 			isLanding = $current.length > 0 && $current.is('.page-landing');
 
 			if count == 1 && App.isMobile
-				window.location = window.location;
+				window.location = '/';
+
+			if forceAgency?
+				App.pickAgency forceAgency;
+				App.changeObject App.objects[Math.floor(Math.random() * (App.objects.length-1))], true
+				#forceAgency = null;
+				return;
 
 			if !App.isMobile && isLanding
 				App.gotoPage('page-landing', 'landing-confirmation');
 			if App.isMobile && $('div.step.current').is('.pageiphone-landing')
 				App.gotoPage('pageiphone-agence')
 
+
+
 		App.socket.on 'code', (code)->
 			App.code = code;
 			App.refreshCodeScreen();
 
 		App.socket.on 'connect', ()->
-				console.log 'test', forceAgency, forceCode;
 				if forceCode?
 					App.bindToCode forceCode;
 				else if forceAgency
@@ -214,7 +224,10 @@ App =
 
 				setTimeout ()->
 					if App.isMobile
-						App.gotoPage 'pageiphone-landing', null
+						if !forceAgency?
+							App.gotoPage 'pageiphone-landing', null
+						else
+							App.gotoPage 'pageiphone-shake'
 					else
 						App.gotoPage 'page-landing', 'landing-code'
 						App.playSound();
@@ -272,6 +285,7 @@ App =
 		App.playSound();
 
 	bindToCode: (code)=>
+		App.siblingCode = code;
 		App.socket.emit 'registerSibling', code
 	
 	pickAgency: (agency)->

@@ -11,6 +11,7 @@
     labels: {},
     agencies: {},
     code: null,
+    siblingCode: null,
     agency: null,
     shakes: 0,
     isMobile: false,
@@ -165,6 +166,8 @@
       });
       App.socket.on('wrongcode', function(data) {
         alert('Ce code n\'existe pas.');
+        forceCode = null;
+        forceAgency = null;
         if (App.isMobile) {
           return App.gotoPage('pageiphone-landing');
         } else {
@@ -177,7 +180,12 @@
         $current = $('div.step.current');
         isLanding = $current.length > 0 && $current.is('.page-landing');
         if (count === 1 && App.isMobile) {
-          window.location = window.location;
+          window.location = '/';
+        }
+        if (forceAgency != null) {
+          App.pickAgency(forceAgency);
+          App.changeObject(App.objects[Math.floor(Math.random() * (App.objects.length - 1))], true);
+          return;
         }
         if (!App.isMobile && isLanding) {
           App.gotoPage('page-landing', 'landing-confirmation');
@@ -191,7 +199,6 @@
         return App.refreshCodeScreen();
       });
       return App.socket.on('connect', function() {
-        console.log('test', forceAgency, forceCode);
         if (forceCode != null) {
           App.bindToCode(forceCode);
         } else if (forceAgency) {
@@ -199,7 +206,11 @@
         }
         return setTimeout(function() {
           if (App.isMobile) {
-            return App.gotoPage('pageiphone-landing', null);
+            if (forceAgency == null) {
+              return App.gotoPage('pageiphone-landing', null);
+            } else {
+              return App.gotoPage('pageiphone-shake');
+            }
           } else {
             App.gotoPage('page-landing', 'landing-code');
             return App.playSound();
@@ -275,6 +286,7 @@
       return App.playSound();
     },
     bindToCode: function(code) {
+      App.siblingCode = code;
       return App.socket.emit('registerSibling', code);
     },
     pickAgency: function(agency) {

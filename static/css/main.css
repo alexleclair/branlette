@@ -1668,8 +1668,10 @@ body.shakelent .shake-bras {
   a.icon-facebook,
   a.icon-twitter {
     /* Reference the @2x Sprite */
+  
     background-image: url(branlette_sprite@2x.png);
     /* Translate the @2x sprite's dimensions back to 1x */
+  
     background-size: 144px 144px;
   }
 }

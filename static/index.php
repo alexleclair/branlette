@@ -193,7 +193,6 @@ Y,     ,d88P
                 <div class="code" data-info="code"></div>
             </div>
         </div>
-        
     </div>
 
     <div class="landing-confirmation substep" style="display: none">
@@ -207,14 +206,12 @@ Y,     ,d88P
     </div>
 
     <div class="main">
-        
         <div class="clear">
-        <h1 class="left">Un autre concours de branlette interactive<span>*</span></h1>
-        <p class="right">Puisque le temps des fêtes est un moment propice pour se réunir et célébrer, nous invitons clients, agences et amis de l'industrie à venir mesurer leur vigueur dans un amical combat de poigne.</p>
+        <h1 class="left">Un concours de branlette<span>*</span> interactive</h1>
+        <p class="right">Nous invitons clients, agences et amis de l'industrie à venir mesurer leur vigueur dans un amical combat de poigne: plus tu shakes, plus on  donne. <br><br>1 canne de conserve par 25&nbsp;000 shakes* jusqu'au 21 décembre, mettons.</p>
         </div>
     </div>
 
-   
     <div class="sidebar">
         <header>
             <div class="left">Top 5 des plus vigoureux branleurs</div>
@@ -283,7 +280,7 @@ Y,     ,d88P
 
     <div class="sidebar">
         <header>
-            <div class="left">Hey <span class="agencyName"></span>, Gâte-toé, c'est Noël</div>
+            <div class="left">Hey <span class="agencyName"></span> gâte-toé, c'est Noël</div>
             <div class="right"><a href="#twitter" class="icon-twitter"><div>twitter</div></a><a href="#facebook" class="icon-facebook"><div>facebook</div></a></div>
         </header>
         <div class="leftscore">
@@ -319,14 +316,15 @@ Y,     ,d88P
     </div>
 </div>
     <div class="sidebar">
-        <header><!-- 
-            <div class="left">Hey <span class="agencyName"></span>, Gâte-toé, c'est Noël</div> -->
+        <header>
+            <!-- <div class="left">Hey <span class="agencyName"></span>, Gâte-toé, c'est Noël</div> -->
+            <div class="left"><a href="/" class="back-to-business"><div class="arrow-left"></div>Retour à la branlette</a></div>
             <div class="right"><a href="#twitter" class="icon-twitter"><div>twitter</div></a><a href="#facebook" class="icon-facebook"><div>facebook</div></a></div>
         </header>
-            <p class="right">À toutes les semaines, nous allons faire faire des affaires nices à plein de monde nice, selon le nombre de shakes, donc share-lé.</p>
+            <p class="right">Plus tu shakes, plus on  donne: 1 canne de conserve par 25 000 shakes* jusqu'au 21 décembre, mettons.</p>
         <div class="leftscore">
             <h1><span class="agencyIndex">?</span>/<span class="agenciesCount">?</span></h1>
-            <footer><a href="/" class="back-to-business"><div class="arrow-left"></div>Retour à la branlette</a></footer>
+            <!-- <footer><a href="/" class="back-to-business"><div class="arrow-left"></div>Retour à la branlette</a></footer> -->
         </div>
         </div>
     </div>

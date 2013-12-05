@@ -171,7 +171,7 @@ Y,     ,d88P
         </div>
 <!-- Quand qqun arrive sur le browser -->
 
-<div class="page-loading step">
+<div class="page-loading step" style="display: none">
 </div>
 
 <div class="page-landing step" style="display: none">
@@ -235,7 +235,7 @@ Y,     ,d88P
 
 <!-- 3 states: 1. intro, 2. shaking, 3. repos/fatigué -->
 
-<div class="page-shake step" style="display: none">
+<div class="page-shake step">
     <!-- intro -->
     <div class="shake-intro substep">
         <!-- <header><span>Allo <span class="agencyName"></span></span></header> -->

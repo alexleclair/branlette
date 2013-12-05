@@ -263,13 +263,10 @@ div.arrow-left {
   height: 0;
   border-top: 5px solid transparent;
   /* left arrow slant */
-
   border-bottom: 5px solid transparent;
   /* right arrow slant */
-
   border-right: 5px solid #ffd600;
   /* bottom, add background color here */
-
   font-size: 0;
   line-height: 0;
   display: inline-block;
@@ -280,13 +277,10 @@ div.arrow-right {
   height: 0;
   border-top: 5px solid transparent;
   /* left arrow slant */
-
   border-bottom: 5px solid transparent;
   /* right arrow slant */
-
   border-left: 5px solid #ffd600;
   /* bottom, add background color here */
-
   font-size: 0;
   line-height: 0;
   display: inline-block;
@@ -367,7 +361,7 @@ div.arrow-right {
   display: block;
 }
 .page-landing .main {
-  width: 1100px;
+  width: 57%;
   position: absolute;
   left: 72px;
   bottom: 102px;
@@ -617,6 +611,34 @@ body {
 .page-shake .shake-repos .fatigue footer div {
   float: left;
 }
+.page-shake .shake-droite {
+  width: 600px;
+  position: absolute;
+  bottom: 102px;
+  right: 52px;
+  border-bottom: 4px solid black;
+}
+.page-shake .shake-droite h1 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-size: 30px;
+  margin: 0;
+  width: 40%;
+}
+.page-shake .shake-droite h2 {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  margin: 0;
+  text-align: right;
+  width: 50%;
+  font-size: 16px;
+  line-height: 1em;
+}
+.page-shake .shake-droite h2 .agencyPeople {
+  color: #ffd600;
+}
 body.has-agency .leftscore h1 {
   display: block;
 }
@@ -732,35 +754,6 @@ body.object-boule .shake-bras {
 }
 body.object-boule .pageiphone-shake div.image {
   background-image: url(../img/boule-iphone.jpg);
-}
-.shake-droite {
-  width: 600px;
-  position: absolute;
-  bottom: 102px;
-  right: 52px;
-  border-bottom: 4px solid black;
-}
-.shake-droite h1 {
-  font-size: 30px;
-  float: left;
-  width: 40%;
-  position: absolute;
-  bottom: 0;
-  margin: 0;
-  line-height: 30px;
-}
-.shake-droite h2 {
-  margin: 0;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  text-align: right;
-  width: 50%;
-  font-size: 16px;
-  line-height: 30px;
-}
-.shake-droite h2 .agencyPeople {
-  color: #ffd600;
 }
 @keyframes shake {
   0% {
@@ -963,7 +956,6 @@ body.shakelent .shake-bras {
   border: 0;
   overflow: hidden;
   /* IE 6/7 fallback */
-
   *text-indent: -9999px;
 }
 .ir:before {
@@ -1026,10 +1018,8 @@ body.shakelent .shake-bras {
 .clearfix:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .clearfix:after {
   clear: both;
@@ -1079,7 +1069,7 @@ body.shakelent .shake-bras {
   }
   .page-landing .main {
     box-sizing: border-box;
-    width: 60%;
+    width: 57%;
   }
   .page-landing .main h1 {
     font-size: 40px;
@@ -1130,17 +1120,6 @@ body.shakelent .shake-bras {
   .page-shake .shake-droite {
     width: 33%;
     right: 52px;
-  }
-  .page-shake .shake-droite h1 {
-    float: none;
-    font-size: 1.4em;
-    margin: 0;
-  }
-  .page-shake .shake-droite h2 {
-    width: 100%;
-    float: none;
-    text-align: left;
-    line-height: 1em;
   }
 }
 @media only screen and (max-width: 1224px) {
@@ -1263,24 +1242,12 @@ body.shakelent .shake-bras {
     right: 52px;
   }
   .page-shake .shake-droite h1 {
-    float: none;
-    font-size: 1.2em;
-    margin: 0;
-  }
-  .page-shake .shake-droite h2 {
-    width: 100%;
-    float: none;
-    text-align: left;
+    font-size: 1em;
+    bottom: 10px;
     line-height: 1em;
   }
 }
-@media only screen and (max-height: 790px) {
-  
-}
 /* iPads (landscape) ----------- */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  
-}
 @media only screen and (max-width: 978px) {
   #logo {
     left: 52px;
@@ -1722,7 +1689,6 @@ body.shakelent .shake-bras {
     background: transparent !important;
     color: #000 !important;
     /* Black prints faster: h5bp.com/s */
-  
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -1737,8 +1703,8 @@ body.shakelent .shake-bras {
     content: " (" attr(title) ")";
   }
   /*
-       * Don't show links for images, or javascript/internal links
-       */
+     * Don't show links for images, or javascript/internal links
+     */
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
@@ -1752,7 +1718,6 @@ body.shakelent .shake-bras {
   thead {
     display: table-header-group;
     /* h5bp.com/t */
-  
   }
   tr,
   img {
@@ -1761,7 +1726,7 @@ body.shakelent .shake-bras {
   img {
     max-width: 100% !important;
   }
-  @page  {
+  @page {
     margin: 0.5cm;
   }
   p,

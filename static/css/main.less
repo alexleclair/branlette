@@ -447,7 +447,7 @@ div.arrow-right {
 
     
     .main {
-    width: 1100px;
+    width:  57%;
     position: absolute;
     left: 72px;
     bottom: 102px;
@@ -772,6 +772,40 @@ html,body {
         }
 
     }
+
+    .shake-droite {
+    width: 600px;
+    position: absolute;
+    bottom: 102px;
+    right: 52px;
+    border-bottom: 4px solid black;
+
+    h1 {
+        position: absolute;
+        left:0;
+        bottom: 0;
+        font-size: 30px;
+        margin: 0;
+        width: 40%;
+    }
+
+    h2 {
+        position: absolute;
+        bottom: 10px;
+        right: 0;
+        margin: 0;
+        text-align: right;
+        width: 50%;
+        font-size: 16px;
+        line-height: 1em;
+
+        .agencyPeople {
+            color: @jaune;
+        }
+    }
+
+    }
+
 }
 
 body.has-agency {
@@ -908,40 +942,7 @@ body.object-boule{
     }
 }
 
-.shake-droite {
-    width: 600px;
-    position: absolute;
-    bottom: 102px;
-    right: 52px;
-    border-bottom: 4px solid black;
 
-    h1 {
-        font-size: 30px;
-        float: left;
-        width: 40%;
-        position: absolute;
-        bottom: 0;
-        margin: 0;
-        line-height: 30px;
-    }
-
-    h2 {
-
-        margin: 0;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        text-align: right;
-        width: 50%;
-        font-size: 16px;
-        line-height: 30px;
-
-        .agencyPeople {
-            color: @jaune;
-        }
-    }
-
-}
 
 
 
@@ -1278,7 +1279,7 @@ and (max-width: 1640px) {
 
         .main {
             box-sizing: border-box;
-            width: 60%;
+            width: 57%;
 
             h1 {
                 font-size: 40px;
@@ -1366,18 +1367,17 @@ and (max-width: 1640px) {
         right: 52px;
 
 
-        h1 {
-            float: none;
-            font-size: 1.4em;
-            margin: 0;
-        }
+        // h1 {
+        //     float: none;
+        //     margin: 0;
+        // }
 
-        h2 {
-            width: 100%;
-            float: none;
-            text-align: left;
-            line-height: 1em;            
-        }
+        // h2 {
+        //     margin: 0;
+        //     padding-bottom: 0px;
+        //     font-size: 1em;
+        //     line-height: 1em;
+        // }
 
     }
 
@@ -1596,17 +1596,18 @@ and (max-width : 1224px) {
 
 
         h1 {
-            float: none;
-            font-size: 1.2em;
-            margin: 0;
+            font-size: 1em;
+            bottom: 10px;
+            line-height: 1em;
         }
 
-        h2 {
-            width: 100%;
-            float: none;
-            text-align: left;
-            line-height: 1em;            
-        }
+     //    h2 {
+     //        width: 60%;margin: 0;
+     //        padding: 0;
+     //        font-size: 0.9em;
+     // //       float: none;
+     //        text-align: left;   
+     //    }
 
     }
 
@@ -1764,6 +1765,25 @@ and (max-height : 768px) {
             }
         }
     }
+
+    .sidebar {
+            // width: 32%;
+
+            header {
+
+                // .left {
+                //     display: block;
+                //     line-height: 1em;
+                //     width: 60%;
+                //     margin-bottom: 0.5em;
+                // }
+            }
+
+            // table td.agence, table td.position {
+            //     font-size: 30px;
+            // }
+
+        }
 
     .main {
         top: 480px;

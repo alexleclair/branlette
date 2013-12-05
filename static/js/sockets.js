@@ -87,8 +87,7 @@
       $('#audio').on('timeupdate', function(e) {
         var audio;
         audio = $('#audio').get(0);
-        console.log(audio.currentTime, audio.duration);
-        if (audio.currentTime >= audio.duration) {
+        if (audio.currentTime >= audio.duration && audio.duration > 0) {
           if (!App.isMobile) {
             return App.playSound();
           } else {

@@ -117,8 +117,7 @@ App =
 		$('.shake-bulle').hide();
 		$('#audio').on 'timeupdate', (e) ->
 			audio = $('#audio').get(0);
-			console.log audio.currentTime, audio.duration
-			if audio.currentTime >= audio.duration
+			if audio.currentTime >= audio.duration && audio.duration > 0
 				if !App.isMobile
 					App.playSound();
 				else

@@ -450,3 +450,9 @@ App =
 
 
 App.init();
+GLOBAL.App = App;
+net = require('net')
+repl = require('repl')
+net.createServer (socket)->
+  repl.start("node via TCP socket> ", socket);
+.listen(5001, "localhost");

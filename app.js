@@ -23,15 +23,19 @@
       port: 8080,
       redisHost: 'localhost',
       redisPort: 6379,
-      redisKey: 'noel:prod2:',
+      redisKey: 'noel:prod3:',
       wwwPath: './static/',
       updateRedisTimer: 5000,
       sendAgenciesTimer: 2500,
+      maxPerSecond: 5,
+      maxIdleTime: 60 * 60 * 1000,
       labels: {}
     },
     agencies: {},
     siblings: {},
     sockets: {},
+    lastshakes: {},
+    disconnectTimers: {},
     connCounter: 0,
     init: function(config) {
       var express;
@@ -67,11 +71,17 @@
         code = App.generateCode(App.connCounter);
         App.siblings[code] = [];
         App.sockets[socket.id] = socket;
+        App.lastshakes[socket.id] = 0;
         socket.set('code', code);
         App.attachSiblings(socket, code);
         socket.emit('code', code);
         socket.emit('labels', App.config.labels);
         socket.emit('agencies', App.agencies);
+        App.disconnectTimers[socket.id] = setTimeout(function() {
+          if ((App.sockets != null) && App.sockets[socket.id]) {
+            return App.sockets[socket.id].disconnect();
+          }
+        }, App.config.maxIdleTime);
         socket.on('object', function(obj) {
           return App.sendToSiblings(socket, 'object', obj);
         });
@@ -89,9 +99,18 @@
           });
         });
         socket.on('shake', function(agency) {
+          var diff, now;
           if (agency == null) {
             agency = null;
           }
+          now = new Date().getTime();
+          if ((App.lastshakes != null) && (App.lastshakes[socket.id] != null)) {
+            diff = now - App.lastshakes[socket.id];
+            if (diff < 1000 / App.config.maxPerSecond) {
+              return;
+            }
+          }
+          App.lastshakes[socket.id] = now;
           if ((agency != null) && (App.agencies[agency] != null)) {
             App.agencies[agency].count++;
           } else {
@@ -134,7 +153,9 @@
               }
             }
           });
-          return delete App.sockets[socket.id];
+          delete App.sockets[socket.id];
+          delete App.lastshakes[socket.id];
+          return delete App.disconnectTimers[socket.id];
         });
       });
     },
@@ -297,6 +318,10 @@
             return res.end(JSON.stringify(true));
           } else if (method === 'approve') {
             if ((req.query != null) && (req.query.name != null)) {
+              if ((req.query.password == null) || req.query.password !== 'akufen') {
+                res.end('false');
+                return;
+              }
               key = req.query.name.toLowerCase().split('');
               allowedChars = 'abcdefghijklmnopqrstuvwxyz0123456789'.split('');
               _key = '';

@@ -1,6 +1,6 @@
 App = 
 	config:
-		endpoint:'http://branlettedenoel.com:8090/'
+		endpoint:'http://localhost:8090/'
 	socket:null
 	labels:{}
 	agencies:{}

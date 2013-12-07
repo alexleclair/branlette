@@ -24,10 +24,12 @@ App =
 			port:8080
 			redisHost:'localhost'
 			redisPort:6379
-			redisKey:'noel:prod2:'
+			redisKey:'noel:prod3:'
 			wwwPath:'./static/'
 			updateRedisTimer:5000
 			sendAgenciesTimer:2500;
+			maxPerSecond:5
+			maxIdleTime:60*60*1000
 			labels: {}
 				# acolyte:	'Acolyte Communication'
 				# avantgardesolutions:'Avant-Garde Solutions'
@@ -158,6 +160,8 @@ App =
 		agencies:{}
 		siblings:{}
 		sockets:{}
+		lastshakes:{}
+		disconnectTimers:{}
 		connCounter: 0;
 
 		init: (config)->
@@ -201,12 +205,17 @@ App =
 					code = App.generateCode(App.connCounter);
 					App.siblings[code] = []
 					App.sockets[socket.id] = socket;
+					App.lastshakes[socket.id] = 0;
 					socket.set 'code', code;
 					App.attachSiblings(socket, code)
 
 					socket.emit 'code', code
 					socket.emit 'labels', App.config.labels
 					socket.emit 'agencies', App.agencies;
+					App.disconnectTimers[socket.id] = setTimeout ()->
+						if App.sockets? && App.sockets[socket.id]
+							App.sockets[socket.id].disconnect();
+					, App.config.maxIdleTime;
 
 					socket.on 'object', (obj)->
 						App.sendToSiblings(socket, 'object', obj)
@@ -224,6 +233,13 @@ App =
 							App.sendAgencies(socket); #send to siblings
 
 					socket.on 'shake', (agency=null)->
+						now = new Date().getTime();
+						if App.lastshakes? && App.lastshakes[socket.id]?
+							diff = now - App.lastshakes[socket.id];
+							if diff < 1000/App.config.maxPerSecond
+								return;
+						App.lastshakes[socket.id] = now;
+
 						if agency? && App.agencies[agency]?
 							App.agencies[agency].count++;
 						else
@@ -259,6 +275,8 @@ App =
 								if App.siblings[code].length == 0
 									delete App.siblings[code];
 						delete App.sockets[socket.id]
+						delete App.lastshakes[socket.id]
+						delete App.disconnectTimers[socket.id]
 
 		
 		attachSiblings:(socket, code)->
@@ -374,7 +392,9 @@ App =
 
 					else if method == 'approve'
 						if req.query? && req.query.name?
-
+							if !req.query.password? || req.query.password != 'akufen'
+								res.end 'false';
+								return;
 							key = req.query.name.toLowerCase().split('');
 							allowedChars = 'abcdefghijklmnopqrstuvwxyz0123456789'.split('');
 							_key = ''

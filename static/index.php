@@ -359,14 +359,15 @@ Y,     ,d88P
         <p>* Tape le nom de ton agence ou scroll la liste pour la trouver:</p>
         </div>
     </div>
-    <form class="add-agency-form"><input type="text" class="add-agency" value="" />
+    <!--<form class="add-agency-form"><input type="text" class="add-agency" value="" />
     <input type="submit" value="Ajouter" class="button" /></form>
+     -->
     
     <ul id="agency-picker">
         
     </ul><br>
-    <h3>Toujours pas trouvé?<br>Ajoute-là:</h3> <form class="add-agency-form"><input type="text" class="add-agency" value="" />
-    <input type="submit" value="Ajouter" class="button" /></form>
+    <h3>Toujours pas trouvé?<br><a href="mailto:alex@akufen.ca?subject=Ajouter une agence&body=Salut, peux-tu ajouter cette agence: " style="text-decoration:underline;">Envoie-nous un courriel</a></h3> <!-- <form class="add-agency-form"><input type="text" class="add-agency" value="" />
+    <input type="submit" value="Ajouter" class="button" /></form> -->
 </div>
 
 <div class="pageiphone-shake step" style="display: none;">

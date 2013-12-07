@@ -1,6 +1,6 @@
 App = 
 	config:
-		endpoint:'http://192.168.0.109:8090/'
+		endpoint:'http://54.235.131.211/'
 	socket:null
 	labels:{}
 	agencies:{}

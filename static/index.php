@@ -366,7 +366,7 @@ Y,     ,d88P
     <ul id="agency-picker">
         
     </ul><br>
-    <h3>Toujours pas trouvé?<br><a href="mailto:alex@akufen.ca?subject=Ajouter une agence&body=Salut, peux-tu ajouter cette agence: " style="text-decoration:underline;">Envoie-nous un courriel</a></h3> <!-- <form class="add-agency-form"><input type="text" class="add-agency" value="" />
+    <h3>Toujours pas trouvé?<br><a href="mailto:branlette@akufen.ca?subject=Ajouter une agence&body=Salut, peux-tu ajouter cette agence: " style="text-decoration:underline;">Envoie-nous un courriel</a></h3> <!-- <form class="add-agency-form"><input type="text" class="add-agency" value="" />
     <input type="submit" value="Ajouter" class="button" /></form> -->
 </div>
 

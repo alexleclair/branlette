@@ -329,8 +329,17 @@
       }
       return ga('send', 'pageview', '/virtual/background/' + obj);
     },
-    resetTexts: function() {
-      var agencies, agency, i, index, key, source, template, _agencies, _byName, _i, _j, _ref, _ref1;
+    resetTexts: function(searchString) {
+      var agencies, agency, allowedChars, i, index, key, searchKey, source, template, _agencies, _byName, _i, _j, _k, _ref, _ref1, _ref2, _searchString;
+      if (searchString == null) {
+        searchString = null;
+      }
+      if (searchString == null) {
+        searchString = $('.search-agency').val();
+        if (searchString.length === 0) {
+          searchString = null;
+        }
+      }
       agency = App.agency;
       if ((App.labels != null) && (App.labels[agency] != null)) {
         $('.agencyName').text(App.labels[agency]);
@@ -352,9 +361,21 @@
       if (App.labels != null) {
         _agencies = [];
         _byName = {};
+        if (searchString != null) {
+          allowedChars = 'abcdefghijklmnopqrstuvwxyz0123456789'.split('');
+          _searchString = searchString.toLowerCase().split('');
+          searchKey = '';
+          for (i = _j = 0, _ref1 = _searchString.length; 0 <= _ref1 ? _j < _ref1 : _j > _ref1; i = 0 <= _ref1 ? ++_j : --_j) {
+            if (allowedChars.indexOf(_searchString[i]) >= 0) {
+              searchKey += '' + _searchString[i];
+            }
+          }
+        }
         for (key in App.labels) {
-          _agencies.push(App.labels[key]);
-          _byName[App.labels[key]] = key;
+          if ((searchKey == null) || key.indexOf(searchKey) >= 0) {
+            _agencies.push(App.labels[key]);
+            _byName[App.labels[key]] = key;
+          }
         }
         _agencies.sort(function(a, b) {
           var _a, _b;
@@ -371,7 +392,7 @@
           }
           return 0;
         });
-        for (i = _j = 0, _ref1 = _agencies.length; 0 <= _ref1 ? _j < _ref1 : _j > _ref1; i = 0 <= _ref1 ? ++_j : --_j) {
+        for (i = _k = 0, _ref2 = _agencies.length; 0 <= _ref2 ? _k < _ref2 : _k > _ref2; i = 0 <= _ref2 ? ++_k : --_k) {
           _agencies[i] = {
             name: _agencies[i],
             key: _byName[_agencies[i]]
@@ -383,9 +404,13 @@
           agencies: _agencies
         }));
         return $('#agency-picker li a').click(function(e) {
+          var url;
           e.preventDefault();
-          App.pickAgency($(this).attr('data-key'));
-          App.playSound(App.silenceSound);
+          url = $(this).attr('data-key');
+          if (App.siblingsCount >= 2) {
+            url += '/' + Branlette.siblingCode;
+          }
+          window.location = '?' + new Date().getTime() + '#!/' + url;
           return false;
         });
       }

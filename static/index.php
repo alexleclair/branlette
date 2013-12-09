@@ -359,10 +359,9 @@ Y,     ,d88P
         <p>* Tape le nom de ton agence ou scroll la liste pour la trouver:</p>
         </div>
     </div>
-    <!--<form class="add-agency-form"><input type="text" class="add-agency" value="" />
-    <input type="submit" value="Ajouter" class="button" /></form>
-     -->
-    
+    <form class="add-agency-form"><input type="text" class="search-agency" placeholder="Rechercher" style="width:100%;" value="" />
+<!--     <input type="submit" value="Ajouter" class="button" /></form>
+ -->    
     <ul id="agency-picker">
         
     </ul><br>

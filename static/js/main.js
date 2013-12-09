@@ -45,6 +45,10 @@ $(document).ready(function(){
 		
 	})
 
+	$('.search-agency').on('keyup', function(e){
+		Branlette.resetTexts($(this).val());
+	})
+
 	$('#logo a, a.back-to-business').click(function(e){
 		//var $current = $('div.step.current');
 		if(!Branlette.isMobile){

@@ -326,7 +326,12 @@ App =
 
 
 
-	resetTexts:()=>
+	resetTexts:(searchString=null)=>
+		if !searchString?
+			searchString = $('.search-agency').val();
+			if searchString.length == 0
+				searchString = null;
+
 		agency = App.agency;
 		if App.labels? && App.labels[agency]?	
 			$('.agencyName').text(App.labels[agency])
@@ -344,9 +349,19 @@ App =
 		if App.labels?
 			_agencies = []
 			_byName = {}
+
+			if searchString?
+				allowedChars = 'abcdefghijklmnopqrstuvwxyz0123456789'.split('');
+				_searchString = searchString.toLowerCase().split('');
+				searchKey = '';
+				for i in [0..._searchString.length]
+					if allowedChars.indexOf(_searchString[i]) >= 0
+						searchKey += '' + _searchString[i]
+
 			for key of App.labels
-				_agencies.push App.labels[key]
-				_byName[App.labels[key]] = key;
+				if !searchKey? or key.indexOf(searchKey) >= 0
+					_agencies.push App.labels[key]
+					_byName[App.labels[key]] = key;
 			_agencies.sort (a,b)=>
 				if a? && b?
 					_a = a.toLowerCase()
@@ -359,6 +374,9 @@ App =
 					return 0;
 				return 0;
 
+			
+
+
 			for i in [0..._agencies.length]
 				_agencies[i] = 
 					name: _agencies[i]
@@ -370,10 +388,16 @@ App =
 			$('#agency-picker li a').click (e)->
 				e.preventDefault();
 
-				App.pickAgency $(this).attr('data-key');
+				url = $(this).attr('data-key');
+				if App.siblingsCount >= 2
+					url += '/'+Branlette.siblingCode;
+				
+				window.location = '?'+new Date().getTime()+'#!/'+url
+
+				#App.pickAgency $(this).attr('data-key');
 				#if App.siblingsCount <= 1 #Only play sound on the phone when there is no desktop
 				#App.playSound();
-				App.playSound(App.silenceSound);
+				#App.playSound(App.silenceSound);
 
 				return false;
 
